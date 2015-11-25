@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeCenterController" customModule="Heartbeats" customModuleProvider="target">
+            <connections>
+                <outlet property="headView" destination="8f5-Xx-43c" id="7wo-2Q-iov"/>
+                <outlet property="userHeadView" destination="EHg-RH-qtN" id="2Cw-yJ-Y1b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="8f5-Xx-43c" customClass="MeCenterHeadView" customModule="Heartbeats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="294"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeadBackImage" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-Ha-0xb">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="294"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOi-heartbeats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQS-ex-rIg">
+                    <rect key="frame" x="191" y="136" width="118" height="21"/>
+                    <color key="tintColor" red="0.99215692280000001" green="0.96862751250000001" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20.5" id="2Nx-M5-lBA"/>
+                        <constraint firstAttribute="width" constant="42" id="iWz-wz-r6d"/>
+                        <constraint firstAttribute="width" constant="117.5" id="jab-zb-RPW"/>
+                        <constraint firstAttribute="height" constant="21" id="tZq-Iz-PbC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="iWz-wz-r6d"/>
+                            <exclude reference="tZq-Iz-PbC"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOi-heartbeats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvt-Nt-TAC">
+                    <rect key="frame" x="191" y="164" width="118" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHg-RH-qtN">
+                    <rect key="frame" x="220" y="62" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="4yp-47-XA9"/>
+                        <constraint firstAttribute="height" constant="60" id="EtJ-Qu-HLC"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="HeadImage"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pHQ-Ha-0xb" firstAttribute="leading" secondItem="8f5-Xx-43c" secondAttribute="leading" id="0aB-IO-Ob8"/>
+                <constraint firstItem="zvt-Nt-TAC" firstAttribute="height" secondItem="GQS-ex-rIg" secondAttribute="height" id="5mR-J0-rxc"/>
+                <constraint firstItem="GQS-ex-rIg" firstAttribute="top" secondItem="EHg-RH-qtN" secondAttribute="bottom" constant="8" id="6Mq-aS-qSD"/>
+                <constraint firstItem="pHQ-Ha-0xb" firstAttribute="top" secondItem="8f5-Xx-43c" secondAttribute="top" id="75w-HT-0yS"/>
+                <constraint firstAttribute="trailing" secondItem="pHQ-Ha-0xb" secondAttribute="trailing" id="CQ0-RZ-nt0"/>
+                <constraint firstAttribute="bottom" secondItem="pHQ-Ha-0xb" secondAttribute="bottom" id="Dhs-1p-fCg"/>
+                <constraint firstAttribute="trailing" secondItem="pHQ-Ha-0xb" secondAttribute="trailing" id="Dqs-wI-ACe"/>
+                <constraint firstItem="zvt-Nt-TAC" firstAttribute="centerX" secondItem="GQS-ex-rIg" secondAttribute="centerX" id="KIe-QH-UtY"/>
+                <constraint firstItem="GQS-ex-rIg" firstAttribute="top" secondItem="EHg-RH-qtN" secondAttribute="bottom" constant="14" id="MnO-9e-o7T"/>
+                <constraint firstItem="GQS-ex-rIg" firstAttribute="centerX" secondItem="EHg-RH-qtN" secondAttribute="centerX" id="NYg-wf-M3b"/>
+                <constraint firstItem="EHg-RH-qtN" firstAttribute="centerX" secondItem="GQS-ex-rIg" secondAttribute="centerX" id="R4H-h9-3Je"/>
+                <constraint firstItem="pHQ-Ha-0xb" firstAttribute="top" secondItem="8f5-Xx-43c" secondAttribute="top" id="RuV-Wv-Buh"/>
+                <constraint firstItem="pHQ-Ha-0xb" firstAttribute="top" secondItem="EHg-RH-qtN" secondAttribute="top" constant="-62" id="SKV-Zo-S3F"/>
+                <constraint firstItem="EHg-RH-qtN" firstAttribute="centerX" secondItem="pHQ-Ha-0xb" secondAttribute="centerX" id="amm-mb-MTm"/>
+                <constraint firstItem="zvt-Nt-TAC" firstAttribute="top" secondItem="GQS-ex-rIg" secondAttribute="bottom" constant="7.5" id="sdO-xF-Enb"/>
+                <constraint firstAttribute="bottom" secondItem="pHQ-Ha-0xb" secondAttribute="bottom" id="uy7-uc-Ncm"/>
+                <constraint firstItem="pHQ-Ha-0xb" firstAttribute="leading" secondItem="8f5-Xx-43c" secondAttribute="leading" id="wUs-f9-IsM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="R4H-h9-3Je"/>
+                    <exclude reference="6Mq-aS-qSD"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="403" y="-293"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="HeadBackImage" width="134" height="82"/>
+        <image name="HeadImage" width="39" height="34"/>
+    </resources>
+</document>
