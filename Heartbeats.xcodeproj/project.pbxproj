@@ -17,18 +17,30 @@
 		DB1AF6541BF792050059A41B /* DynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6531BF792050059A41B /* DynamicController.swift */; };
 		DB1AF6561BF7923E0059A41B /* MeCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6551BF7923E0059A41B /* MeCenterController.swift */; };
 		DB1AF6581BF792580059A41B /* MeCenterHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6571BF792580059A41B /* MeCenterHeadView.swift */; };
-		DB1AF65A1BF792650059A41B /* MeCenterHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB1AF6591BF792650059A41B /* MeCenterHeadView.xib */; };
-		F157CAAA1C05857700DED4A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F157CA901C05857700DED4A7 /* Info.plist */; };
-		F157CAAB1C05857700DED4A7 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA921C05857700DED4A7 /* MASCompositeConstraint.m */; };
-		F157CAAC1C05857700DED4A7 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA951C05857700DED4A7 /* MASConstraint.m */; };
-		F157CAAD1C05857700DED4A7 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA971C05857700DED4A7 /* MASConstraintMaker.m */; };
-		F157CAAE1C05857700DED4A7 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA991C05857700DED4A7 /* MASLayoutConstraint.m */; };
-		F157CAAF1C05857700DED4A7 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA9D1C05857700DED4A7 /* MASViewAttribute.m */; };
-		F157CAB01C05857700DED4A7 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CA9F1C05857700DED4A7 /* MASViewConstraint.m */; };
-		F157CAB11C05857700DED4A7 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CAA11C05857700DED4A7 /* NSArray+MASAdditions.m */; };
-		F157CAB21C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CAA41C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		F157CAB31C05857700DED4A7 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CAA61C05857700DED4A7 /* View+MASAdditions.m */; };
-		F157CAB41C05857700DED4A7 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F157CAA91C05857700DED4A7 /* ViewController+MASAdditions.m */; };
+		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
+		F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */; };
+		F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0A1C06EA2400F7AB97 /* ConstraintDescription.swift */; };
+		F1716D1A1C06EA2400F7AB97 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0B1C06EA2400F7AB97 /* ConstraintItem.swift */; };
+		F1716D1B1C06EA2400F7AB97 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0C1C06EA2400F7AB97 /* ConstraintMaker.swift */; };
+		F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0D1C06EA2400F7AB97 /* ConstraintRelation.swift */; };
+		F1716D1D1C06EA2400F7AB97 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0E1C06EA2400F7AB97 /* Debugging.swift */; };
+		F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0F1C06EA2400F7AB97 /* EdgeInsets.swift */; };
+		F1716D1F1C06EA2400F7AB97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1716D101C06EA2400F7AB97 /* Info.plist */; };
+		F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D111C06EA2400F7AB97 /* LayoutConstraint.swift */; };
+		F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D131C06EA2400F7AB97 /* SnapKit.swift */; };
+		F1716D221C06EA2400F7AB97 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D141C06EA2400F7AB97 /* SourceLocation.swift */; };
+		F1716D231C06EA2400F7AB97 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D151C06EA2400F7AB97 /* View+SnapKit.swift */; };
+		F1716D241C06EA2400F7AB97 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D161C06EA2400F7AB97 /* ViewController+SnapKit.swift */; };
+		F1716D301C08370A00F7AB97 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1716D2B1C08370A00F7AB97 /* SMS_SDKLocalizable.strings */; };
+		F1716D311C08370A00F7AB97 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D2D1C08370A00F7AB97 /* MOBFoundation.framework */; };
+		F1716D321C08370A00F7AB97 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D2E1C08370A00F7AB97 /* SMS_SDK.framework */; };
+		F1716D351C08388A00F7AB97 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D341C08388A00F7AB97 /* libicucore.tbd */; };
+		F1716D371C08389100F7AB97 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D361C08389100F7AB97 /* libz.tbd */; };
+		F1716D391C08389900F7AB97 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D381C08389900F7AB97 /* MessageUI.framework */; };
+		F1716D3B1C0838A000F7AB97 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D3A1C0838A000F7AB97 /* JavaScriptCore.framework */; };
+		F1716D3D1C0838A900F7AB97 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D3C1C0838A900F7AB97 /* libstdc++.tbd */; };
+		F1716D3F1C0838B000F7AB97 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D3E1C0838B000F7AB97 /* AddressBook.framework */; };
+		F1716D411C0838B600F7AB97 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D401C0838B600F7AB97 /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,34 +77,33 @@
 		DB1AF6531BF792050059A41B /* DynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicController.swift; sourceTree = "<group>"; };
 		DB1AF6551BF7923E0059A41B /* MeCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterController.swift; sourceTree = "<group>"; };
 		DB1AF6571BF792580059A41B /* MeCenterHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterHeadView.swift; sourceTree = "<group>"; };
-		DB1AF6591BF792650059A41B /* MeCenterHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeCenterHeadView.xib; sourceTree = "<group>"; };
-		DB1AF6931BF7ABE10059A41B /* Heartbeats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartbeats-Bridging-Header.h"; sourceTree = "<group>"; };
-		F157CA901C05857700DED4A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F157CA911C05857700DED4A7 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
-		F157CA921C05857700DED4A7 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
-		F157CA931C05857700DED4A7 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
-		F157CA941C05857700DED4A7 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
-		F157CA951C05857700DED4A7 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
-		F157CA961C05857700DED4A7 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
-		F157CA971C05857700DED4A7 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
-		F157CA981C05857700DED4A7 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
-		F157CA991C05857700DED4A7 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
-		F157CA9A1C05857700DED4A7 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
-		F157CA9B1C05857700DED4A7 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
-		F157CA9C1C05857700DED4A7 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
-		F157CA9D1C05857700DED4A7 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		F157CA9E1C05857700DED4A7 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
-		F157CA9F1C05857700DED4A7 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
-		F157CAA01C05857700DED4A7 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		F157CAA11C05857700DED4A7 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		F157CAA21C05857700DED4A7 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		F157CAA31C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		F157CAA41C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		F157CAA51C05857700DED4A7 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
-		F157CAA61C05857700DED4A7 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
-		F157CAA71C05857700DED4A7 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		F157CAA81C05857700DED4A7 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		F157CAA91C05857700DED4A7 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		F1716D081C06EA2400F7AB97 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		F1716D0A1C06EA2400F7AB97 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		F1716D0B1C06EA2400F7AB97 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		F1716D0C1C06EA2400F7AB97 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		F1716D0D1C06EA2400F7AB97 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		F1716D0E1C06EA2400F7AB97 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		F1716D0F1C06EA2400F7AB97 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		F1716D101C06EA2400F7AB97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1716D111C06EA2400F7AB97 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		F1716D121C06EA2400F7AB97 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		F1716D131C06EA2400F7AB97 /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
+		F1716D141C06EA2400F7AB97 /* SourceLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceLocation.swift; sourceTree = "<group>"; };
+		F1716D151C06EA2400F7AB97 /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
+		F1716D161C06EA2400F7AB97 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		F1716D2C1C08370A00F7AB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		F1716D2D1C08370A00F7AB97 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		F1716D2E1C08370A00F7AB97 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		F1716D2F1C08370A00F7AB97 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		F1716D341C08388A00F7AB97 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		F1716D361C08389100F7AB97 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F1716D381C08389900F7AB97 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F1716D3A1C0838A000F7AB97 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F1716D3C1C0838A900F7AB97 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		F1716D3E1C0838B000F7AB97 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F1716D401C0838B600F7AB97 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		F1716D471C0859D000F7AB97 /* Heartbeats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartbeats-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +111,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1716D411C0838B600F7AB97 /* AddressBookUI.framework in Frameworks */,
+				F1716D3F1C0838B000F7AB97 /* AddressBook.framework in Frameworks */,
+				F1716D3D1C0838A900F7AB97 /* libstdc++.tbd in Frameworks */,
+				F1716D3B1C0838A000F7AB97 /* JavaScriptCore.framework in Frameworks */,
+				F1716D391C08389900F7AB97 /* MessageUI.framework in Frameworks */,
+				F1716D371C08389100F7AB97 /* libz.tbd in Frameworks */,
+				F1716D351C08388A00F7AB97 /* libicucore.tbd in Frameworks */,
+				F1716D311C08370A00F7AB97 /* MOBFoundation.framework in Frameworks */,
+				F1716D321C08370A00F7AB97 /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				DB1AF6141BF76FA90059A41B /* Heartbeats */,
-				F157CA8E1C05856700DED4A7 /* lib */,
 				DB1AF6291BF76FA90059A41B /* HeartbeatsTests */,
 				DB1AF6341BF76FA90059A41B /* HeartbeatsUITests */,
 				DB1AF6131BF76FA90059A41B /* Products */,
@@ -151,6 +170,7 @@
 				DB1AF61C1BF76FA90059A41B /* Assets.xcassets */,
 				DB1AF61E1BF76FA90059A41B /* LaunchScreen.storyboard */,
 				DB1AF6211BF76FA90059A41B /* Info.plist */,
+				F1716D421C08392B00F7AB97 /* Lib */,
 			);
 			path = Heartbeats;
 			sourceTree = "<group>";
@@ -178,7 +198,7 @@
 			children = (
 				DB1AF6441BF771090059A41B /* MainNavigationController.swift */,
 				DB1AF6451BF771090059A41B /* MainTabBarController.swift */,
-				DB1AF6931BF7ABE10059A41B /* Heartbeats-Bridging-Header.h */,
+				F1716D471C0859D000F7AB97 /* Heartbeats-Bridging-Header.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -196,55 +216,69 @@
 			children = (
 				DB1AF6551BF7923E0059A41B /* MeCenterController.swift */,
 				DB1AF6571BF792580059A41B /* MeCenterHeadView.swift */,
-				DB1AF6591BF792650059A41B /* MeCenterHeadView.xib */,
 			);
 			path = MeCenter;
 			sourceTree = "<group>";
 		};
-		F157CA8E1C05856700DED4A7 /* lib */ = {
+		F1716D071C06EA2400F7AB97 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
-				F157CA8F1C05857700DED4A7 /* Masonry */,
+				F1716D081C06EA2400F7AB97 /* Constraint.swift */,
+				F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */,
+				F1716D0A1C06EA2400F7AB97 /* ConstraintDescription.swift */,
+				F1716D0B1C06EA2400F7AB97 /* ConstraintItem.swift */,
+				F1716D0C1C06EA2400F7AB97 /* ConstraintMaker.swift */,
+				F1716D0D1C06EA2400F7AB97 /* ConstraintRelation.swift */,
+				F1716D0E1C06EA2400F7AB97 /* Debugging.swift */,
+				F1716D0F1C06EA2400F7AB97 /* EdgeInsets.swift */,
+				F1716D101C06EA2400F7AB97 /* Info.plist */,
+				F1716D111C06EA2400F7AB97 /* LayoutConstraint.swift */,
+				F1716D121C06EA2400F7AB97 /* SnapKit.h */,
+				F1716D131C06EA2400F7AB97 /* SnapKit.swift */,
+				F1716D141C06EA2400F7AB97 /* SourceLocation.swift */,
+				F1716D151C06EA2400F7AB97 /* View+SnapKit.swift */,
+				F1716D161C06EA2400F7AB97 /* ViewController+SnapKit.swift */,
 			);
-			name = lib;
-			path = Heartbeats/MeCenter;
+			path = Masonry;
 			sourceTree = "<group>";
 		};
-		F157CA8F1C05857700DED4A7 /* Masonry */ = {
+		F1716D2A1C08370A00F7AB97 /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				F157CA901C05857700DED4A7 /* Info.plist */,
-				F157CA911C05857700DED4A7 /* MASCompositeConstraint.h */,
-				F157CA921C05857700DED4A7 /* MASCompositeConstraint.m */,
-				F157CA931C05857700DED4A7 /* MASConstraint+Private.h */,
-				F157CA941C05857700DED4A7 /* MASConstraint.h */,
-				F157CA951C05857700DED4A7 /* MASConstraint.m */,
-				F157CA961C05857700DED4A7 /* MASConstraintMaker.h */,
-				F157CA971C05857700DED4A7 /* MASConstraintMaker.m */,
-				F157CA981C05857700DED4A7 /* MASLayoutConstraint.h */,
-				F157CA991C05857700DED4A7 /* MASLayoutConstraint.m */,
-				F157CA9A1C05857700DED4A7 /* Masonry.h */,
-				F157CA9B1C05857700DED4A7 /* MASUtilities.h */,
-				F157CA9C1C05857700DED4A7 /* MASViewAttribute.h */,
-				F157CA9D1C05857700DED4A7 /* MASViewAttribute.m */,
-				F157CA9E1C05857700DED4A7 /* MASViewConstraint.h */,
-				F157CA9F1C05857700DED4A7 /* MASViewConstraint.m */,
-				F157CAA01C05857700DED4A7 /* NSArray+MASAdditions.h */,
-				F157CAA11C05857700DED4A7 /* NSArray+MASAdditions.m */,
-				F157CAA21C05857700DED4A7 /* NSArray+MASShorthandAdditions.h */,
-				F157CAA31C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.h */,
-				F157CAA41C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.m */,
-				F157CAA51C05857700DED4A7 /* View+MASAdditions.h */,
-				F157CAA61C05857700DED4A7 /* View+MASAdditions.m */,
-				F157CAA71C05857700DED4A7 /* View+MASShorthandAdditions.h */,
-				F157CAA81C05857700DED4A7 /* ViewController+MASAdditions.h */,
-				F157CAA91C05857700DED4A7 /* ViewController+MASAdditions.m */,
+				F1716D2B1C08370A00F7AB97 /* SMS_SDKLocalizable.strings */,
+				F1716D2D1C08370A00F7AB97 /* MOBFoundation.framework */,
+				F1716D2E1C08370A00F7AB97 /* SMS_SDK.framework */,
 			);
-			name = Masonry;
-			path = ../../Masonry;
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		F1716D421C08392B00F7AB97 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				F1716D071C06EA2400F7AB97 /* Masonry */,
+				F1716D2A1C08370A00F7AB97 /* SMS_SDK */,
+				F1716D401C0838B600F7AB97 /* AddressBookUI.framework */,
+				F1716D3E1C0838B000F7AB97 /* AddressBook.framework */,
+				F1716D3C1C0838A900F7AB97 /* libstdc++.tbd */,
+				F1716D3A1C0838A000F7AB97 /* JavaScriptCore.framework */,
+				F1716D381C08389900F7AB97 /* MessageUI.framework */,
+				F1716D361C08389100F7AB97 /* libz.tbd */,
+				F1716D341C08388A00F7AB97 /* libicucore.tbd */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F1716D331C08381000F7AB97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		DB1AF6111BF76FA90059A41B /* Heartbeats */ = {
@@ -254,6 +288,7 @@
 				DB1AF60E1BF76FA90059A41B /* Sources */,
 				DB1AF60F1BF76FA90059A41B /* Frameworks */,
 				DB1AF6101BF76FA90059A41B /* Resources */,
+				F1716D331C08381000F7AB97 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -306,7 +341,7 @@
 		DB1AF60A1BF76FA90059A41B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = heart;
 				TargetAttributes = {
@@ -352,9 +387,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F157CAAA1C05857700DED4A7 /* Info.plist in Resources */,
+				F1716D301C08370A00F7AB97 /* SMS_SDKLocalizable.strings in Resources */,
+				F1716D1F1C06EA2400F7AB97 /* Info.plist in Resources */,
 				DB1AF6201BF76FA90059A41B /* LaunchScreen.storyboard in Resources */,
-				DB1AF65A1BF792650059A41B /* MeCenterHeadView.xib in Resources */,
 				DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,22 +415,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F157CAAC1C05857700DED4A7 /* MASConstraint.m in Sources */,
-				F157CAAF1C05857700DED4A7 /* MASViewAttribute.m in Sources */,
-				F157CAB41C05857700DED4A7 /* ViewController+MASAdditions.m in Sources */,
-				F157CAB11C05857700DED4A7 /* NSArray+MASAdditions.m in Sources */,
 				DB1AF6561BF7923E0059A41B /* MeCenterController.swift in Sources */,
-				F157CAB01C05857700DED4A7 /* MASViewConstraint.m in Sources */,
-				F157CAAE1C05857700DED4A7 /* MASLayoutConstraint.m in Sources */,
+				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
+				F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */,
 				DB1AF6461BF771090059A41B /* MainNavigationController.swift in Sources */,
+				F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */,
+				F1716D231C06EA2400F7AB97 /* View+SnapKit.swift in Sources */,
+				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
+				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,
+				F1716D1B1C06EA2400F7AB97 /* ConstraintMaker.swift in Sources */,
 				DB1AF6541BF792050059A41B /* DynamicController.swift in Sources */,
-				F157CAB31C05857700DED4A7 /* View+MASAdditions.m in Sources */,
-				F157CAAB1C05857700DED4A7 /* MASCompositeConstraint.m in Sources */,
-				F157CAB21C05857700DED4A7 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				F157CAAD1C05857700DED4A7 /* MASConstraintMaker.m in Sources */,
 				DB1AF6581BF792580059A41B /* MeCenterHeadView.swift in Sources */,
+				F1716D1D1C06EA2400F7AB97 /* Debugging.swift in Sources */,
 				DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */,
+				F1716D221C06EA2400F7AB97 /* SourceLocation.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
+				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
+				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
+				F1716D241C06EA2400F7AB97 /* ViewController+SnapKit.swift in Sources */,
+				F1716D1A1C06EA2400F7AB97 /* ConstraintItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +475,15 @@
 				DB1AF61F1BF76FA90059A41B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F1716D2B1C08370A00F7AB97 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1716D2C1C08370A00F7AB97 /* en */,
+				F1716D2F1C08370A00F7AB97 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -530,6 +577,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heartbeats/SMS_SDK",
+				);
 				INFOPLIST_FILE = Heartbeats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -549,6 +601,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heartbeats/SMS_SDK",
+				);
 				INFOPLIST_FILE = Heartbeats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -566,10 +623,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = HeartbeatsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = heart.HeartbeatsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = Heartbeats_Heartbeats_Bridging_Header_h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = Heartbeats_Heartbeats_Bridging_Header_h;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartbeats.app/Heartbeats";
 			};
 			name = Debug;
@@ -578,10 +639,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = HeartbeatsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = heart.HeartbeatsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = Heartbeats_Heartbeats_Bridging_Header_h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = Heartbeats_Heartbeats_Bridging_Header_h;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heartbeats.app/Heartbeats";
 			};
 			name = Release;

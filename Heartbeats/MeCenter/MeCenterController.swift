@@ -9,37 +9,38 @@
 import UIKit
 
 class MeCenterController: UIViewController {
-
-    @IBOutlet var headView: MeCenterHeadView!
-    @IBOutlet weak var userHeadView: UIButton!
-
+    
+//    MARK : - 懒加载控件
       private  lazy var meCenterTableView: UITableView = {
-        let tableView = UITableView()
-        return tableView
+            let tableView = UITableView()
+            return tableView
         }()
+    
+      private lazy var headView : MeCenterHeadView = MeCenterHeadView()
+    
 //      初始化操作
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
-        self.loadHeadView()
         self.setupUI()
     }
-    private func loadHeadView() -> MeCenterHeadView {
-        let headViews = NSBundle.mainBundle().loadNibNamed("MeCenterHeadView", owner: nil, options: nil)
-            return headViews.first as! MeCenterHeadView
-    }
-//   MARK:  -- 设置UI
+//    MARK; - 设置UI
     private func setupUI() {
-        headView = loadHeadView()
         view.addSubview(headView)
         view.addSubview(meCenterTableView)
         self.navigationController?.navigationBarHidden = true
         headView.translatesAutoresizingMaskIntoConstraints = false
         meCenterTableView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[headView]-0-|", options: NSLayoutFormatOptions.AlignAllBaseline, metrics: nil, views: ["headView": headView]))
-         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[headView(==300)]-0-[tableView]-0-|", options: NSLayoutFormatOptions.AlignAllBaseline, metrics: nil, views: ["headView": headView, "tableView": meCenterTableView]))
+        headView.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo(view).offset(CGSize(width: 0, height: -(view.frame.width * 0.6)))
+        }
+        meCenterTableView.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo(view)
+            make.top.equalTo(headView.snp_bottom).offset(1)
+        }
     }
+
+    
     /*
     // MARK: - Navigation
 
@@ -49,5 +50,4 @@ class MeCenterController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

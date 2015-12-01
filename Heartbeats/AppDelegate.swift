@@ -11,12 +11,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds);
         window?.rootViewController = MainTabBarController();
         window?.makeKeyAndVisible();
+//        集合短信SDK
+        SMSSDK.registerApp("c51e83e80668", withSecret: "b7c9c37957d8ecd77afde0beff7b9e5d")
         return true
 
     }
