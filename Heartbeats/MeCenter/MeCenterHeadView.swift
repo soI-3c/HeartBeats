@@ -106,8 +106,6 @@ class MeCenterHeadView: UIView {
     
 //    MARK: - 换头像点击事件
      @objc private func changeUserHeadImg() {
-//        SMSSDK.getVerificationCodeByMethod("", phoneNumber: "18321655626", zone: "86", customIdentifier: "") { (NSError!) -> Void in
-//            
-//        }
+        
     }
 }
