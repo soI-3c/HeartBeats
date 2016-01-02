@@ -16,11 +16,13 @@ class MainTabBarController: UITabBarController {
     }
     private func addChildViewControllers() {
         self.addChildViewController(DynamicController(), title: "Heartbeats", imageName: "")
+        self.addChildViewController(ContactsCollectionViewController(), title: "ContactsCollectionViewController", imageName: "")
         self.addChildViewController(MeCenterController(), title: "Me", imageName: "")
     }
     
     private func addChildViewController(vc: UIViewController, title: String, imageName: String) {
         vc.title = title;
+        tabBar.tintColor = UIColor.blackColor()
         let navC = MainNavigationController(rootViewController: vc)
         vc.tabBarItem.image = UIImage(named: imageName)
         addChildViewController(navC)

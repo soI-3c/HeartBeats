@@ -7,20 +7,37 @@
 //
 
 import UIKit
+import AVOSCloud
+
+
+typealias changeRootViewController = () -> Void
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+    var changeBlock: changeRootViewController?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds);
-        window?.rootViewController = MainTabBarController();
+        HeartUser.registerSubclass()
+        AVOSCloud.setApplicationId("MfQgIdk0MNsmNiKUh7tix2ph", clientKey: "QMviVrHgrzIBEvOrjqxOAYzK")
+        if HeartUser.currentUser() != nil {
+            window?.rootViewController = MainTabBarController()
+        } else {
+            let loginRegisterControllerSB =  UIStoryboard(name: "LoginRegisterMainViewController", bundle: nil)
+            let loginRegisterMainController = loginRegisterControllerSB.instantiateInitialViewController() as? LoginRegisterMainViewController
+            //        改变根控制器
+            changeBlock = {() -> Void in
+                self.window?.rootViewController = MainTabBarController()
+            }
+            loginRegisterMainController?.changeViewController = changeBlock
+            window?.rootViewController = loginRegisterMainController
+        }
         window?.makeKeyAndVisible();
-//        集合短信SDK
-        SMSSDK.registerApp("c51e83e80668", withSecret: "b7c9c37957d8ecd77afde0beff7b9e5d")
+    //        集合短信SDK
         return true
-
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -45,4 +62,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

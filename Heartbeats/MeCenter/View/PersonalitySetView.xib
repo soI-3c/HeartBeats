@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yMQ-dG-ZyK" customClass="PersonalitySetView" customModule="Heartbeats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awl-D7-jdH" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
+                    <rect key="frame" x="8" y="8" width="219" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="7O0-yp-acj"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="编辑">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="changeEditAction:" destination="yMQ-dG-ZyK" eventType="touchUpInside" id="y0b-Jd-Myf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-aV-MlA" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
+                    <rect key="frame" x="247" y="8" width="206" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="mga-PV-gC0"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="closeAction:" destination="yMQ-dG-ZyK" eventType="touchUpInside" id="9oH-eM-itX"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="want" translatesAutoresizingMaskIntoConstraints="NO" id="e52-IA-kck">
+                    <rect key="frame" x="8" y="46" width="445" height="168"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="e52-IA-kck" firstAttribute="top" secondItem="Dpy-aV-MlA" secondAttribute="bottom" constant="8" id="Fmk-em-M2X"/>
+                <constraint firstAttribute="trailing" secondItem="e52-IA-kck" secondAttribute="trailing" constant="8" id="Og1-mR-6uw"/>
+                <constraint firstItem="Awl-D7-jdH" firstAttribute="top" secondItem="yMQ-dG-ZyK" secondAttribute="top" constant="8" id="TNH-fK-UOs"/>
+                <constraint firstItem="Awl-D7-jdH" firstAttribute="leading" secondItem="yMQ-dG-ZyK" secondAttribute="leading" constant="8" id="Uyy-Ua-Zeq"/>
+                <constraint firstItem="e52-IA-kck" firstAttribute="leading" secondItem="yMQ-dG-ZyK" secondAttribute="leading" constant="8" id="VRS-fi-BLN"/>
+                <constraint firstAttribute="trailing" secondItem="Dpy-aV-MlA" secondAttribute="trailing" constant="8" id="XLl-xC-l0K"/>
+                <constraint firstItem="Awl-D7-jdH" firstAttribute="width" secondItem="Dpy-aV-MlA" secondAttribute="width" id="YiD-lz-oat"/>
+                <constraint firstItem="Dpy-aV-MlA" firstAttribute="leading" secondItem="Awl-D7-jdH" secondAttribute="trailing" constant="8" id="ay5-p9-0Iz"/>
+                <constraint firstItem="Dpy-aV-MlA" firstAttribute="leading" secondItem="Awl-D7-jdH" secondAttribute="trailing" constant="8" id="bLZ-E0-caf"/>
+                <constraint firstItem="Dpy-aV-MlA" firstAttribute="top" secondItem="yMQ-dG-ZyK" secondAttribute="top" constant="8" id="m7R-Hn-Fyf"/>
+                <constraint firstAttribute="bottom" secondItem="e52-IA-kck" secondAttribute="bottom" constant="8" id="slz-oz-2cQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="editTextView" destination="e52-IA-kck" id="a53-1h-RjZ"/>
+            </connections>
+            <point key="canvasLocation" x="374.5" y="278"/>
+        </view>
+    </objects>
+</document>

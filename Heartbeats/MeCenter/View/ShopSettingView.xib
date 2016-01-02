@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tEa-m3-UZV" customClass="ShopSettingView" customModule="Heartbeats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="484" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugc-Gv-0kq" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
+                    <rect key="frame" x="269" y="30" width="146" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="编辑">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="settingAction:" destination="tEa-m3-UZV" eventType="touchUpInside" id="xO1-vB-Jns"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMO-b2-ZnD" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
+                    <rect key="frame" x="69" y="30" width="146" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="X4Z-n9-7TP"/>
+                        <constraint firstAttribute="height" constant="30" id="eWc-J1-nCj"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="商店">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="X4Z-n9-7TP"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="shopAction:" destination="tEa-m3-UZV" eventType="touchUpInside" id="UY2-v8-a1f"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ugc-Gv-0kq" firstAttribute="centerY" secondItem="OMO-b2-ZnD" secondAttribute="centerY" id="1GT-k6-3i5"/>
+                <constraint firstItem="Ugc-Gv-0kq" firstAttribute="centerX" secondItem="tEa-m3-UZV" secondAttribute="centerX" constant="100" id="3mm-2m-zXV"/>
+                <constraint firstItem="Ugc-Gv-0kq" firstAttribute="height" secondItem="OMO-b2-ZnD" secondAttribute="height" id="H2Y-1J-N71"/>
+                <constraint firstItem="OMO-b2-ZnD" firstAttribute="width" secondItem="tEa-m3-UZV" secondAttribute="width" multiplier="0.3" id="RW6-dl-geE"/>
+                <constraint firstItem="Ugc-Gv-0kq" firstAttribute="width" secondItem="OMO-b2-ZnD" secondAttribute="width" id="RXW-P8-dzt"/>
+                <constraint firstItem="OMO-b2-ZnD" firstAttribute="centerY" secondItem="tEa-m3-UZV" secondAttribute="centerY" id="o1k-nh-wYl"/>
+                <constraint firstItem="OMO-b2-ZnD" firstAttribute="centerX" secondItem="tEa-m3-UZV" secondAttribute="centerX" constant="-100" id="sWO-Pq-Ojl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="360" y="207"/>
+        </view>
+    </objects>
+</document>

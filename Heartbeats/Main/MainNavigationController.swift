@@ -12,11 +12,11 @@ class MainNavigationController: UINavigationController, UIGestureRecognizerDeleg
 //    MARK:- 初始化
     override func viewDidLoad() {
         super.viewDidLoad()
-    let target =  interactivePopGestureRecognizer?.delegate
-    let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
-        pan.delegate = self;
-        view .addGestureRecognizer(pan)
-        interactivePopGestureRecognizer?.enabled = false
+        let target =  interactivePopGestureRecognizer?.delegate
+        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
+            pan.delegate = self;
+            view .addGestureRecognizer(pan)
+            interactivePopGestureRecognizer?.enabled = false
     }
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -36,7 +36,7 @@ class MainNavigationController: UINavigationController, UIGestureRecognizerDeleg
         bar.translucent = false;
         
 //        设置按钮着色
-        UIBarButtonItem .appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
     }
     
     func handleNavigationTransition( sender: UIGestureRecognizer){
