@@ -10,21 +10,31 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
+   lazy var mainTabarView : MainTabar = {
+       let mainTabarView =  MainTabar.currentMainTabar()
+        mainTabarView.selectControllerIndex = {(result) -> () in
+            self.selectedIndex = result
+        }
+        return mainTabarView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainTabarView.frame = tabBar.frame
+        tabBar.removeFromSuperview()
+        self.view .addSubview(mainTabarView);
         addChildViewControllers();
     }
     private func addChildViewControllers() {
-        self.addChildViewController(DynamicController(), title: "Heartbeats", imageName: "")
-        self.addChildViewController(ContactsCollectionViewController(), title: "ContactsCollectionViewController", imageName: "")
-        self.addChildViewController(MeCenterController(), title: "Me", imageName: "")
+        addChildViewController(HomeController(), title: "Heartbeats", imageName: "")
+        addChildViewController(DynamicTableViewController(), title: "Dynamic", imageName: "")
+        addChildViewController(DefaultPublicDynamicController(), title: "PublicDynamic", imageName: "")
+        addChildViewController(ContactsCollectionViewController(), title: "Contacts", imageName: "")
+        addChildViewController(MeCenterController(), title: "Me", imageName: "")
     }
     
     private func addChildViewController(vc: UIViewController, title: String, imageName: String) {
-        vc.title = title;
-        tabBar.tintColor = UIColor.blackColor()
+        vc.navigationItem.title = title;
         let navC = MainNavigationController(rootViewController: vc)
-        vc.tabBarItem.image = UIImage(named: imageName)
         addChildViewController(navC)
     }
     

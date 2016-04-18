@@ -1,18 +1,14 @@
 //
 //  PhotoBrowserCell.swift
-//  Weibo09
 //
 //  Created by Romeo on 15/9/14.
-//  Copyright © 2015年 itheima. All rights reserved.
+//  Copyright © 2015年. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
-import SVProgressHUD
 
 /// 照片浏览 Cell，显示单张图片
 class PhotoBrowserCell: UICollectionViewCell {
-
     /// 图像的 URL
     var url: NSURL? {
         didSet {
@@ -44,7 +40,6 @@ class PhotoBrowserCell: UICollectionViewCell {
                         SVProgressHUD.showInfoWithStatus("您的网络不给力")
                         return
                     }
-                    
                     // 执行到此处，表示图片已经下载完成
                     self.setImagePosition()
                 }
@@ -97,8 +92,6 @@ class PhotoBrowserCell: UICollectionViewCell {
     // MARK: - 构造函数，因为和屏幕一样大，只会被调用两次，后面再滚动就直接使用缓冲池中的 cell
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        printLog(frame)
         
         setupUI()
     }
@@ -157,8 +150,7 @@ extension PhotoBrowserCell: UIScrollViewDelegate {
     /// - parameter view:       view - 被缩放的视图
     /// - parameter scale:      scale 缩放完成的比例
     /// 提示：测试的时候，需要找合适的图片
-    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
-        
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {   
         // 调整 Y 值
         var offsetY = (scrollView.bounds.height - imageView.frame.height) * 0.5
         // 调整 X 值

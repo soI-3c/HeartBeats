@@ -104,7 +104,6 @@ class PathDynamicModal: NSObject, UIGestureRecognizerDelegate {
         self.fadeBackgroundView(fromAlpha: 1.0, toAlpha: 0, completion: { (flag) -> () in
                 self.backgroundView.removeFromSuperview()
                 self.backgroundView.modal = nil
-                
                 self.view.center = self.originalCenter
                 self.view.translatesAutoresizingMaskIntoConstraints = self.originalTranslatesAutoresizingMaskIntoConstraints
         

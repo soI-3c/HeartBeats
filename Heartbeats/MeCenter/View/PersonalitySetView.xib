@@ -26,8 +26,8 @@
                         <action selector="changeEditAction:" destination="yMQ-dG-ZyK" eventType="touchUpInside" id="y0b-Jd-Myf"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-aV-MlA" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
-                    <rect key="frame" x="247" y="8" width="206" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-aV-MlA" customClass="HBButton" customModule="Heartbeats" customModuleProvider="target">
+                    <rect key="frame" x="235" y="8" width="218" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="mga-PV-gC0"/>
@@ -41,10 +41,10 @@
                         <action selector="closeAction:" destination="yMQ-dG-ZyK" eventType="touchUpInside" id="9oH-eM-itX"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="want" translatesAutoresizingMaskIntoConstraints="NO" id="e52-IA-kck">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="what do you want to say" translatesAutoresizingMaskIntoConstraints="NO" id="e52-IA-kck">
                     <rect key="frame" x="8" y="46" width="445" height="168"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -65,6 +65,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="editBtn" destination="Awl-D7-jdH" id="57U-fb-sGz"/>
                 <outlet property="editTextView" destination="e52-IA-kck" id="a53-1h-RjZ"/>
             </connections>
             <point key="canvasLocation" x="374.5" y="278"/>

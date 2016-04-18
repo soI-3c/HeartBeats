@@ -1,3 +1,5 @@
+
+
 //
 //  MoreAttributeSetView.swift
 //  Heartbeats
@@ -47,6 +49,7 @@ class MoreAttributeSetView: NameWithPhoneSetView, UIPickerViewDataSource, UIPick
     @IBAction func editAction(sender: HBButton) {
         if selectChangeStr == nil {
             selectChangeStr = soures![0]
+        
         }
         changeHandler?(selectChangeStr!)
         changeSaveActionHandler?()

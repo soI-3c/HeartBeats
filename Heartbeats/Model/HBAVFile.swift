@@ -8,6 +8,7 @@
 
 import UIKit
 
+let userID = "userID"
 class HBAVFile: AVFile {
-
+   @NSManaged var userID: String?
 }

@@ -10,11 +10,12 @@ import UIKit
 
 let screenMaimWidth = UIScreen.mainScreen().bounds.size.width
 let screenMaimheiht = UIScreen.mainScreen().bounds.size.height
-let iconImageString = "userHeadImg"
-let backIconImageString = "userBackImg"
+let iconImageString = "iconImage"                       // 头像名称ID
+let backIconImageString = "backIconImage"   // 背景头像ID
+
 let zero:CGFloat = 0.0
-let minMargins = 8
-let maxMArgins = 16
+let minMargins = 8                  // MeCenterHeadView
+let maxMArgins = 16                 // MeCenterHeadView
 let fontSize: CGFloat = 15
 
 
@@ -36,17 +37,45 @@ let ages = ["18","19","20","21","22","23","24","25","26","27","28", "29", "30", 
  let cars = ["已购车", "暂没购车"]
 
 
+let userId = "userID"
+
+
+
+// MARK: - 输出日志
+/// 输出日志
+///
+/// - parameter message:  日志消息
+/// - parameter logError: 错误标记，默认是 false，如果是 true，发布时仍然会输出
+/// - parameter file:     文件名
+/// - parameter method:   方法名
+/// - parameter line:     代码行数
+func printLog<T>(message: T,
+    logError: Bool = false,
+    file: String = __FILE__,
+    method: String = __FUNCTION__,
+    line: Int = __LINE__)
+{
+    if logError {
+        print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+    } else {
+        #if DEBUG
+            print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+        #endif
+    }
+}
 class Tools: NSObject {
     static var userdefaults = NSUserDefaults.standardUserDefaults()
+    
 //    MARK: -- token
     internal class func saveUserID(token : String) {
-        userdefaults.setObject("objectId", forKey: token)
+        userdefaults.setObject(token, forKey: userId)
     }
     
     internal class func userID() -> String {
-        return (userdefaults.objectForKey("objectId") ?? "") as! String
+        return (userdefaults.objectForKey(userId) ?? "") as! String
     }
     
+//    MARK: -- 保存用户名
     internal class func saveUsername(token : String) {
         userdefaults.setObject("username", forKey: token)
     }
@@ -54,8 +83,8 @@ class Tools: NSObject {
     internal class func username() -> String {
         return (userdefaults.objectForKey("username") ?? "") as! String
     }
-    
-//   手机验证
+
+//   MARK: -- 手机验证
     class func phoneCheck(number: String)-> Bool {
         let mobile = "^1[3|4|5|7|8][0-9]{9}$"
         let  CM = "^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$"
@@ -73,6 +102,15 @@ class Tools: NSObject {
                 return true
         }else {
             return false
+        }
+    }
+//    MARK: -- 验证代码判断, 是否为纯数字
+    class func verifyCodeCheck(var number : String) -> Bool{
+     number = number.stringByTrimmingCharactersInSet(NSCharacterSet.decimalDigitCharacterSet())
+        if number.characters.count > 0 {
+            return false
+        }else {
+            return true
         }
     }
     
@@ -98,16 +136,21 @@ class Tools: NSObject {
         lab.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(width)
         }
-//        let labSize = text.sizeWithAttributes([NSFontAttributeName : lab.font])
-//        lab.frame = CGRect(x: 0, y: 0, width: labSize.width, height: labSize.height)
         lab.backgroundColor = UIColor.grayColor()
         lab.textColor = UIColor.whiteColor()
         return lab
     }
-    
+//    MARK: -- 加载指定xib
     class func instantiateFromNib(className: String, widthPercen: CGFloat, hieghtPercen: CGFloat) -> UIView? {
         let view = UINib(nibName: className, bundle: nil).instantiateWithOwner(nil, options: nil).first as! UIView
         view.frame = CGRect(x: 0, y: 0, width: screenMaimWidth * widthPercen, height: screenMaimheiht * hieghtPercen)
         return view
+    }
+    
+//    显示提示框并设置样式
+    class func showSVPMessage(message: String) {
+        SVProgressHUD.setBackgroundColor(UIColor.blackColor())
+        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
+        SVProgressHUD.showInfoWithStatus(message);
     }
 }

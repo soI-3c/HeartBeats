@@ -10,37 +10,62 @@ import UIKit
 import AVOSCloud
 
 
-typealias changeRootViewController = () -> Void
+typealias changeRootViewControllerToMain = () -> Void
+typealias changeRootViewControllerToLogin = () -> Void
+
+/// 在类的外面写的常量或者变量就是全局能够访问的
+/// 视图控制器切换通知字符串
+let HBRootViewControllerSwitchNotification = "HBRootViewControllerSwitchNotification"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var changeBlock: changeRootViewController?
+    var changeRootControllerToMainBlock: changeRootViewControllerToMain?
+    var changeRootControllToLogin: changeRootViewControllerToLogin?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds);
+       window?.backgroundColor = UIColor.whiteColor()
         HeartUser.registerSubclass()
+        Dynamic.registerSubclass()
         AVOSCloud.setApplicationId("MfQgIdk0MNsmNiKUh7tix2ph", clientKey: "QMviVrHgrzIBEvOrjqxOAYzK")
-        if HeartUser.currentUser() != nil {
-            window?.rootViewController = MainTabBarController()
-        } else {
-            let loginRegisterControllerSB =  UIStoryboard(name: "LoginRegisterMainViewController", bundle: nil)
-            let loginRegisterMainController = loginRegisterControllerSB.instantiateInitialViewController() as? LoginRegisterMainViewController
-            //        改变根控制器
-            changeBlock = {() -> Void in
-                self.window?.rootViewController = MainTabBarController()
-            }
-            loginRegisterMainController?.changeViewController = changeBlock
-            window?.rootViewController = loginRegisterMainController
-        }
+        
+        // 注册通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: HBRootViewControllerSwitchNotification, object: nil)
+        setupAppearance()
+        window?.rootViewController = defaultRootControll()
         window?.makeKeyAndVisible();
     //        集合短信SDK
         return true
     }
+//   MARK: - 默认控制器
+    private func defaultRootControll()-> UIViewController {
+        if HeartUser.currentUser() != nil {
+            return MainTabBarController()
+        }
+        return loadLoginRegisterControl()
+    }
+    
+    @objc func switchRootViewController(n: NSNotification) {
+        let isTrue = n.object as! Bool
+       window?.rootViewController = isTrue ? MainTabBarController() : loadLoginRegisterControl()
+    }
+    
+    private func loadLoginRegisterControl() -> UIViewController {
+        let loginRegisterControllerSB =  UIStoryboard(name: "LoginRegisterMainViewController", bundle: nil)
+        return loginRegisterControllerSB.instantiateInitialViewController() as! LoginRegisterMainViewController
+    }
+    
+    /// 设置外观
+    private func setupAppearance() {
+        // 一经设置，全局有效，应该尽早设置
+        UITabBar.appearance().tintColor = UIColor.clearColor()
+        UITabBar.appearance().alpha = 0.015
+        SVProgressHUD.setBackgroundColor(UIColor.blackColor())
+        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
+    }
     
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(application: UIApplication) {

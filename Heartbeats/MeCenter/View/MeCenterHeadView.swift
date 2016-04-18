@@ -7,47 +7,55 @@
 //
 
 import UIKit
-
- protocol MeCenterHeadViewDelegate : NSObjectProtocol {
+protocol MeCenterHeadViewDelegate : NSObjectProtocol {
     func chageUserHeaderImg(meCenterHeadView : MeCenterHeadView)
     func chageUserBackImg(meCenterHeadView : MeCenterHeadView)
 }
 
 /**  个人中心头视图 */
 class MeCenterHeadView: UIView{
-    
+
 // MARK : -- 懒加载 控件
     weak var delegate: MeCenterHeadViewDelegate?
-        var user: HeartUser?
-        {
-            didSet {
-               if let user = user {
-                if let userIcon = user.iconImage?.getData() {
-                    userHeadImgView.setImage(UIImage(data: userIcon), forState: UIControlState.Normal)
-                }
-                if let backIcon = user.backIconImage {
-                    userBackImg.setImage(UIImage(data: (backIcon.getData())!), forState: UIControlState.Normal)
-                }
-                        username.text = user.username
-                        userIndividualityText.text = user.personality == nil ? "" : user.personality
-                        ageLabel.text = user.age == nil ? "年龄" : user.age
-                        sexLabel.text = user.sex == nil ? "性别" : user.sex
-                        heightLabel.text = user.height == nil ? "身高" : user.height
-                        academicLabel.text = user.academic == nil ? "学历" : user.academic
-                        addressLabel.text = user.address == nil ? "地址" : user.address
-                        incomeLabel.text = user.income == nil ? "月收入" : user.income
-                        carLabel.text = user.car == nil ? "是否已购车" : user.car
-                        houseLabel.text = user.house == nil ? "是否已购房" : user.house
-                }
+    var user: HeartUser? {
+        didSet {
+           if let user = user {
+                NetworkTools.loadUserIconImageWithBackImage(user, imageName: HBUserIconImage
+                    , finishedCallBack: {[weak self] (objs, error) -> () in
+                    if error == nil {
+                        if let user = objs!.first as? HeartUser {
+                            if let url = user.iconImage?.url {
+                                self!.userHeadImgView.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
+                            }else {
+                            
+                            }
+                            if let url = user.backIconImage?.url {
+                                self!.userBackImg.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
+                            }else {
+                            
+                            }
+                        }
+                    }
+                })
+                username.text = user.username
+                userIndividualityText.text = user.personality == nil ? "" : user.personality
+                ageLabel.text = user.age == nil ? " 年龄 " : " \(user.age!) "
+                sexLabel.text = user.sex == nil ? " 性别 " : " \(user.sex!) "
+                heightLabel.text = user.height == nil ? " 身高 " : " \(user.height!) "
+                academicLabel.text = user.academic == nil ? " 学历 " : " \(user.academic!) "
+                addressLabel.text = user.address == nil ? " 地址 " : " \(user.address!) "
+                incomeLabel.text = user.income == nil ? " 月收入 " : " \(user.income!) "
+                carLabel.text = user.car == nil ? " 是否已购车 " : " \(user.car!) "
+                houseLabel.text = user.house == nil ? " 是否已购房 " : " \(user.house!) "
             }
-       }
+        }
+    }
     
     lazy var userBackImg: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
         btn.adjustsImageWhenHighlighted = false
-        btn.setBackgroundImage(UIImage(named: "userBackImg"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "changeUserBackImg", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         return btn;
     }()
@@ -58,9 +66,8 @@ class MeCenterHeadView: UIView{
         btn.snp_makeConstraints(closure: { (make) -> Void in
             make.width.height.equalTo(60)
         })
-        btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
-        btn.setBackgroundImage(UIImage(named: "HeadImage"), forState: UIControlState.Normal)
         return btn;
     }()
     
@@ -124,7 +131,7 @@ class MeCenterHeadView: UIView{
             make.bottom.equalTo(userBackImg.snp_bottom).offset(-30)
         }
         username.snp_makeConstraints { (make) -> Void in
-               make.centerX.equalTo(userHeadImgView)
+               make.leading.equalTo(userHeadImgView)
                 make.top.equalTo(userHeadImgView.snp_bottom).offset(3)
         }
         sexLabel.snp_makeConstraints { (make) -> Void in
@@ -167,18 +174,8 @@ class MeCenterHeadView: UIView{
         //设置遮盖额外部分,下面两句的意义及实现是相同的
         //imgV.clipsToBounds = true
         userHeadImgView.layer.masksToBounds = true
-        loadUserImage(iconImageString, btn: userHeadImgView)
-        loadUserImage(backIconImageString, btn: userBackImg)
     }
-    
-    private func loadUserImage(imgFileName: String, btn: UIButton) {
-        //从文件读取用户头像
-        let fullPath = ((NSHomeDirectory() as NSString) .stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent(imgFileName)
-        //可选绑定,若保存过用户头像则显示之
-        if let savedImage = UIImage(contentsOfFile: fullPath){
-            btn.setImage(savedImage, forState: UIControlState.Normal)
-        }
-    }
+
 //    MARK: - 换头像点击事件
     @objc private func changeUserHeadImg() {
         self.delegate?.chageUserHeaderImg(self)

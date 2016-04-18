@@ -9,7 +9,7 @@
 import UIKit
 
 // 注册Controller
-class LoginControllerView: UIViewController {
+class GetisterViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var passWorldTextField: UITextField!
     @IBOutlet weak var verifyCodeTextField: UITextField!
@@ -29,7 +29,7 @@ class LoginControllerView: UIViewController {
     }
     
     @IBAction func getisterAction(sender: UIButton) {               // 注册
-        if let verifyCode = verifyCodeTextField.text, let phoneNumer = phoneNumberTextField.text {
+        if let verifyCode = verifyCodeTextField.text, let phoneNumer = phoneNumberTextField.text, let password = passWorldTextField.text {
             if !Tools.verifyCodeCheck(verifyCode) {
                 SVProgressHUD.showInfoWithStatus("验证码不正确")
                 return
@@ -40,7 +40,10 @@ class LoginControllerView: UIViewController {
                         SVProgressHUD.showInfoWithStatus("注册失败")
                         return
                     }
-                    HeartUser.currentUser()                             // 注册成功
+                    user.password = password
+                    user.save()
+                    HeartUser.currentUser()                         // 注册成功, 保存当前用户
+                    self.dismissViewControllerAnimated(false, completion: nil)
                     // 发送通知切换视图控制器
                     NSNotificationCenter.defaultCenter().postNotificationName(HBRootViewControllerSwitchNotification, object: true)
                 })

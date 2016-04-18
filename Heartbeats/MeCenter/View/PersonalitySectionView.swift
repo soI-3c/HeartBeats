@@ -8,21 +8,10 @@
 
 import UIKit
 
+// 个人介绍的View
 class PersonalitySectionView: UIView {
-    var linesActionHandler: ((CGFloat) -> Void)?
-    
     @IBOutlet weak var persionalityLabel: UILabel!
-    
-    var personality: String? {
-        willSet {
-            if let str: NSString = newValue {
-                self.persionalityLabel.text = newValue
-                let textSize =  str.sizeWithAttributes([NSFontAttributeName:persionalityLabel.font])
-                let lines =  textSize.width / (screenMaimWidth - 2)
-                self.linesActionHandler?(lines)    // 回调行数
-            }
-        }
-    }
     override func awakeFromNib() {
+        persionalityLabel.textAlignment = .Center
     }
 }

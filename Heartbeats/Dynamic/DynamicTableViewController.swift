@@ -8,45 +8,57 @@
 
 import UIKit
 
-class DynamicTableViewController: UITableViewController {
+let MainDynamicCellID = "MainDynamicCellID"
 
+class DynamicTableViewController: UITableViewController {
+    var scrollUporDown: Bool = false
+    var newY: CGFloat = 0
+    var oldY: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationController?.navigationBar.translucent = true
+        tableView.registerNib(UINib(nibName: "MainDynamicTableCell", bundle: nil), forCellReuseIdentifier: MainDynamicCellID)
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+//    MARK: --根据滚动方向隐藏导航栏
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.isEqual(tableView) {
+            newY = scrollView.contentOffset.y
+            if newY != oldY {
+                scrollUporDown = newY > oldY ? true: false
+            }
+            oldY = newY
+        }
+        if scrollUporDown == true {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.navigationController?.navigationBar.frame = CGRectMake(0, -44, screenMaimWidth, 44)
+                }, completion: { (_) -> Void in
+            })
+        }else {
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.navigationController?.navigationBar.frame = CGRectMake(0, 20, screenMaimWidth, 44)
+                }, completion: { (_) -> Void in
+            })
+        }
+        
+        }
+    }
+extension DynamicTableViewController {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MainDynamicTableCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(MainDynamicCellID, forIndexPath: indexPath) as! MainDynamicTableCell
         return cell
     }
-    */
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return screenMaimheiht * 0.65;
+    }
+}
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -92,4 +104,3 @@ class DynamicTableViewController: UITableViewController {
     }
     */
 
-}

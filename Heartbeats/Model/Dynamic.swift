@@ -8,6 +8,30 @@
 
 import UIKit
 
-class Dynamic: AVObject {
+let HBDynamicUser = "user"
+let HBDynamicPhotos = "photos"
+let HBDynamicContent = "content"
+class Dynamic: AVObject, AVSubclassing {
+    @NSManaged var user: HeartUser?
+    @NSManaged var photos: [AnyObject]?
+    @NSManaged var content: String?
+    
+   static func parseClassName() -> String? {
+        return "Dynamic"
+    }
+}
 
+
+extension Dynamic {
+    class func photoUrls(dynamic: Dynamic) -> [String]? {
+        var urls = [String]()
+        if dynamic.photos?.count > 0 {
+            for fileDate in dynamic.photos! {
+                if let file = fileDate as? AVFile {
+                   urls.append(file.url)
+                }
+            }
+        }
+        return urls
+    }
 }

@@ -1,19 +1,17 @@
+
 //
-//  UIImage+Extension.swift
-//  01-照片选择
+//  UIButton+Extension.swift
+//  Heartbeats
 //
-//  Created by Romeo on 15/9/10.
-//  Copyright © 2015年 itheima. All rights reserved.
-//
+//  Created by liaosenshi on 15/12/30.
+//  Copyright © 2015年 heart. All rights reserved.
 
 import UIKit
 
 extension UIImage {
     
     /// 将当前图片缩放到指定宽度
-    ///
     /// - parameter width: 指定宽度
-    ///
     /// - returns: UIImage，如果本身比指定的宽度小，直接返回
     func scaleImageToWidth(width: CGFloat) -> UIImage {
         

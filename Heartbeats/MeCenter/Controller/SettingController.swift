@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias changeUserInfo = (HeartUser) -> Void
+
 class SettingController: UITableViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -20,8 +22,12 @@ class SettingController: UITableViewController {
     @IBOutlet weak var isHaveCarLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var personalityLabel: UITableViewCell!
-    
     @IBOutlet weak var cellShowText: UILabel!
+    
+    var isChanged : Bool = false                // 判断是否有修改信息
+    var changUserInfoBlock : changeUserInfo?   // 修改用户信息的回调(回到个人中心刷新数据)
+    
+    var changeRootControToLogin : changeRootViewControllerToLogin?
     private var user: HeartUser?
     
     var currUser: HeartUser? {
@@ -39,6 +45,16 @@ class SettingController: UITableViewController {
         navigationController?.navigationBarHidden = false
         prepare()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if isChanged == true{
+            if let user = self.user {
+                changUserInfoBlock?(user)       // 如果有修改则刷新个人中心的数据
+            }
+        }
+
+    }
+    
     private func prepare() {
         if let username = user?.username {
             usernameLabel.text = username
@@ -78,39 +94,43 @@ class SettingController: UITableViewController {
          userIconAlert.addAction(canelAction)
         self.presentViewController(userIconAlert, animated: true, completion: nil)
     }
+//    MARK: -- 退出登陆
     private func loginOutHandler(avc:UIAlertAction) -> Void {
           HeartUser.logOut()
+          NSNotificationCenter.defaultCenter().postNotificationName(HBRootViewControllerSwitchNotification, object: false)
     }
 //   MARK: --  tableViewDelegate
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        prepare()
         return 22
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView")
-             showView.editTextField.text = user?.username
+            let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView", textNumer: 10)
+            showView.editTextField.text = user?.username
+            showView.editTextField.resignFirstResponder()
             showView.changeHandler = {(objStr) -> Void in
                 self.user?.username = objStr
             }
         }else if indexPath.row == 1 {
-            let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView")
-             showView.editTextField.text = user?.mobilePhoneNumber
+            let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView", textNumer: 11)
+            showView.editTextField.text = user?.mobilePhoneNumber
             showView.changeHandler = {(objStr) -> Void in
                 self.user?.mobilePhoneNumber = objStr
             }
         }else if indexPath.row == 9 {
-            let (showView, _) = self.loadNameWithPhoneView("PersonalitySetView")
+            let (showView, _) = self.loadNameWithPhoneView("PersonalitySetView", textNumer: 0)
             (showView as? PersonalitySetView)?.editTextView.text = user?.personality
             showView.changeHandler = {(objStr) -> Void in
                 self.user?.personality = objStr
             }
         }else {
-            let (showView, _) = self.loadNameWithPhoneView("MoreAttributeSetView")
+            let (showView, _) = self.loadNameWithPhoneView("MoreAttributeSetView", textNumer: 0)
            (showView as? MoreAttributeSetView)?.soureCome = indexPath.row
-            switch  indexPath.row {
+            switch indexPath.row {
             case 2 :
                 showView.changeHandler = {(objStr) -> Void in
-                    self.user?.sex? =  objStr
+                    self.user?.sex = objStr
                 }
             case 3:
                 showView.changeHandler = {(objStr) -> Void in
@@ -137,19 +157,25 @@ class SettingController: UITableViewController {
                     self.user?.car = objStr
                 }
             }
-
         }
-        prepare()
     }
-    
-    private func loadNameWithPhoneView(classString: String) -> (view: NameWithPhoneSetView, modal: PathDynamicModal) {
-        let showView = Tools.instantiateFromNib(classString, widthPercen: 0.65, hieghtPercen: 0.4) as! NameWithPhoneSetView
+    private func loadNameWithPhoneView(classString: String, textNumer: Int) -> (view: NameWithPhoneSetView, modal: PathDynamicModal) {
+        let showView = Tools.instantiateFromNib(classString, widthPercen: 0.65, hieghtPercen: 0.5) as! NameWithPhoneSetView
+        showView.textNumber = textNumer;
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal.show(modalView: showView, inView: window!)
         
         showView.changeSaveActionHandler = {() -> Void in
             modal.closeWithLeansRight()
-            self.user?.saveInBackground()
+            self.user?.saveInBackgroundWithBlock({ (success, e) -> Void in
+                if success == true {
+                    self.tableView.reloadData()
+                    self.isChanged = true
+                    Tools.showSVPMessage("编辑成功")
+                }else {
+                    SVProgressHUD.showInfoWithStatus("编辑失败")
+                }
+            })
         }
         showView.closeHandler = {() -> Void in
             modal.closeWithLeansLeft()

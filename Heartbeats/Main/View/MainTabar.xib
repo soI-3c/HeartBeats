@@ -15,16 +15,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFP-te-3V8">
                     <rect key="frame" x="436" y="0.0" width="50" height="49"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfG-sY-Voo">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfG-sY-Voo">
                             <rect key="frame" x="7" y="7" width="36" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="25d-fp-t88"/>
                                 <constraint firstAttribute="width" constant="36" id="8v1-ey-mnA"/>
                             </constraints>
-                            <state key="normal" backgroundImage="1"/>
+                            <state key="normal" backgroundImage="4"/>
+                            <state key="selected" backgroundImage="1select"/>
+                            <connections>
+                                <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="bsR-VJ-R8W"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="vfG-sY-Voo" secondAttribute="trailing" id="AMj-j1-VZp"/>
                         <constraint firstAttribute="bottom" secondItem="vfG-sY-Voo" secondAttribute="bottom" constant="8" id="Aqf-yw-CVM"/>
@@ -47,16 +51,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="580-Y4-pmv">
                     <rect key="frame" x="66" y="0.0" width="123" height="49"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-e5-0Lp">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-e5-0Lp">
                             <rect key="frame" x="43" y="7" width="36" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="36" id="0bN-lz-D9F"/>
                                 <constraint firstAttribute="height" constant="36" id="Fcv-uR-BWZ"/>
                             </constraints>
-                            <state key="normal" backgroundImage="1"/>
+                            <state key="normal" backgroundImage="2"/>
+                            <connections>
+                                <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="mPv-Et-hk9"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="wZ7-e5-0Lp" firstAttribute="centerX" secondItem="580-Y4-pmv" secondAttribute="centerX" id="94U-pv-Zmg"/>
                         <constraint firstItem="wZ7-e5-0Lp" firstAttribute="centerY" secondItem="580-Y4-pmv" secondAttribute="centerY" id="M1n-7H-xuU"/>
@@ -72,9 +79,13 @@
                                 <constraint firstAttribute="height" constant="36" id="6an-ah-EDO"/>
                             </constraints>
                             <state key="normal" backgroundImage="1"/>
+                            <state key="selected" backgroundImage="1select"/>
+                            <connections>
+                                <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="KiU-Ps-ygs"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="bXX-BB-dQY" firstAttribute="centerX" secondItem="AvI-xH-peT" secondAttribute="centerX" id="XGO-CF-vo1"/>
                         <constraint firstAttribute="bottom" secondItem="bXX-BB-dQY" secondAttribute="bottom" constant="8" id="XpT-1l-CVW"/>
@@ -94,36 +105,22 @@
                         </mask>
                     </variation>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdU-e2-4TA">
-                    <rect key="frame" x="313" y="0.0" width="123" height="49"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="227-Xi-38b">
-                            <rect key="frame" x="43" y="7" width="36" height="36"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="K8g-JN-8ng"/>
-                                <constraint firstAttribute="width" constant="36" id="cgG-k5-wUD"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="1"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="227-Xi-38b" firstAttribute="centerY" secondItem="cdU-e2-4TA" secondAttribute="centerY" id="AXQ-9m-aaq"/>
-                        <constraint firstItem="227-Xi-38b" firstAttribute="centerX" secondItem="cdU-e2-4TA" secondAttribute="centerX" id="r7D-iN-5kV"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVc-MR-Lxu">
                     <rect key="frame" x="189" y="0.0" width="124" height="49"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjL-W3-ZH4">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjL-W3-ZH4">
                             <rect key="frame" x="42" y="4" width="41" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="SaL-Nt-2ex"/>
                             </constraints>
-                            <state key="normal" backgroundImage="3"/>
+                            <state key="normal" backgroundImage="5"/>
+                            <state key="selected" backgroundImage="5select"/>
+                            <connections>
+                                <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="q5L-iP-p0o"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="BjL-W3-ZH4" firstAttribute="centerX" secondItem="gVc-MR-Lxu" secondAttribute="centerX" id="2Cg-d8-U2K"/>
                         <constraint firstItem="BjL-W3-ZH4" firstAttribute="centerY" secondItem="gVc-MR-Lxu" secondAttribute="centerY" id="Au2-oy-J5z"/>
@@ -140,6 +137,28 @@
                             <exclude reference="VbX-eq-kFZ"/>
                         </mask>
                     </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdU-e2-4TA">
+                    <rect key="frame" x="313" y="0.0" width="123" height="49"/>
+                    <subviews>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="227-Xi-38b">
+                            <rect key="frame" x="43" y="7" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="K8g-JN-8ng"/>
+                                <constraint firstAttribute="width" constant="36" id="cgG-k5-wUD"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="3"/>
+                            <state key="selected" backgroundImage="4"/>
+                            <connections>
+                                <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="oL9-Bo-Bys"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="227-Xi-38b" firstAttribute="centerY" secondItem="cdU-e2-4TA" secondAttribute="centerY" id="AXQ-9m-aaq"/>
+                        <constraint firstItem="227-Xi-38b" firstAttribute="centerX" secondItem="cdU-e2-4TA" secondAttribute="centerX" id="r7D-iN-5kV"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,7 +191,12 @@
         </view>
     </objects>
     <resources>
-        <image name="1" width="64" height="64"/>
-        <image name="3" width="64" height="64"/>
+        <image name="1" width="42" height="42"/>
+        <image name="1select" width="170" height="170"/>
+        <image name="2" width="85" height="85"/>
+        <image name="3" width="42" height="42"/>
+        <image name="4" width="42" height="42"/>
+        <image name="5" width="85" height="85"/>
+        <image name="5select" width="170" height="170"/>
     </resources>
 </document>

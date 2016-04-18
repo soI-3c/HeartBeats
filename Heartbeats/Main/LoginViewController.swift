@@ -8,28 +8,50 @@
 
 import UIKit
 
-class GetisterViewController: UIViewController {
+// 登陆controller
+class LoginViewController: UIViewController {
 
+    @IBOutlet weak var forgetBtn: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var nothingBtn: UIButton!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setViewBorderWitdColor(loginBtn)
+        setViewBorderWitdColor(nothingBtn)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func backAction(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginAction(sender: UIButton) {
+        if let phoneNumber = phoneNumberTextField.text, let password = passwordTextField.text {
+            if Tools.phoneCheck(phoneNumber) {
+               HeartUser.logInWithMobilePhoneNumberInBackground(phoneNumber, password: password, block: { (user, error) -> Void in
+                    print(phoneNumber, password)
+                    if error != nil {
+                        SVProgressHUD.showInfoWithStatus("用户不存在")
+                        return
+                    }
+                    if user != nil {
+                        HeartUser.currentUser()
+                        self.dismissViewControllerAnimated(false, completion: nil)
+                        // 发送通知切换视图控制器
+                        NSNotificationCenter.defaultCenter().postNotificationName(HBRootViewControllerSwitchNotification, object: true)
+                        return
+                    }
+               })
+            }else {
+                SVProgressHUD.showInfoWithStatus("请输入正确的手机号码")
+            }
+        }
     }
-    */
-
+    func setViewBorderWitdColor(view: UIView) {
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        view.layer.borderWidth = 1.0
+        view.layer.borderColor = UIColor.whiteColor().CGColor
+    }
 }

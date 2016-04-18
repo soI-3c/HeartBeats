@@ -153,6 +153,6 @@
         </view>
     </objects>
     <resources>
-        <image name="closeIcon" width="64" height="64"/>
+        <image name="closeIcon" width="42" height="42"/>
     </resources>
 </document>

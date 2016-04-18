@@ -8,15 +8,19 @@
 
 import UIKit
 
-class MainNavigationController: UINavigationController, UIGestureRecognizerDelegate{
+class MainNavigationController: UINavigationController, UINavigationControllerDelegate,UIGestureRecognizerDelegate{
 //    MARK:- 初始化
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         let target =  interactivePopGestureRecognizer?.delegate
         let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
             pan.delegate = self;
-            view .addGestureRecognizer(pan)
-            interactivePopGestureRecognizer?.enabled = false
+//            view .addGestureRecognizer(pan)
+        interactivePopGestureRecognizer?.enabled = true
+        interactivePopGestureRecognizer?.delegate = self
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 32))
+        btn.setImage(UIImage(named: "closeIcon"), forState: UIControlState.Normal)
     }
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -38,24 +42,47 @@ class MainNavigationController: UINavigationController, UIGestureRecognizerDeleg
 //        设置按钮着色
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
     }
-    
     func handleNavigationTransition( sender: UIGestureRecognizer){
+        switch sender.state {
+          case UIGestureRecognizerState.Changed:
+             print(sender.state)
+          case UIGestureRecognizerState.Ended:
+             print(sender.state)
+          case UIGestureRecognizerState.Cancelled:
+             print(sender.state)
+          default:
+             print(sender.state)
+        }
           navigationController?.popViewControllerAnimated(true)
     }
     
     /**
-        跳转控制器都会跳用本方法
+        跳转控制器都会跳用本方法, 自定义返回按钮
     */
     override func pushViewController(viewController: UIViewController, animated: Bool) {
+        if viewControllers.count >= 1 {
+          let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+            spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
+          let leftBtn = UIBarButtonItem(image: UIImage(named: "closeIcon")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "doBack")
+            viewController.navigationItem.leftBarButtonItems = [spaceItem, leftBtn]
+            MainTabar.currentMainTabar().hidden = true                          // 隐藏自定义的tabbar
+        }
+        if viewController .isKindOfClass(MeCenterController.self) {
+            viewController.automaticallyAdjustsScrollViewInsets = false     // 让内容从状态顶部开始显示
+        }
         super.pushViewController(viewController, animated: true)
     }
     
-    // MARK: - Navigation
-
-//     In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+       return super.popViewControllerAnimated(true)
     }
-
+    // UINavigationControllerDelegate
+    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+//        只有当真正要显示是否是根据控制器时,才决定是否要显示tabbar, 只要不是根据控制器都隐藏tabbar
+        MainTabar.currentMainTabar().hidden = viewControllers.count > 1 ? true : false
+    }
+    func doBack() {
+        popViewControllerAnimated(true)
+    }
+    
 }

@@ -8,14 +8,19 @@
 
 import UIKit
 
+// 自定义tabarView
 class MainTabar: UIView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+   static var mainTabarView: MainTabar?
+    class func currentMainTabar() -> MainTabar{
+        if mainTabarView != nil {
+            return mainTabarView!
+        }
+         self.mainTabarView = NSBundle.mainBundle().loadNibNamed("MainTabar", owner: nil, options: nil).first as? MainTabar
+        mainTabarView?.backgroundColor = UIColor.clearColor()
+        return mainTabarView!
     }
-    */
-
+    @IBAction func selextControIndex(sender: UIButton) {
+        selectControllerIndex?(sender.tag)
+    }
+    var selectControllerIndex: ((Int) -> Void)?
 }

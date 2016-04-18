@@ -10,26 +10,48 @@ import UIKit
 
 class DefaultPublicDynamicController: UIViewController {
 
+    var photoDynamicBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.blackColor()
+        btn.layer.cornerRadius = 60 / 2
+        btn.layer.masksToBounds = true
+        return btn
+    }()
+    var textDynamicBtn: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius =  60 / 2
+        btn.layer.masksToBounds = true
+        return btn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupUI()
+        updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        view.addSubview(photoDynamicBtn)
+        photoDynamicBtn.snp_makeConstraints { (make) -> Void in
+            make.bottom.equalTo(view.snp_top)
+            make.centerX.equalTo(view)
+            make.width.height.equalTo(60)
+        }
     }
-    */
-
+    func updateUI() {
+        UIView.animateWithDuration(0.52, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.photoDynamicBtn.snp_updateConstraints(closure: { (make) -> Void in
+                    make.center.equalTo(view)
+                })
+            }) { (_) -> Void in
+                
+        }
+    }
 }
+
+
+
+
+
+
+
+

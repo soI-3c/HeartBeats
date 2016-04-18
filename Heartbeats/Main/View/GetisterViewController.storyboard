@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Login Controller View-->
+        <!--Getister View Controller-->
         <scene sceneID="hnG-gt-Mb7">
             <objects>
-                <viewController id="qth-RD-SYM" customClass="LoginControllerView" customModule="Heartbeats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qth-RD-SYM" customClass="GetisterViewController" customModule="Heartbeats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Khf-yY-5Yb"/>
                         <viewControllerLayoutGuide type="bottom" id="4de-uU-8gk"/>
@@ -126,7 +126,7 @@
                                 <state key="normal" title=" + 86 "/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.55076280323539983" blue="0.58718481706274106" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rQ1-5U-cgT" firstAttribute="bottom" secondItem="nQf-Xc-933" secondAttribute="bottom" constant="-2" id="0wr-YL-pRe"/>
                             <constraint firstItem="jDT-QA-PGz" firstAttribute="centerX" secondItem="Av2-Vw-kC7" secondAttribute="centerX" id="8aO-NV-ia9"/>

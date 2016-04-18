@@ -1,32 +1,26 @@
 //
 //  HMProgressImageView.swift
-//  Weibo09
 //
 //  Created by Romeo on 15/9/15.
-//  Copyright © 2015年 itheima. All rights reserved.
+//  Copyright © 2015年 All rights reserved.
 //
 
 import UIKit
 
 class HMProgressImageView: UIImageView {
-
     /// 进度数值，0～1
     var progress: CGFloat = 0 {
         didSet {
             progressView.progress = progress
         }
     }
-    
     private lazy var progressView: HMProgressView = {
         let p = HMProgressView()
-        
         p.backgroundColor = UIColor.clearColor()
-        
         // 添加控件
         self.addSubview(p)
         // 设置大小
         p.frame = self.bounds
-
         return p
     }()
     
@@ -35,25 +29,20 @@ class HMProgressImageView: UIImageView {
 //        // Drawing code
 //        printLog("come here")
 //    }
-    
     /// 类中类，专供 HMProgressImageView 使用
     private class HMProgressView: UIView {
-        
         /// 进度数值，0～1
         var progress: CGFloat = 0 {
             didSet {
                 setNeedsDisplay()
             }
         }
-        
         // 提问：rect 是什么 = view.bounds
         // drawRect 一旦被调用，所有的内容都会重新被绘制
         private override func drawRect(rect: CGRect) {
-            
             if progress >= 1 {
                 return
             }
-            
             // 绘制曲线
             /**
                 1. 中心点
@@ -76,10 +65,8 @@ class HMProgressImageView: UIImageView {
             path.addLineToPoint(center)
             // 关闭路径，产生一个扇形
             path.closePath()
-            
             // 设置属性 - 在实际应用中，动画只是点缀，不要抢
             UIColor(white: 0.0, alpha: 0.5).setFill()
-            
             path.fill()
         }
     }

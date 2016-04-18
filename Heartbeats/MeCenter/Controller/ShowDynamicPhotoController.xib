@@ -1,19 +1,140 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowDynamicPhotoController" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-        </view>
+        <viewController id="0N2-AO-oiI" customClass="ShowDynamicPhotoController" customModule="Heartbeats" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="ycE-PJ-ch4"/>
+                <viewControllerLayoutGuide type="bottom" id="0tS-E1-MDa"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="x4t-3q-U0A">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3B-IQ-6ez" customClass="DynamicPraiseEvaluation" customModule="Heartbeats" customModuleProvider="target">
+                        <rect key="frame" x="-4" y="445" width="328" height="35"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9b-UL-gJ4">
+                                <rect key="frame" x="8" y="0.0" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="37h-34-r8Y"/>
+                                    <constraint firstAttribute="height" constant="35" id="TFE-4w-rDw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="buV-R3-YoH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title=" 赞" image="yesIcon">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="buV-R3-YoH"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="praiseAction:" destination="0N2-AO-oiI" eventType="touchUpInside" id="Z5j-UG-GNM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmQ-kk-CW9">
+                                <rect key="frame" x="240" y="0.0" width="40" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title=" 1" image="yesIcon">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dho-zJ-YYP">
+                                <rect key="frame" x="280" y="0.0" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="XmR-c7-Zey"/>
+                                    <constraint firstAttribute="height" constant="35" id="cKH-0A-Wxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title=" 1" image="yesIcon">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzE-ne-sYa">
+                                <rect key="frame" x="62" y="0.0" width="50" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title=" 评论" image="yesIcon">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="commentAction:" destination="0N2-AO-oiI" eventType="touchUpInside" id="sOP-fx-gm9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BzE-ne-sYa" firstAttribute="baseline" secondItem="v9b-UL-gJ4" secondAttribute="baseline" id="30s-hj-nxI"/>
+                            <constraint firstItem="BzE-ne-sYa" firstAttribute="width" secondItem="v9b-UL-gJ4" secondAttribute="width" id="6Y2-7H-U5O"/>
+                            <constraint firstAttribute="bottom" secondItem="v9b-UL-gJ4" secondAttribute="bottom" id="733-WT-7Nk"/>
+                            <constraint firstItem="Dho-zJ-YYP" firstAttribute="leading" secondItem="KmQ-kk-CW9" secondAttribute="trailing" id="BkQ-W1-0Kz"/>
+                            <constraint firstAttribute="trailing" secondItem="Dho-zJ-YYP" secondAttribute="trailing" constant="8" id="CAw-Id-jyd"/>
+                            <constraint firstItem="BzE-ne-sYa" firstAttribute="top" secondItem="v9b-UL-gJ4" secondAttribute="top" id="DCv-ic-3un"/>
+                            <constraint firstAttribute="bottom" secondItem="Dho-zJ-YYP" secondAttribute="bottom" id="JdX-fX-7Op"/>
+                            <constraint firstItem="v9b-UL-gJ4" firstAttribute="leading" secondItem="L3B-IQ-6ez" secondAttribute="leading" constant="8" id="Lit-KH-N3R"/>
+                            <constraint firstItem="KmQ-kk-CW9" firstAttribute="top" secondItem="Dho-zJ-YYP" secondAttribute="top" id="NT2-j3-uKJ"/>
+                            <constraint firstAttribute="height" constant="35" id="YZ1-hd-ZSg"/>
+                            <constraint firstItem="KmQ-kk-CW9" firstAttribute="height" secondItem="Dho-zJ-YYP" secondAttribute="height" id="b9w-dU-IEJ"/>
+                            <constraint firstItem="KmQ-kk-CW9" firstAttribute="width" secondItem="Dho-zJ-YYP" secondAttribute="width" id="ipI-yk-BsW"/>
+                            <constraint firstItem="BzE-ne-sYa" firstAttribute="height" secondItem="v9b-UL-gJ4" secondAttribute="height" id="ito-zU-ne2"/>
+                            <constraint firstItem="BzE-ne-sYa" firstAttribute="leading" secondItem="v9b-UL-gJ4" secondAttribute="trailing" constant="4" id="jRj-Ur-741"/>
+                            <constraint firstItem="KmQ-kk-CW9" firstAttribute="baseline" secondItem="Dho-zJ-YYP" secondAttribute="baseline" id="oLR-Be-IJ2"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地我我我我我我我我我我我我我我我我我我我我地我我我我我我我我我我我我我我我我我我我我" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7k-hG-UQy">
+                        <rect key="frame" x="0.0" y="412" width="320" height="34"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IQz-39-3VD">
+                        <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bI2-d6-zLJ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="0N2-AO-oiI" id="Mcw-1g-fuU"/>
+                            <outlet property="delegate" destination="0N2-AO-oiI" id="BQI-9b-AL6"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="IQz-39-3VD" firstAttribute="leading" secondItem="x4t-3q-U0A" secondAttribute="leadingMargin" constant="-20" id="2JA-oz-I4j"/>
+                    <constraint firstItem="0tS-E1-MDa" firstAttribute="top" secondItem="L3B-IQ-6ez" secondAttribute="bottom" id="CEY-Rw-ttl"/>
+                    <constraint firstItem="t7k-hG-UQy" firstAttribute="leading" secondItem="x4t-3q-U0A" secondAttribute="leading" id="JIh-Iw-T0c"/>
+                    <constraint firstAttribute="trailing" secondItem="t7k-hG-UQy" secondAttribute="trailing" id="UQb-5P-BSK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="L3B-IQ-6ez" secondAttribute="trailing" constant="-20" id="biR-ma-TiL"/>
+                    <constraint firstItem="L3B-IQ-6ez" firstAttribute="top" secondItem="t7k-hG-UQy" secondAttribute="bottom" constant="-1" id="k1R-Fr-lbc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IQz-39-3VD" secondAttribute="trailing" constant="-20" id="mcf-Kk-bYl"/>
+                    <constraint firstItem="L3B-IQ-6ez" firstAttribute="leading" secondItem="x4t-3q-U0A" secondAttribute="leadingMargin" constant="-20" id="qYJ-N3-3SM"/>
+                    <constraint firstItem="0tS-E1-MDa" firstAttribute="top" secondItem="IQz-39-3VD" secondAttribute="bottom" id="tni-P2-RTd"/>
+                    <constraint firstItem="IQz-39-3VD" firstAttribute="top" secondItem="x4t-3q-U0A" secondAttribute="topMargin" id="yoC-ap-OWi"/>
+                </constraints>
+            </view>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentBtn" destination="BzE-ne-sYa" id="0u9-8a-Ow8"/>
+                <outlet property="contentLabel" destination="t7k-hG-UQy" id="Rle-gJ-FJW"/>
+                <outlet property="dynamicCollectionView" destination="IQz-39-3VD" id="eAt-St-NAd"/>
+                <outlet property="praiseBtn" destination="v9b-UL-gJ4" id="FeN-q8-w0M"/>
+            </connections>
+            <point key="canvasLocation" x="353" y="117"/>
+        </viewController>
     </objects>
+    <resources>
+        <image name="yesIcon" width="16" height="16"/>
+    </resources>
 </document>
