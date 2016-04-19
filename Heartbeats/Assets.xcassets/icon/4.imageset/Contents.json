@@ -6,11 +6,11 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "love15.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "h2_128.png",
       "scale" : "3x"
     }
   ],
