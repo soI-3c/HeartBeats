@@ -125,13 +125,11 @@ class PublicDynamicCell: UICollectionViewCell {
     // 心灵鸡烫
     var heartLabel: UILabel = {
         let heartL = UILabel()
-        heartL.text = "this' is my App"
         heartL.textAlignment = NSTextAlignment.Center
-        heartL.font = UIFont(name: "", size: fontSize)
+//        heartL.font = UIFont(name: "", size: 10)
         heartL.numberOfLines = 0
-        heartL.textColor = UIColor.orangeColor()
+        heartL.textColor = UIColor.blackColor()
         heartL.alpha = 0.85
-//        heartL.sizeToFit()
         return heartL;
     }()
 
@@ -226,11 +224,11 @@ class PublicDynamicCell: UICollectionViewCell {
             make.width.equalTo(self)
             make.height.equalTo(15)
             make.top.equalTo((username?.snp_bottom)!).offset(4)
-            make.bottom.equalTo(heartLabel.snp_top).offset(4)
         }
         heartLabel.snp_makeConstraints { (make) -> Void in
             make.left.right.equalTo(giveHeartView)
-            make.bottom.equalTo(giveHeartView.snp_top).offset(8)
+            make.height.equalTo(25)
+            make.bottom.equalTo(giveHeartView.snp_top).offset(-16)
         }
         giveHeartView.snp_makeConstraints { (make) -> Void in
             make.left.right.equalTo(backImageView)

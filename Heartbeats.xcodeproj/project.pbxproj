@@ -16,22 +16,27 @@
 		DB1AF6461BF771090059A41B /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6441BF771090059A41B /* MainNavigationController.swift */; };
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
-		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; settings = {ASSET_TAGS = (); }; };
+		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
 		DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB835B231C390EBF004F05BA /* HBCollectionCell.xib */; };
-		DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */; settings = {ASSET_TAGS = (); }; };
+		DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936771CC673EE00C2FED9 /* CellTopView.xib */; };
+		DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936791CC6764C00C2FED9 /* CellBottomView.xib */; };
+		DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */; };
+		DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */; };
 		DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9518321C37EEE10056EB44 /* Dynamic.swift */; };
 		DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D001C414716007A516E /* PictureSelectorViewController.swift */; };
 		DBA28D051C414778007A516E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D041C414778007A516E /* UIImage+Extension.swift */; };
 		DBACE2D41C141FB7002A494A /* LoginRegisterMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBACE2D31C141FB7002A494A /* LoginRegisterMainViewController.storyboard */; };
 		DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */; };
 		DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */; };
+		DBCC94721CC79FDD00A08669 /* CellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94711CC79FDD00A08669 /* CellTopView.swift */; };
+		DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94731CC7A13100A08669 /* CellBottomView.swift */; };
+		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
-		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; settings = {ASSET_TAGS = (); }; };
-		DBD71A211CB7DA65006921A2 /* MainDynamicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD71A1F1CB7DA65006921A2 /* MainDynamicTableCell.xib */; settings = {ASSET_TAGS = (); }; };
+		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
+		DBD71A211CB7DA65006921A2 /* MainDynamicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD71A1F1CB7DA65006921A2 /* MainDynamicTableCell.xib */; };
 		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
 		F11127601C2A6516001FB131 /* SettingView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F111275F1C2A6516001FB131 /* SettingView2.xib */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
@@ -103,6 +108,7 @@
 		F174DB0B1C48C1DC00259CCD /* ZZPhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DADC1C48C1DC00259CCD /* ZZPhotoListCell.m */; };
 		F174DB0C1C48C1DC00259CCD /* ZZPhotoPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DADD1C48C1DC00259CCD /* ZZPhotoPickerCell.h */; };
 		F174DB0D1C48C1DC00259CCD /* ZZPhotoPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DADE1C48C1DC00259CCD /* ZZPhotoPickerCell.m */; };
+		F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */; };
 		F17EB8A61C3CF19E00829E45 /* Contact.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB8A31C3CF19E00829E45 /* Contact.xib */; };
 		F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB8A41C3CF19E00829E45 /* ContactsCollectionViewController.swift */; };
 		F17EB8A81C3CF19E00829E45 /* dialCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB8A51C3CF19E00829E45 /* dialCell2.xib */; };
@@ -152,6 +158,8 @@
 		F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */; };
 		F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */; };
 		F1F751B11C229F6400176642 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F751B01C229F6400176642 /* AVOSCloudIM.framework */; };
+		F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */; };
+		F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */; };
 		F1FC09FE1C18074B00459E6F /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC09FD1C18074B00459E6F /* AVOSCloud.framework */; };
 		F1FC0A001C18077C00459E6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC09FF1C18077C00459E6F /* SystemConfiguration.framework */; };
 		F1FC0A021C18078600459E6F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC0A011C18078600459E6F /* MobileCoreServices.framework */; };
@@ -199,6 +207,8 @@
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		DB835B231C390EBF004F05BA /* HBCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBCollectionCell.xib; sourceTree = "<group>"; };
+		DB8936771CC673EE00C2FED9 /* CellTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTopView.xib; sourceTree = "<group>"; };
+		DB8936791CC6764C00C2FED9 /* CellBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellBottomView.xib; sourceTree = "<group>"; };
 		DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		DB9518321C37EEE10056EB44 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
@@ -207,6 +217,9 @@
 		DBACE2D31C141FB7002A494A /* LoginRegisterMainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginRegisterMainViewController.storyboard; sourceTree = "<group>"; };
 		DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBUIViewEX.h"; sourceTree = "<group>"; };
 		DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBUIViewEX.m"; sourceTree = "<group>"; };
+		DBCC94711CC79FDD00A08669 /* CellTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTopView.swift; sourceTree = "<group>"; };
+		DBCC94731CC7A13100A08669 /* CellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBottomView.swift; sourceTree = "<group>"; };
+		DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDynamicTableCell.swift; sourceTree = "<group>"; };
 		DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDynamicTableCell.swift; sourceTree = "<group>"; };
 		DBD71A1F1CB7DA65006921A2 /* MainDynamicTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainDynamicTableCell.xib; sourceTree = "<group>"; };
@@ -283,6 +296,7 @@
 		F174DADC1C48C1DC00259CCD /* ZZPhotoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoListCell.m; sourceTree = "<group>"; };
 		F174DADD1C48C1DC00259CCD /* ZZPhotoPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoPickerCell.h; sourceTree = "<group>"; };
 		F174DADE1C48C1DC00259CCD /* ZZPhotoPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoPickerCell.m; sourceTree = "<group>"; };
+		F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDynaicTableCell.swift; sourceTree = "<group>"; };
 		F17EB8A31C3CF19E00829E45 /* Contact.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Contact.xib; sourceTree = "<group>"; };
 		F17EB8A41C3CF19E00829E45 /* ContactsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewController.swift; sourceTree = "<group>"; };
 		F17EB8A51C3CF19E00829E45 /* dialCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialCell2.xib; sourceTree = "<group>"; };
@@ -333,6 +347,8 @@
 		F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDynamicPhotoController.swift; sourceTree = "<group>"; };
 		F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDynamicPhotoController.xib; path = ../Controller/ShowDynamicPhotoController.xib; sourceTree = "<group>"; };
 		F1F751B01C229F6400176642 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
+		F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+textOfOnePointNumber.h"; sourceTree = "<group>"; };
+		F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+textOfOnePointNumber.m"; sourceTree = "<group>"; };
 		F1FC09FD1C18074B00459E6F /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		F1FC09FF1C18077C00459E6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F1FC0A011C18078600459E6F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -488,7 +504,13 @@
 			isa = PBXGroup;
 			children = (
 				DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */,
+				DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */,
+				F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */,
+				DBCC94711CC79FDD00A08669 /* CellTopView.swift */,
+				DBCC94731CC7A13100A08669 /* CellBottomView.swift */,
 				DBD71A1F1CB7DA65006921A2 /* MainDynamicTableCell.xib */,
+				DB8936771CC673EE00C2FED9 /* CellTopView.xib */,
+				DB8936791CC6764C00C2FED9 /* CellBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,6 +518,8 @@
 		F1518ABB1C2BED5E00A58AF2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */,
+				F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */,
 				DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */,
 				DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */,
 				DBA28D041C414778007A516E /* UIImage+Extension.swift */,
@@ -789,6 +813,7 @@
 			files = (
 				DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */,
 				F174DB0A1C48C1DC00259CCD /* ZZPhotoListCell.h in Headers */,
+				F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */,
 				F17EB8BD1C3CF1CA00829E45 /* DWFlowLayout.h in Headers */,
 				F174DB061C48C1DC00259CCD /* ZZPageControl.h in Headers */,
 				F174DAE31C48C1DC00259CCD /* ZZCameraPickerViewController.h in Headers */,
@@ -937,6 +962,7 @@
 				F1EC2A8C1C9A85C90038A0CB /* MainTabar.xib in Resources */,
 				F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */,
 				DBACE2D41C141FB7002A494A /* LoginRegisterMainViewController.storyboard in Resources */,
+				DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */,
 				F174DAFA1C48C1DC00259CCD /* select_no.png in Resources */,
 				F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */,
 				F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */,
@@ -949,6 +975,7 @@
 				F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */,
 				F174DAF81C48C1DC00259CCD /* photo_add.png in Resources */,
 				DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */,
+				DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */,
 				F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */,
 				F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */,
 				F174DAF31C48C1DC00259CCD /* camera_focus_pic.png in Resources */,
@@ -1038,6 +1065,7 @@
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,
 				DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */,
 				F17EB8B81C3CF1CA00829E45 /* AWCollectionViewDialLayout.m in Sources */,
+				F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */,
 				F174DB031C48C1DC00259CCD /* ZZCameraFocusView.m in Sources */,
 				DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */,
 				DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */,
@@ -1069,6 +1097,7 @@
 				DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */,
 				F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */,
 				F174DB051C48C1DC00259CCD /* ZZCameraPickerCell.m in Sources */,
+				DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */,
 				DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */,
 				F17EB8BB1C3CF1CA00829E45 /* HomeController.swift in Sources */,
 				F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */,
@@ -1088,6 +1117,7 @@
 				F174DAF11C48C1DC00259CCD /* ZZPhotoDatas.m in Sources */,
 				F1EF0B361CA1263A00E25771 /* GetisterViewController.swift in Sources */,
 				F1716D1D1C06EA2400F7AB97 /* Debugging.swift in Sources */,
+				DBCC94721CC79FDD00A08669 /* CellTopView.swift in Sources */,
 				F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */,
 				F174DB011C48C1DC00259CCD /* ZZBrowserPickerCell.m in Sources */,
 				DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */,
@@ -1096,6 +1126,7 @@
 				F1E3D7EF1C23B20100E63CDF /* MeCenterCell.swift in Sources */,
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
+				F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */,
 				F1ED56321C30FB58005F74DB /* SettingController.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
@@ -1107,6 +1138,7 @@
 				F1716D241C06EA2400F7AB97 /* ViewController+SnapKit.swift in Sources */,
 				F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */,
 				F1E96BB61C2159CB0046EFD2 /* HeartUser.swift in Sources */,
+				DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */,
 				F1716D1A1C06EA2400F7AB97 /* ConstraintItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1273,7 +1305,7 @@
 					"\"-lc++\"",
 					"\"-lsqlite3\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn;
+				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn.mmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";
@@ -1318,7 +1350,7 @@
 					"\"-lc++\"",
 					"\"-lsqlite3\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn;
+				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn.mmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";

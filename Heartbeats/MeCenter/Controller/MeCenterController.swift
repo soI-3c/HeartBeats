@@ -108,6 +108,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
                 settingController!.currUser = self!.user
                 settingController?.changUserInfoBlock = {[weak self] (user) -> Void in
                     self?.headView.user = user
+                    self?.tableView.layoutIfNeeded()           // 位置改变了, 调用系统会帮我们调整
                 }
                 self!.navigationController?.pushViewController(settingController!, animated: true)
             }
@@ -228,7 +229,10 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         if files?.count > 0 {
             for file in files! {
                    let f = file as? HBAVFile
-                    f?.deleteInBackground()
+                f?.deleteInBackgroundWithBlock({ (b, error) -> Void in
+                    if (error != nil) {
+                    }
+                })
             }
         }
         //      保存到服务器

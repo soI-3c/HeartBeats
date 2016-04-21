@@ -10,23 +10,29 @@ import UIKit
 
 let MainDynamicCellID = "MainDynamicCellID"
 
+
+enum DynamicCellID : String {
+    case imageCellID = "imageCellID"
+    case contentCellID = "contentCellID"
+    static func cellID(dynamic: Dynamic) -> String {
+       return dynamic.photos?.count > 0 ? imageCellID.rawValue : contentCellID.rawValue
+    }
+}
+let imageCellID = "imageCellID"
+let contentCellID = "contentCellID"
 class DynamicTableViewController: UITableViewController {
-    var scrollUporDown: Bool = false
-    var newY: CGFloat = 0
-    var oldY: CGFloat = 0
-    
+
+//    MARK:-- Override
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = true
-        tableView.registerNib(UINib(nibName: "MainDynamicTableCell", bundle: nil), forCellReuseIdentifier: MainDynamicCellID)
+        tableView.registerClass(ImageDynamicTableCell.self, forCellReuseIdentifier: DynamicCellID.imageCellID.rawValue)
+        tableView.registerClass(ContentDynaicTableCell.self, forCellReuseIdentifier: DynamicCellID.contentCellID.rawValue)
+        // 提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
+        tableView.estimatedRowHeight = 400
+        
+        loadData()
     }
-
-    // MARK: - Table view data source
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
-    }
-//    MARK: --根据滚动方向隐藏导航栏
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.isEqual(tableView) {
             newY = scrollView.contentOffset.y
@@ -46,17 +52,52 @@ class DynamicTableViewController: UITableViewController {
                 }, completion: { (_) -> Void in
             })
         }
-        
+    }
+    
+//    MARK: -- private
+    func loadData() {
+        NetworkTools.loadDynamics { (result, error) -> () in
+            if error == nil {
+                self.dynamics = result as? [Dynamic]
+            }else {
+                print(error)
+            }
         }
     }
+    
+//    MARK: -- getter / setter
+    var scrollUporDown: Bool = false            // 用于判断table的上下滚动
+    var newY: CGFloat = 0
+    var oldY: CGFloat = 0
+    
+    var dynamics: [Dynamic]? {                 // 动态s
+        didSet {
+            tableView.reloadData()
+        }
+    }
+}
+
+// MARK: --- Dasoure
 extension DynamicTableViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return dynamics?.count ?? 0
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MainDynamicTableCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(MainDynamicCellID, forIndexPath: indexPath) as! MainDynamicTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item]), forIndexPath: indexPath) as! MainDynamicTableCell
+        cell.dynamic = dynamics![indexPath.item]
         return cell
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return screenMaimheiht * 0.65;
+        let dynamic = dynamics?[indexPath.item]             // 先取缓存行高, 没有再计算
+        if  dynamic?.cellHeight > 0 {
+            return dynamic!.cellHeight
+        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item])) as! MainDynamicTableCell
+        dynamic!.cellHeight = cell.rowHeigth(dynamic!)
+        return cell.rowHeigth(dynamic!)
     }
 }
     /*

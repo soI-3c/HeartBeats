@@ -40,7 +40,6 @@
     CGRect oldFrame = self.frame;
     oldFrame.size.width = width;
     self.frame = oldFrame;
-
 }
 
 -(CGFloat)height{

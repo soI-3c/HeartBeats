@@ -40,7 +40,7 @@ class DefaultPublicDynamicController: UIViewController {
     func updateUI() {
         UIView.animateWithDuration(0.52, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.photoDynamicBtn.snp_updateConstraints(closure: { (make) -> Void in
-                    make.center.equalTo(view)
+                    make.center.equalTo(self.view)
                 })
             }) { (_) -> Void in
                 

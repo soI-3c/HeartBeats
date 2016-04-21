@@ -82,9 +82,8 @@ class MeCenterHeadView: UIView{
     private lazy var userIndividualityText : UILabel = {
         let lab = UILabel()
         lab.textAlignment = NSTextAlignment.Left
+        lab.font = UIFont(name: "Helvetica-Bold", size: 13)
         lab.numberOfLines = 0
-        lab.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        lab.sizeToFit()
         return lab
     }()
     private lazy var ageLabel : UILabel = UILabel(title: "年龄", fontSize: fontSize)

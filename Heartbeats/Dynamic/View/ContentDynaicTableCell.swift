@@ -1,0 +1,53 @@
+//
+//  ContentDynaicTableCell.swift
+//  Heartbeats
+//
+//  Created by liaosenshi on 16/4/21.
+//  Copyright © 2016年 heart. All rights reserved.
+//
+
+import UIKit
+
+class ContentDynaicTableCell: MainDynamicTableCell {
+    
+//    MARK: -- overide
+    override func setUpUI() {
+        super.setUpUI()
+        content.text = "dfjkdsfdjsfjdpfupejodjncdjcdhcoiukjhdiqwjdjjdnlvjpjoqujldhuqijwpipwiopujpqwup"
+        contentView.addSubview(backView)
+        contentView.addSubview(content)
+        
+        backView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(topView.snp_bottom)
+            make.left.right.equalTo(self)
+            make.height.equalTo(screenMaimWidth)
+        }
+        content.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(backView.center)
+            make.width.equalTo(screenMaimWidth)
+        }
+    }
+    
+//    MARK: -- private
+    override func rowHeigth(dynamic: Dynamic) -> CGFloat {
+        return topView.frame.height + screenMaimWidth * 0.66 + bottomView.frame.height
+    }
+    
+    //    MARK: -- setter/ getter
+   override var dynamic: Dynamic? {
+        didSet {
+            content.text = dynamic?.content
+        }
+    }
+    
+    var backView: UIView = UIView()
+    var content: UILabel = {
+        let lab = UILabel()
+        lab.textColor = UIColor.blackColor()
+        lab.numberOfLines = 0
+        lab.drawTextInRect(UIEdgeInsetsInsetRect(lab.bounds, UIEdgeInsetsMake(5, 5, 5, 5)))
+        return lab
+    }()
+
+}
+

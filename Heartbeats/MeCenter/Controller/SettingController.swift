@@ -52,7 +52,6 @@ class SettingController: UITableViewController {
                 changUserInfoBlock?(user)       // 如果有修改则刷新个人中心的数据
             }
         }
-
     }
     
     private func prepare() {
@@ -102,7 +101,7 @@ class SettingController: UITableViewController {
 //   MARK: --  tableViewDelegate
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         prepare()
-        return 22
+        return 0
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
@@ -183,6 +182,9 @@ class SettingController: UITableViewController {
         }
         return (showView, modal)
     }
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

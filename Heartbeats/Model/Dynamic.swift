@@ -12,15 +12,15 @@ let HBDynamicUser = "user"
 let HBDynamicPhotos = "photos"
 let HBDynamicContent = "content"
 class Dynamic: AVObject, AVSubclassing {
-    @NSManaged var user: HeartUser?
-    @NSManaged var photos: [AnyObject]?
-    @NSManaged var content: String?
+    @NSManaged var user: HeartUser?                 //  动态所属的user
+    @NSManaged var photos: [AnyObject]?             //  图片
+    @NSManaged var content: String?                 //  内容
+    var cellHeight: CGFloat = 0                     //  缓存行高
     
    static func parseClassName() -> String? {
         return "Dynamic"
     }
 }
-
 
 extension Dynamic {
     class func photoUrls(dynamic: Dynamic) -> [String]? {
@@ -35,3 +35,4 @@ extension Dynamic {
         return urls
     }
 }
+

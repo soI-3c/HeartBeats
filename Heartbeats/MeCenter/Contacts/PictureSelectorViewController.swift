@@ -81,7 +81,6 @@ class PictureSelectorViewController: UICollectionViewController, PictureSelector
     // MARK: - PictureSelectorCellDelegate
     private func pictureSelectorCellClickRemoveButton(cell: PictureSelectorCell) {
         print("删除按钮 \(cell)")
-        
         // 根据 cell 获得当前的索引
         if let indexPath = collectionView?.indexPathForCell(cell) where indexPath.item < pictures.count {
             

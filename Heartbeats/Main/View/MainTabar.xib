@@ -21,7 +21,7 @@
                                 <constraint firstAttribute="height" constant="36" id="25d-fp-t88"/>
                                 <constraint firstAttribute="width" constant="36" id="8v1-ey-mnA"/>
                             </constraints>
-                            <state key="normal" backgroundImage="4"/>
+                            <state key="normal" backgroundImage="5"/>
                             <state key="selected" backgroundImage="1select"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="bsR-VJ-R8W"/>
@@ -113,7 +113,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="SaL-Nt-2ex"/>
                             </constraints>
-                            <state key="normal" backgroundImage="5"/>
+                            <state key="normal" backgroundImage="3"/>
                             <state key="selected" backgroundImage="5select"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="q5L-iP-p0o"/>
@@ -147,7 +147,7 @@
                                 <constraint firstAttribute="height" constant="36" id="K8g-JN-8ng"/>
                                 <constraint firstAttribute="width" constant="36" id="cgG-k5-wUD"/>
                             </constraints>
-                            <state key="normal" backgroundImage="3"/>
+                            <state key="normal" backgroundImage="4"/>
                             <state key="selected" backgroundImage="4"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="oL9-Bo-Bys"/>
@@ -193,10 +193,10 @@
     <resources>
         <image name="1" width="42" height="42"/>
         <image name="1select" width="170" height="170"/>
-        <image name="2" width="85" height="85"/>
+        <image name="2" width="42" height="42"/>
         <image name="3" width="42" height="42"/>
         <image name="4" width="42" height="42"/>
-        <image name="5" width="85" height="85"/>
+        <image name="5" width="42" height="42"/>
         <image name="5select" width="170" height="170"/>
     </resources>
 </document>

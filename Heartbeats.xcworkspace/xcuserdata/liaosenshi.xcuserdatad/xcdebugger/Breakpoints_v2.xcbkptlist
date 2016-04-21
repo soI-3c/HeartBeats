@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Heartbeats/Main/LoginViewController.swift"
-            timestampString = "480391412.76684"
+            filePath = "Heartbeats/Dynamic/View/MainDynamicTableCell.swift"
+            timestampString = "482920804.926022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "loginAction(_:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "rowHeigth(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
