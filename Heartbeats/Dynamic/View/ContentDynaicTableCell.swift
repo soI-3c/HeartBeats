@@ -13,7 +13,6 @@ class ContentDynaicTableCell: MainDynamicTableCell {
 //    MARK: -- overide
     override func setUpUI() {
         super.setUpUI()
-        content.text = "dfjkdsfdjsfjdpfupejodjncdjcdhcoiukjhdiqwjdjjdnlvjpjoqujldhuqijwpipwiopujpqwup"
         contentView.addSubview(backView)
         contentView.addSubview(content)
         
@@ -45,7 +44,6 @@ class ContentDynaicTableCell: MainDynamicTableCell {
         let lab = UILabel()
         lab.textColor = UIColor.blackColor()
         lab.numberOfLines = 0
-        lab.drawTextInRect(UIEdgeInsetsInsetRect(lab.bounds, UIEdgeInsetsMake(5, 5, 5, 5)))
         return lab
     }()
 

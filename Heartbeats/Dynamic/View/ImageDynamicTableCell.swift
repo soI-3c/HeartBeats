@@ -16,7 +16,6 @@ class ImageDynamicTableCell: MainDynamicTableCell {
         contentView.addSubview(photosImgView)
         contentView.addSubview(content)
         // 根据文字长度, 动态计算section的高度
-        let textSize =  content.text?.sizeWithAttributes([NSFontAttributeName: content.font])
     
         photosImgView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(topView.snp_bottom)
@@ -44,6 +43,7 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     }
     var content: UILabel = {
         let lab = UILabel()
+        lab.backgroundColor = UIColor(red: 255.0 / 255.0, green: 203.0 / 255.0, blue: 204.0 / 255.0, alpha: 0.75)
         lab.numberOfLines = 0
         return lab
     }()

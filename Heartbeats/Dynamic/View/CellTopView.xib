@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.55000000000000004" contentMode="scaleToFill" id="aUO-Ex-1Wg" customClass="CellTopView" customModule="Heartbeats" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="aUO-Ex-1Wg" customClass="CellTopView" customModule="Heartbeats" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="562" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -22,12 +22,6 @@
                         <color key="titleColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeartBeats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-li-ZA4">
-                    <rect key="frame" x="56" y="8" width="466" height="32"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiC-Gi-fS2">
                     <rect key="frame" x="8" y="4" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,8 +33,14 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeartBeats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-li-ZA4">
+                    <rect key="frame" x="56" y="8" width="466" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.1215686351" alpha="0.16" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Bkq-li-ZA4" secondAttribute="bottom" constant="8" id="7hq-WH-z2k"/>
                 <constraint firstItem="Bkq-li-ZA4" firstAttribute="top" secondItem="aUO-Ex-1Wg" secondAttribute="top" constant="8" id="8Me-O1-lEC"/>

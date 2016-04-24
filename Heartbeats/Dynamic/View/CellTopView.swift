@@ -30,14 +30,15 @@ class CellTopView: UIView {
     func cornerRadius(sender : UIView, radius: CGFloat) {
         sender.layer.cornerRadius = radius / 2
         sender.layer.masksToBounds = true
+        sender.layer.borderColor = UIColor.whiteColor().CGColor
+        sender.layer.borderWidth = 1.5
     }
     
 //    MARK: -- setter/ getter
     var dynamic: Dynamic? {
         didSet {
             if let dynamic = dynamic {
-                print(dynamic.user?.iconImage?.url)
-                userHeadView.setImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "1"))
+            userHeadView.setBackgroundImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "1"))
                 usernameLabel.text = dynamic.user?.username
             }
         }
