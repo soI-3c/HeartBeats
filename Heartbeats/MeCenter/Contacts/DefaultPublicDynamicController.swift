@@ -7,47 +7,43 @@
 //
 
 import UIKit
-
+// MARK: -- 发表动态
 class DefaultPublicDynamicController: UIViewController {
 
-    var photoDynamicBtn: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = UIColor.blackColor()
-        btn.layer.cornerRadius = 60 / 2
-        btn.layer.masksToBounds = true
-        return btn
-    }()
-    var textDynamicBtn: UIButton = {
-        let btn = UIButton()
-        btn.layer.cornerRadius =  60 / 2
-        btn.layer.masksToBounds = true
-        return btn
-    }()
+//   MARK: -- override
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        updateUI()
+        setUpUI()
+        setUpNav()
     }
     
-    func setupUI() {
-        view.addSubview(photoDynamicBtn)
-        photoDynamicBtn.snp_makeConstraints { (make) -> Void in
-            make.bottom.equalTo(view.snp_top)
-            make.centerX.equalTo(view)
-            make.width.height.equalTo(60)
-        }
+//   MARK: --  private func
+    func setUpUI() {
+        addChildViewController(imgGridViewController)
+        view.addSubview(imgGridViewController.view)
+        imgGridViewController.view.frame = view.bounds
+        navigationController?.navigationBar.addSubview(navBtn)
     }
-    func updateUI() {
-        UIView.animateWithDuration(0.52, delay: 0, usingSpringWithDamping: 6, initialSpringVelocity: 6, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                self.photoDynamicBtn.snp_updateConstraints(closure: { (make) -> Void in
-                    make.center.equalTo(self.view)
-                })
-            }) { (_) -> Void in
-                
-        }
+    func setUpNav() {
+        let leftBtn = UIBarButtonItem(image: UIImage(named: "closeIcon")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "doBack")
+        navigationItem.leftBarButtonItems = [leftBtn]
     }
+    
+    func doBack() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+//    MARK: --- setter / getter 
+    let imgGridViewController = SCImageGridViewController()
+ 
+    let navBtn: UIButton = {            //
+        let btn = UIButton(type: .Custom)
+        btn.setTitle("相机胶卷", forState: .Normal)
+        btn.setImage(UIImage(named: "closeIcon"), forState: UIControlState.Normal)
+        btn.frame = CGRectMake(0, 0, 135, 35)
+        return btn
+    }()
 }
-
 
 
 

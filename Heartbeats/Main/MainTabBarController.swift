@@ -13,6 +13,11 @@ class MainTabBarController: UITabBarController {
    lazy var mainTabarView : MainTabar = {
        let mainTabarView =  MainTabar.currentMainTabar()
         mainTabarView.selectControllerIndex = {(result) -> () in
+            if result == 2 {
+                  let viewController = DefaultPublicDynamicController()
+                  self.presentViewController(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
+                return
+            }
             self.selectedIndex = result
         }
         return mainTabarView
@@ -27,7 +32,8 @@ class MainTabBarController: UITabBarController {
     private func addChildViewControllers() {
         addChildViewController(HomeController(), title: "Heartbeats", imageName: "")
         addChildViewController(DynamicTableViewController(), title: "Dynamic", imageName: "")
-        addChildViewController(DefaultPublicDynamicController(), title: "PublicDynamic", imageName: "")
+        // 添加了一个空白的控制器
+        addChildViewController(UIViewController())
         addChildViewController(ContactsCollectionViewController(), title: "Contacts", imageName: "")
         addChildViewController(MeCenterController(), title: "Me", imageName: "")
     }

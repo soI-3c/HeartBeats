@@ -8,5 +8,4 @@
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "SVProgressHUD.h"
-#import "ZZPhotoController.h"
-#import "ZZCameraController.h"
+#import "SCImageGridViewController.h"

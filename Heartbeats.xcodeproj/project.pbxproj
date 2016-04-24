@@ -17,6 +17,7 @@
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
 		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
+		DB4D07A81CCCF8EA002D6891 /* DynamicNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */; settings = {ASSET_TAGS = (); }; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
@@ -25,6 +26,25 @@
 		DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936791CC6764C00C2FED9 /* CellBottomView.xib */; };
 		DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */; };
 		DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */; };
+		DB8C15641CCC9F6D0040C907 /* SCBrowseImageController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15571CCC9F6D0040C907 /* SCBrowseImageController.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C15661CCC9F6D0040C907 /* SCImageCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15591CCC9F6D0040C907 /* SCImageCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C15681CCC9F6D0040C907 /* SCImageGridCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C15691CCC9F6D0040C907 /* SCImageGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155B1CCC9F6D0040C907 /* SCImageGridCell.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C156B1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155D1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C156C1CCC9F6D0040C907 /* SCImageGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155F1CCC9F6D0040C907 /* SCImageGridViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C156E1CCC9F6D0040C907 /* SCImageGridViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */; settings = {ASSET_TAGS = (); }; };
+		DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15611CCC9F6D0040C907 /* SCImageGridViewLayout.m */; settings = {ASSET_TAGS = (); }; };
+		DB8C15701CCC9F6D0040C907 /* select_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8C15631CCC9F6D0040C907 /* select_yes.png */; settings = {ASSET_TAGS = (); }; };
+		DB8C15711CCCA02D0040C907 /* SCBrowseImageController.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */; };
+		DB8C15721CCCA02D0040C907 /* SCImageCollectionCell.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */; };
+		DB8C15731CCCA02D0040C907 /* SCImageGridCell.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */; };
+		DB8C15741CCCA02D0040C907 /* SCImageGridCellSelectingView.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */; };
+		DB8C15751CCCA02D0040C907 /* SCImageGridViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */; };
+		DB8C15761CCCA02D0040C907 /* SCImageGridViewLayout.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */; };
 		DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9518321C37EEE10056EB44 /* Dynamic.swift */; };
 		DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D001C414716007A516E /* PictureSelectorViewController.swift */; };
 		DBA28D051C414778007A516E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D041C414778007A516E /* UIImage+Extension.swift */; };
@@ -60,53 +80,6 @@
 		F1716D3D1C0838A900F7AB97 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D3C1C0838A900F7AB97 /* libstdc++.tbd */; };
 		F1716D3F1C0838B000F7AB97 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D3E1C0838B000F7AB97 /* AddressBook.framework */; };
 		F1716D411C0838B600F7AB97 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1716D401C0838B600F7AB97 /* AddressBookUI.framework */; };
-		F174DADF1C48C1DC00259CCD /* ZZBrowserPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAAD1C48C1DC00259CCD /* ZZBrowserPickerViewController.h */; };
-		F174DAE01C48C1DC00259CCD /* ZZBrowserPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAAE1C48C1DC00259CCD /* ZZBrowserPickerViewController.m */; };
-		F174DAE11C48C1DC00259CCD /* ZZCameraController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAAF1C48C1DC00259CCD /* ZZCameraController.h */; };
-		F174DAE21C48C1DC00259CCD /* ZZCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAB01C48C1DC00259CCD /* ZZCameraController.m */; };
-		F174DAE31C48C1DC00259CCD /* ZZCameraPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAB11C48C1DC00259CCD /* ZZCameraPickerViewController.h */; };
-		F174DAE41C48C1DC00259CCD /* ZZCameraPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAB21C48C1DC00259CCD /* ZZCameraPickerViewController.m */; };
-		F174DAE51C48C1DC00259CCD /* ZZPhotoController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAB31C48C1DC00259CCD /* ZZPhotoController.h */; };
-		F174DAE61C48C1DC00259CCD /* ZZPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAB41C48C1DC00259CCD /* ZZPhotoController.m */; };
-		F174DAE71C48C1DC00259CCD /* ZZPhotoListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAB51C48C1DC00259CCD /* ZZPhotoListViewController.h */; };
-		F174DAE81C48C1DC00259CCD /* ZZPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAB61C48C1DC00259CCD /* ZZPhotoListViewController.m */; };
-		F174DAE91C48C1DC00259CCD /* ZZPhotoPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAB71C48C1DC00259CCD /* ZZPhotoPickerViewController.h */; };
-		F174DAEA1C48C1DC00259CCD /* ZZPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAB81C48C1DC00259CCD /* ZZPhotoPickerViewController.m */; };
-		F174DAEB1C48C1DC00259CCD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DABA1C48C1DC00259CCD /* Common.h */; };
-		F174DAEC1C48C1DC00259CCD /* UIImageHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DABB1C48C1DC00259CCD /* UIImageHandle.h */; };
-		F174DAED1C48C1DC00259CCD /* UIImageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DABC1C48C1DC00259CCD /* UIImageHandle.m */; };
-		F174DAEE1C48C1DC00259CCD /* ZZBrowerAnimate.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DABD1C48C1DC00259CCD /* ZZBrowerAnimate.h */; };
-		F174DAEF1C48C1DC00259CCD /* ZZBrowerAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DABE1C48C1DC00259CCD /* ZZBrowerAnimate.m */; };
-		F174DAF01C48C1DC00259CCD /* ZZPhotoDatas.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DABF1C48C1DC00259CCD /* ZZPhotoDatas.h */; };
-		F174DAF11C48C1DC00259CCD /* ZZPhotoDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAC01C48C1DC00259CCD /* ZZPhotoDatas.m */; };
-		F174DAF21C48C1DC00259CCD /* ZZPhotoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAC11C48C1DC00259CCD /* ZZPhotoKit.h */; };
-		F174DAF31C48C1DC00259CCD /* camera_focus_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC31C48C1DC00259CCD /* camera_focus_pic.png */; };
-		F174DAF41C48C1DC00259CCD /* change_camera_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC41C48C1DC00259CCD /* change_camera_pic.png */; };
-		F174DAF51C48C1DC00259CCD /* flash_close_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC51C48C1DC00259CCD /* flash_close_pic.png */; };
-		F174DAF61C48C1DC00259CCD /* flash_open_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC61C48C1DC00259CCD /* flash_open_pic.png */; };
-		F174DAF71C48C1DC00259CCD /* no_data.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC71C48C1DC00259CCD /* no_data.png */; };
-		F174DAF81C48C1DC00259CCD /* photo_add.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC81C48C1DC00259CCD /* photo_add.png */; };
-		F174DAF91C48C1DC00259CCD /* remove_btn_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DAC91C48C1DC00259CCD /* remove_btn_pic.png */; };
-		F174DAFA1C48C1DC00259CCD /* select_no.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACA1C48C1DC00259CCD /* select_no.png */; };
-		F174DAFB1C48C1DC00259CCD /* select_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACB1C48C1DC00259CCD /* select_yes.png */; };
-		F174DAFC1C48C1DC00259CCD /* take_photo_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACC1C48C1DC00259CCD /* take_photo_pic.png */; };
-		F174DAFD1C48C1DC00259CCD /* take_photo_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACD1C48C1DC00259CCD /* take_photo_pic@2x.png */; };
-		F174DAFE1C48C1DC00259CCD /* trash_btn_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACE1C48C1DC00259CCD /* trash_btn_pic.png */; };
-		F174DAFF1C48C1DC00259CCD /* zz_alumb_rightCell.png in Resources */ = {isa = PBXBuildFile; fileRef = F174DACF1C48C1DC00259CCD /* zz_alumb_rightCell.png */; };
-		F174DB001C48C1DC00259CCD /* ZZBrowserPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAD11C48C1DC00259CCD /* ZZBrowserPickerCell.h */; };
-		F174DB011C48C1DC00259CCD /* ZZBrowserPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAD21C48C1DC00259CCD /* ZZBrowserPickerCell.m */; };
-		F174DB021C48C1DC00259CCD /* ZZCameraFocusView.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAD31C48C1DC00259CCD /* ZZCameraFocusView.h */; };
-		F174DB031C48C1DC00259CCD /* ZZCameraFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAD41C48C1DC00259CCD /* ZZCameraFocusView.m */; };
-		F174DB041C48C1DC00259CCD /* ZZCameraPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAD51C48C1DC00259CCD /* ZZCameraPickerCell.h */; };
-		F174DB051C48C1DC00259CCD /* ZZCameraPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAD61C48C1DC00259CCD /* ZZCameraPickerCell.m */; };
-		F174DB061C48C1DC00259CCD /* ZZPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAD71C48C1DC00259CCD /* ZZPageControl.h */; };
-		F174DB071C48C1DC00259CCD /* ZZPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DAD81C48C1DC00259CCD /* ZZPageControl.m */; };
-		F174DB081C48C1DC00259CCD /* ZZPhotoHud.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DAD91C48C1DC00259CCD /* ZZPhotoHud.h */; };
-		F174DB091C48C1DC00259CCD /* ZZPhotoHud.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DADA1C48C1DC00259CCD /* ZZPhotoHud.m */; };
-		F174DB0A1C48C1DC00259CCD /* ZZPhotoListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DADB1C48C1DC00259CCD /* ZZPhotoListCell.h */; };
-		F174DB0B1C48C1DC00259CCD /* ZZPhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DADC1C48C1DC00259CCD /* ZZPhotoListCell.m */; };
-		F174DB0C1C48C1DC00259CCD /* ZZPhotoPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F174DADD1C48C1DC00259CCD /* ZZPhotoPickerCell.h */; };
-		F174DB0D1C48C1DC00259CCD /* ZZPhotoPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F174DADE1C48C1DC00259CCD /* ZZPhotoPickerCell.m */; };
 		F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */; };
 		F17EB8A61C3CF19E00829E45 /* Contact.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB8A31C3CF19E00829E45 /* Contact.xib */; };
 		F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB8A41C3CF19E00829E45 /* ContactsCollectionViewController.swift */; };
@@ -202,6 +175,7 @@
 		DB1AF6451BF771090059A41B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreAttributeSetView.swift; sourceTree = "<group>"; };
 		DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoShowView.swift; sourceTree = "<group>"; };
+		DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicNavView.swift; sourceTree = "<group>"; };
 		DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
@@ -210,6 +184,19 @@
 		DB8936791CC6764C00C2FED9 /* CellBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellBottomView.xib; sourceTree = "<group>"; };
 		DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBrowseImageController.h; sourceTree = "<group>"; };
+		DB8C15571CCC9F6D0040C907 /* SCBrowseImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBrowseImageController.m; sourceTree = "<group>"; };
+		DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageCollectionCell.h; sourceTree = "<group>"; };
+		DB8C15591CCC9F6D0040C907 /* SCImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageCollectionCell.m; sourceTree = "<group>"; };
+		DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageGridCell.h; sourceTree = "<group>"; };
+		DB8C155B1CCC9F6D0040C907 /* SCImageGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageGridCell.m; sourceTree = "<group>"; };
+		DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageGridCellSelectingView.h; sourceTree = "<group>"; };
+		DB8C155D1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageGridCellSelectingView.m; sourceTree = "<group>"; };
+		DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageGridViewController.h; sourceTree = "<group>"; };
+		DB8C155F1CCC9F6D0040C907 /* SCImageGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageGridViewController.m; sourceTree = "<group>"; };
+		DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageGridViewLayout.h; sourceTree = "<group>"; };
+		DB8C15611CCC9F6D0040C907 /* SCImageGridViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageGridViewLayout.m; sourceTree = "<group>"; };
+		DB8C15631CCC9F6D0040C907 /* select_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_yes.png; sourceTree = "<group>"; };
 		DB9518321C37EEE10056EB44 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		DBA28D001C414716007A516E /* PictureSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSelectorViewController.swift; sourceTree = "<group>"; };
 		DBA28D041C414778007A516E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -247,53 +234,6 @@
 		F1716D3E1C0838B000F7AB97 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		F1716D401C0838B600F7AB97 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		F1716D471C0859D000F7AB97 /* Heartbeats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartbeats-Bridging-Header.h"; sourceTree = "<group>"; };
-		F174DAAD1C48C1DC00259CCD /* ZZBrowserPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowserPickerViewController.h; sourceTree = "<group>"; };
-		F174DAAE1C48C1DC00259CCD /* ZZBrowserPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowserPickerViewController.m; sourceTree = "<group>"; };
-		F174DAAF1C48C1DC00259CCD /* ZZCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCameraController.h; sourceTree = "<group>"; };
-		F174DAB01C48C1DC00259CCD /* ZZCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCameraController.m; sourceTree = "<group>"; };
-		F174DAB11C48C1DC00259CCD /* ZZCameraPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCameraPickerViewController.h; sourceTree = "<group>"; };
-		F174DAB21C48C1DC00259CCD /* ZZCameraPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCameraPickerViewController.m; sourceTree = "<group>"; };
-		F174DAB31C48C1DC00259CCD /* ZZPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoController.h; sourceTree = "<group>"; };
-		F174DAB41C48C1DC00259CCD /* ZZPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoController.m; sourceTree = "<group>"; };
-		F174DAB51C48C1DC00259CCD /* ZZPhotoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoListViewController.h; sourceTree = "<group>"; };
-		F174DAB61C48C1DC00259CCD /* ZZPhotoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoListViewController.m; sourceTree = "<group>"; };
-		F174DAB71C48C1DC00259CCD /* ZZPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoPickerViewController.h; sourceTree = "<group>"; };
-		F174DAB81C48C1DC00259CCD /* ZZPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoPickerViewController.m; sourceTree = "<group>"; };
-		F174DABA1C48C1DC00259CCD /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		F174DABB1C48C1DC00259CCD /* UIImageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageHandle.h; sourceTree = "<group>"; };
-		F174DABC1C48C1DC00259CCD /* UIImageHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageHandle.m; sourceTree = "<group>"; };
-		F174DABD1C48C1DC00259CCD /* ZZBrowerAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowerAnimate.h; sourceTree = "<group>"; };
-		F174DABE1C48C1DC00259CCD /* ZZBrowerAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerAnimate.m; sourceTree = "<group>"; };
-		F174DABF1C48C1DC00259CCD /* ZZPhotoDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoDatas.h; sourceTree = "<group>"; };
-		F174DAC01C48C1DC00259CCD /* ZZPhotoDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoDatas.m; sourceTree = "<group>"; };
-		F174DAC11C48C1DC00259CCD /* ZZPhotoKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoKit.h; sourceTree = "<group>"; };
-		F174DAC31C48C1DC00259CCD /* camera_focus_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_focus_pic.png; sourceTree = "<group>"; };
-		F174DAC41C48C1DC00259CCD /* change_camera_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_camera_pic.png; sourceTree = "<group>"; };
-		F174DAC51C48C1DC00259CCD /* flash_close_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_close_pic.png; sourceTree = "<group>"; };
-		F174DAC61C48C1DC00259CCD /* flash_open_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_open_pic.png; sourceTree = "<group>"; };
-		F174DAC71C48C1DC00259CCD /* no_data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_data.png; sourceTree = "<group>"; };
-		F174DAC81C48C1DC00259CCD /* photo_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_add.png; sourceTree = "<group>"; };
-		F174DAC91C48C1DC00259CCD /* remove_btn_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove_btn_pic.png; sourceTree = "<group>"; };
-		F174DACA1C48C1DC00259CCD /* select_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_no.png; sourceTree = "<group>"; };
-		F174DACB1C48C1DC00259CCD /* select_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_yes.png; sourceTree = "<group>"; };
-		F174DACC1C48C1DC00259CCD /* take_photo_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = take_photo_pic.png; sourceTree = "<group>"; };
-		F174DACD1C48C1DC00259CCD /* take_photo_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take_photo_pic@2x.png"; sourceTree = "<group>"; };
-		F174DACE1C48C1DC00259CCD /* trash_btn_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash_btn_pic.png; sourceTree = "<group>"; };
-		F174DACF1C48C1DC00259CCD /* zz_alumb_rightCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zz_alumb_rightCell.png; sourceTree = "<group>"; };
-		F174DAD11C48C1DC00259CCD /* ZZBrowserPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowserPickerCell.h; sourceTree = "<group>"; };
-		F174DAD21C48C1DC00259CCD /* ZZBrowserPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowserPickerCell.m; sourceTree = "<group>"; };
-		F174DAD31C48C1DC00259CCD /* ZZCameraFocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCameraFocusView.h; sourceTree = "<group>"; };
-		F174DAD41C48C1DC00259CCD /* ZZCameraFocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCameraFocusView.m; sourceTree = "<group>"; };
-		F174DAD51C48C1DC00259CCD /* ZZCameraPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCameraPickerCell.h; sourceTree = "<group>"; };
-		F174DAD61C48C1DC00259CCD /* ZZCameraPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCameraPickerCell.m; sourceTree = "<group>"; };
-		F174DAD71C48C1DC00259CCD /* ZZPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPageControl.h; sourceTree = "<group>"; };
-		F174DAD81C48C1DC00259CCD /* ZZPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPageControl.m; sourceTree = "<group>"; };
-		F174DAD91C48C1DC00259CCD /* ZZPhotoHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoHud.h; sourceTree = "<group>"; };
-		F174DADA1C48C1DC00259CCD /* ZZPhotoHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoHud.m; sourceTree = "<group>"; };
-		F174DADB1C48C1DC00259CCD /* ZZPhotoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoListCell.h; sourceTree = "<group>"; };
-		F174DADC1C48C1DC00259CCD /* ZZPhotoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoListCell.m; sourceTree = "<group>"; };
-		F174DADD1C48C1DC00259CCD /* ZZPhotoPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPhotoPickerCell.h; sourceTree = "<group>"; };
-		F174DADE1C48C1DC00259CCD /* ZZPhotoPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPhotoPickerCell.m; sourceTree = "<group>"; };
 		F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDynaicTableCell.swift; sourceTree = "<group>"; };
 		F17EB8A31C3CF19E00829E45 /* Contact.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Contact.xib; sourceTree = "<group>"; };
 		F17EB8A41C3CF19E00829E45 /* ContactsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -498,6 +438,34 @@
 			path = MeCenter;
 			sourceTree = "<group>";
 		};
+		DB8C15551CCC9F6D0040C907 /* SCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */,
+				DB8C15571CCC9F6D0040C907 /* SCBrowseImageController.m */,
+				DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */,
+				DB8C15591CCC9F6D0040C907 /* SCImageCollectionCell.m */,
+				DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */,
+				DB8C155B1CCC9F6D0040C907 /* SCImageGridCell.m */,
+				DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */,
+				DB8C155D1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m */,
+				DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */,
+				DB8C155F1CCC9F6D0040C907 /* SCImageGridViewController.m */,
+				DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */,
+				DB8C15611CCC9F6D0040C907 /* SCImageGridViewLayout.m */,
+				DB8C15621CCC9F6D0040C907 /* Soure */,
+			);
+			path = SCImagePicker;
+			sourceTree = "<group>";
+		};
+		DB8C15621CCC9F6D0040C907 /* Soure */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C15631CCC9F6D0040C907 /* select_yes.png */,
+			);
+			path = Soure;
+			sourceTree = "<group>";
+		};
 		DBD71A1D1CB7DA1F006921A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,7 +519,6 @@
 		F1716D421C08392B00F7AB97 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				F174DAAB1C48C1DC00259CCD /* ZZPhotoRE */,
 				F17EB8C41C3CF2C400829E45 /* PathDynamicModal.swift */,
 				F17EB8B11C3CF1CA00829E45 /* DWFlowLayout.h */,
 				F17EB8B21C3CF1CA00829E45 /* DWFlowLayout.m */,
@@ -569,92 +536,6 @@
 				F1716D341C08388A00F7AB97 /* libicucore.tbd */,
 			);
 			name = Lib;
-			sourceTree = "<group>";
-		};
-		F174DAAB1C48C1DC00259CCD /* ZZPhotoRE */ = {
-			isa = PBXGroup;
-			children = (
-				F174DAAC1C48C1DC00259CCD /* Controller */,
-				F174DAB91C48C1DC00259CCD /* Model */,
-				F174DAC21C48C1DC00259CCD /* Resources */,
-				F174DAD01C48C1DC00259CCD /* View */,
-			);
-			path = ZZPhotoRE;
-			sourceTree = "<group>";
-		};
-		F174DAAC1C48C1DC00259CCD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F174DAAD1C48C1DC00259CCD /* ZZBrowserPickerViewController.h */,
-				F174DAAE1C48C1DC00259CCD /* ZZBrowserPickerViewController.m */,
-				F174DAAF1C48C1DC00259CCD /* ZZCameraController.h */,
-				F174DAB01C48C1DC00259CCD /* ZZCameraController.m */,
-				F174DAB11C48C1DC00259CCD /* ZZCameraPickerViewController.h */,
-				F174DAB21C48C1DC00259CCD /* ZZCameraPickerViewController.m */,
-				F174DAB31C48C1DC00259CCD /* ZZPhotoController.h */,
-				F174DAB41C48C1DC00259CCD /* ZZPhotoController.m */,
-				F174DAB51C48C1DC00259CCD /* ZZPhotoListViewController.h */,
-				F174DAB61C48C1DC00259CCD /* ZZPhotoListViewController.m */,
-				F174DAB71C48C1DC00259CCD /* ZZPhotoPickerViewController.h */,
-				F174DAB81C48C1DC00259CCD /* ZZPhotoPickerViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F174DAB91C48C1DC00259CCD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F174DABA1C48C1DC00259CCD /* Common.h */,
-				F174DABB1C48C1DC00259CCD /* UIImageHandle.h */,
-				F174DABC1C48C1DC00259CCD /* UIImageHandle.m */,
-				F174DABD1C48C1DC00259CCD /* ZZBrowerAnimate.h */,
-				F174DABE1C48C1DC00259CCD /* ZZBrowerAnimate.m */,
-				F174DABF1C48C1DC00259CCD /* ZZPhotoDatas.h */,
-				F174DAC01C48C1DC00259CCD /* ZZPhotoDatas.m */,
-				F174DAC11C48C1DC00259CCD /* ZZPhotoKit.h */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F174DAC21C48C1DC00259CCD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F174DAC31C48C1DC00259CCD /* camera_focus_pic.png */,
-				F174DAC41C48C1DC00259CCD /* change_camera_pic.png */,
-				F174DAC51C48C1DC00259CCD /* flash_close_pic.png */,
-				F174DAC61C48C1DC00259CCD /* flash_open_pic.png */,
-				F174DAC71C48C1DC00259CCD /* no_data.png */,
-				F174DAC81C48C1DC00259CCD /* photo_add.png */,
-				F174DAC91C48C1DC00259CCD /* remove_btn_pic.png */,
-				F174DACA1C48C1DC00259CCD /* select_no.png */,
-				F174DACB1C48C1DC00259CCD /* select_yes.png */,
-				F174DACC1C48C1DC00259CCD /* take_photo_pic.png */,
-				F174DACD1C48C1DC00259CCD /* take_photo_pic@2x.png */,
-				F174DACE1C48C1DC00259CCD /* trash_btn_pic.png */,
-				F174DACF1C48C1DC00259CCD /* zz_alumb_rightCell.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		F174DAD01C48C1DC00259CCD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F174DAD11C48C1DC00259CCD /* ZZBrowserPickerCell.h */,
-				F174DAD21C48C1DC00259CCD /* ZZBrowserPickerCell.m */,
-				F174DAD31C48C1DC00259CCD /* ZZCameraFocusView.h */,
-				F174DAD41C48C1DC00259CCD /* ZZCameraFocusView.m */,
-				F174DAD51C48C1DC00259CCD /* ZZCameraPickerCell.h */,
-				F174DAD61C48C1DC00259CCD /* ZZCameraPickerCell.m */,
-				F174DAD71C48C1DC00259CCD /* ZZPageControl.h */,
-				F174DAD81C48C1DC00259CCD /* ZZPageControl.m */,
-				F174DAD91C48C1DC00259CCD /* ZZPhotoHud.h */,
-				F174DADA1C48C1DC00259CCD /* ZZPhotoHud.m */,
-				F174DADB1C48C1DC00259CCD /* ZZPhotoListCell.h */,
-				F174DADC1C48C1DC00259CCD /* ZZPhotoListCell.m */,
-				F174DADD1C48C1DC00259CCD /* ZZPhotoPickerCell.h */,
-				F174DADE1C48C1DC00259CCD /* ZZPhotoPickerCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F17EB8A21C3CF19E00829E45 /* Contacts */ = {
@@ -715,6 +596,7 @@
 		F17EB8C91C3D09CB00829E45 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -774,6 +656,7 @@
 		F1E96BB11C21599F0046EFD2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DB8C15551CCC9F6D0040C907 /* SCImagePicker */,
 				F1518ABB1C2BED5E00A58AF2 /* Extension */,
 				F1E96BB21C21599F0046EFD2 /* Tools.swift */,
 				F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */,
@@ -808,28 +691,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8C156C1CCC9F6D0040C907 /* SCImageGridViewController.h in Headers */,
+				DB8C156E1CCC9F6D0040C907 /* SCImageGridViewLayout.h in Headers */,
 				DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */,
-				F174DB0A1C48C1DC00259CCD /* ZZPhotoListCell.h in Headers */,
 				F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */,
 				F17EB8BD1C3CF1CA00829E45 /* DWFlowLayout.h in Headers */,
-				F174DB061C48C1DC00259CCD /* ZZPageControl.h in Headers */,
-				F174DAE31C48C1DC00259CCD /* ZZCameraPickerViewController.h in Headers */,
 				F17EB8B71C3CF1CA00829E45 /* AWCollectionViewDialLayout.h in Headers */,
-				F174DB021C48C1DC00259CCD /* ZZCameraFocusView.h in Headers */,
-				F174DAF01C48C1DC00259CCD /* ZZPhotoDatas.h in Headers */,
-				F174DB041C48C1DC00259CCD /* ZZCameraPickerCell.h in Headers */,
-				F174DB081C48C1DC00259CCD /* ZZPhotoHud.h in Headers */,
-				F174DB0C1C48C1DC00259CCD /* ZZPhotoPickerCell.h in Headers */,
-				F174DAEE1C48C1DC00259CCD /* ZZBrowerAnimate.h in Headers */,
-				F174DAE71C48C1DC00259CCD /* ZZPhotoListViewController.h in Headers */,
-				F174DAEC1C48C1DC00259CCD /* UIImageHandle.h in Headers */,
-				F174DAE51C48C1DC00259CCD /* ZZPhotoController.h in Headers */,
-				F174DADF1C48C1DC00259CCD /* ZZBrowserPickerViewController.h in Headers */,
-				F174DB001C48C1DC00259CCD /* ZZBrowserPickerCell.h in Headers */,
-				F174DAE91C48C1DC00259CCD /* ZZPhotoPickerViewController.h in Headers */,
-				F174DAE11C48C1DC00259CCD /* ZZCameraController.h in Headers */,
-				F174DAF21C48C1DC00259CCD /* ZZPhotoKit.h in Headers */,
-				F174DAEB1C48C1DC00259CCD /* Common.h in Headers */,
+				DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */,
+				DB8C15681CCC9F6D0040C907 /* SCImageGridCell.h in Headers */,
+				DB8C15641CCC9F6D0040C907 /* SCBrowseImageController.h in Headers */,
+				DB8C15661CCC9F6D0040C907 /* SCImageCollectionCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,42 +818,30 @@
 			files = (
 				F1EF9A571C3E002500F3F696 /* HBHomeCollectionCell.xib in Resources */,
 				F17EB8A61C3CF19E00829E45 /* Contact.xib in Resources */,
-				F174DAF41C48C1DC00259CCD /* change_camera_pic.png in Resources */,
 				F1EF9A591C3E566600F3F696 /* OneSelfPhotoLibView.xib in Resources */,
-				F174DAF71C48C1DC00259CCD /* no_data.png in Resources */,
 				F1716D1F1C06EA2400F7AB97 /* Info.plist in Resources */,
-				F174DAFE1C48C1DC00259CCD /* trash_btn_pic.png in Resources */,
 				DB1AF6201BF76FA90059A41B /* LaunchScreen.storyboard in Resources */,
 				F1ED56301C30DADB005F74DB /* SettingController.storyboard in Resources */,
+				DB8C15701CCC9F6D0040C907 /* select_yes.png in Resources */,
 				F1E6CBDE1C2D0F8500353300 /* ShopSettingView.xib in Resources */,
 				F1EC2A8C1C9A85C90038A0CB /* MainTabar.xib in Resources */,
 				F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */,
 				DBACE2D41C141FB7002A494A /* LoginRegisterMainViewController.storyboard in Resources */,
 				DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */,
-				F174DAFA1C48C1DC00259CCD /* select_no.png in Resources */,
 				F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */,
 				F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */,
 				DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */,
 				F17EB8A81C3CF19E00829E45 /* dialCell2.xib in Resources */,
-				F174DAFC1C48C1DC00259CCD /* take_photo_pic.png in Resources */,
-				F174DAFD1C48C1DC00259CCD /* take_photo_pic@2x.png in Resources */,
 				F11127601C2A6516001FB131 /* SettingView2.xib in Resources */,
-				F174DAFB1C48C1DC00259CCD /* select_yes.png in Resources */,
 				F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */,
-				F174DAF81C48C1DC00259CCD /* photo_add.png in Resources */,
 				DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */,
 				DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */,
 				F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */,
 				F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */,
-				F174DAF31C48C1DC00259CCD /* camera_focus_pic.png in Resources */,
 				F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */,
 				F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */,
-				F174DAF51C48C1DC00259CCD /* flash_close_pic.png in Resources */,
-				F174DAFF1C48C1DC00259CCD /* zz_alumb_rightCell.png in Resources */,
 				F1DC43AE1C29196A00BE211B /* SettingView.xib in Resources */,
 				F1E3D7F01C23B20100E63CDF /* MeCenterCell.xib in Resources */,
-				F174DAF91C48C1DC00259CCD /* remove_btn_pic.png in Resources */,
-				F174DAF61C48C1DC00259CCD /* flash_open_pic.png in Resources */,
 				DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1056,35 +915,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4D07A81CCCF8EA002D6891 /* DynamicNavView.swift in Sources */,
+				DB8C15711CCCA02D0040C907 /* SCBrowseImageController.h in Sources */,
+				DB8C15721CCCA02D0040C907 /* SCImageCollectionCell.h in Sources */,
+				DB8C15731CCCA02D0040C907 /* SCImageGridCell.h in Sources */,
+				DB8C15741CCCA02D0040C907 /* SCImageGridCellSelectingView.h in Sources */,
+				DB8C15751CCCA02D0040C907 /* SCImageGridViewController.h in Sources */,
+				DB8C15761CCCA02D0040C907 /* SCImageGridViewLayout.h in Sources */,
 				F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */,
 				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,
 				DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */,
 				F17EB8B81C3CF1CA00829E45 /* AWCollectionViewDialLayout.m in Sources */,
 				F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */,
-				F174DB031C48C1DC00259CCD /* ZZCameraFocusView.m in Sources */,
 				DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */,
 				DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */,
 				DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */,
 				F1EC2A8E1C9A86460038A0CB /* MainTabar.swift in Sources */,
+				DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */,
 				F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */,
+				DB8C156B1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m in Sources */,
 				F1E399831C33AC4A00A46DB0 /* NameWithPhoneSetView.swift in Sources */,
 				F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */,
 				F17EB8C51C3CF2C400829E45 /* PathDynamicModal.swift in Sources */,
 				F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */,
 				DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */,
-				F174DB0B1C48C1DC00259CCD /* ZZPhotoListCell.m in Sources */,
 				F1E6CBE01C2D143E00353300 /* ShopSettingView.swift in Sources */,
 				F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */,
+				DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */,
 				DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */,
-				F174DAE61C48C1DC00259CCD /* ZZPhotoController.m in Sources */,
-				F174DAE21C48C1DC00259CCD /* ZZCameraController.m in Sources */,
 				F17EB8C81C3D02F800829E45 /* PublicDynamicController.swift in Sources */,
 				F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */,
-				F174DAED1C48C1DC00259CCD /* UIImageHandle.m in Sources */,
-				F174DAE81C48C1DC00259CCD /* ZZPhotoListViewController.m in Sources */,
 				DBA28D051C414778007A516E /* UIImage+Extension.swift in Sources */,
-				F174DAE41C48C1DC00259CCD /* ZZCameraPickerViewController.m in Sources */,
 				DB1AF6461BF771090059A41B /* MainNavigationController.swift in Sources */,
 				F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */,
 				F1716D231C06EA2400F7AB97 /* View+SnapKit.swift in Sources */,
@@ -1092,14 +954,12 @@
 				F1E96BB81C2159EF0046EFD2 /* LoginRegisterMainViewController.swift in Sources */,
 				DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */,
 				F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */,
-				F174DB051C48C1DC00259CCD /* ZZCameraPickerCell.m in Sources */,
 				DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */,
 				DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */,
 				F17EB8BB1C3CF1CA00829E45 /* HomeController.swift in Sources */,
 				F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */,
 				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
-				F174DAEF1C48C1DC00259CCD /* ZZBrowerAnimate.m in Sources */,
-				F174DAEA1C48C1DC00259CCD /* ZZPhotoPickerViewController.m in Sources */,
+				DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */,
 				F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */,
 				F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */,
 				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,
@@ -1107,18 +967,15 @@
 				F1E44E641C3FB9BA00EC1836 /* HBAVFile.swift in Sources */,
 				F1716D1B1C06EA2400F7AB97 /* ConstraintMaker.swift in Sources */,
 				F17EB8BE1C3CF1CA00829E45 /* DWFlowLayout.m in Sources */,
-				F174DB071C48C1DC00259CCD /* ZZPageControl.m in Sources */,
-				F174DAE01C48C1DC00259CCD /* ZZBrowserPickerViewController.m in Sources */,
 				F1E96BB31C21599F0046EFD2 /* Tools.swift in Sources */,
-				F174DAF11C48C1DC00259CCD /* ZZPhotoDatas.m in Sources */,
 				F1EF0B361CA1263A00E25771 /* GetisterViewController.swift in Sources */,
 				F1716D1D1C06EA2400F7AB97 /* Debugging.swift in Sources */,
 				DBCC94721CC79FDD00A08669 /* CellTopView.swift in Sources */,
 				F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */,
-				F174DB011C48C1DC00259CCD /* ZZBrowserPickerCell.m in Sources */,
+				DB8C15691CCC9F6D0040C907 /* SCImageGridCell.m in Sources */,
 				DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */,
 				F1716D221C06EA2400F7AB97 /* SourceLocation.swift in Sources */,
-				F174DB091C48C1DC00259CCD /* ZZPhotoHud.m in Sources */,
+				DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */,
 				F1E3D7EF1C23B20100E63CDF /* MeCenterCell.swift in Sources */,
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
@@ -1130,7 +987,6 @@
 				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
 				DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */,
 				F1E3998B1C33DB4300A46DB0 /* PersonalitySetView.swift in Sources */,
-				F174DB0D1C48C1DC00259CCD /* ZZPhotoPickerCell.m in Sources */,
 				F1716D241C06EA2400F7AB97 /* ViewController+SnapKit.swift in Sources */,
 				F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */,
 				F1E96BB61C2159CB0046EFD2 /* HeartUser.swift in Sources */,
