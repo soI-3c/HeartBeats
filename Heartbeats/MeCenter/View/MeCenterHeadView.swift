@@ -54,7 +54,6 @@ class MeCenterHeadView: UIView{
     lazy var userBackImg: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
-        btn.adjustsImageWhenHighlighted = false
         btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         return btn;

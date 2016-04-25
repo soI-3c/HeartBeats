@@ -18,7 +18,6 @@ static NSString * const reuseIdentifier = @"SCImageGridCell";
 typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完成拍摄后的回调用所有图片
 @interface SCImageGridViewController ()<SCImageGridCellDelegate>
     @property(nonatomic, strong) ALAssetsLibrary *assetsLibrary;
-    @property(nonatomic, strong) NSMutableArray <ALAsset *> *assets;                //资源对象
     @property(nonatomic, strong) NSMutableArray <ALAsset *> *selectAssets;
     @property(nonatomic, assign) NSInteger maxPickerCount;
 @end
@@ -52,7 +51,6 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
     SCImageGridViewLayout *layout = [[SCImageGridViewLayout alloc] init];
     return [super initWithCollectionViewLayout:layout];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -111,7 +109,7 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
     self.assets = [[NSMutableArray alloc] init];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    self.navigationController.toolbarHidden = NO;
+//    self.navigationController.toolbarHidden = NO;
     self.navigationItem.title = @"图片选择器";
     // 工具条
     _previewItem = [[UIBarButtonItem alloc] initWithTitle:@"预览" style:UIBarButtonItemStylePlain target:self action:@selector(clickPreviewButton)];
@@ -165,7 +163,7 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
 - (void) clickPreviewButton {
     [self returnSelectImgs:^(NSArray<UIImage *> *imgs) {
         if (imgs) {
-            SCBrowseImageController *browseImage = [[SCBrowseImageController alloc] initWithImages:imgs selectIndex:0];
+            SCBrowseImageController *browseImage = [[SCBrowseImageController alloc] initWithImages:(NSMutableArray *)imgs selectIndex:0];
             [self.navigationController pushViewController:browseImage animated:true];
         }
     }];

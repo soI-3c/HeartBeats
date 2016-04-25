@@ -17,7 +17,6 @@
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
 		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
-		DB4D07A81CCCF8EA002D6891 /* DynamicNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */; settings = {ASSET_TAGS = (); }; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
@@ -26,19 +25,19 @@
 		DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936791CC6764C00C2FED9 /* CellBottomView.xib */; };
 		DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */; };
 		DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */; };
-		DB8C15641CCC9F6D0040C907 /* SCBrowseImageController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15571CCC9F6D0040C907 /* SCBrowseImageController.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C15661CCC9F6D0040C907 /* SCImageCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15591CCC9F6D0040C907 /* SCImageCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C15681CCC9F6D0040C907 /* SCImageGridCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C15691CCC9F6D0040C907 /* SCImageGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155B1CCC9F6D0040C907 /* SCImageGridCell.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C156B1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155D1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C156C1CCC9F6D0040C907 /* SCImageGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155F1CCC9F6D0040C907 /* SCImageGridViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C156E1CCC9F6D0040C907 /* SCImageGridViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */; settings = {ASSET_TAGS = (); }; };
-		DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15611CCC9F6D0040C907 /* SCImageGridViewLayout.m */; settings = {ASSET_TAGS = (); }; };
-		DB8C15701CCC9F6D0040C907 /* select_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8C15631CCC9F6D0040C907 /* select_yes.png */; settings = {ASSET_TAGS = (); }; };
+		DB8C15641CCC9F6D0040C907 /* SCBrowseImageController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */; };
+		DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15571CCC9F6D0040C907 /* SCBrowseImageController.m */; };
+		DB8C15661CCC9F6D0040C907 /* SCImageCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */; };
+		DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15591CCC9F6D0040C907 /* SCImageCollectionCell.m */; };
+		DB8C15681CCC9F6D0040C907 /* SCImageGridCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */; };
+		DB8C15691CCC9F6D0040C907 /* SCImageGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155B1CCC9F6D0040C907 /* SCImageGridCell.m */; };
+		DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155C1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h */; };
+		DB8C156B1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155D1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m */; };
+		DB8C156C1CCC9F6D0040C907 /* SCImageGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C155E1CCC9F6D0040C907 /* SCImageGridViewController.h */; };
+		DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155F1CCC9F6D0040C907 /* SCImageGridViewController.m */; };
+		DB8C156E1CCC9F6D0040C907 /* SCImageGridViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8C15601CCC9F6D0040C907 /* SCImageGridViewLayout.h */; };
+		DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15611CCC9F6D0040C907 /* SCImageGridViewLayout.m */; };
+		DB8C15701CCC9F6D0040C907 /* select_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8C15631CCC9F6D0040C907 /* select_yes.png */; };
 		DB8C15711CCCA02D0040C907 /* SCBrowseImageController.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15561CCC9F6D0040C907 /* SCBrowseImageController.h */; };
 		DB8C15721CCCA02D0040C907 /* SCImageCollectionCell.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C15581CCC9F6D0040C907 /* SCImageCollectionCell.h */; };
 		DB8C15731CCCA02D0040C907 /* SCImageGridCell.h in Sources */ = {isa = PBXBuildFile; fileRef = DB8C155A1CCC9F6D0040C907 /* SCImageGridCell.h */; };
@@ -95,6 +94,7 @@
 		F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB8CB1C3D09EB00829E45 /* PublicDynamicCell.xib */; };
 		F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */; };
 		F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8D34D1C28E75D00B0B847 /* SettingView.swift */; };
+		F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */; };
 		F1DC43AE1C29196A00BE211B /* SettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AD1C29196A00BE211B /* SettingView.xib */; };
 		F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */; };
 		F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC43B11C2948CA00BE211B /* PersonalityView.swift */; };
@@ -175,7 +175,6 @@
 		DB1AF6451BF771090059A41B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreAttributeSetView.swift; sourceTree = "<group>"; };
 		DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoShowView.swift; sourceTree = "<group>"; };
-		DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicNavView.swift; sourceTree = "<group>"; };
 		DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
@@ -250,6 +249,7 @@
 		F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPublicDynamicController.swift; sourceTree = "<group>"; };
 		F19DD7251C23DB9000658A93 /* Publice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publice.h; sourceTree = "<group>"; };
 		F1B8D34D1C28E75D00B0B847 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPhotoLibListView.swift; sourceTree = "<group>"; };
 		F1DC43AD1C29196A00BE211B /* SettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingView.xib; sourceTree = "<group>"; };
 		F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalityView.xib; sourceTree = "<group>"; };
 		F1DC43B11C2948CA00BE211B /* PersonalityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
@@ -596,7 +596,7 @@
 		F17EB8C91C3D09CB00829E45 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DB4D07A71CCCF8EA002D6891 /* DynamicNavView.swift */,
+				F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -915,7 +915,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4D07A81CCCF8EA002D6891 /* DynamicNavView.swift in Sources */,
 				DB8C15711CCCA02D0040C907 /* SCBrowseImageController.h in Sources */,
 				DB8C15721CCCA02D0040C907 /* SCImageCollectionCell.h in Sources */,
 				DB8C15731CCCA02D0040C907 /* SCImageGridCell.h in Sources */,
@@ -981,6 +980,7 @@
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
 				F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */,
 				F1ED56321C30FB58005F74DB /* SettingController.swift in Sources */,
+				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
 				DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */,
@@ -1157,7 +1157,7 @@
 					"\"-lc++\"",
 					"\"-lsqlite3\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn.mmm;
+				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";
@@ -1202,7 +1202,7 @@
 					"\"-lc++\"",
 					"\"-lsqlite3\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nnnn.mmm;
+				PRODUCT_BUNDLE_IDENTIFIER = heart.Heartbeats.cc.nhhjioko.nn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";
