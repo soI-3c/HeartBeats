@@ -91,16 +91,19 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.assets.count;
+    return self.assets.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SCImageGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath: indexPath];
-    cell.image = [UIImage imageWithCGImage:[self.assets[indexPath.item] thumbnail]];
-    cell.selectingView.hidden = true;
-    cell.delegate = self;
-    cell.selectingView.hidden = ![self.selectAssets containsObject:self.assets[indexPath.item]];
+    cell.image = indexPath.item == 0 ? nil : [UIImage imageWithCGImage:[self.assets[indexPath.item - 1] thumbnail]];
     return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item == 0) {
+        
+    }
+    
 }
 
 #pragma mark - 设置界面

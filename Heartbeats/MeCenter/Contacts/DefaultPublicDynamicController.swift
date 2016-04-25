@@ -35,7 +35,7 @@ class DefaultPublicDynamicController: UIViewController {
     }
     func setUpNav() {
         let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-        spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
+        spaceItem.width = -10                                       // 为了自定返回按钮时, 往右偏移的问题
         let leftBtn = UIBarButtonItem(image: UIImage(named: "cancel")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "doBack")
         navigationItem.leftBarButtonItems = [spaceItem, leftBtn]
     }
@@ -48,7 +48,7 @@ class DefaultPublicDynamicController: UIViewController {
             sender.imageView?.transform = CGAffineTransformRotate((sender.imageView?.transform)!,CGFloat(M_PI))
         };
         let y = sender.selected ? 0 : -self.view.frame.height
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.popView.frame = CGRectMake(0, y , screenMaimWidth, self.view.frame.height)
         })
     }

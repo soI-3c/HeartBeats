@@ -24,7 +24,7 @@
         UITapGestureRecognizer *tapGestur = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellOnClick:)];
         [self addGestureRecognizer:tapGestur];
         [self.contentView addSubview:self.imageView];
-        [self.contentView addSubview:self.selectingView];
+//        [self.contentView addSubview:self.selectingView];         // 并不会用到, 多图片选择时会用到
     }
     return self;
 }
@@ -46,6 +46,8 @@
     if (image) {
         _image = image;
         [self.imageView setImage: self.image];
+    }else {
+        [self.imageView setImage: [UIImage imageNamed:@"camera"]];
     }
 }
 -(void) cellOnClick:(SCImageGridCell *) cell {
