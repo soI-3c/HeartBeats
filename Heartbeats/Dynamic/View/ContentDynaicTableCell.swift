@@ -25,10 +25,12 @@ class ContentDynaicTableCell: MainDynamicTableCell {
             make.center.equalTo(backView.center)
             make.width.equalTo(screenMaimWidth)
         }
+         backImageView.frame = CGRectMake(0, 0, screenMaimWidth, topView.frame.height + screenMaimWidth * 0.66 + bottomView.frame.height)
     }
     
 //    MARK: -- private
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
+        backImageView.frame = CGRectMake(0, 0, screenMaimWidth, topView.frame.height + screenMaimWidth * 0.66 + bottomView.frame.height)
         return topView.frame.height + screenMaimWidth * 0.66 + bottomView.frame.height
     }
     

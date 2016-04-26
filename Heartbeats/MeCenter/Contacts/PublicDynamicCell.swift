@@ -21,18 +21,23 @@ class PublicDynamicCell: UICollectionViewCell {
 //   用户
     var user: HeartUser? {
         didSet {
-            if var user = user {
+            if let user = user {
+                userHeadImg.imageView?.image = nil
+                backImageView.image = nil
                 let iconImageFile = user.iconImage
-                if let url = iconImageFile?.url {
-                    userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: .Normal)
-                }else {
-                    userHeadImg.setImage(UIImage(named: "4"), forState: UIControlState.Normal)
-                }
                 let backImageFile = user.backIconImage
+                let imgNumber = arc4random() % 9
+                let image = UIImage(named: "u\(imgNumber)")
+                if let url = iconImageFile?.url {
+                   userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: UIControlState.Normal, placeholderImage: image)
+                }else {
+                    userHeadImg.setImage(image, forState: UIControlState.Normal)
+                }
+                
                 if let url = backImageFile?.url {
                     backImageView.sd_setImageWithURL(NSURL(string: url))
                 }else {
-                    backImageView.image = UIImage(named: "back")
+                    backImageView.image = image
                 }
                 username!.text = "  \(user.username)  "
                 heartLabel.text = user.personality
@@ -72,7 +77,8 @@ class PublicDynamicCell: UICollectionViewCell {
         headBtn.layer.cornerRadius = 40 / 2
         //设置遮盖额外部分,下面两句的意义及实现是相同的
         headBtn.layer.masksToBounds = true
-        headBtn.setImage(UIImage(named: "4"), forState: UIControlState.Normal)
+        headBtn.layer.borderWidth = 1
+        headBtn.layer.borderColor = UIColor.whiteColor().CGColor
         return headBtn
     }()
     

@@ -19,15 +19,18 @@ class MainDynamicTableCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpUI()
+        insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpUI()
+        insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
     }
     
 //    MARK: -- private
     func setUpUI() {
+        contentView.addSubview(backImageView)
         contentView.addSubview(topView)
         contentView.addSubview(bottomView)
         
@@ -36,6 +39,7 @@ class MainDynamicTableCell: UITableViewCell {
             make.height.equalTo(48)
             make.left.right.equalTo(self)
         }
+
         bottomView.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(self)
             make.left.right.equalTo(self)
@@ -47,10 +51,23 @@ class MainDynamicTableCell: UITableViewCell {
         return 0.0
     }
     
+    func insertBlurView (view: UIView, style: UIBlurEffectStyle) {      // 毛玻璃功能
+        view.backgroundColor = UIColor.clearColor()
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        view.insertSubview(blurEffectView, atIndex: 0)
+    }
+
 //    MARK: -- setter/ getter
     var topView: CellTopView = CellTopView.loadNibSelf()
     var bottomView : CellBottomView = CellBottomView.loadNibSelf()
     
+    var backImageView : UIImageView = {                                 // 毛玻璃
+        let imgView = UIImageView()
+        imgView.image = UIImage(named: "u3")
+        return imgView
+    }()
     
     var dynamic: Dynamic? {
         didSet{

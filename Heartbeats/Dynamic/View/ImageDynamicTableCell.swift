@@ -27,8 +27,9 @@ class ImageDynamicTableCell: MainDynamicTableCell {
             make.left.right.equalTo(self)
             make.height.equalTo(45)
         }
+         backImageView.frame = CGRectMake(0, 0, screenMaimWidth, topView.frame.height + screenMaimWidth + 45 + bottomView.frame.height)
     }
-    
+
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
         return topView.frame.height + screenMaimWidth + 45 + bottomView.frame.height
     }
@@ -43,7 +44,7 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     }
     var content: UILabel = {
         let lab = UILabel()
-        lab.backgroundColor = UIColor(red: 255.0 / 255.0, green: 203.0 / 255.0, blue: 204.0 / 255.0, alpha: 0.75)
+        lab.backgroundColor = UIColor.clearColor()
         lab.numberOfLines = 0
         return lab
     }()

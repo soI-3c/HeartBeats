@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: -- 发表动态 -  选择图片
 class DefaultPublicDynamicController: UIViewController {
-
+    
 //   MARK: -- override
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +56,9 @@ class DefaultPublicDynamicController: UIViewController {
 //    MARK: --- setter / getter 
    lazy var imgGridViewController: SCImageGridViewController = {        // 选择图片后跳到截取页面
         let imgGridViewControl = SCImageGridViewController()
-        imgGridViewControl.selectImageAction = {(img) -> Void in
-            self.dynamicCutOffImgController.img = img
-            self.navigationController?.pushViewController(self.dynamicCutOffImgController, animated: true)
+        imgGridViewControl.selectImageAction = {[weak self](img) -> Void in
+            self!.dynamicCutOffImgController.img = img
+            self!.navigationController?.pushViewController(self!.dynamicCutOffImgController, animated: true)
         }
         return imgGridViewControl
     }()

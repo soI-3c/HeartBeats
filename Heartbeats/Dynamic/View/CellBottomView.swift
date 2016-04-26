@@ -9,8 +9,6 @@
 import UIKit
 
 class CellBottomView: UIView {
-    
-
 //    MARK: -- private
     class func loadNibSelf() -> CellBottomView {
         return UINib(nibName: "CellBottomView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CellBottomView

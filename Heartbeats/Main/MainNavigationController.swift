@@ -13,14 +13,8 @@ class MainNavigationController: UINavigationController, UINavigationControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        let target =  interactivePopGestureRecognizer?.delegate
-        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
-            pan.delegate = self;
-//            view .addGestureRecognizer(pan)
         interactivePopGestureRecognizer?.enabled = true
         interactivePopGestureRecognizer?.delegate = self
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 32))
-        btn.setImage(UIImage(named: "closeIcon"), forState: UIControlState.Normal)
     }
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -42,20 +36,6 @@ class MainNavigationController: UINavigationController, UINavigationControllerDe
 //        设置按钮着色
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
     }
-    func handleNavigationTransition( sender: UIGestureRecognizer){
-        switch sender.state {
-          case UIGestureRecognizerState.Changed:
-             print(sender.state)
-          case UIGestureRecognizerState.Ended:
-             print(sender.state)
-          case UIGestureRecognizerState.Cancelled:
-             print(sender.state)
-          default:
-             print(sender.state)
-        }
-          navigationController?.popViewControllerAnimated(true)
-    }
-    
     /**
         跳转控制器都会跳用本方法, 自定义返回按钮
     */

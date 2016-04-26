@@ -27,12 +27,12 @@ class MeCenterHeadView: UIView{
                             if let url = user.iconImage?.url {
                                 self!.userHeadImgView.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
                             }else {
-                            
+                                self?.userHeadImgView.setBackgroundImage(UIImage(named: "u1"), forState: UIControlState.Normal)
                             }
                             if let url = user.backIconImage?.url {
                                 self!.userBackImg.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
                             }else {
-                            
+                                self?.userBackImg.setBackgroundImage(UIImage(named: "u1"), forState: .Normal)
                             }
                         }
                     }
@@ -67,6 +67,9 @@ class MeCenterHeadView: UIView{
         })
         btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.whiteColor().CGColor
+
         return btn;
     }()
     
