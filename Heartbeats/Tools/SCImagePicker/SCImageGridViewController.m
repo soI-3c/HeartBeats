@@ -103,7 +103,12 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
     if (indexPath.item == 0) {
         
     }
-    
+    ALAsset *asset = self.assets[indexPath.item - 1];
+    CGImageRef ref = [[asset  defaultRepresentation]fullResolutionImage];
+    UIImage *img = [[UIImage alloc]initWithCGImage: ref];
+    if (self.selectImageAction) {
+        self.selectImageAction(img);
+    }
 }
 
 #pragma mark - 设置界面

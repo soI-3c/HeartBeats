@@ -17,12 +17,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     _imageView.frame = self.bounds;
-    _selectingView.frame = self.bounds;
+//    _selectingView.frame = self.bounds;
 }
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        UITapGestureRecognizer *tapGestur = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellOnClick:)];
-        [self addGestureRecognizer:tapGestur];
+//        UITapGestureRecognizer *tapGestur = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellOnClick:)];
+//        [self addGestureRecognizer:tapGestur];
         [self.contentView addSubview:self.imageView];
 //        [self.contentView addSubview:self.selectingView];         // 并不会用到, 多图片选择时会用到
     }

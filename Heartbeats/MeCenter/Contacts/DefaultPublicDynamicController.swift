@@ -7,7 +7,8 @@
 //
 
 import UIKit
-// MARK: -- 发表动态
+
+// MARK: -- 发表动态 -  选择图片
 class DefaultPublicDynamicController: UIViewController {
 
 //   MARK: -- override
@@ -16,7 +17,6 @@ class DefaultPublicDynamicController: UIViewController {
         setUpUI()
         setUpNav()
     }
-    
     
 //   MARK: --  private func
     func setUpUI() {
@@ -48,14 +48,23 @@ class DefaultPublicDynamicController: UIViewController {
             sender.imageView?.transform = CGAffineTransformRotate((sender.imageView?.transform)!,CGFloat(M_PI))
         };
         let y = sender.selected ? 0 : -self.view.frame.height
-        UIView.animateWithDuration(0.4, animations: { () -> Void in
+        UIView.animateWithDuration(0.35, animations: { () -> Void in
             self.popView.frame = CGRectMake(0, y , screenMaimWidth, self.view.frame.height)
         })
     }
     
 //    MARK: --- setter / getter 
-   let imgGridViewController = SCImageGridViewController()
- 
+   lazy var imgGridViewController: SCImageGridViewController = {        // 选择图片后跳到截取页面
+        let imgGridViewControl = SCImageGridViewController()
+        imgGridViewControl.selectImageAction = {(img) -> Void in
+            self.dynamicCutOffImgController.img = img
+            self.navigationController?.pushViewController(self.dynamicCutOffImgController, animated: true)
+        }
+        return imgGridViewControl
+    }()
+    
+   var dynamicCutOffImgController = DynamicCutOffImgController()        // 截取图片控制器
+    
    lazy var navBtn: UIButton = {                                        // 相册显示名字
         let btn = UIButton(type: .Custom)
         btn.setTitle("相机胶卷", forState: .Normal)

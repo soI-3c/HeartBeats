@@ -129,6 +129,7 @@
 		F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */; };
 		F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */; };
 		F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */; };
+		F1F576D41CCF30DE00E49F87 /* DynamicCutOffImgController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */; };
 		F1F751B11C229F6400176642 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F751B01C229F6400176642 /* AVOSCloudIM.framework */; };
 		F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */; };
 		F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */; };
@@ -284,6 +285,7 @@
 		F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDynamicPhotoController.swift; sourceTree = "<group>"; };
 		F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDynamicPhotoController.xib; path = ../Controller/ShowDynamicPhotoController.xib; sourceTree = "<group>"; };
+		F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCutOffImgController.swift; sourceTree = "<group>"; };
 		F1F751B01C229F6400176642 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+textOfOnePointNumber.h"; sourceTree = "<group>"; };
 		F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+textOfOnePointNumber.m"; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */,
+				F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */,
 				F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */,
 				DBA28D001C414716007A516E /* PictureSelectorViewController.swift */,
 				F17EB8C91C3D09CB00829E45 /* View */,
@@ -949,6 +952,7 @@
 				DB1AF6461BF771090059A41B /* MainNavigationController.swift in Sources */,
 				F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */,
 				F1716D231C06EA2400F7AB97 /* View+SnapKit.swift in Sources */,
+				F1F576D41CCF30DE00E49F87 /* DynamicCutOffImgController.swift in Sources */,
 				F17EB8CC1C3D09EB00829E45 /* PublicDynamicCell.swift in Sources */,
 				F1E96BB81C2159EF0046EFD2 /* LoginRegisterMainViewController.swift in Sources */,
 				DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */,
