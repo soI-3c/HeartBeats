@@ -23,9 +23,8 @@ class ContentDynaicTableCell: MainDynamicTableCell {
         }
         content.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(backView.center)
-            make.width.equalTo(screenMaimWidth)
+            make.width.equalTo(screenMaimWidth - 16)
         }
-         backImageView.frame = CGRectMake(0, 0, screenMaimWidth, topView.frame.height + screenMaimWidth * 0.66 + bottomView.frame.height)
     }
     
 //    MARK: -- private
@@ -38,13 +37,15 @@ class ContentDynaicTableCell: MainDynamicTableCell {
    override var dynamic: Dynamic? {
         didSet {
             content.text = dynamic?.content
+            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
+            insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
         }
     }
     
     var backView: UIView = UIView()
     var content: UILabel = {
         let lab = UILabel()
-        lab.textColor = UIColor.blackColor()
+        lab.textColor = UIColor.whiteColor()
         lab.numberOfLines = 0
         return lab
     }()

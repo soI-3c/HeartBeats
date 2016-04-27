@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,18 +16,14 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="Jn1-D7-at3"/>
                     </constraints>
-                    <state key="normal" backgroundImage="1"/>
+                    <state key="normal" backgroundImage="heart"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-Se-8Rv">
-                    <rect key="frame" x="134" y="12.5" width="20" height="20.5"/>
+                    <rect key="frame" x="134" y="12" width="20" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Mv-GYu">
-                    <rect key="frame" x="96" y="8" width="30" height="29"/>
-                    <state key="normal" backgroundImage="3"/>
-                </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6wK-UW-ptW">
                     <rect key="frame" x="8" y="45" width="585" height="35"/>
                     <constraints>
@@ -41,11 +37,15 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGL-OD-kk5">
-                    <rect key="frame" x="46" y="12.5" width="18" height="20.5"/>
+                    <rect key="frame" x="46" y="12" width="18" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Mv-GYu">
+                    <rect key="frame" x="96" y="8" width="30" height="29"/>
+                    <state key="normal" backgroundImage="take"/>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="2jN-Se-8Rv" firstAttribute="leading" secondItem="Iek-Mv-GYu" secondAttribute="trailing" constant="8" id="1gL-hH-fVX"/>
@@ -54,11 +54,11 @@
                 <constraint firstItem="AGL-OD-kk5" firstAttribute="leading" secondItem="S9I-en-0dH" secondAttribute="trailing" constant="8" id="HIV-V8-CN9"/>
                 <constraint firstAttribute="bottom" secondItem="6wK-UW-ptW" secondAttribute="bottom" constant="8" id="KGX-Lw-gRb"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="leading" secondItem="AGL-OD-kk5" secondAttribute="trailing" constant="32" id="L8y-R8-7Qf"/>
+                <constraint firstItem="AGL-OD-kk5" firstAttribute="centerY" secondItem="2jN-Se-8Rv" secondAttribute="centerY" id="OMh-Vd-nl0"/>
                 <constraint firstItem="S9I-en-0dH" firstAttribute="leading" secondItem="ZBe-RW-Xup" secondAttribute="leading" constant="8" id="QUn-yy-bTo"/>
                 <constraint firstItem="6wK-UW-ptW" firstAttribute="leading" secondItem="ZBe-RW-Xup" secondAttribute="leading" constant="8" id="Sse-89-HvH"/>
                 <constraint firstItem="S9I-en-0dH" firstAttribute="top" secondItem="ZBe-RW-Xup" secondAttribute="top" constant="8" id="U0b-yp-Ol1"/>
                 <constraint firstItem="S9I-en-0dH" firstAttribute="top" secondItem="ZBe-RW-Xup" secondAttribute="top" constant="8" id="fSH-44-t9S"/>
-                <constraint firstItem="AGL-OD-kk5" firstAttribute="centerY" secondItem="S9I-en-0dH" secondAttribute="centerY" id="g1g-YC-ena"/>
                 <constraint firstAttribute="trailing" secondItem="6wK-UW-ptW" secondAttribute="trailing" constant="8" id="g3s-IE-rhw"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="height" secondItem="S9I-en-0dH" secondAttribute="height" id="m0U-hy-N5O"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="centerY" secondItem="S9I-en-0dH" secondAttribute="centerY" id="om0-nj-z53"/>
@@ -74,7 +74,7 @@
         </view>
     </objects>
     <resources>
-        <image name="1" width="42" height="42"/>
-        <image name="3" width="42" height="42"/>
+        <image name="heart" width="40" height="40"/>
+        <image name="take" width="40" height="40"/>
     </resources>
 </document>

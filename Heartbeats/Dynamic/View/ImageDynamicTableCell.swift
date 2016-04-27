@@ -24,10 +24,9 @@ class ImageDynamicTableCell: MainDynamicTableCell {
         }
         content.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(photosImgView.snp_bottom)
-            make.left.right.equalTo(self)
+            make.left.right.equalTo(8)
             make.height.equalTo(45)
         }
-         backImageView.frame = CGRectMake(0, 0, screenMaimWidth, topView.frame.height + screenMaimWidth + 45 + bottomView.frame.height)
     }
 
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
@@ -39,11 +38,19 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     override var dynamic: Dynamic? {
         didSet {
             content.text = dynamic?.content
-            photosImgView.sd_setImageWithURL(NSURL(string: (dynamic?.user?.iconImage?.url)!), placeholderImage: UIImage(named: "headImage"))
+            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
+            
+            photosImgView.image = placeholderImage
+//            let urls = Dynamic.photoUrls(dynamic!)
+//            if urls?.count > 0 {
+//                photosImgView.sd_setImageWithURL(NSURL(string: urls![0]), placeholderImage: placeholderImage)
+//            }
+            insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
         }
     }
     var content: UILabel = {
         let lab = UILabel()
+        lab.textColor = UIColor.whiteColor()
         lab.backgroundColor = UIColor.clearColor()
         lab.numberOfLines = 0
         return lab

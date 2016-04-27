@@ -19,13 +19,11 @@ class MainDynamicTableCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpUI()
-        insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpUI()
-        insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
     }
     
 //    MARK: -- private
@@ -50,13 +48,15 @@ class MainDynamicTableCell: UITableViewCell {
     func rowHeigth(dynamic: Dynamic) -> CGFloat {
         return 0.0
     }
-    
     func insertBlurView (view: UIView, style: UIBlurEffectStyle) {      // 毛玻璃功能
+        if  view.subviews.count > 1 {
+            return
+        }
         view.backgroundColor = UIColor.clearColor()
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
-        view.insertSubview(blurEffectView, atIndex: 0)
+        view.addSubview(blurEffectView)
     }
 
 //    MARK: -- setter/ getter
@@ -65,12 +65,16 @@ class MainDynamicTableCell: UITableViewCell {
     
     var backImageView : UIImageView = {                                 // 毛玻璃
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "u3")
+        imgView.image = placeholderImage
         return imgView
     }()
     
     var dynamic: Dynamic? {
         didSet{
+            let urls = Dynamic.photoUrls(dynamic!)
+            if urls?.count > 0 {
+                backImageView.sd_setImageWithURL(NSURL(string: urls![0]), placeholderImage: placeholderImage)
+            }
             topView.dynamic = dynamic
             bottomView.dynamic = dynamic
         }

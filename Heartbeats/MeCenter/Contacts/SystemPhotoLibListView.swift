@@ -12,6 +12,7 @@ import UIKit
 
 let photoLibCellID = "photoLibCellID"
 class SystemPhotoLibListView: UITableView, UITableViewDataSource, UITableViewDelegate {
+
 //    MARK: -- override
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -29,10 +30,10 @@ class SystemPhotoLibListView: UITableView, UITableViewDataSource, UITableViewDel
         tableFooterView = UIView()
         self.bounces = false
        photoLib.enumerateGroupsWithTypes(ALAssetsGroupAll, usingBlock: { (group, _) -> Void in
-        if group != nil {
-             self.assetGroups.append(group)
-        }
-        self.reloadData()
+            if group != nil {
+                 self.assetGroups.append(group)
+            }
+            self.reloadData()
         }) { (_) -> Void in
         }
     }

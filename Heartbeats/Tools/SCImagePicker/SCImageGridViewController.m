@@ -101,7 +101,7 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.item == 0) {
-        
+        return;
     }
     ALAsset *asset = self.assets[indexPath.item - 1];
     CGImageRef ref = [[asset  defaultRepresentation]fullResolutionImage];
@@ -115,10 +115,9 @@ typedef void (^accomplishTakePhoto)(NSMutableArray *);                  // 完�
 - (void)prepareUI {
     self.assetsLibrary = [[ALAssetsLibrary alloc] init];
     self.assets = [[NSMutableArray alloc] init];
-    
     self.collectionView.backgroundColor = [UIColor whiteColor];
 //    self.navigationController.toolbarHidden = NO;
-    self.navigationItem.title = @"图片选择器";
+//    self.navigationItem.title = @"图片选择器";
     // 工具条
     _previewItem = [[UIBarButtonItem alloc] initWithTitle:@"预览" style:UIBarButtonItemStylePlain target:self action:@selector(clickPreviewButton)];
     _previewItem.enabled = NO;

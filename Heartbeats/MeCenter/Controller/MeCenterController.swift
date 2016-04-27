@@ -191,9 +191,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
 //        let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
 //        获得编辑后的图片
         let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
-        print(image?.size)
-        print(UIImagePNGRepresentation(image! as! UIImage)!.length)
-        
         dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in     //异步子线程去储存图片
             if self.isUserHeadImg == true {
                 self.changeAndSaveImg(image as! UIImage, iconImageFileName: HBUserIconImage)

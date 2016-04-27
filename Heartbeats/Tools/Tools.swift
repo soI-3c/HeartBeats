@@ -11,7 +11,9 @@ import UIKit
 let screenMaimWidth = UIScreen.mainScreen().bounds.size.width
 let screenMaimheiht = UIScreen.mainScreen().bounds.size.height
 let iconImageString = "iconImage"                       // 头像名称ID
-let backIconImageString = "backIconImage"   // 背景头像ID
+let backIconImageString = "backIconImage"               // 背景头像ID
+
+let placeholderImage = UIImage(named: "u4")
 
 let zero:CGFloat = 0.0
 let minMargins = 8                  // MeCenterHeadView
