@@ -56,7 +56,6 @@
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
 		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
 		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
-		F11127601C2A6516001FB131 /* SettingView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F111275F1C2A6516001FB131 /* SettingView2.xib */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
 		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
 		F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */; };
@@ -95,7 +94,6 @@
 		F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */; };
 		F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8D34D1C28E75D00B0B847 /* SettingView.swift */; };
 		F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */; };
-		F1DC43AE1C29196A00BE211B /* SettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AD1C29196A00BE211B /* SettingView.xib */; };
 		F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */; };
 		F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC43B11C2948CA00BE211B /* PersonalityView.swift */; };
 		F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */; };
@@ -209,7 +207,6 @@
 		DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDynamicTableCell.swift; sourceTree = "<group>"; };
 		F111275D1C2A5142001FB131 /* SettingView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView2.swift; sourceTree = "<group>"; };
-		F111275F1C2A6516001FB131 /* SettingView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingView2.xib; sourceTree = "<group>"; };
 		F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F1716D081C06EA2400F7AB97 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -251,7 +248,6 @@
 		F19DD7251C23DB9000658A93 /* Publice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publice.h; sourceTree = "<group>"; };
 		F1B8D34D1C28E75D00B0B847 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPhotoLibListView.swift; sourceTree = "<group>"; };
-		F1DC43AD1C29196A00BE211B /* SettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingView.xib; sourceTree = "<group>"; };
 		F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalityView.xib; sourceTree = "<group>"; };
 		F1DC43B11C2948CA00BE211B /* PersonalityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
 		F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameWithPhoneSetView.xib; sourceTree = "<group>"; };
@@ -612,8 +608,6 @@
 				F1DC43B11C2948CA00BE211B /* PersonalityView.swift */,
 				F1EC2A8D1C9A86460038A0CB /* MainTabar.swift */,
 				F1EC2A8B1C9A85C90038A0CB /* MainTabar.xib */,
-				F1DC43AD1C29196A00BE211B /* SettingView.xib */,
-				F111275F1C2A6516001FB131 /* SettingView2.xib */,
 				F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */,
 				F1EF0B371CA1267700E25771 /* GetisterViewController.storyboard */,
 				DB893F401CA17B610031D4A5 /* LoginViewController.storyboard */,
@@ -835,7 +829,6 @@
 				F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */,
 				DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */,
 				F17EB8A81C3CF19E00829E45 /* dialCell2.xib in Resources */,
-				F11127601C2A6516001FB131 /* SettingView2.xib in Resources */,
 				F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */,
 				DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */,
 				DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */,
@@ -843,7 +836,6 @@
 				F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */,
 				F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */,
 				F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */,
-				F1DC43AE1C29196A00BE211B /* SettingView.xib in Resources */,
 				F1E3D7F01C23B20100E63CDF /* MeCenterCell.xib in Resources */,
 				DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */,
 			);
@@ -1166,7 +1158,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1210,7 +1202,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Heartbeats/Main/Heartbeats-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

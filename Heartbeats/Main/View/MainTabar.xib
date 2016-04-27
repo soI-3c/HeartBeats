@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -21,8 +21,8 @@
                                 <constraint firstAttribute="height" constant="36" id="25d-fp-t88"/>
                                 <constraint firstAttribute="width" constant="36" id="8v1-ey-mnA"/>
                             </constraints>
-                            <state key="normal" backgroundImage="5"/>
-                            <state key="selected" backgroundImage="1select"/>
+                            <state key="normal" backgroundImage="m"/>
+                            <state key="selected" backgroundImage="mS"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="bsR-VJ-R8W"/>
                             </connections>
@@ -49,7 +49,7 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="580-Y4-pmv">
-                    <rect key="frame" x="66" y="0.0" width="123" height="49"/>
+                    <rect key="frame" x="66" y="0.0" width="123.5" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-e5-0Lp">
                             <rect key="frame" x="43" y="7" width="36" height="36"/>
@@ -57,7 +57,8 @@
                                 <constraint firstAttribute="width" constant="36" id="0bN-lz-D9F"/>
                                 <constraint firstAttribute="height" constant="36" id="Fcv-uR-BWZ"/>
                             </constraints>
-                            <state key="normal" backgroundImage="2"/>
+                            <state key="normal" backgroundImage="Safari"/>
+                            <state key="selected" backgroundImage="SafariS"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="mPv-Et-hk9"/>
                             </connections>
@@ -78,8 +79,8 @@
                                 <constraint firstAttribute="width" constant="36" id="2XX-lO-dSH"/>
                                 <constraint firstAttribute="height" constant="36" id="6an-ah-EDO"/>
                             </constraints>
-                            <state key="normal" backgroundImage="1"/>
-                            <state key="selected" backgroundImage="1select"/>
+                            <state key="normal" backgroundImage="home"/>
+                            <state key="selected" backgroundImage="homeS"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="KiU-Ps-ygs"/>
                             </connections>
@@ -106,15 +107,15 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVc-MR-Lxu">
-                    <rect key="frame" x="189" y="0.0" width="124" height="49"/>
+                    <rect key="frame" x="189" y="0.0" width="123" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjL-W3-ZH4">
-                            <rect key="frame" x="42" y="4" width="41" height="41"/>
+                            <rect key="frame" x="37" y="0.0" width="49" height="49"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="41" id="SaL-Nt-2ex"/>
+                                <constraint firstAttribute="width" constant="49" id="SaL-Nt-2ex"/>
                             </constraints>
-                            <state key="normal" backgroundImage="3"/>
-                            <state key="selected" backgroundImage="5select"/>
+                            <state key="normal" backgroundImage="dynamic"/>
+                            <state key="selected" backgroundImage="dynamicS"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="q5L-iP-p0o"/>
                             </connections>
@@ -127,19 +128,23 @@
                         <constraint firstAttribute="bottom" secondItem="BjL-W3-ZH4" secondAttribute="bottom" constant="4" id="L5j-kv-g0n"/>
                         <constraint firstAttribute="bottom" secondItem="BjL-W3-ZH4" secondAttribute="bottom" id="Ueh-eZ-pSA"/>
                         <constraint firstItem="BjL-W3-ZH4" firstAttribute="top" secondItem="gVc-MR-Lxu" secondAttribute="top" id="VbX-eq-kFZ"/>
+                        <constraint firstItem="BjL-W3-ZH4" firstAttribute="top" secondItem="gVc-MR-Lxu" secondAttribute="top" id="ZKk-kE-sBR"/>
                         <constraint firstItem="BjL-W3-ZH4" firstAttribute="top" secondItem="gVc-MR-Lxu" secondAttribute="top" constant="4" id="m51-N3-nms"/>
                         <constraint firstItem="BjL-W3-ZH4" firstAttribute="centerY" secondItem="gVc-MR-Lxu" secondAttribute="centerY" id="wNk-Tr-FOg"/>
+                        <constraint firstAttribute="bottom" secondItem="BjL-W3-ZH4" secondAttribute="bottom" id="zZy-uO-a6f"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="Au2-oy-J5z"/>
+                            <exclude reference="L5j-kv-g0n"/>
                             <exclude reference="Ueh-eZ-pSA"/>
                             <exclude reference="VbX-eq-kFZ"/>
+                            <exclude reference="m51-N3-nms"/>
                         </mask>
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdU-e2-4TA">
-                    <rect key="frame" x="313" y="0.0" width="123" height="49"/>
+                    <rect key="frame" x="312" y="0.0" width="123.5" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="227-Xi-38b">
                             <rect key="frame" x="43" y="7" width="36" height="36"/>
@@ -147,8 +152,8 @@
                                 <constraint firstAttribute="height" constant="36" id="K8g-JN-8ng"/>
                                 <constraint firstAttribute="width" constant="36" id="cgG-k5-wUD"/>
                             </constraints>
-                            <state key="normal" backgroundImage="4"/>
-                            <state key="selected" backgroundImage="4"/>
+                            <state key="normal" backgroundImage="message"/>
+                            <state key="selected" backgroundImage="messageS"/>
                             <connections>
                                 <action selector="selextControIndex:" destination="6z3-0f-CZc" eventType="touchUpInside" id="oL9-Bo-Bys"/>
                             </connections>
@@ -187,16 +192,19 @@
                 <constraint firstAttribute="bottom" secondItem="580-Y4-pmv" secondAttribute="bottom" id="yZV-zM-UPL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="566" y="225.5"/>
+            <point key="canvasLocation" x="204" y="208.5"/>
         </view>
     </objects>
     <resources>
-        <image name="1" width="42" height="42"/>
-        <image name="1select" width="170" height="170"/>
-        <image name="2" width="42" height="42"/>
-        <image name="3" width="42" height="42"/>
-        <image name="4" width="42" height="42"/>
-        <image name="5" width="42" height="42"/>
-        <image name="5select" width="170" height="170"/>
+        <image name="Safari" width="64" height="64"/>
+        <image name="SafariS" width="64" height="64"/>
+        <image name="dynamic" width="64" height="64"/>
+        <image name="dynamicS" width="64" height="64"/>
+        <image name="home" width="64" height="64"/>
+        <image name="homeS" width="65" height="64"/>
+        <image name="m" width="64" height="64"/>
+        <image name="mS" width="64" height="64"/>
+        <image name="message" width="64" height="64"/>
+        <image name="messageS" width="64" height="64"/>
     </resources>
 </document>
