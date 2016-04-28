@@ -56,9 +56,16 @@ class MainNavigationController: UINavigationController, UINavigationControllerDe
     override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
        return super.popViewControllerAnimated(true)
     }
+    
+//    MARK : -- delegate
     // UINavigationControllerDelegate
     func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
 //        只有当真正要显示是否是根据控制器时,才决定是否要显示tabbar, 只要不是根据控制器都隐藏tabbar
+//        MainTabar.currentMainTabar().hidden = viewControllers.count > 1 ? true : false
+    }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        //        只有当真正要显示是否是根据控制器时,才决定是否要显示tabbar, 只要不是根据控制器都隐藏tabbar
         MainTabar.currentMainTabar().hidden = viewControllers.count > 1 ? true : false
     }
     func doBack() {

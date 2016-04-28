@@ -8,16 +8,10 @@
 
 import UIKit
 let HBHomeCellID = "HBHomeCellID"
-
+/* 首页 */
 class HomeController: UICollectionViewController {
-    // 实现 init() 构造函数，方便外部的代码调用，不需要额外指定布局属性
-    init() {
-        // 调用父类的默认构造函数
-        super.init(collectionViewLayout: DWFlowLayout())
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+//    MARK: -- getter/ setter
     // 数据源
     var users: [HeartUser]? {
         didSet {
@@ -25,6 +19,12 @@ class HomeController: UICollectionViewController {
         }
     }
     var isPresented: Bool = false               //  判断是presented 还是diss
+
+    let backImageView: UIImageView = {          // 背景图, 毛玻璃
+        let imgView = UIImageView()
+        imgView.image = placeholderImage
+        return imgView
+    }()
     
     /// 动画播放的图像视图
     lazy var imageView: HMProgressImageView = {
@@ -33,8 +33,12 @@ class HomeController: UICollectionViewController {
         iv.clipsToBounds = true
         return iv
     }()
+    
+//    MARK: -- override
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.backgroundView = backImageView
+        Tools.insertBlurView(backImageView, style: .Dark)
         collectionView!.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 82)
         // 注册可重用 cell
         collectionView?.registerClass(PublicDynamicCell.self, forCellWithReuseIdentifier: HBHomeCellID)
@@ -43,6 +47,18 @@ class HomeController: UICollectionViewController {
         MainTabar.currentMainTabar().hidden = false                                                // 隐藏自定义的tabbar
         prepareLayout()
     }
+    
+    // 实现 init() 构造函数，方便外部的代码调用，不需要额外指定布局属性
+    init() {
+        // 调用父类的默认构造函数
+        super.init(collectionViewLayout: DWFlowLayout())
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+//    MARK: -- private func
     func loadData() {
         NetworkTools.loadUsers { (result, error) -> () in
             if error == nil {
@@ -56,10 +72,12 @@ class HomeController: UICollectionViewController {
     private func prepareLayout() {
         // 获得当前的布局属性
         let layout = collectionView?.collectionViewLayout as! DWFlowLayout
-        layout.itemSize = CGSize(width: self.view.frame.width * 0.78, height: self.view.frame.height * 0.67)
+        layout.itemSize = CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.7)
           collectionView?.showsHorizontalScrollIndicator = false
     }
-    // MARK: UICollectionViewDataSource
+    
+    
+    // MARK: -- DataSource
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users?.count ?? 0
     }
@@ -87,22 +105,21 @@ class HomeController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
            let meCenterControl =  MeCenterController()
              meCenterControl.user = users![indexPath.item]
-//        meCenterControl.tabBarController?.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(meCenterControl, animated: true)
     }
 }
 
+
+
 // MARK: -- PublicDynamicCellDelegate
 extension HomeController: PublicDynamicCellDelegate {
     func publicDynamicCell(cell: PublicDynamicCell, converse user: HeartUser) {
-       print("converse: --- ")
     }
     func publicDynamicCell(cell: PublicDynamicCell, giveHeart user: HeartUser) {
-       print("giveHeart: --- ")
     }
 }
 
-
+// MARK: -- 转场动画
 extension HomeController: UIViewControllerTransitioningDelegate {
     /// 返回提供展现 present 转场动画的对象
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

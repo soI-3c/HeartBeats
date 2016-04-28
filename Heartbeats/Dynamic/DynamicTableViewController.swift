@@ -39,20 +39,26 @@ class DynamicTableViewController: UITableViewController {
 //    MARK:-- Override
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+        
         view.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.translucent = true
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.registerClass(ImageDynamicTableCell.self, forCellReuseIdentifier: DynamicCellID.imageCellID.rawValue)
         tableView.registerClass(ContentDynaicTableCell.self, forCellReuseIdentifier: DynamicCellID.contentCellID.rawValue)
         
+        
         // 提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
         tableView.estimatedRowHeight = 500
         tableView.rowHeight = UITableViewAutomaticDimension
         
+//        将backgroundView的高提高 20, 设置,毛玻璃
         tableView.backgroundView = backImageView
+        tableView.backgroundView?.frame = CGRectMake(0, 0, screenMaimWidth, (tableView.backgroundView?.frame.height)! + 20)
+        view.setNeedsLayout()
         Tools.insertBlurView(backImageView, style: .Light)
-        loadData()
     }
+    
     
     
 
@@ -82,14 +88,8 @@ class DynamicTableViewController: UITableViewController {
         NetworkTools.loadDynamics { (result, error) -> () in
             if error == nil {
                 self.dynamics = result as? [Dynamic]
-            }else {
-                print(error)
             }
         }
-    }
-    
-    func setUpUI() {
-        
     }
 //    MARK: -- getter / setter
     var en: DynamicCellID = DynamicCellID.imageCellID       // cell ID
@@ -106,7 +106,7 @@ class DynamicTableViewController: UITableViewController {
     
     var backImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "u3")
+        imgView.image = UIImage(named: "u5")
         return imgView
     }()                       // 动态背景图片, 毛玻离
 }

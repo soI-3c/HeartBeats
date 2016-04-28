@@ -157,7 +157,7 @@ class Tools: NSObject {
     }
 //    毛玻离
     class func insertBlurView (view: UIView, style: UIBlurEffectStyle) {      // 毛玻璃功能
-        if  view.subviews.count > 1 {
+        if  view.subviews.count >= 1 {
             return
         }
         view.backgroundColor = UIColor.clearColor()

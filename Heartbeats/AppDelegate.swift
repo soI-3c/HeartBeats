@@ -52,8 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func loadLoginRegisterControl() -> UIViewController {
-        let loginRegisterControllerSB =  UIStoryboard(name: "LoginRegisterMainViewController", bundle: nil)
-        return loginRegisterControllerSB.instantiateInitialViewController() as! LoginRegisterMainViewController
+        return  LoginRegisterMainViewController()
     }
     
     /// 设置外观

@@ -47,7 +47,6 @@
 		DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9518321C37EEE10056EB44 /* Dynamic.swift */; };
 		DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D001C414716007A516E /* PictureSelectorViewController.swift */; };
 		DBA28D051C414778007A516E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D041C414778007A516E /* UIImage+Extension.swift */; };
-		DBACE2D41C141FB7002A494A /* LoginRegisterMainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBACE2D31C141FB7002A494A /* LoginRegisterMainViewController.storyboard */; };
 		DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */; };
 		DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */; };
 		DBCC94721CC79FDD00A08669 /* CellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94711CC79FDD00A08669 /* CellTopView.swift */; };
@@ -199,7 +198,6 @@
 		DB9518321C37EEE10056EB44 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		DBA28D001C414716007A516E /* PictureSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureSelectorViewController.swift; sourceTree = "<group>"; };
 		DBA28D041C414778007A516E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		DBACE2D31C141FB7002A494A /* LoginRegisterMainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginRegisterMainViewController.storyboard; sourceTree = "<group>"; };
 		DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBUIViewEX.h"; sourceTree = "<group>"; };
 		DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBUIViewEX.m"; sourceTree = "<group>"; };
 		DBCC94711CC79FDD00A08669 /* CellTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTopView.swift; sourceTree = "<group>"; };
@@ -423,7 +421,6 @@
 				F1E96BB71C2159EF0046EFD2 /* LoginRegisterMainViewController.swift */,
 				F1EF0B351CA1263A00E25771 /* GetisterViewController.swift */,
 				DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */,
-				DBACE2D31C141FB7002A494A /* LoginRegisterMainViewController.storyboard */,
 				F1716D471C0859D000F7AB97 /* Heartbeats-Bridging-Header.h */,
 			);
 			path = Main;
@@ -826,7 +823,6 @@
 				F1E6CBDE1C2D0F8500353300 /* ShopSettingView.xib in Resources */,
 				F1EC2A8C1C9A85C90038A0CB /* MainTabar.xib in Resources */,
 				F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */,
-				DBACE2D41C141FB7002A494A /* LoginRegisterMainViewController.storyboard in Resources */,
 				DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */,
 				F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */,
 				F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */,

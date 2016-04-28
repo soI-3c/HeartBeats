@@ -54,10 +54,10 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
         // 短图
         if size.height < imgScrollView.bounds.height {
             let y = (imgScrollView.bounds.height - size.height) * 0.5
+            
             // 设置边距的最大好处，缩放之后，能够自动调整 contentSize，能够保证滚动看到边界
             imgScrollView.contentInset = UIEdgeInsets(top: y, left: 0, bottom: 0, right: 0)
         } else {    // 长图
-            
             imgScrollView.contentSize = size
         }
     }
