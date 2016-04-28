@@ -22,7 +22,7 @@ class ShowDynamicPhotoController: UIViewController, UICollectionViewDataSource, 
             if dynamic != nil {
                 self.title = "2015/ 04/ 15"
                 contentLabel.text = dynamic?.content
-                dynamicPhotos = Dynamic.photoUrls(dynamic!)
+//                dynamicPhotos = Dynamic.photoUrls(dynamic!)
             }
         }
     }

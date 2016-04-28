@@ -31,6 +31,7 @@ class MainDynamicTableCell: UITableViewCell {
         contentView.addSubview(backImageView)
         contentView.addSubview(topView)
         contentView.addSubview(bottomView)
+        contentView.addSubview(content)
         
         topView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self)
@@ -48,20 +49,16 @@ class MainDynamicTableCell: UITableViewCell {
     func rowHeigth(dynamic: Dynamic) -> CGFloat {
         return 0.0
     }
-    func insertBlurView (view: UIView, style: UIBlurEffectStyle) {      // 毛玻璃功能
-        if  view.subviews.count > 1 {
-            return
-        }
-        view.backgroundColor = UIColor.clearColor()
-        let blurEffect = UIBlurEffect(style: style)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        view.addSubview(blurEffectView)
-    }
-
 //    MARK: -- setter/ getter
     var topView: CellTopView = CellTopView.loadNibSelf()
     var bottomView : CellBottomView = CellBottomView.loadNibSelf()
+    
+    var content: UILabel = {
+        let lab = UILabel()
+        lab.textColor = UIColor.whiteColor()
+        lab.numberOfLines = 0
+        return lab
+    }()
     
     var backImageView : UIImageView = {                                 // 毛玻璃
         let imgView = UIImageView()
@@ -71,9 +68,8 @@ class MainDynamicTableCell: UITableViewCell {
     
     var dynamic: Dynamic? {
         didSet{
-            let urls = Dynamic.photoUrls(dynamic!)
-            if urls?.count > 0 {
-                backImageView.sd_setImageWithURL(NSURL(string: urls![0]), placeholderImage: placeholderImage)
+            if let url = dynamic?.photos?.url {
+                backImageView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
             }
             topView.dynamic = dynamic
             bottomView.dynamic = dynamic

@@ -264,7 +264,6 @@ class HBHomeCollectionView: UICollectionView {
 //     MARK: -- 初始化
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         // 设置布局的间距
         self.delegate = self             // 让自己成为自己的代理
         self.dataSource = self

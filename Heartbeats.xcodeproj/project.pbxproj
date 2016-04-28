@@ -94,6 +94,7 @@
 		F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */; };
 		F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8D34D1C28E75D00B0B847 /* SettingView.swift */; };
 		F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */; };
+		F1D936A31CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */; };
 		F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */; };
 		F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC43B11C2948CA00BE211B /* PersonalityView.swift */; };
 		F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */; };
@@ -248,6 +249,7 @@
 		F19DD7251C23DB9000658A93 /* Publice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publice.h; sourceTree = "<group>"; };
 		F1B8D34D1C28E75D00B0B847 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPhotoLibListView.swift; sourceTree = "<group>"; };
+		F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraisesCollectionView.swift; sourceTree = "<group>"; };
 		F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalityView.xib; sourceTree = "<group>"; };
 		F1DC43B11C2948CA00BE211B /* PersonalityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
 		F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameWithPhoneSetView.xib; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */,
 				DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */,
 				F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */,
+				F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */,
 				DBCC94711CC79FDD00A08669 /* CellTopView.swift */,
 				DBCC94731CC7A13100A08669 /* CellBottomView.swift */,
 				DB8936771CC673EE00C2FED9 /* CellTopView.xib */,
@@ -975,6 +978,7 @@
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
 				F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */,
+				F1D936A31CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift in Sources */,
 				F1ED56321C30FB58005F74DB /* SettingController.swift in Sources */,
 				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
@@ -1122,6 +1126,7 @@
 			baseConfigurationReference = D5818DCC978510989447CB16 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1167,6 +1172,7 @@
 			baseConfigurationReference = 78DD3F0288D0775237852CDF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

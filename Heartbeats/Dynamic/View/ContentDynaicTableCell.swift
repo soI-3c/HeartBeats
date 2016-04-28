@@ -14,7 +14,6 @@ class ContentDynaicTableCell: MainDynamicTableCell {
     override func setUpUI() {
         super.setUpUI()
         contentView.addSubview(backView)
-        contentView.addSubview(content)
         
         backView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(topView.snp_bottom)
@@ -22,8 +21,9 @@ class ContentDynaicTableCell: MainDynamicTableCell {
             make.height.equalTo(screenMaimWidth)
         }
         content.snp_makeConstraints { (make) -> Void in
-            make.center.equalTo(backView.center)
-            make.width.equalTo(screenMaimWidth - 16)
+            make.left.equalTo(self).offset(16)
+            make.right.equalTo(self).offset(-16)
+            make.centerY.equalTo(backView.center.y)
         }
     }
     
@@ -38,17 +38,10 @@ class ContentDynaicTableCell: MainDynamicTableCell {
         didSet {
             content.text = dynamic?.content
             backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
-            insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
+            Tools.insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
         }
     }
     
     var backView: UIView = UIView()
-    var content: UILabel = {
-        let lab = UILabel()
-        lab.textColor = UIColor.whiteColor()
-        lab.numberOfLines = 0
-        return lab
-    }()
-
 }
 

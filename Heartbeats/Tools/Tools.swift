@@ -155,4 +155,16 @@ class Tools: NSObject {
         SVProgressHUD.setForegroundColor(UIColor.whiteColor())
         SVProgressHUD.showInfoWithStatus(message);
     }
+//    毛玻离
+    class func insertBlurView (view: UIView, style: UIBlurEffectStyle) {      // 毛玻璃功能
+        if  view.subviews.count > 1 {
+            return
+        }
+        view.backgroundColor = UIColor.clearColor()
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        view.addSubview(blurEffectView)
+    }
+
 }

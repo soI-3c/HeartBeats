@@ -22,8 +22,8 @@ class MeCenterCell: UITableViewCell {
             if dynamic != nil {
                 contentLabel.text = dynamic?.content
                 let urls = Dynamic.photoUrls(dynamic!)
-                photosCollectionView.photosUrls = urls
-                dateSoureUrls = urls
+//                photosCollectionView.photosUrls = urls
+//                dateSoureUrls = urls
                 photosCollectionView.reloadData()
             }
         }

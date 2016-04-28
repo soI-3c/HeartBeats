@@ -13,7 +13,7 @@ let HBDynamicPhotos = "photos"
 let HBDynamicContent = "content"
 class Dynamic: AVObject, AVSubclassing {
     @NSManaged var user: HeartUser?                 //  动态所属的user
-    @NSManaged var photos: [AnyObject]?             //  图片
+    @NSManaged var photos: HBAVFile?                //  图片
     @NSManaged var content: String?                 //  内容
     var cellHeight: CGFloat = 0                     //  缓存行高
     
@@ -23,16 +23,11 @@ class Dynamic: AVObject, AVSubclassing {
 }
 
 extension Dynamic {
-    class func photoUrls(dynamic: Dynamic) -> [String]? {
-        var urls = [String]()
-        if dynamic.photos?.count > 0 {
-            for fileDate in dynamic.photos! {
-                if let file = fileDate as? AVFile {
-                   urls.append(file.url)
-                }
-            }
+    class func photoUrls(dynamic: Dynamic) -> String? {
+        if let photo = dynamic.photos {
+            return photo.url
         }
-        return urls
+        return nil
     }
 }
 
