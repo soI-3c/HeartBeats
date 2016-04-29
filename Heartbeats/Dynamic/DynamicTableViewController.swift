@@ -52,7 +52,7 @@ class DynamicTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 500
         tableView.rowHeight = UITableViewAutomaticDimension
         
-//        将backgroundView的高提高 20, 设置,毛玻璃
+//        将backgroundView的高提高® 20, 设置,毛玻璃
         tableView.backgroundView = backImageView
         tableView.backgroundView?.frame = CGRectMake(0, 0, screenMaimWidth, (tableView.backgroundView?.frame.height)! + 20)
         view.setNeedsLayout()
