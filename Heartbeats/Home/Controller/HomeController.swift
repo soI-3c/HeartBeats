@@ -39,12 +39,11 @@ class HomeController: UICollectionViewController {
         super.viewDidLoad()
         collectionView?.backgroundView = backImageView
         Tools.insertBlurView(backImageView, style: .Dark)
-        collectionView!.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 82)
+
         // 注册可重用 cell
         collectionView?.registerClass(PublicDynamicCell.self, forCellWithReuseIdentifier: HBHomeCellID)
-        loadData()
         navigationController?.navigationBar.hidden = true
-        MainTabar.currentMainTabar().hidden = false                                                // 隐藏自定义的tabbar
+        loadData()
         prepareLayout()
     }
     

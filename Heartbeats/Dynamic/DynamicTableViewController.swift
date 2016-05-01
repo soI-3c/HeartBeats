@@ -58,10 +58,6 @@ class DynamicTableViewController: UITableViewController {
         view.setNeedsLayout()
         Tools.insertBlurView(backImageView, style: .Light)
     }
-    
-    
-    
-
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        if scrollView.isEqual(tableView) {
 //            newY = scrollView.contentOffset.y

@@ -42,7 +42,7 @@ class SystemPhotoLibListView: UITableView, UITableViewDataSource, UITableViewDel
     lazy var photoLib: ALAssetsLibrary = ALAssetsLibrary()              // 系统资源
     lazy var assetGroups: [ALAssetsGroup] = [ALAssetsGroup]()           // 所在相册
     lazy var assets: NSMutableArray = NSMutableArray()                  // 指定相册中的Asset
-     var selectPhotoGroup: ((NSMutableArray, String) -> Void)?          // 选择指定相册
+    var selectPhotoGroup: ((NSMutableArray, String) -> Void)?          // 选择指定相册
 }
 
 extension SystemPhotoLibListView {
