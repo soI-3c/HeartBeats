@@ -15,6 +15,7 @@ class Dynamic: AVObject, AVSubclassing {
     @NSManaged var user: HeartUser?                 //  动态所属的user
     @NSManaged var photos: HBAVFile?                //  图片
     @NSManaged var content: String?                 //  内容
+    @NSManaged var feeling: String?                 //  当前心情(对应图片的名字)
     var cellHeight: CGFloat = 0                     //  缓存行高
     
    static func parseClassName() -> String? {

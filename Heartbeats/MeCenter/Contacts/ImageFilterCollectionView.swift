@@ -36,7 +36,7 @@ class ImageFilterCollectionView: UICollectionView {
     // 各种滤镜
     private let filterNames = ["CIPhotoEffectInstant", "CIPhotoEffectNoir", "CIPhotoEffectTonal", "CIPhotoEffectTransfer", "CIPhotoEffectMono", "CIPhotoEffectFade", "CIPhotoEffectProcess", "CIPhotoEffectChrome"]
     
-    var selectImageFilter: (String -> Void)?          // 选择指定filter
+    var selectImageFilter: (String -> Void)?                // 选择指定filter
 }
 
 extension ImageFilterCollectionView: UICollectionViewDataSource {

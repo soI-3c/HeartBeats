@@ -17,6 +17,7 @@
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
 		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
+		DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4353111CD79DFB0081347E /* FeelingView.swift */; settings = {ASSET_TAGS = (); }; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
@@ -177,6 +178,7 @@
 		DB1AF6451BF771090059A41B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreAttributeSetView.swift; sourceTree = "<group>"; };
 		DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoShowView.swift; sourceTree = "<group>"; };
+		DB4353111CD79DFB0081347E /* FeelingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 			children = (
 				F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */,
 				DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */,
+				DB4353111CD79DFB0081347E /* FeelingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
+				DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */,
 				DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */,
 				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
 				DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */,

@@ -18,10 +18,11 @@ class DynamicEditInfoController: UIViewController {
     }
     
     private func setUpUI() {
-        view.addSubview(imageView)
-        view.addSubview(backImageView)
-        view.addSubview(imageFilterCollectionView)
-        view.addSubview(publicBtn)
+        view.addSubview(imageView)                      // 图片
+        view.addSubview(backImageView)                  // 背景的毛玻璃图片
+        view.addSubview(imageFilterCollectionView)      // 滤镜图片
+        view.addSubview(publicBtn)                      // 发布
+        view.addSubview(feelView)                       // 表情
         
         imageView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self.view)
@@ -35,11 +36,17 @@ class DynamicEditInfoController: UIViewController {
             make.left.right.equalTo(backImageView)
             make.height.equalTo(92)
         }
+        feelView.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(imageFilterCollectionView.snp_bottom).offset(16)
+            make.left.right.equalTo(imageFilterCollectionView).offset(CGPoint(x: 8, y: 0))
+            make.height.equalTo(40)
+        }
         publicBtn.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(view).offset(-8)
             make.bottom.equalTo(view).offset(-8)
             make.height.width.equalTo(60)
         }
+        
 //
         Tools.insertBlurView(backImageView, style: .ExtraLight)
     }
@@ -69,11 +76,15 @@ class DynamicEditInfoController: UIViewController {
     
     lazy var imageFilterCollectionView: ImageFilterCollectionView = {
         let imageFilterV = ImageFilterCollectionView()
-        imageFilterV.selectImageFilter = {(name) -> Void in
-            self.imageView.image = Tools().imgFilterEffect(self.image!, filterName: name)
+        imageFilterV.selectImageFilter = {(name) -> Void in         // 对图片进行滤镜
+            if name != self.imageFilterLastName {
+                self.imageView.image = Tools().imgFilterEffect(self.image!, filterName: name)
+                self.imageFilterLastName = name
+            }
         }
         return imageFilterV
     }()
+    var imageFilterLastName: String?           // 最后一次的滤镜名称, 如果重复的则不重复设置了(性能)
     
     lazy var publicBtn: UIButton = {           // 发布Btn
         let btn = UIButton()
@@ -83,4 +94,5 @@ class DynamicEditInfoController: UIViewController {
         btn.addTarget(self, action: "publicDynamic", forControlEvents: .TouchUpInside)
         return btn
     }()
+     var feelView = FeelingView()             // 表情View
 }
