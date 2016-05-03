@@ -68,8 +68,6 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
             offsetX = (offsetX < 0) ? 0 : offsetX
             // 设置边距的最大好处，缩放之后，能够自动调整 contentSize，能够保证滚动看到边界
             imgScrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: offsetY, right: offsetX)
-            print(imgScrollView.contentSize)
-
         } else {
             // 长图
             imgScrollView.contentSize = size
@@ -97,7 +95,10 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
     }
     
     func cuttOffImage() {
-      img = img!.getSubImage(CGRectMake(0, 0, 100, 100))
+     // img = img!.getSubImage(CGRectMake(0, 0, 100, 100))
+      let editInfoController = DynamicEditInfoController()
+      editInfoController.image = img
+      navigationController?.pushViewController(editInfoController, animated: true)
     }
 
 //    MARK: -- getter / setter

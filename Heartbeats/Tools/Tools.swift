@@ -166,5 +166,17 @@ class Tools: NSObject {
         blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
     }
-
+    
+    //    滤镜
+    func imgFilterEffect(image: UIImage, filterName: String) -> UIImage {
+        let inputImage = CIImage(image: image)
+        let filter = CIFilter(name: filterName)
+        filter?.setDefaults()
+        filter?.setValue(inputImage , forKey: kCIInputImageKey)
+        let context = CIContext(options: nil)
+        let outputImage = filter?.outputImage
+        let cgImage =  context.createCGImage(outputImage!, fromRect: (outputImage?.extent)!)
+        let newImage = UIImage(CGImage: cgImage)
+        return newImage
+    }
 }

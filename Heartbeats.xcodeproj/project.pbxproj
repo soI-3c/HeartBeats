@@ -17,6 +17,7 @@
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
 		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
+		DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4353111CD79DFB0081347E /* FeelingView.swift */; settings = {ASSET_TAGS = (); }; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
@@ -54,6 +55,9 @@
 		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
 		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
+		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */; };
+		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
 		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
 		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
@@ -174,6 +178,7 @@
 		DB1AF6451BF771090059A41B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreAttributeSetView.swift; sourceTree = "<group>"; };
 		DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoShowView.swift; sourceTree = "<group>"; };
+		DB4353111CD79DFB0081347E /* FeelingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
@@ -205,6 +210,9 @@
 		DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDynamicTableCell.swift; sourceTree = "<group>"; };
 		DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDynamicTableCell.swift; sourceTree = "<group>"; };
+		DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicEditInfoController.swift; sourceTree = "<group>"; };
+		DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterCollectionView.swift; sourceTree = "<group>"; };
 		F111275D1C2A5142001FB131 /* SettingView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView2.swift; sourceTree = "<group>"; };
 		F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F1716D081C06EA2400F7AB97 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -297,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */,
 				F1716D351C08388A00F7AB97 /* libicucore.tbd in Frameworks */,
 				F1FC0A061C18079800459E6F /* CoreLocation.framework in Frameworks */,
 				F1FC0A041C18079000459E6F /* CoreTelephony.framework in Frameworks */,
@@ -343,6 +352,7 @@
 		534CB68C49B0241C40312791 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */,
 				F1FC0A051C18079800459E6F /* CoreLocation.framework */,
 				F1FC0A031C18079000459E6F /* CoreTelephony.framework */,
 				F1FC0A011C18078600459E6F /* MobileCoreServices.framework */,
@@ -469,9 +479,9 @@
 				DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */,
 				DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */,
 				F17C2BED1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift */,
-				F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */,
 				DBCC94711CC79FDD00A08669 /* CellTopView.swift */,
 				DBCC94731CC7A13100A08669 /* CellBottomView.swift */,
+				F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */,
 				DB8936771CC673EE00C2FED9 /* CellTopView.xib */,
 				DB8936791CC6764C00C2FED9 /* CellBottomView.xib */,
 			);
@@ -584,6 +594,7 @@
 			children = (
 				F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */,
 				F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */,
+				DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */,
 				F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */,
 				DBA28D001C414716007A516E /* PictureSelectorViewController.swift */,
 				F17EB8C91C3D09CB00829E45 /* View */,
@@ -596,6 +607,8 @@
 			isa = PBXGroup;
 			children = (
 				F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */,
+				DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */,
+				DB4353111CD79DFB0081347E /* FeelingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -951,6 +964,7 @@
 				DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */,
 				DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */,
 				F17EB8BB1C3CF1CA00829E45 /* HomeController.swift in Sources */,
+				DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */,
 				F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */,
 				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
 				DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */,
@@ -979,6 +993,7 @@
 				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
+				DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */,
 				DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */,
 				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
 				DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */,
@@ -988,6 +1003,7 @@
 				F1E96BB61C2159CB0046EFD2 /* HeartUser.swift in Sources */,
 				DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */,
 				F1716D1A1C06EA2400F7AB97 /* ConstraintItem.swift in Sources */,
+				DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
