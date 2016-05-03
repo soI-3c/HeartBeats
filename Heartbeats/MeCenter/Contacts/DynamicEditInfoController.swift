@@ -78,12 +78,17 @@ class DynamicEditInfoController: UIViewController {
 //
         Tools.insertBlurView(backImageView, style: .Light)
     }
+    
+    // 发表
     func publicDynamic() {
-        
+        let dynamicImage = HBAVFile(name: "dynamicImage", data: UIImageJPEGRepresentation(image!, 0.8))
+        dynamic.photos = dynamicImage
     }
     
     
 //    MARK: -- setter / getter
+    var dynamic = Dynamic()                               // 要发布的动态对象
+    
     var image: UIImage? {
         didSet {
             imageView.image = image
@@ -114,7 +119,7 @@ class DynamicEditInfoController: UIViewController {
     
     lazy var addressBtn: UILabel = UILabel(title: " 位置 ", fontSize: 16, textColor: UIColor(white: 1.0, alpha: 1.0), backColor: UIColor.blackColor(), cornerRadius: 5)
 
-    var imageFilterLastName: String?           // 最后一次的滤镜名称, 如果重复的则不重复设置了(性能)
+    var imageFilterLastName: String?          // 最后一次的滤镜名称, 如果重复的则不重复设置了(性能)
     lazy var imageFilterCollectionView: ImageFilterCollectionView = {
         let imageFilterV = ImageFilterCollectionView()
         imageFilterV.selectImageFilter = {(name) -> Void in         // 对图片进行滤镜
@@ -129,7 +134,7 @@ class DynamicEditInfoController: UIViewController {
     lazy var writeContentTextControl: DynamicWriteContentTextController = {
         let writeContentTControl = DynamicWriteContentTextController()
         writeContentTControl.contentT = {(contentText) -> Void in
-            
+            self.dynamic.content = contentText                  // 发表的文字
         }
         return writeContentTControl
     }()
