@@ -76,7 +76,6 @@ class HomeController: UICollectionViewController {
           collectionView?.showsHorizontalScrollIndicator = false
     }
     
-    
     // MARK: -- DataSource
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users?.count ?? 0
