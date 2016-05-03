@@ -15,7 +15,7 @@ class MainTabBarController: UITabBarController {
         mainTabarView.selectControllerIndex = {(result) -> () in
             if result == 2 {
                   let viewController = DefaultPublicDynamicController()
-                  self.presentViewController(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
+                  self.presentViewController(MainNavigationController(rootViewController: viewController), animated: true, completion: nil)
                 return
             }
             self.selectedIndex = result

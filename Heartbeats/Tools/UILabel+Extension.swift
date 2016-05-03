@@ -29,4 +29,19 @@ extension UILabel {
         //imgV.clipsToBounds = true
         layer.masksToBounds = true
     }
+    
+    /// - returns: UILabel
+    convenience init(title: String?, fontSize: CGFloat, textColor: UIColor, backColor: UIColor,  cornerRadius: CGFloat) {
+        self.init()
+        // 设置对象属性
+        text = title
+        font = UIFont(name: "Helvetica-Bold", size: fontSize)
+        self.textColor = textColor
+        backgroundColor = backgroundColor
+        layer.cornerRadius = cornerRadius
+        //设置遮盖额外部分,下面两句的意义及实现是相同的
+        //imgV.clipsToBounds = true
+        layer.masksToBounds = true
+    }
+
 }

@@ -14,7 +14,7 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
 //    MARK : -- override
     override func viewDidLoad() {
         super.viewDidLoad()
-        automaticallyAdjustsScrollViewInsets = false
+//        automaticallyAdjustsScrollViewInsets = true
         setUpUI()
     }
     
@@ -95,7 +95,24 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
     }
     
     func cuttOffImage() {
-     // img = img!.getSubImage(CGRectMake(0, 0, 100, 100))
+        // 调整 Y 值
+      let jY = (screenMaimheiht - 64 - screenMaimWidth) * 0.5
+      let offsetY = imgView.frame.origin.y - (screenMaimheiht - 64 - screenMaimWidth)
+
+      let iY = offsetY < 0 ? jY : offsetY
+      print(offsetY, iY)
+      let y = ((jY - iY) / imgScrollView.contentSize.height) * (img?.size.height)!
+        // x
+      let jX: CGFloat = 0
+      let iX = (imgScrollView.contentSize.width - imgView.frame.width) * 0.5
+      let iW = imgView.frame.width
+      let x = (((jX - iX) / iW) * (img?.size.width)!)
+        
+        // w, h
+      let w = (img?.size.width)! / imgScrollView.contentSize.width * screenMaimWidth
+      let h = (img?.size.height)! / imgScrollView.contentSize.height * screenMaimWidth
+    
+      img = img!.getSubImage(CGRectMake(x, y, w, h))
       let editInfoController = DynamicEditInfoController()
       editInfoController.image = img
       navigationController?.pushViewController(editInfoController, animated: true)

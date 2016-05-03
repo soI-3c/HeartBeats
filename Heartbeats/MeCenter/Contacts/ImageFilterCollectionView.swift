@@ -83,7 +83,7 @@ class ImageFilterCollectionCell: UICollectionViewCell {
     
     let imgView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = placeholderImage
+        imageView.image = UIImage(named: "filterImage")
         return imageView
     }()
     let title: UILabel = {
@@ -93,11 +93,10 @@ class ImageFilterCollectionCell: UICollectionViewCell {
         lab.font = UIFont(name: "", size: 13)
         return lab
     }()
-    
     var filterName: String? {
         didSet {
            title.text = filterName
-           imgView.image = Tools().imgFilterEffect(placeholderImage!, filterName: filterName!)
+           imgView.image = Tools().imgFilterEffect(UIImage(named: "filterImage")!, filterName: filterName!)
         }
     }
 }

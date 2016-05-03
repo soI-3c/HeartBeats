@@ -8,7 +8,7 @@
 
 import UIKit
 
-/* 表情View */
+/* 心情View */
 class FeelingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +37,7 @@ class FeelingView: UIView {
         }
     }
     
-    func butIsSelect(sender: UIButton) {
+    func butIsSelect(sender: UIButton) {                // 选择心情
         for subV in subviews  {
           let v = subV as? UIButton
             v?.selected = false
@@ -45,6 +45,6 @@ class FeelingView: UIView {
         sender.selected = !sender.selected
         selectFeel?(imgNames[sender.tag])               // 回调选择的心情
     }
-    var imgNames = ["c", "j", "k", "ku", "u"]           // 表情图片名字组
+    var imgNames = ["c", "j", "k", "ku", "u"]           // 心情图片名字组
     var selectFeel: (String -> Void)?                   // 选择心情
 }

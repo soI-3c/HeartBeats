@@ -17,7 +17,7 @@
 		DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6451BF771090059A41B /* MainTabBarController.swift */; };
 		DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */; };
 		DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D106F1CBE843B005DBDA3 /* UserInfoShowView.swift */; };
-		DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4353111CD79DFB0081347E /* FeelingView.swift */; settings = {ASSET_TAGS = (); }; };
+		DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4353111CD79DFB0081347E /* FeelingView.swift */; };
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
@@ -55,9 +55,9 @@
 		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
 		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
-		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; };
 		DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */; };
-		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
+		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; };
 		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
 		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
@@ -128,6 +128,7 @@
 		F1EF9A571C3E002500F3F696 /* HBHomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */; };
 		F1EF9A591C3E566600F3F696 /* OneSelfPhotoLibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */; };
 		F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */; };
+		F1F2F3711CD8A2E200E30083 /* DynamicWriteContentTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */; };
 		F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */; };
 		F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */; };
 		F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */; };
@@ -286,6 +287,7 @@
 		F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HBHomeCollectionCell.xib; path = ../../MeCenter/Contacts/HBHomeCollectionCell.xib; sourceTree = "<group>"; };
 		F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneSelfPhotoLibView.xib; sourceTree = "<group>"; };
 		F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraiseEvaluation.swift; sourceTree = "<group>"; };
+		F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicWriteContentTextController.swift; sourceTree = "<group>"; };
 		F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDynamicPhotoController.swift; sourceTree = "<group>"; };
 		F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDynamicPhotoController.xib; path = ../Controller/ShowDynamicPhotoController.xib; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */,
 				F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */,
 				DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */,
+				F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */,
 				F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */,
 				DBA28D001C414716007A516E /* PictureSelectorViewController.swift */,
 				F17EB8C91C3D09CB00829E45 /* View */,
@@ -961,6 +964,7 @@
 				F1E96BB81C2159EF0046EFD2 /* LoginRegisterMainViewController.swift in Sources */,
 				DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */,
 				F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */,
+				F1F2F3711CD8A2E200E30083 /* DynamicWriteContentTextController.swift in Sources */,
 				DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */,
 				DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */,
 				F17EB8BB1C3CF1CA00829E45 /* HomeController.swift in Sources */,
