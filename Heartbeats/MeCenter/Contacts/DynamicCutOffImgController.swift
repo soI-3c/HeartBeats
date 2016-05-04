@@ -111,8 +111,8 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
         // w, h
       let w = (img?.size.width)! / imgScrollView.contentSize.width * screenMaimWidth
       let h = (img?.size.height)! / imgScrollView.contentSize.height * screenMaimWidth
-    
       img = img!.getSubImage(CGRectMake(x, y, w, h))
+      img = img?.scaleImage(img!, maxDataLeng: 200)
       let editInfoController = DynamicEditInfoController()
       editInfoController.image = img
       navigationController?.pushViewController(editInfoController, animated: true)
@@ -155,7 +155,7 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 60 / 2
         btn.backgroundColor = UIColor.whiteColor()
-        btn.setImage(UIImage(named: "u4"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "tailor"), forState: UIControlState.Normal)
         btn.addTarget(self, action: "cuttOffImage", forControlEvents: .TouchUpInside)
         return btn
     }()

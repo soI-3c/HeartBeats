@@ -60,6 +60,7 @@
 		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; };
 		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
+		F15A8F9D1CD9921D00F29362 /* DynamicAddressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15A8F9C1CD9921D00F29362 /* DynamicAddressControl.swift */; };
 		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
 		F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */; };
 		F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D0A1C06EA2400F7AB97 /* ConstraintDescription.swift */; };
@@ -216,6 +217,7 @@
 		DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterCollectionView.swift; sourceTree = "<group>"; };
 		F111275D1C2A5142001FB131 /* SettingView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView2.swift; sourceTree = "<group>"; };
 		F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		F15A8F9C1CD9921D00F29362 /* DynamicAddressControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAddressControl.swift; sourceTree = "<group>"; };
 		F1716D081C06EA2400F7AB97 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		F1716D091C06EA2400F7AB97 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		F1716D0A1C06EA2400F7AB97 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -307,9 +309,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FC0A061C18079800459E6F /* CoreLocation.framework in Frameworks */,
 				DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */,
 				F1716D351C08388A00F7AB97 /* libicucore.tbd in Frameworks */,
-				F1FC0A061C18079800459E6F /* CoreLocation.framework in Frameworks */,
 				F1FC0A041C18079000459E6F /* CoreTelephony.framework in Frameworks */,
 				F1FC0A021C18078600459E6F /* MobileCoreServices.framework in Frameworks */,
 				F1FC0A001C18077C00459E6F /* SystemConfiguration.framework in Frameworks */,
@@ -598,6 +600,7 @@
 				F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */,
 				DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */,
 				F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */,
+				F15A8F9C1CD9921D00F29362 /* DynamicAddressControl.swift */,
 				F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */,
 				DBA28D001C414716007A516E /* PictureSelectorViewController.swift */,
 				F17EB8C91C3D09CB00829E45 /* View */,
@@ -999,6 +1002,7 @@
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
 				DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */,
 				DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */,
+				F15A8F9D1CD9921D00F29362 /* DynamicAddressControl.swift in Sources */,
 				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
 				DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */,
 				F1E3998B1C33DB4300A46DB0 /* PersonalitySetView.swift in Sources */,
@@ -1153,7 +1157,7 @@
 					"$(PROJECT_DIR)/Heartbeats",
 				);
 				INFOPLIST_FILE = Heartbeats/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1199,7 +1203,7 @@
 					"$(PROJECT_DIR)/Heartbeats",
 				);
 				INFOPLIST_FILE = Heartbeats/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

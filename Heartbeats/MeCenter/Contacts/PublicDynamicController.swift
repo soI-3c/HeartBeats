@@ -100,7 +100,7 @@ class PublicDynamicController: UITableViewController, UITextViewDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(HBPublicDynamicCellID, forIndexPath: indexPath)
         cell.backgroundColor = UIColor(white: 0.9, alpha: 0.6)
-        cell.textLabel?.text = "地点 "
+        cell.textLabel?.text = "地点"
         cell.accessoryType = .DisclosureIndicator
         return cell
     }

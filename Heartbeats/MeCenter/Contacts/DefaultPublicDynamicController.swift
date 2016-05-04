@@ -17,6 +17,9 @@ class DefaultPublicDynamicController: UIViewController {
         setUpUI()
         setUpNav()
     }
+    deinit {
+        print("DefaultPublicDynamicController")
+    }
     
 //   MARK: --  private func
     func setUpUI() {
@@ -54,7 +57,7 @@ class DefaultPublicDynamicController: UIViewController {
     }
     
 //    MARK: --- setter / getter 
-   lazy var imgGridViewController: SCImageGridViewController = {        // 选择图片后跳到截取页面
+    lazy var imgGridViewController: SCImageGridViewController = {        // 选择图片后跳到截取页面
         let imgGridViewControl = SCImageGridViewController()
         imgGridViewControl.selectImageAction = {[weak self](img) -> Void in
             self!.dynamicCutOffImgController.img = img

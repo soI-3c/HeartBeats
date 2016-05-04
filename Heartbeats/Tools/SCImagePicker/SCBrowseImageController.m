@@ -34,6 +34,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     // 视图将要显示的时候滚动到显示用户选择的图片位置
   NSIndexPath *selectPath = [NSIndexPath indexPathForItem:self.selectIndex inSection:0];
     [self.collectionView scrollToItemAtIndexPath:selectPath atScrollPosition: UICollectionViewScrollPositionLeft animated:true];

@@ -50,4 +50,42 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return smallImage
     }
+    
+//    将图片压缩到指定大小
+    func scaleImage(var image: UIImage, maxDataLeng: CGFloat) -> UIImage {
+        var compression: CGFloat = 1.0;
+        let maxCompression: CGFloat = 0.1;
+        var maxWidth: CGFloat = 0.0;
+        
+       let imgLeng = CGFloat(UIImageJPEGRepresentation(image, 1.0)!.length)
+        if (image.size.width > image.size.height) {
+            maxWidth = image.size.height / sqrt(imgLeng / 1024.0 / maxDataLeng);
+        }else {
+            maxWidth = image.size.width / sqrt(imgLeng / 1024.0 / maxDataLeng);
+        }
+        maxWidth =  maxWidth > screenMaimWidth ? maxWidth : screenMaimWidth ;
+        image = self.scaleImageToWidth(maxWidth, image: image)
+        var imageData = UIImageJPEGRepresentation(image, compression);
+        while (CGFloat(imageData!.length) > maxDataLeng && compression > maxCompression) {
+            compression -= 0.1;
+            imageData = UIImageJPEGRepresentation(image, compression);
+        }
+        return UIImage(data: imageData!)!
+    }
+//    等比例压缩
+    func scaleImageToWidth(width: CGFloat, image: UIImage) -> UIImage {
+        if (image.size.width < width) {
+            return image
+        }
+        let imgHeight = width * image.size.height / image.size.width;
+        let size  = CGSizeMake(width, imgHeight)
+        UIGraphicsBeginImageContext(size)
+        // 在制定区域中缩放绘制完整图像
+        image.drawInRect(CGRectMake(0, 0, size.width + 2, size.height + 2))
+        // 4. 获取绘制结果
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        // 5. 关闭上下文
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
