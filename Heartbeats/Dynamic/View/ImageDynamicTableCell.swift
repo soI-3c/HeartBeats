@@ -27,14 +27,24 @@ class ImageDynamicTableCell: MainDynamicTableCell {
             make.right.equalTo(self).offset(-16)
             make.height.equalTo(45)
         }
+        addressLabel.snp_makeConstraints { (make) -> Void in
+            make.right.equalTo(self).offset(-8)
+            make.bottom.equalTo(photosImgView.snp_bottom).offset(-8)
+        }
     }
-
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
-        return topView.frame.height + screenMaimWidth + 45 + bottomView.frame.height
+        let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 45 : 0
+        return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height
     }
     
 //    MARK: -- setter/ getter
-    var photosImgView: UIImageView = UIImageView()
+   lazy var photosImgView: UIImageView = {
+        let imageV = UIImageView()
+        let tapGesture = UITapGestureRecognizer(target: self, action: "addSupport")
+//        tapGesture.set
+//        imageV.addGestureRecognizer()
+        return imageV
+    }()
     override var dynamic: Dynamic? {
         didSet {
             content.text = dynamic?.content

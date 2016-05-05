@@ -27,7 +27,7 @@ class PublicDynamicCell: UICollectionViewCell {
                 let iconImageFile = user.iconImage
                 let backImageFile = user.backIconImage
                 let imgNumber = arc4random() % 9
-                let image = UIImage(named: "u\(imgNumber)")
+                let image = placeholderImage
                 if let url = iconImageFile?.url {
                    userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: UIControlState.Normal, placeholderImage: image)
                 }else {

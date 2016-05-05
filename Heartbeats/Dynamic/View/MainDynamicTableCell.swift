@@ -32,7 +32,9 @@ class MainDynamicTableCell: UITableViewCell {
         contentView.addSubview(topView)
         contentView.addSubview(bottomView)
         contentView.addSubview(content)
+        contentView.addSubview(addressLabel)
         
+        addressLabel.layer.zPosition = 100              // 在图层最上面
         topView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self)
             make.height.equalTo(48)
@@ -50,19 +52,25 @@ class MainDynamicTableCell: UITableViewCell {
         return 0.0
     }
 //    MARK: -- setter/ getter
-    var topView: CellTopView = CellTopView.loadNibSelf()
-    var bottomView : CellBottomView = CellBottomView.loadNibSelf()
+    let topView: CellTopView = CellTopView.loadNibSelf()
+    let bottomView : CellBottomView = CellBottomView.loadNibSelf()
     
-    var content: UILabel = {
+   lazy var content: UILabel = {
         let lab = UILabel()
         lab.textColor = UIColor.whiteColor()
         lab.numberOfLines = 0
         return lab
     }()
+    lazy var addressLabel: UILabel = {
+        let lab = UILabel()
+        lab.textAlignment = .Center
+        lab.textColor = UIColor.orangeColor()
+        lab.alpha = 0.8
+        return lab
+    }()
     
-    var backImageView : UIImageView = {                                 // 毛玻璃
+    lazy var backImageView : UIImageView = {                                 // 毛玻璃
         let imgView = UIImageView()
-        imgView.image = placeholderImage
         return imgView
     }()
     
@@ -70,6 +78,9 @@ class MainDynamicTableCell: UITableViewCell {
         didSet{
             if let url = dynamic?.photos?.url {
                 backImageView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
+            }
+            if let address = dynamic?.address {
+                addressLabel.text = "#\((address))"
             }
             topView.dynamic = dynamic
             bottomView.dynamic = dynamic

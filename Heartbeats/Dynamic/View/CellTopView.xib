@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
@@ -12,15 +11,20 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJI-yQ-r1h">
-                    <rect key="frame" x="530" y="12" width="24" height="24"/>
-                    <color key="backgroundColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
+                    <rect key="frame" x="522" y="8" width="32" height="32"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="9xM-Pa-f9k"/>
-                        <constraint firstAttribute="width" constant="24" id="KTF-es-nMz"/>
+                        <constraint firstAttribute="width" constant="32" id="KTF-es-nMz"/>
                     </constraints>
                     <state key="normal">
-                        <color key="titleColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="9xM-Pa-f9k"/>
+                        </mask>
+                    </variation>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiC-Gi-fS2">
                     <rect key="frame" x="8" y="4" width="40" height="40"/>
@@ -34,7 +38,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeartBeats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-li-ZA4">
-                    <rect key="frame" x="56" y="8" width="466" height="32"/>
+                    <rect key="frame" x="56" y="8" width="458" height="32"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -43,14 +47,14 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Bkq-li-ZA4" secondAttribute="bottom" constant="8" id="7hq-WH-z2k"/>
                 <constraint firstItem="Bkq-li-ZA4" firstAttribute="top" secondItem="aUO-Ex-1Wg" secondAttribute="top" constant="8" id="8Me-O1-lEC"/>
-                <constraint firstItem="qJI-yQ-r1h" firstAttribute="top" secondItem="aUO-Ex-1Wg" secondAttribute="top" constant="12" id="8sR-ag-5fR"/>
+                <constraint firstItem="qJI-yQ-r1h" firstAttribute="top" secondItem="aUO-Ex-1Wg" secondAttribute="top" constant="8" id="8sR-ag-5fR"/>
                 <constraint firstItem="jiC-Gi-fS2" firstAttribute="leading" secondItem="aUO-Ex-1Wg" secondAttribute="leading" constant="8" id="Gnk-Gz-PxD"/>
                 <constraint firstAttribute="bottom" secondItem="jiC-Gi-fS2" secondAttribute="bottom" constant="4" id="Le4-xs-IDU"/>
                 <constraint firstAttribute="trailing" secondItem="qJI-yQ-r1h" secondAttribute="trailing" constant="8" id="MhL-4Q-aRp"/>
                 <constraint firstItem="jiC-Gi-fS2" firstAttribute="top" secondItem="aUO-Ex-1Wg" secondAttribute="top" constant="4" id="PYS-mP-E5G"/>
                 <constraint firstItem="qJI-yQ-r1h" firstAttribute="leading" secondItem="Bkq-li-ZA4" secondAttribute="trailing" constant="8" id="XJ4-OH-6UV"/>
                 <constraint firstItem="Bkq-li-ZA4" firstAttribute="leading" secondItem="jiC-Gi-fS2" secondAttribute="trailing" constant="8" id="ux8-qm-mXy"/>
-                <constraint firstAttribute="bottom" secondItem="qJI-yQ-r1h" secondAttribute="bottom" constant="12" id="zl8-MG-WS4"/>
+                <constraint firstAttribute="bottom" secondItem="qJI-yQ-r1h" secondAttribute="bottom" constant="8" id="zl8-MG-WS4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -38,14 +38,16 @@ class CellTopView: UIView {
     var dynamic: Dynamic? {
         didSet {
             if let dynamic = dynamic {
-            userHeadView.setBackgroundImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "1"))
+                userHeadView.sd_setBackgroundImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: .Normal, placeholderImage: placeholderImage)
+                dynamic.feeling = dynamic.feeling?.characters.count > 0 ? dynamic.feeling : "k"
+                nowDoingBtn.setBackgroundImage(UIImage(named: "\(dynamic.feeling!)s"), forState: .Normal)
                 usernameLabel.text = dynamic.user?.username
+                
             }
         }
     }
     
     @IBOutlet weak var nowDoingBtn: UIButton!
     @IBOutlet weak var userHeadView: UIButton!
-    
     @IBOutlet weak var usernameLabel: UILabel!
 }

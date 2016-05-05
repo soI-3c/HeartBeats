@@ -17,9 +17,6 @@ class DefaultPublicDynamicController: UIViewController {
         setUpUI()
         setUpNav()
     }
-    deinit {
-        print("DefaultPublicDynamicController")
-    }
     
 //   MARK: --  private func
     func setUpUI() {
