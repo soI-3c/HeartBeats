@@ -25,6 +25,10 @@ class ContentDynaicTableCell: MainDynamicTableCell {
             make.right.equalTo(self).offset(-16)
             make.centerY.equalTo(backView.center.y)
         }
+        addressLabel.snp_makeConstraints { (make) -> Void in
+            make.right.equalTo(self).offset(-8)
+            make.bottom.equalTo(backView.snp_bottom).offset(-8)
+        }
     }
     
 //    MARK: -- private
@@ -38,7 +42,7 @@ class ContentDynaicTableCell: MainDynamicTableCell {
         didSet {
             content.text = dynamic?.content
             backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
-            Tools.insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
+            Tools.insertBlurView(backImageView, style: .Light)
         }
     }
     

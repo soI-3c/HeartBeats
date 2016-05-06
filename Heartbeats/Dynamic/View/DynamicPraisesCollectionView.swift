@@ -21,23 +21,37 @@ class DynamicPraisesCollectionView: UICollectionView {
     }
     
 //    MARK: -- private func
-    private func prepareLayout() {
+    func prepareLayout() {
         // 获得当前的布局属性
         registerClass(DynamicPraisesCollectionViewCell.self, forCellWithReuseIdentifier: praisesCollectionViewCell)
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         backgroundColor = UIColor.clearColor()
         showsHorizontalScrollIndicator = false
-        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-        layout.minimumInteritemSpacing = 2
-        layout.minimumLineSpacing = 3
-        layout.itemSize = CGSizeMake(30,25)
+        let margin: CGFloat = 2;
+        let itemWH = itemWHWithCount(8, margin: margin)
+        
+        layout.itemSize = CGSizeMake(itemWH, itemWH);
+        layout.minimumInteritemSpacing = margin;
+        layout.minimumLineSpacing = margin;
+        layout.sectionInset = UIEdgeInsetsMake(margin, margin, margin, margin);
     }
+    func itemWHWithCount(var count: CGFloat, margin: CGFloat) -> CGFloat {
+        var itemWH: CGFloat = 0;
+        let size = self.bounds.size;
+        repeat {
+            let wh = (size.width - (count + 1) * margin) / count
+            itemWH = floor(wh)
+            count++;
+        } while (itemWH > 30);
+        return itemWH;
+    }
+
 }
 
 // MARK: -- dataSource
 extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -74,7 +88,7 @@ class DynamicPraisesCollectionViewCell: UICollectionViewCell {
     }()
     var imgUrl : String? {
         didSet {
-            imgView.sd_setImageWithURL(NSURL(string: imgUrl!), placeholderImage: UIImage(named: "u3"))
+            imgView.sd_setImageWithURL(NSURL(string: imgUrl!), placeholderImage: placeholderImage)
         }
     }
 }

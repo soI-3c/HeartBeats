@@ -22,20 +22,6 @@ let imageCellID = "imageCellID"
 let contentCellID = "contentCellID"
 class DynamicTableViewController: UITableViewController {
     
-//    let contents = ["yesh, you know, lalalala, you need to change...", "有些路，通往哪里并不重要，重要的是你会在路上看到什么样的风景。", "We all go through thunderstorms, but not every one of us make it", "The only way to get what you really want, is to know what you really want. And the only way to know what you really want, is to know yourself.", "o keep a relationship with love: Admit it whenever you’re wrong， and when you’re right， shut up", "走向最远的方向——哪怕前路迷茫；抱着最大的希望——哪怕山穷水尽；坚持最强的意志——哪怕刀山火海；做好最坏的打算——哪怕从头再来。", "因为，你的努力终究不是为了别人，别人的评价也未必是你真实的自己", "我们每个人都有不同的处世方式，就像一串葡萄到手后，有人挑最好的先吃，有人把好的留到最后吃。", "生命好在无意义，才容得下各自赋予意义。假如生命是有意义的，这个意义却不合我的志趣，那才尴尬狼狈。"];
-    
-    //        for var i = 0; i < 6; ++i {
-    //            let dynamic = Dynamic()
-    //            dynamic.user = HeartUser.currentUser()
-    ////             let img = UIImage(named: "u7")
-    ////            let file = HBAVFile(name: "contentImg.png", data: UIImageJPEGRepresentation(img!, 1.0))
-    ////            dynamic.photos = file
-    //            dynamic.content = contents[i]
-    //            dynamic.saveInBackgroundWithBlock({ (b, error) -> Void in
-    //                print(b)
-    //            })
-    //        }
-    
 //    MARK:-- Override
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +34,7 @@ class DynamicTableViewController: UITableViewController {
         tableView.registerClass(ContentDynaicTableCell.self, forCellReuseIdentifier: DynamicCellID.contentCellID.rawValue)
         
         
-        // 提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
+//         提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
         tableView.estimatedRowHeight = 500
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -56,7 +42,7 @@ class DynamicTableViewController: UITableViewController {
         tableView.backgroundView = backImageView
         tableView.backgroundView?.frame = CGRectMake(0, 0, screenMaimWidth, (tableView.backgroundView?.frame.height)! + 20)
         view.setNeedsLayout()
-        Tools.insertBlurView(backImageView, style: .Light)
+        Tools.insertBlurView(backImageView, style: .ExtraLight)
     }
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        if scrollView.isEqual(tableView) {
@@ -99,10 +85,9 @@ class DynamicTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
     var backImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "u5")
+        imgView.image = placeholderImage
         return imgView
     }()                       // 动态背景图片, 毛玻离
 }
@@ -112,7 +97,6 @@ extension DynamicTableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dynamics?.count ?? 0
     }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MainDynamicTableCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item]), forIndexPath: indexPath) as! MainDynamicTableCell
         cell.dynamic = dynamics![indexPath.item]
@@ -126,7 +110,7 @@ extension DynamicTableViewController {
         }
         let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item])) as! MainDynamicTableCell
         dynamic!.cellHeight = cell.rowHeigth(dynamic!)
-        return cell.rowHeigth(dynamic!)
+        return dynamic!.cellHeight
     }
 }
 

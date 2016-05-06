@@ -29,7 +29,7 @@ class DynamicEditInfoController: UIViewController {
     private func labelAddTap() {
         contentTextBtn.userInteractionEnabled = true
         addressBtn.userInteractionEnabled = true
-        contentTextBtn.addGestureRecognizer( UITapGestureRecognizer(target: self, action: "writeContentText"))
+        contentTextBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "writeContentText"))
         addressBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "writeAddress"))
     }
     
@@ -106,16 +106,18 @@ class DynamicEditInfoController: UIViewController {
     
     // 发表
     func publicDynamic() {
+        dynamic.user = HeartUser.currentUser()
         let dynamicImage = HBAVFile(name: "dynamicImage", data: UIImageJPEGRepresentation(image!, 1.0))
         dynamic.photos = dynamicImage
-        dynamic.saveInBackgroundWithBlock { (isSuccess, error) -> Void in
-            if isSuccess == true {
+        dynamic.saveInBackgroundWithBlock { (b, error) -> Void in
+            if error == nil {
                 self.dismissViewControllerAnimated(true, completion: nil)
-            }else {
+                MainTabar.currentMainTabar().hidden = false
+                return
             }
+            SVProgressHUD.showInfoWithStatus("发布失败..")
         }
     }
-    
     
 //    MARK: -- setter / getter
     let dynamic = Dynamic()                                                 // 要发布的动态对象
