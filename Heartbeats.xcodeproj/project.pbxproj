@@ -129,6 +129,7 @@
 		F1EF9A571C3E002500F3F696 /* HBHomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */; };
 		F1EF9A591C3E566600F3F696 /* OneSelfPhotoLibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */; };
 		F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */; };
+		F1F1627B1CDC8045004A2077 /* DynamicPraise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1627A1CDC8045004A2077 /* DynamicPraise.swift */; };
 		F1F2F3711CD8A2E200E30083 /* DynamicWriteContentTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */; };
 		F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */; };
 		F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */; };
@@ -289,6 +290,7 @@
 		F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HBHomeCollectionCell.xib; path = ../../MeCenter/Contacts/HBHomeCollectionCell.xib; sourceTree = "<group>"; };
 		F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneSelfPhotoLibView.xib; sourceTree = "<group>"; };
 		F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraiseEvaluation.swift; sourceTree = "<group>"; };
+		F1F1627A1CDC8045004A2077 /* DynamicPraise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraise.swift; sourceTree = "<group>"; };
 		F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicWriteContentTextController.swift; sourceTree = "<group>"; };
 		F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDynamicPhotoController.swift; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 			children = (
 				F1E96BB51C2159CB0046EFD2 /* HeartUser.swift */,
 				DB9518321C37EEE10056EB44 /* Dynamic.swift */,
+				F1F1627A1CDC8045004A2077 /* DynamicPraise.swift */,
 				F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */,
 			);
 			path = Model;
@@ -975,6 +978,7 @@
 				F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */,
 				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
 				DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */,
+				F1F1627B1CDC8045004A2077 /* DynamicPraise.swift in Sources */,
 				F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */,
 				F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */,
 				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,

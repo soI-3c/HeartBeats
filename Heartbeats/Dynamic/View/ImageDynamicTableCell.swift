@@ -32,8 +32,8 @@ class ImageDynamicTableCell: MainDynamicTableCell {
             make.bottom.equalTo(photosImgView.snp_bottom).offset(-8)
         }
     }
-    override func rowHeigth(dynamic: Dynamic) -> CGFloat {
-        let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 45 : 0
+    override func rowHeigth(dynamic: Dynamic?) -> CGFloat {
+        let contentHeight: CGFloat =  dynamic?.content?.characters.count > 0 ? 45 : 0
         return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height
     }
     
@@ -47,12 +47,17 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     }()
     override var dynamic: Dynamic? {
         didSet {
+            for view in backImageView.subviews {
+                view.removeFromSuperview()
+            }
             content.text = dynamic?.content
-            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
+            let heitht = dynamic?.cellHeight > 0 ? dynamic?.cellHeight : rowHeigth(dynamic)
+            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, heitht!)
             if let url = dynamic?.photos?.url {
                 photosImgView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
             }
-            Tools.insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
+            print(backImageView.frame)
+            Tools.insertBlurView(backImageView, style: .Light)
         }
     }
 }

@@ -34,7 +34,7 @@ class DynamicTableViewController: UITableViewController {
         tableView.registerClass(ContentDynaicTableCell.self, forCellReuseIdentifier: DynamicCellID.contentCellID.rawValue)
         
         
-        // 提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
+//         提示：如果不使用自动计算行高，UITableViewAutomaticDimension，一定不要设置底部约束
         tableView.estimatedRowHeight = 500
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -42,7 +42,7 @@ class DynamicTableViewController: UITableViewController {
         tableView.backgroundView = backImageView
         tableView.backgroundView?.frame = CGRectMake(0, 0, screenMaimWidth, (tableView.backgroundView?.frame.height)! + 20)
         view.setNeedsLayout()
-        Tools.insertBlurView(backImageView, style: .Light)
+        Tools.insertBlurView(backImageView, style: .ExtraLight)
     }
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        if scrollView.isEqual(tableView) {
@@ -85,7 +85,6 @@ class DynamicTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
     var backImageView : UIImageView = {
         let imgView = UIImageView()
         imgView.image = placeholderImage
@@ -98,7 +97,6 @@ extension DynamicTableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dynamics?.count ?? 0
     }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MainDynamicTableCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item]), forIndexPath: indexPath) as! MainDynamicTableCell
         cell.dynamic = dynamics![indexPath.item]
@@ -112,7 +110,7 @@ extension DynamicTableViewController {
         }
         let cell = tableView.dequeueReusableCellWithIdentifier(DynamicCellID.cellID(dynamics![indexPath.item])) as! MainDynamicTableCell
         dynamic!.cellHeight = cell.rowHeigth(dynamic!)
-        return cell.rowHeigth(dynamic!)
+        return dynamic!.cellHeight
     }
 }
 

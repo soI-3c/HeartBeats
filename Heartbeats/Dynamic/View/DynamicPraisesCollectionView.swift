@@ -51,7 +51,7 @@ class DynamicPraisesCollectionView: UICollectionView {
 // MARK: -- dataSource
 extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
