@@ -38,7 +38,7 @@ class CellTopView: UIView {
     var dynamic: Dynamic? {
         didSet {
             if let dynamic = dynamic {
-            userHeadView.setBackgroundImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: UIControlState.Normal, placeholderImage: UIImage(named: "1"))
+            userHeadView.setBackgroundImageWithURL(NSURL(string: (dynamic.user?.iconImage?.url)!), forState: UIControlState.Normal, placeholderImage: placeholderImage)
                 usernameLabel.text = dynamic.user?.username
             }
         }

@@ -21,6 +21,10 @@ class DynamicEditInfoController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {     // 隐藏状态栏
         return true
     }
+    deinit {
+        print("DynamicEditInfoController")
+    }
+    
 //    MARK: -- private func
     private func labelAddTap() {
         contentTextBtn.userInteractionEnabled = true
@@ -48,7 +52,7 @@ class DynamicEditInfoController: UIViewController {
         writeContentTextControl.contentT = {[weak self](contentText) -> Void in            // 文字
             self!.dynamic.content = contentText
         }
-        writeAddressControl.returnAddress = {[weak self](var addressString) -> Void in         // 地址
+        writeAddressControl.returnAddress = {[weak self](var addressString) -> Void in     // 地址
             addressString = addressString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             self!.addressBtn.text = addressString.characters.count > 0 ? addressString : "位置"
             self!.dynamic.address = addressString
@@ -104,6 +108,12 @@ class DynamicEditInfoController: UIViewController {
     func publicDynamic() {
         let dynamicImage = HBAVFile(name: "dynamicImage", data: UIImageJPEGRepresentation(image!, 1.0))
         dynamic.photos = dynamicImage
+        dynamic.saveInBackgroundWithBlock { (isSuccess, error) -> Void in
+            if isSuccess == true {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }else {
+            }
+        }
     }
     
     

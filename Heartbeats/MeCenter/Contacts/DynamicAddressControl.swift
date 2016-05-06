@@ -165,7 +165,7 @@ class InputAddressView: UIView {
         let btn = UIButton()
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 5
-        btn.backgroundColor = UIColor(colorLiteralRed: 218.0 / 255.0, green: 37.0 / 255.0, blue: 29.0 / 255.0, alpha: 0.8)
+        btn.backgroundColor = UIColor.redColor()
         btn.setTitle(" 确定 ", forState: .Normal)
         btn.addTarget(self, action: "doneWirteAddress", forControlEvents: .TouchUpInside)
         return btn
