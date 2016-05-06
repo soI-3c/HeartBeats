@@ -44,7 +44,7 @@ class MainDynamicTableCell: UITableViewCell {
         bottomView.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(self)
             make.left.right.equalTo(self)
-            make.height.equalTo(44)
+            make.height.equalTo(88)
         }
     }
     

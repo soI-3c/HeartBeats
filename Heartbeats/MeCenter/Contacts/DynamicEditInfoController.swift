@@ -112,7 +112,6 @@ class DynamicEditInfoController: UIViewController {
         dynamic.saveInBackgroundWithBlock { (b, error) -> Void in
             if error == nil {
                 self.dismissViewControllerAnimated(true, completion: nil)
-                MainTabar.currentMainTabar().hidden = false
                 return
             }
             SVProgressHUD.showInfoWithStatus("发布失败..")

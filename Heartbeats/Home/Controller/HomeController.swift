@@ -38,7 +38,7 @@ class HomeController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundView = backImageView
-        Tools.insertBlurView(backImageView, style: .ExtraLight)
+        Tools.insertBlurView(backImageView, style: .Dark)
 
         // 注册可重用 cell
         collectionView?.registerClass(PublicDynamicCell.self, forCellWithReuseIdentifier: HBHomeCellID)
@@ -106,6 +106,7 @@ class HomeController: UICollectionViewController {
         navigationController?.pushViewController(meCenterControl, animated: true)
     }
 }
+
 
 
 // MARK: -- PublicDynamicCellDelegate

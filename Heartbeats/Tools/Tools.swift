@@ -163,8 +163,7 @@ class Tools: NSObject {
         view.backgroundColor = UIColor.clearColor()
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
-        print(blurEffectView.frame)
+        blurEffectView.frame = view.bounds
         view.addSubview(blurEffectView)
     }
     

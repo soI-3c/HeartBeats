@@ -42,7 +42,7 @@ class ContentDynaicTableCell: MainDynamicTableCell {
         didSet {
             content.text = dynamic?.content
             backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
-            Tools.insertBlurView(backImageView, style: .Light)
+            Tools.insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
         }
     }
     
