@@ -20,11 +20,11 @@ class ContentDynaicTableCell: MainDynamicTableCell {
             make.left.right.equalTo(self)
             make.height.equalTo(screenMaimWidth)
         }
-        content.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(self).offset(16)
-            make.right.equalTo(self).offset(-16)
-            make.centerY.equalTo(backView.center.y)
-        }
+//        content.snp_makeConstraints { (make) -> Void in
+//            make.left.equalTo(self).offset(16)
+//            make.right.equalTo(self).offset(-16)
+//            make.centerY.equalTo(backView.center.y)
+//        }
         addressLabel.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(self).offset(-8)
             make.bottom.equalTo(backView.snp_bottom).offset(-8)

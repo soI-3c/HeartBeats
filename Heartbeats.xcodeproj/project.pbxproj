@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66E6A0CF71E968FBADF5128C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9849E2289B6B1BB11F5FABA8 /* libPods.a */; };
+		DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0ACD6A1CDEED4700F345DD /* DynamicPraise.swift */; settings = {ASSET_TAGS = (); }; };
 		DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6151BF76FA90059A41B /* AppDelegate.swift */; };
 		DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1AF61C1BF76FA90059A41B /* Assets.xcassets */; };
 		DB1AF6201BF76FA90059A41B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1AF61E1BF76FA90059A41B /* LaunchScreen.storyboard */; };
@@ -165,6 +166,7 @@
 		78DD3F0288D0775237852CDF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9849E2289B6B1BB11F5FABA8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5818DCC978510989447CB16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0ACD6A1CDEED4700F345DD /* DynamicPraise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraise.swift; sourceTree = "<group>"; };
 		DB1AF6121BF76FA90059A41B /* Heartbeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartbeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1AF6151BF76FA90059A41B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1AF61C1BF76FA90059A41B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 			children = (
 				F1E96BB51C2159CB0046EFD2 /* HeartUser.swift */,
 				DB9518321C37EEE10056EB44 /* Dynamic.swift */,
+				DB0ACD6A1CDEED4700F345DD /* DynamicPraise.swift */,
 				F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */,
 			);
 			path = Model;
@@ -975,6 +978,7 @@
 				F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */,
 				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
 				DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */,
+				DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */,
 				F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */,
 				F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */,
 				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,

@@ -22,9 +22,11 @@ class DynamicPraisesCollectionView: UICollectionView {
     
 //    MARK: -- private func
     func prepareLayout() {
+        dataSource = self
         // 获得当前的布局属性
         registerClass(DynamicPraisesCollectionViewCell.self, forCellWithReuseIdentifier: praisesCollectionViewCell)
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        layout.scrollDirection = .Horizontal
         backgroundColor = UIColor.clearColor()
         showsHorizontalScrollIndicator = false
         let margin: CGFloat = 2;
@@ -37,9 +39,9 @@ class DynamicPraisesCollectionView: UICollectionView {
     }
     func itemWHWithCount(var count: CGFloat, margin: CGFloat) -> CGFloat {
         var itemWH: CGFloat = 0;
-        let size = self.bounds.size;
+        let width = screenMaimWidth - 32;
         repeat {
-            let wh = (size.width - (count + 1) * margin) / count
+            let wh = (width - (count + 1) * margin) / count
             itemWH = floor(wh)
             count++;
         } while (itemWH > 30);
@@ -51,7 +53,7 @@ class DynamicPraisesCollectionView: UICollectionView {
 // MARK: -- dataSource
 extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 11
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

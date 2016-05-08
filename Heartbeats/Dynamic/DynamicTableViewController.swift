@@ -44,26 +44,6 @@ class DynamicTableViewController: UITableViewController {
         view.setNeedsLayout()
         Tools.insertBlurView(backImageView, style: .Light)
     }
-//    override func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if scrollView.isEqual(tableView) {
-//            newY = scrollView.contentOffset.y
-//            if newY != oldY {
-//                scrollUporDown = newY > oldY ? true: false
-//            }
-//            oldY = newY
-//        }
-//        if scrollUporDown == true {
-//            UIView.animateWithDuration(0.5, animations: { () -> Void in
-//                    self.navigationController?.navigationBar.frame = CGRectMake(0, -44, screenMaimWidth, 44)
-//                }, completion: { (_) -> Void in
-//            })
-//        }else {
-//            UIView.animateWithDuration(0.5, animations: { () -> Void in
-//                self.navigationController?.navigationBar.frame = CGRectMake(0, 20, screenMaimWidth, 44)
-//                }, completion: { (_) -> Void in
-//            })
-//        }
-//    }
     
 //    MARK: -- private
     func loadData() {
@@ -85,7 +65,6 @@ class DynamicTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
     var backImageView : UIImageView = {
         let imgView = UIImageView()
         imgView.image = placeholderImage

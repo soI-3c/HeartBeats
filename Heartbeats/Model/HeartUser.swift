@@ -28,7 +28,6 @@ let HBUserHouse = "house"
 let HBUserCar = "car"
 
 class HeartUser: AVUser {
-    
     @NSManaged var iconImage: HBAVFile?      // 用户头像
     @NSManaged var backIconImage: HBAVFile?  // 背景头像
     @NSManaged var personality: String?      // 个性签名

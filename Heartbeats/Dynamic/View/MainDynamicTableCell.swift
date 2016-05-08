@@ -32,19 +32,20 @@ class MainDynamicTableCell: UITableViewCell {
         contentView.addSubview(topView)
         contentView.addSubview(bottomView)
         contentView.addSubview(content)
+        contentView.addSubview(dynamicPraiseCollectionV)
         contentView.addSubview(addressLabel)
         
         addressLabel.layer.zPosition = 100              // 在图层最上面
+        
         topView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(self)
             make.height.equalTo(48)
             make.left.right.equalTo(self)
         }
-
-        bottomView.snp_makeConstraints { (make) -> Void in
-            make.bottom.equalTo(self)
-            make.left.right.equalTo(self)
-            make.height.equalTo(88)
+        dynamicPraiseCollectionV.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(content)
+            make.top.equalTo(bottomView.snp_bottom)
+            make.height.equalTo(40)
         }
     }
     
@@ -73,6 +74,7 @@ class MainDynamicTableCell: UITableViewCell {
         let imgView = UIImageView()
         return imgView
     }()
+    var dynamicPraiseCollectionV = DynamicPraisesCollectionView()
     
     var dynamic: Dynamic? {
         didSet{
@@ -82,6 +84,11 @@ class MainDynamicTableCell: UITableViewCell {
             if let address = dynamic?.address {
                 addressLabel.text = "#\((address))"
             }
+            let height =  dynamic?.praises?.count > 0 ? 44 : 0
+             dynamicPraiseCollectionV.snp_updateConstraints { (make) -> Void in
+                make.height.equalTo(height)
+            }
+            
             topView.dynamic = dynamic
             bottomView.dynamic = dynamic
         }

@@ -34,25 +34,41 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     }
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
         let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 45 : 0
-        return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height
+        let praisesHeight: CGFloat =  dynamic.praises?.count > 0 ? 44 : 0
+        return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height + praisesHeight
+    }
+    private func addPraise(imageView: UIImageView) {
+//        NSNotification(name: <#T##String#>, object: <#T##AnyObject?#>, userInfo: <#T##[NSObject : AnyObject]?#>)
     }
     
 //    MARK: -- setter/ getter
    lazy var photosImgView: UIImageView = {
         let imageV = UIImageView()
-        let tapGesture = UITapGestureRecognizer(target: self, action: "addSupport")
-//        tapGesture.set
-//        imageV.addGestureRecognizer()
+        let tapGesture = UITapGestureRecognizer(target: self, action: "addPraise:")
+        imageV.addGestureRecognizer(tapGesture)
         return imageV
     }()
     override var dynamic: Dynamic? {
         didSet {
+            for view in backImageView.subviews {
+                view.removeFromSuperview()
+            }
             content.text = dynamic?.content
-            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, self.rowHeigth(dynamic!))
+            let contentHeight = dynamic?.content?.characters.count < 0 ? 0 : 45
+            content.snp_updateConstraints(closure: { (make) -> Void in
+                make.height.equalTo(contentHeight)
+            })
+            bottomView.snp_makeConstraints { (make) -> Void in
+                make.top.equalTo(content.snp_bottom)
+                make.left.right.equalTo(self)
+                make.height.equalTo(44)
+            }
+            let heitht = dynamic?.cellHeight > 0 ? dynamic?.cellHeight : rowHeigth(dynamic!)
+            backImageView.frame = CGRectMake(0, 0, screenMaimWidth, heitht!)
             if let url = dynamic?.photos?.url {
                 photosImgView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
             }
-            Tools.insertBlurView(backImageView, style: UIBlurEffectStyle.Light)
+            Tools.insertBlurView(backImageView, style: .Light)
         }
     }
 }
