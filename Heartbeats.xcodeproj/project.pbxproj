@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66E6A0CF71E968FBADF5128C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9849E2289B6B1BB11F5FABA8 /* libPods.a */; };
-		DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0ACD6A1CDEED4700F345DD /* DynamicPraise.swift */; settings = {ASSET_TAGS = (); }; };
+		DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0ACD6A1CDEED4700F345DD /* DynamicPraise.swift */; };
 		DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AF6151BF76FA90059A41B /* AppDelegate.swift */; };
 		DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1AF61C1BF76FA90059A41B /* Assets.xcassets */; };
 		DB1AF6201BF76FA90059A41B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1AF61E1BF76FA90059A41B /* LaunchScreen.storyboard */; };
@@ -371,6 +371,7 @@
 		DB1AF6091BF76FA90059A41B = {
 			isa = PBXGroup;
 			children = (
+				DB1AF6431BF771090059A41B /* Main */,
 				DB1AF6141BF76FA90059A41B /* Heartbeats */,
 				DB1AF6291BF76FA90059A41B /* HeartbeatsTests */,
 				DB1AF6341BF76FA90059A41B /* HeartbeatsUITests */,
@@ -393,7 +394,6 @@
 		DB1AF6141BF76FA90059A41B /* Heartbeats */ = {
 			isa = PBXGroup;
 			children = (
-				DB1AF6431BF771090059A41B /* Main */,
 				F17EB8A91C3CF1CA00829E45 /* Home */,
 				F1EC2A8F1C9AAC600038A0CB /* Dynamic */,
 				F17EB8C61C3D017700829E45 /* PublicDynamic */,
@@ -439,7 +439,8 @@
 				DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */,
 				F1716D471C0859D000F7AB97 /* Heartbeats-Bridging-Header.h */,
 			);
-			path = Main;
+			name = Main;
+			path = Heartbeats/Main;
 			sourceTree = "<group>";
 		};
 		DB1AF6491BF78B2B0059A41B /* MeCenter */ = {

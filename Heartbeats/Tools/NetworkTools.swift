@@ -38,6 +38,7 @@ class NetworkTools: NSObject {
         let dynamicQuery = Dynamic.query()
         dynamicQuery.includeKey(HBDynamicUser)
         dynamicQuery.includeKey(HBDynamicPhotos)
+        dynamicQuery.includeKey(HBDynamicPraises)
         dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
         //设置缓存有效期
         dynamicQuery.maxCacheAge = 24*3600;

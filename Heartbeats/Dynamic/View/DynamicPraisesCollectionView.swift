@@ -12,15 +12,19 @@ class DynamicPraisesCollectionView: UICollectionView {
 //    MARK: -- override
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadPraise", name: "reloadPraiseCollectionView", object: nil)
         prepareLayout()
     }
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
-        dataSource = self
         prepareLayout()
     }
     
 //    MARK: -- private func
+    func reloadPraise() {
+        reloadData()
+    }
+    
     func prepareLayout() {
         dataSource = self
         // 获得当前的布局属性
@@ -47,18 +51,26 @@ class DynamicPraisesCollectionView: UICollectionView {
         } while (itemWH > 30);
         return itemWH;
     }
-
+    
+//    MARK: -- getter/ setter
+    var praises: [DynamicPraise]? {
+        didSet{
+            self.reloadData()
+        }
+    }
 }
 
 // MARK: -- dataSource
 extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return praises?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(praisesCollectionViewCell, forIndexPath: indexPath) as? DynamicPraisesCollectionViewCell
-        cell?.imgUrl = "sdsdas"
+        print(praises?.count)
+        let praise = praises?[indexPath.item]
+        cell?.imgUrl = praise?.userHeadImg?.url
         return cell!
     }
 }
@@ -75,11 +87,13 @@ class DynamicPraisesCollectionViewCell: UICollectionViewCell {
         setUpUI()
     }
     
+//    MARK: -- private func
     func setUpUI() {
         contentView.addSubview(imgView)
         imgView.frame = bounds
     }
     
+//    MRAK: -- setter/ getter
     var imgView: UIImageView = {
         let imgView = UIImageView()
         imgView.layer.cornerRadius = 30 / 2
@@ -90,7 +104,11 @@ class DynamicPraisesCollectionViewCell: UICollectionViewCell {
     }()
     var imgUrl : String? {
         didSet {
-            imgView.sd_setImageWithURL(NSURL(string: imgUrl!), placeholderImage: placeholderImage)
+            if let url = imgUrl {
+                 imgView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
+                return
+            }
+            imgView.sd_setImageWithURL(NSURL(string:""), placeholderImage: placeholderImage)
         }
     }
 }

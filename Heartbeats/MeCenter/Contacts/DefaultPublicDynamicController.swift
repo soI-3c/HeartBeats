@@ -14,6 +14,7 @@ class DefaultPublicDynamicController: UIViewController {
 //   MARK: -- override
     override func viewDidLoad() {
         super.viewDidLoad()
+        MainTabar.currentMainTabar().hidden = false
         setUpUI()
         setUpNav()
     }

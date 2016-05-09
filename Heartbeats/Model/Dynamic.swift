@@ -11,6 +11,7 @@ import UIKit
 let HBDynamicUser = "user"
 let HBDynamicPhotos = "photos"
 let HBDynamicContent = "content"
+let HBDynamicPraises = "praises"
 class Dynamic: AVObject, AVSubclassing {
     @NSManaged var user: HeartUser!                 //  动态所属的user
     @NSManaged var photos: HBAVFile?                //  图片

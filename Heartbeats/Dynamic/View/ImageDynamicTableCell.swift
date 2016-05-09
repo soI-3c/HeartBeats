@@ -37,14 +37,18 @@ class ImageDynamicTableCell: MainDynamicTableCell {
         let praisesHeight: CGFloat =  dynamic.praises?.count > 0 ? 44 : 0
         return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height + praisesHeight
     }
-    private func addPraise(imageView: UIImageView) {
-//        NSNotification(name: <#T##String#>, object: <#T##AnyObject?#>, userInfo: <#T##[NSObject : AnyObject]?#>)
+//  MARK: -- private func
+    func addPraise(imageView: UIImageView) {                        // 点赞通知
+        NSNotificationCenter.defaultCenter().postNotificationName("touchPraiseEven", object: nil, userInfo: ["dynamic" : dynamic!, "Cell": self])
     }
     
 //    MARK: -- setter/ getter
    lazy var photosImgView: UIImageView = {
         let imageV = UIImageView()
+        imageV.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "addPraise:")
+        tapGesture.numberOfTapsRequired = 2
+
         imageV.addGestureRecognizer(tapGesture)
         return imageV
     }()
@@ -54,11 +58,11 @@ class ImageDynamicTableCell: MainDynamicTableCell {
                 view.removeFromSuperview()
             }
             content.text = dynamic?.content
-            let contentHeight = dynamic?.content?.characters.count < 0 ? 0 : 45
+            let contentHeight = dynamic?.content?.characters.count < 0 ? 0 : 45                //      根据是否有内容来决定高度(是否显示)
             content.snp_updateConstraints(closure: { (make) -> Void in
                 make.height.equalTo(contentHeight)
             })
-            bottomView.snp_makeConstraints { (make) -> Void in
+            bottomView.snp_makeConstraints { (make) -> Void in                               
                 make.top.equalTo(content.snp_bottom)
                 make.left.right.equalTo(self)
                 make.height.equalTo(44)

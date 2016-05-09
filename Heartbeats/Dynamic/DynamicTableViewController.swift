@@ -26,6 +26,8 @@ class DynamicTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        // 改变点赞通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changePraises:", name: "touchPraiseEven", object: nil)
         
         view.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.translucent = true
@@ -44,22 +46,53 @@ class DynamicTableViewController: UITableViewController {
         view.setNeedsLayout()
         Tools.insertBlurView(backImageView, style: .Light)
     }
+    deinit {                                            // 移除通知
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
 //    MARK: -- private
     func loadData() {
         NetworkTools.loadDynamics { (result, error) -> () in
             if error == nil {
                 self.dynamics = result as? [Dynamic]
+                for dynamic in self.dynamics! {
+                       print( dynamic.praises)
+                }
             }
         }
     }
+    func changePraises(notification: NSNotification) {                                                      // 点赞刷新指定点赞列表
+       let user = HeartUser.currentUser()
+       let info = notification.userInfo
+        let indexPath = self.tableView.indexPathForCell(info!["Cell"] as! MainDynamicTableCell)
+        
+       let dynamic = info!["dynamic"] as! Dynamic
+//       var praises = dynamic.praises
+//        print(praises?.count)
+//        for var i = 0; i < praises?.count; ++i {
+//            let praise = praises![i]
+//            if praise.userID == HeartUser.currentUser().objectId {
+//                praises?.removeAtIndex(i)
+//                dynamic.cellHeight = 0
+//                self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)                // 刷新指定行
+//                dynamic.saveInBackground()
+//                return
+//            }
+//        }
+//
+        let praise = DynamicPraise(dynamicID: dynamic.objectId, userID: user.objectId, userHeadImg: user.iconImage, userName: user.username)
+        praise.saveInBackgroundWithBlock { (success, error) -> Void in
+            if error == nil {
+               dynamic.addObject([praise], forKey: "praises")
+                dynamic.cellHeight = 0                                                                      // 解决缓存行高没法刷新到点赞
+                self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)                // 刷新指定行
+               dynamic.saveInBackground()
+            }
+        }
+    }
+    
 //    MARK: -- getter / setter
     var en: DynamicCellID = DynamicCellID.imageCellID       // cell ID
-    
-    var scrollUporDown: Bool = false                        // 用于判断table的上下滚动
-    var newY: CGFloat = 0
-    var oldY: CGFloat = 0
-    
     var dynamics: [Dynamic]? {                              // 动态s
         didSet {
             tableView.reloadData()
@@ -85,7 +118,7 @@ extension DynamicTableViewController {
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let dynamic = dynamics?[indexPath.item]             // 先取缓存行高, 没有再计算
+        let dynamic = dynamics?[indexPath.item]             // 先取缓存行高, 没有, 再计算
         if  dynamic?.cellHeight > 0 {
             return dynamic!.cellHeight
         }
