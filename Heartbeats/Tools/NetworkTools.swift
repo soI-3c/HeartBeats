@@ -39,9 +39,10 @@ class NetworkTools: NSObject {
         dynamicQuery.includeKey(HBDynamicUser)
         dynamicQuery.includeKey(HBDynamicPhotos)
         dynamicQuery.includeKey(HBDynamicPraises)
-        dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
+//        dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
+        dynamicQuery.clearCachedResult()
         //设置缓存有效期
-        dynamicQuery.maxCacheAge = 24*3600;
+//        dynamicQuery.maxCacheAge = 24*3600;
         dynamicQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 for dynamic in objects {

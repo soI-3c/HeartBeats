@@ -23,9 +23,8 @@ class ImageDynamicTableCell: MainDynamicTableCell {
         }
         content.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(photosImgView.snp_bottom)
-            make.left.equalTo(self).offset(16)
-            make.right.equalTo(self).offset(-16)
-            make.height.equalTo(45)
+            make.left.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-8)
         }
         addressLabel.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(self).offset(-8)
@@ -33,8 +32,8 @@ class ImageDynamicTableCell: MainDynamicTableCell {
         }
     }
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
-        let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 45 : 0
-        let praisesHeight: CGFloat =  dynamic.praises?.count > 0 ? 44 : 0
+        let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 25 : 0
+        let praisesHeight: CGFloat =  dynamic.praises?.count > 0 ? 40 : 0
         return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height + praisesHeight
     }
 //  MARK: -- private func
@@ -58,14 +57,14 @@ class ImageDynamicTableCell: MainDynamicTableCell {
                 view.removeFromSuperview()
             }
             content.text = dynamic?.content
-            let contentHeight = dynamic?.content?.characters.count < 0 ? 0 : 45                //      根据是否有内容来决定高度(是否显示)
+            let contentHeight = dynamic?.content?.characters.count > 0 ? 25 : 0                //      根据是否有内容来决定高度(是否显示)
             content.snp_updateConstraints(closure: { (make) -> Void in
                 make.height.equalTo(contentHeight)
             })
             bottomView.snp_makeConstraints { (make) -> Void in                               
                 make.top.equalTo(content.snp_bottom)
                 make.left.right.equalTo(self)
-                make.height.equalTo(44)
+                make.height.equalTo(35)
             }
             let heitht = dynamic?.cellHeight > 0 ? dynamic?.cellHeight : rowHeigth(dynamic!)
             backImageView.frame = CGRectMake(0, 0, screenMaimWidth, heitht!)

@@ -10,26 +10,29 @@
             <rect key="frame" x="0.0" y="0.0" width="601" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9I-en-0dH">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9I-en-0dH">
                     <rect key="frame" x="8" y="8" width="30" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="Jn1-D7-at3"/>
                     </constraints>
-                    <state key="normal" backgroundImage="heart"/>
+                    <state key="normal" image="c"/>
+                    <connections>
+                        <action selector="praiseAction:" destination="ZBe-RW-Xup" eventType="touchUpInside" id="u8A-nM-Isa"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-Se-8Rv">
-                    <rect key="frame" x="134" y="12" width="20" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="131" y="14" width="16" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Mv-GYu">
-                    <rect key="frame" x="96" y="8" width="30" height="28"/>
-                    <state key="normal" backgroundImage="take"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Mv-GYu">
+                    <rect key="frame" x="93" y="8" width="30" height="28"/>
+                    <state key="normal" image="k"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGL-OD-kk5">
-                    <rect key="frame" x="46" y="12" width="18" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="46" y="14" width="15" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -43,28 +46,21 @@
                 <constraint firstItem="S9I-en-0dH" firstAttribute="leading" secondItem="ZBe-RW-Xup" secondAttribute="leading" constant="8" id="QUn-yy-bTo"/>
                 <constraint firstItem="S9I-en-0dH" firstAttribute="top" secondItem="ZBe-RW-Xup" secondAttribute="top" constant="8" id="U0b-yp-Ol1"/>
                 <constraint firstAttribute="bottom" secondItem="S9I-en-0dH" secondAttribute="bottom" constant="8" id="ZQO-t0-PGZ"/>
-                <constraint firstItem="S9I-en-0dH" firstAttribute="top" secondItem="ZBe-RW-Xup" secondAttribute="top" constant="8" id="fSH-44-t9S"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="height" secondItem="S9I-en-0dH" secondAttribute="height" id="m0U-hy-N5O"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="centerY" secondItem="S9I-en-0dH" secondAttribute="centerY" id="om0-nj-z53"/>
                 <constraint firstItem="Iek-Mv-GYu" firstAttribute="width" secondItem="S9I-en-0dH" secondAttribute="width" id="uOH-8U-thA"/>
-                <constraint firstItem="S9I-en-0dH" firstAttribute="leading" secondItem="ZBe-RW-Xup" secondAttribute="leading" constant="8" id="zC3-pg-eKb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="fSH-44-t9S"/>
-                    <exclude reference="zC3-pg-eKb"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="discussNumberLab" destination="2jN-Se-8Rv" id="Qtm-p3-APm"/>
+                <outlet property="praiseBtn" destination="S9I-en-0dH" id="DMJ-YC-2xV"/>
                 <outlet property="praiseNumberLab" destination="AGL-OD-kk5" id="PFl-M5-RvE"/>
             </connections>
-            <point key="canvasLocation" x="171.5" y="180"/>
+            <point key="canvasLocation" x="500.5" y="183"/>
         </view>
     </objects>
     <resources>
-        <image name="heart" width="40" height="40"/>
-        <image name="take" width="40" height="40"/>
+        <image name="c" width="16" height="16"/>
+        <image name="k" width="16" height="16"/>
     </resources>
 </document>

@@ -43,7 +43,7 @@ class MainDynamicTableCell: UITableViewCell {
             make.left.right.equalTo(self)
         }
         dynamicPraiseCollectionV.snp_makeConstraints { (make) -> Void in
-            make.left.right.equalTo(content)
+            make.left.right.equalTo(self).offset(CGPoint(x: 8, y: 8))
             make.top.equalTo(bottomView.snp_bottom)
         }
     }
@@ -55,19 +55,9 @@ class MainDynamicTableCell: UITableViewCell {
     let topView: CellTopView = CellTopView.loadNibSelf()
     let bottomView : CellBottomView = CellBottomView.loadNibSelf()
     
-   lazy var content: UILabel = {
-        let lab = UILabel()
-        lab.textColor = UIColor.whiteColor()
-        lab.numberOfLines = 0
-        return lab
-    }()
-    lazy var addressLabel: UILabel = {
-        let lab = UILabel()
-        lab.textAlignment = .Center
-        lab.textColor = UIColor.orangeColor()
-        lab.alpha = 0.8
-        return lab
-    }()
+    lazy var content: UILabel = UILabel(title: "", fontSize: 12, textColor: UIColor.whiteColor(), backColor: UIColor.clearColor(), cornerRadius: 0);
+    
+    lazy var addressLabel: UILabel = UILabel(title: "", fontSize: 10, textColor: UIColor.orangeColor(), backColor: UIColor.clearColor(), cornerRadius: 0);
     
     lazy var backImageView : UIImageView = {                                 // 毛玻璃
         let imgView = UIImageView()
@@ -83,7 +73,7 @@ class MainDynamicTableCell: UITableViewCell {
             if let address = dynamic?.address {
                 addressLabel.text = "#\((address))"
             }
-            let height =  dynamic?.praises?.count > 0 ? 44 : 0
+            let height =  dynamic?.praises?.count > 0 ? 40 : 0
              dynamicPraiseCollectionV.snp_updateConstraints { (make) -> Void in
                 make.height.equalTo(height)
             }

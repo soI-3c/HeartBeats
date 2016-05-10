@@ -17,9 +17,14 @@ class CellBottomView: UIView {
 //    MARK:-- setter/ getter
     var dynamic: Dynamic? {
         didSet {
-            
+            praiseNumberLab.text = "\(dynamic?.praises?.count ?? 0)"
         }
     }
+    @IBAction func praiseAction(sender: UIButton) {
+       NSNotificationCenter.defaultCenter().postNotificationName("touchPraiseEven", object: nil, userInfo: ["dynamic" : dynamic!, "Cell": self.superview!.superview!])
+    }
+    
+    @IBOutlet weak var praiseBtn: UIButton!
     @IBOutlet weak var discussNumberLab: UILabel!
     @IBOutlet weak var praiseNumberLab: UILabel!
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 /*动态赞*/
 class DynamicPraise: AVObject, AVSubclassing {
     @NSManaged var dynamicID: String!               //动态ID

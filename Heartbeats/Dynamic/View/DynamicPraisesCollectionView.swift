@@ -1,3 +1,4 @@
+
 //
 //  DynamicPraisesCollectionView.swift
 //  Heartbeats
@@ -53,7 +54,7 @@ class DynamicPraisesCollectionView: UICollectionView {
     }
     
 //    MARK: -- getter/ setter
-    var praises: [DynamicPraise]? {
+    var praises: [AnyObject]? {
         didSet{
             self.reloadData()
         }
@@ -68,8 +69,8 @@ extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(praisesCollectionViewCell, forIndexPath: indexPath) as? DynamicPraisesCollectionViewCell
-        print(praises?.count)
-        let praise = praises?[indexPath.item]
+        let praise = praises?[indexPath.item] as? DynamicPraise
+        print(praise?.userName)
         cell?.imgUrl = praise?.userHeadImg?.url
         return cell!
     }
