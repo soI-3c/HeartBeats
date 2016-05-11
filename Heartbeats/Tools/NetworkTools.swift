@@ -40,7 +40,7 @@ class NetworkTools: NSObject {
         dynamicQuery.includeKey(HBDynamicPhotos)
         dynamicQuery.includeKey(HBDynamicPraises)
 //        dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
-        dynamicQuery.clearCachedResult()
+//        dynamicQuery.clearCachedResult()
         //设置缓存有效期
 //        dynamicQuery.maxCacheAge = 24*3600;
         dynamicQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
@@ -54,7 +54,7 @@ class NetworkTools: NSObject {
             }
         })
     }
-    
+
 // 根据ID查找指定用户
    class func loadUserIconImageWithBackImage (user: HeartUser?, imageName: String?, finishedCallBack: HBNetFinishedCallBack) {
         let userQuery = HeartUser.query()

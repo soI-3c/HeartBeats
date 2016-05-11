@@ -58,11 +58,9 @@ extension HeartUser {
                 if let user = objects.first as? HeartUser {
                     if imageName == HBUserIconImage {
                         url = user.iconImage?.url
-                        print(url)
                     }
                     if imageName == HBUserBackIconImage {
                         url = user.backIconImage?.url
-                        print(url)
                     }
                 }
             }

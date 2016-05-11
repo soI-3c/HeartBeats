@@ -29,7 +29,6 @@ extension UILabel {
         //imgV.clipsToBounds = true
         layer.masksToBounds = true
     }
-    
     /// - returns: UILabel
     convenience init(title: String?, fontSize: CGFloat, textColor: UIColor, backColor: UIColor,  cornerRadius: CGFloat) {
         self.init()

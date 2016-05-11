@@ -7,11 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="ZBe-RW-Xup" customClass="CellBottomView" customModule="Heartbeats" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="601" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="601" height="35"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9I-en-0dH">
-                    <rect key="frame" x="8" y="8" width="30" height="28"/>
+                    <rect key="frame" x="8" y="8" width="30" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="Jn1-D7-at3"/>
                     </constraints>
@@ -21,17 +21,17 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-Se-8Rv">
-                    <rect key="frame" x="131" y="14" width="16" height="16"/>
+                    <rect key="frame" x="131" y="10" width="16" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iek-Mv-GYu">
-                    <rect key="frame" x="93" y="8" width="30" height="28"/>
+                    <rect key="frame" x="93" y="8" width="30" height="19"/>
                     <state key="normal" image="k"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGL-OD-kk5">
-                    <rect key="frame" x="46" y="14" width="15" height="16"/>
+                    <rect key="frame" x="46" y="10" width="15" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

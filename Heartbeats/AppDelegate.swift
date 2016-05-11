@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         HeartUser.registerSubclass()
         Dynamic.registerSubclass()
         DynamicPraise.registerSubclass()
+        DynamicComment.registerSubclass()
         AVOSCloud.setApplicationId("MfQgIdk0MNsmNiKUh7tix2ph", clientKey: "QMviVrHgrzIBEvOrjqxOAYzK")
     
         // 注册通知

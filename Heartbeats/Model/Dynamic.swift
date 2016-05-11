@@ -18,10 +18,9 @@ class Dynamic: AVObject, AVSubclassing {
     @NSManaged var content: String?                 //  内容
     @NSManaged var feeling: String?                 //  当前心情(对应图片的名字)
     @NSManaged var address: String?                 //  地址
-    @NSManaged var praises: [AnyObject]?        //  赞的人数组
+    @NSManaged var praises: [AnyObject]?            //  赞的人数组
+    @NSManaged var comments: [AnyObject]?           //  评论
     var cellHeight: CGFloat = 0                     //  缓存行高
-    
-    
    static func parseClassName() -> String? {
         return "Dynamic"
     }
