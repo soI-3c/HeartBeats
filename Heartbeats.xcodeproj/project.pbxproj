@@ -96,6 +96,7 @@
 		F17EB8C81C3D02F800829E45 /* PublicDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */; };
 		F17EB8CC1C3D09EB00829E45 /* PublicDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB8CA1C3D09EB00829E45 /* PublicDynamicCell.swift */; };
 		F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB8CB1C3D09EB00829E45 /* PublicDynamicCell.xib */; };
+		F18700E01CE42A700004EA75 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18700DF1CE42A700004EA75 /* TextStorage.swift */; };
 		F19BBF521C45EC19006BE361 /* DefaultPublicDynamicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */; };
 		F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8D34D1C28E75D00B0B847 /* SettingView.swift */; };
 		F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */; };
@@ -258,6 +259,7 @@
 		F17EB8C71C3D02F800829E45 /* PublicDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicDynamicController.swift; sourceTree = "<group>"; };
 		F17EB8CA1C3D09EB00829E45 /* PublicDynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicDynamicCell.swift; path = ../../MeCenter/Contacts/PublicDynamicCell.swift; sourceTree = "<group>"; };
 		F17EB8CB1C3D09EB00829E45 /* PublicDynamicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PublicDynamicCell.xib; path = ../../MeCenter/Contacts/PublicDynamicCell.xib; sourceTree = "<group>"; };
+		F18700DF1CE42A700004EA75 /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
 		F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPublicDynamicController.swift; sourceTree = "<group>"; };
 		F19DD7251C23DB9000658A93 /* Publice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publice.h; sourceTree = "<group>"; };
 		F1B8D34D1C28E75D00B0B847 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				DBA28D041C414778007A516E /* UIImage+Extension.swift */,
 				F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */,
 				F1E399861C33C12B00A46DB0 /* HBButton.swift */,
+				F18700DF1CE42A700004EA75 /* TextStorage.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				DB8C15741CCCA02D0040C907 /* SCImageGridCellSelectingView.h in Sources */,
 				DB8C15751CCCA02D0040C907 /* SCImageGridViewController.h in Sources */,
 				DB8C15761CCCA02D0040C907 /* SCImageGridViewLayout.h in Sources */,
+				F18700E01CE42A700004EA75 /* TextStorage.swift in Sources */,
 				F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */,
 				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,

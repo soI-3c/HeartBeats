@@ -56,13 +56,6 @@ class MainDynamicTableCell: UITableViewCell {
     func rowHeigth(dynamic: Dynamic) -> CGFloat {
         return 0.0
     }
-    func commentTabVHeight(number: CGFloat) -> CGFloat {                         // 评论行高, 最多4行
-        if number <= 4 {
-            return number * 30
-        }
-        if number > 4 { return 4 * 30 }
-        return 0
-    }
     
 //    MARK: -- setter/ getter
     let topView: CellTopView = CellTopView.loadNibSelf()
@@ -91,10 +84,11 @@ class MainDynamicTableCell: UITableViewCell {
                 make.height.equalTo(height)
             }
             dynamicCommentsView.snp_updateConstraints { (make) -> Void in
-//               make.height.equalTo(self.commentTabVHeight((self.dynamic?.comments?.count)!))
-                make.height.equalTo(120)
+////               make.height.equalTo(self.commentTabVHeight((self.dynamic?.comments?.count)!))
+                make.height.equalTo(80)
             }
             dynamicPraiseCollectionV.praises = dynamic?.praises
+            dynamicCommentsView.dynamic = dynamic
             topView.dynamic = dynamic
             bottomView.dynamic = dynamic
         }

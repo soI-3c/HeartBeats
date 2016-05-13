@@ -73,6 +73,7 @@ class ImageDynamicTableCell: MainDynamicTableCell {
                 photosImgView.sd_setImageWithURL(NSURL(string: url), placeholderImage: placeholderImage)
             }
             Tools.insertBlurView(backImageView, style: .Light)
+            setNeedsUpdateConstraints()
         }
     }
 }
