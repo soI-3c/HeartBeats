@@ -34,8 +34,7 @@ class ImageDynamicTableCell: MainDynamicTableCell {
     override func rowHeigth(dynamic: Dynamic) -> CGFloat {
         let contentHeight: CGFloat =  dynamic.content?.characters.count > 0 ? 25 : 0
         let praisesHeight: CGFloat =  dynamic.praises?.count > 0 ? 40 : 0
-//        let commentVHeigh: CGFloat =  self.commentTabVHeight(CGFloat((dynamic.comments?.count)!))
-        return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height + praisesHeight + 120
+        return topView.frame.height + screenMaimWidth + contentHeight + bottomView.frame.height + praisesHeight + dynamic.commentTabVHeight + 8
     }
 //  MARK: -- private func
     func addPraise(imageView: UIImageView) {                        // 点赞通知

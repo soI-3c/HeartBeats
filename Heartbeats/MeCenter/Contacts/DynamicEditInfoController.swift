@@ -108,14 +108,25 @@ class DynamicEditInfoController: UIViewController {
     func publicDynamic() {
         dynamic.user = HeartUser.currentUser()
         let dynamicImage = HBAVFile(name: "dynamicImage", data: UIImageJPEGRepresentation(image!, 1.0))
+        let a =  DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "shi", targetUserName: "mdzz", commentContent: "you know. i love yu")
+        let b = DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "bb", targetUserName: "zz", commentContent: "you know. i love yudfdfdfdfjdfjdkfjdklsfjldsjfl")
+        let c = DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "shi", targetUserName: "", commentContent: "you know. i love ydfdfffdsddfdfdfdfdß®")
         dynamic.photos = dynamicImage
-        dynamic.saveInBackgroundWithBlock { (b, error) -> Void in
-            if error == nil {
+        AVObject.saveAllInBackground([a, b, c]) { (success, error) -> Void in
+            if error != nil {
+                print(error)
+                SVProgressHUD.showInfoWithStatus("发布失败..")
+
+            }else {
+                let relation = self.dynamic.relationforKey(HBDynamicComments)
+                relation.addObject(a)
+                relation.addObject(b)
+                relation.addObject(c)
+                self.dynamic.saveEventually({ (success, error) -> Void in
+                     SVProgressHUD.showInfoWithStatus("发布失败..")
+                })
                 self.dismissViewControllerAnimated(true, completion: nil)
-                MainTabar.currentMainTabar().hidden = false
-                return
             }
-            SVProgressHUD.showInfoWithStatus("发布失败..")
         }
     }
     

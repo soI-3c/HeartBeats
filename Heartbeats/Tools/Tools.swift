@@ -179,4 +179,19 @@ class Tools: NSObject {
         let newImage = UIImage(CGImage: cgImage)
         return newImage
     }
+    //  动态回复(评论文字)
+   class func cellContentWithCellHeight(comment: DynamicComment)-> (NSMutableAttributedString, CGFloat)  {
+        let str = NSMutableAttributedString()
+        let attributes = [
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1),
+        ]
+        str.appendAttributedString(NSAttributedString(string: comment.userName, attributes: attributes))
+        if comment.targetUserName?.characters.count > 0 {
+            str.appendAttributedString(NSAttributedString(string: " 回复了 ", attributes: attributes))
+            str.appendAttributedString(NSAttributedString(string: "@\(comment.targetUserName!)", attributes: [NSForegroundColorAttributeName : UIColor.redColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption2)]))
+        }
+        str.appendAttributedString(NSAttributedString(string: ": " + comment.commentContent, attributes: attributes))
+        let size = str.boundingRectWithSize(CGSize(width: screenMaimWidth - 16, height: 999), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).size
+        return (str, size.height)
+    }
 }

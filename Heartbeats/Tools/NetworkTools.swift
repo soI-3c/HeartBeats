@@ -39,6 +39,7 @@ class NetworkTools: NSObject {
         dynamicQuery.includeKey(HBDynamicUser)
         dynamicQuery.includeKey(HBDynamicPhotos)
         dynamicQuery.includeKey(HBDynamicPraises)
+        dynamicQuery.includeKey(HBDynamicComments)
 //        dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
 //        dynamicQuery.clearCachedResult()
         //设置缓存有效期
