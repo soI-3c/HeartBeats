@@ -97,6 +97,9 @@ class MainDynamicTableCell: UITableViewCell {
              dynamicPraiseCollectionV.snp_updateConstraints { (make) -> Void in
                 make.height.equalTo(height)
             }
+            dynamicCommentsView.snp_updateConstraints { (make) -> Void in
+                make.height.equalTo((dynamic?.commentTabVHeight)! + 8)
+            }
             dynamicPraiseCollectionV.praises = dynamic?.praises
             dynamicCommentsView.dynamic = dynamic
             topView.dynamic = dynamic

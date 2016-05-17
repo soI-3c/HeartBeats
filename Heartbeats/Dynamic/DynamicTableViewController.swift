@@ -118,8 +118,13 @@ class DynamicTableViewController: UITableViewController {
     var en: DynamicCellID = DynamicCellID.imageCellID       // cell ID
     var dynamics: [Dynamic]? {                              // 动态s
         didSet {
-            dynamics?.forEach({ (dynamic) -> () in
-                
+            dynamics?.forEach({ (dynamic) -> () in                      // 计算评论显示的高度
+                var commentsHeight: CGFloat = 0
+                dynamic.comments?.forEach({ (comment) -> () in
+                    let (_, height) = Tools.cellContentWithCellHeight(comment as! DynamicComment)
+                    commentsHeight += height
+                })
+                dynamic.commentTabVHeight = commentsHeight
             })
             tableView.reloadData()
         }

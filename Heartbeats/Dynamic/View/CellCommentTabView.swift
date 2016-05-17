@@ -14,6 +14,7 @@ class CellCommentTabView: UITableView {
 //    MARK: -- override
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        separatorStyle = .None
         setUpUI()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -38,12 +39,7 @@ class CellCommentTabView: UITableView {
 //     MARK: -- getter/ setter
     var dynamic: Dynamic? {                                 // 动态
         didSet{
-//            comments = dynamic?.comments as? [DynamicComment]
-           let a =  DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "shi", targetUserName: "mdzz", commentContent: "you know. i love yu")
-           let b = DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "bb", targetUserName: "zz", commentContent: "you know. i love yudfdfdfdfjdfjdkfjdklsfjldsjfl")
-
-           let c = DynamicComment(dynamicID: "", userID: "", userHeadImg: nil, userName: "shi", targetUserName: "", commentContent: "you know. i love ydfdfffdsddfdfdfdfdß®")
-            comments = [a, b, c]
+            self.comments = dynamic?.comments as? [DynamicComment]
             reloadData()
         }
     }
@@ -63,6 +59,7 @@ extension CellCommentTabView: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(commentTabViewCell, forIndexPath: indexPath) as! CommentTabViewCell
         cell.comment = comments![indexPath.item]
+        tableViewHeight += cell.cellHeight + 2
         return cell
     }
 }
@@ -87,6 +84,7 @@ class CommentTabViewCell: UITableViewCell {
 //    MARK: -- override
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .None
         setUpUI()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -101,25 +99,10 @@ class CommentTabViewCell: UITableViewCell {
             make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
     }
-    func cellContentWithCellHeight()-> (NSMutableAttributedString, CGFloat)  {
-        let str = NSMutableAttributedString()
-        let attributes = [
-            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1),
-        ]
-        str.appendAttributedString(NSAttributedString(string: comment.userName, attributes: attributes))
-        if comment.targetUserName?.characters.count > 0 {
-            str.appendAttributedString(NSAttributedString(string: " 回复了 ", attributes: attributes))
-            str.appendAttributedString(NSAttributedString(string: "@\(comment.targetUserName!)", attributes: [NSForegroundColorAttributeName : UIColor.redColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption2)]))
-        }
-        str.appendAttributedString(NSAttributedString(string: ": " + comment.commentContent, attributes: attributes))
-        let size = str.boundingRectWithSize(CGSize(width: screenMaimWidth - 16, height: 999), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).size
-        return (str, size.height)
-    }
-    
 //    MARK: -- getter / setter
     var comment: DynamicComment! {                                 // 评论
         didSet {
-            let (str, height) = cellContentWithCellHeight()
+            let (str, height) = Tools.cellContentWithCellHeight(comment)
             contentLab.attributedText = str
             cellHeight = height
         }
