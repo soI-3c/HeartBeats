@@ -26,9 +26,13 @@ class MainDynamicTableCell: UITableViewCell {
         super.init(coder: aDecoder)
         setUpUI()
     }
-    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 //    MARK: -- private func
     func setUpUI() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateCommentsViewHeight:", name: "updateCommentsViewHeight", object: nil)
+        
         contentView.addSubview(backImageView)
         contentView.addSubview(topView)
         contentView.addSubview(bottomView)
@@ -36,9 +40,8 @@ class MainDynamicTableCell: UITableViewCell {
         contentView.addSubview(dynamicPraiseCollectionV)
         contentView.addSubview(dynamicCommentsView)
         contentView.addSubview(addressLabel)
-        
-        addressLabel.layer.zPosition = 100              // 在图层最上面
-        
+    
+        addressLabel.layer.zPosition = 100                                  // 在图层最上面
         topView.snp_makeConstraints { (make) -> Void in                     // topView
             make.top.equalTo(self)
             make.height.equalTo(48)
@@ -51,12 +54,23 @@ class MainDynamicTableCell: UITableViewCell {
         dynamicCommentsView.snp_makeConstraints { (make) -> Void in         // 评论View
             make.top.equalTo(dynamicPraiseCollectionV.snp_bottom)
             make.left.right.equalTo(content)
+            make.height.equalTo(60)
         }
     }
     func rowHeigth(dynamic: Dynamic) -> CGFloat {
         return 0.0
     }
     
+    func updateCommentsViewHeight(notification: NSNotification) {
+        let info = notification.userInfo
+        let commentHeight = info!["height"] as! CGFloat
+        dynamicCommentsView.snp_updateConstraints { (make) -> Void in
+            make.height.equalTo(commentHeight)
+        }
+    }
+    func updateViewConstraints() {
+        
+    }
 //    MARK: -- setter/ getter
     let topView: CellTopView = CellTopView.loadNibSelf()
     let bottomView : CellBottomView = CellBottomView.loadNibSelf()
@@ -69,7 +83,7 @@ class MainDynamicTableCell: UITableViewCell {
         return imgView
     }()
     var dynamicPraiseCollectionV = DynamicPraisesCollectionView()           // 点赞列表
-    var dynamicCommentsView = CellCommentTabView()                          //  评论列表
+    var dynamicCommentsView = CellCommentTabView()                          // 评论列表
     
     var dynamic: Dynamic? {
         didSet{
@@ -82,10 +96,6 @@ class MainDynamicTableCell: UITableViewCell {
             let height =  dynamic?.praises?.count > 0 ? 40 : 0
              dynamicPraiseCollectionV.snp_updateConstraints { (make) -> Void in
                 make.height.equalTo(height)
-            }
-            dynamicCommentsView.snp_updateConstraints { (make) -> Void in
-////               make.height.equalTo(self.commentTabVHeight((self.dynamic?.comments?.count)!))
-                make.height.equalTo(80)
             }
             dynamicPraiseCollectionV.praises = dynamic?.praises
             dynamicCommentsView.dynamic = dynamic

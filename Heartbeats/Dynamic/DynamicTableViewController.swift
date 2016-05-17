@@ -81,21 +81,19 @@ class DynamicTableViewController: UITableViewController {
                 return
             }
         }
+        
         // 点赞
         let praise = DynamicPraise(dynamicID: dynamic.objectId, userID: user.objectId, userHeadImg: user.iconImage, userName: user.username)
-        praise.saveInBackgroundWithBlock { (success, error) -> Void in
+        dynamic.addUniqueObject(praise, forKey: "praises")
+        dynamic.cellHeight = 0                                                                    // 解决缓存行高没法刷新到点赞
+        dynamic.saveInBackgroundWithBlock({ (success, error) -> Void in
             if error == nil {
-                dynamic.addUniqueObject(praise, forKey: "praises")
-                dynamic.cellHeight = 0                                                                      // 解决缓存行高没法刷新到点赞
-                dynamic.saveInBackgroundWithBlock({ (success, error) -> Void in
-                    if error == nil {
-                        self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)        // 刷新指定行
-                        self.tableView.setNeedsLayout()
-                        self.praiseAnimation(true)
-                    }
-                })
+                self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)        // 刷新指定行
+                self.tableView.setNeedsLayout()
+                self.praiseAnimation(true)
             }
-        }
+        })
+
     }
     // 点赞动画
     private func praiseAnimation(isPraise: Bool) {
@@ -116,11 +114,13 @@ class DynamicTableViewController: UITableViewController {
         }
     }
     
-    
 //    MARK: -- getter / setter
     var en: DynamicCellID = DynamicCellID.imageCellID       // cell ID
     var dynamics: [Dynamic]? {                              // 动态s
         didSet {
+            dynamics?.forEach({ (dynamic) -> () in
+                
+            })
             tableView.reloadData()
         }
     }

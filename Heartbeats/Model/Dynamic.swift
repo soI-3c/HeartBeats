@@ -21,6 +21,7 @@ class Dynamic: AVObject, AVSubclassing {
     @NSManaged var praises: [AnyObject]?            //  赞的人数组
     @NSManaged var comments: [AnyObject]?           //  评论
     var cellHeight: CGFloat = 0                     //  缓存行高
+    var commentTabVHeight: CGFloat = 0              //  评论tablView的高
    static func parseClassName() -> String? {
         return "Dynamic"
     }

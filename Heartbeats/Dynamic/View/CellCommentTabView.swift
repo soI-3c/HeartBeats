@@ -30,6 +30,7 @@ class CellCommentTabView: UITableView {
         delegate = self
         backgroundColor = UIColor.clearColor()
         bounces = false
+        tableFooterView = UIView()
         registerClass(CommentTabViewCell.self, forCellReuseIdentifier: commentTabViewCell)
         prototypeCell =  dequeueReusableCellWithIdentifier(commentTabViewCell) as? CommentTabViewCell
     }
@@ -62,10 +63,6 @@ extension CellCommentTabView: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(commentTabViewCell, forIndexPath: indexPath) as! CommentTabViewCell
         cell.comment = comments![indexPath.item]
-        tableViewHeight += cell.cellHeight + 2
-        if indexPath.item == comments!.count - 1 {
-            
-        }
         return cell
     }
 }
@@ -73,7 +70,11 @@ extension CellCommentTabView: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
        let cell = self.prototypeCell!
        cell.comment = comments![indexPath.item]
-       return cell.cellHeight + 2
+        tableViewHeight += cell.cellHeight + 2
+        if indexPath.item == comments!.count - 1 {
+            NSNotificationCenter.defaultCenter().postNotificationName("updateCommentsViewHeight", object: nil, userInfo: ["height" : tableViewHeight])
+        }
+       return cell.cellHeight + 8
     }
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -126,6 +127,7 @@ class CommentTabViewCell: UITableViewCell {
     var cellHeight: CGFloat = 0                                     // 行高
     let contentLab: UILabel = {                                     // 评论
         let lab = UILabel(frame: CGRect(x: 0, y: 0, width: Int(screenMaimWidth) - 16, height: Int.max))
+        lab.preferredMaxLayoutWidth = screenMaimWidth - 16
         lab.textColor = UIColor.whiteColor()
         lab.numberOfLines = 4
         return lab
