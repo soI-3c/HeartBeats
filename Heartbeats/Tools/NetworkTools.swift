@@ -32,7 +32,7 @@ class NetworkTools: NSObject {
             }
         })
     }
-//    MARK: -- 返回动态数组
+//    MARK: -- 返回所有人动态数组
     class func loadDynamics(finishedCallBack: HBNetFinishedCallBack) {
         var dynamics = [Dynamic]()
         let dynamicQuery = Dynamic.query()
@@ -40,10 +40,6 @@ class NetworkTools: NSObject {
         dynamicQuery.includeKey(HBDynamicPhotos)
         dynamicQuery.includeKey(HBDynamicPraises)
         dynamicQuery.includeKey(HBDynamicComments)
-//        dynamicQuery.cachePolicy = AVCachePolicy.NetworkElseCache
-//        dynamicQuery.clearCachedResult()
-        //设置缓存有效期
-//        dynamicQuery.maxCacheAge = 24*3600;
         dynamicQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 for dynamic in objects {
@@ -72,8 +68,7 @@ class NetworkTools: NSObject {
             }
         }
     }
-    
-//    查找所有User
+// 查找所有User
   class func loadUsers (finishedCallBack: HBNetFinishedCallBack) {
         let userQuery = HeartUser.query()
         userQuery.cachePolicy = AVCachePolicy.NetworkElseCache
@@ -90,6 +85,5 @@ class NetworkTools: NSObject {
                     finishedCallBack(result: nil, error: err)
             }
         }
-    
     }
 }

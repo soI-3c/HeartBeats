@@ -14,10 +14,11 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
 //    MARK : -- override
     override func viewDidLoad() {
         super.viewDidLoad()
-//        automaticallyAdjustsScrollViewInsets = true
         setUpUI()
     }
-    
+    deinit {
+        print("DynamicCutOffImgController")
+    }
 //    MARK: -- private func
    private func setUpUI() {
         view.addSubview(imgScrollView)
@@ -113,9 +114,26 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
       let h = (img?.size.height)! / imgScrollView.contentSize.height * screenMaimWidth
       img = img!.getSubImage(CGRectMake(x, y, w, h))
       img = img?.scaleImage(img!, maxDataLeng: 200)
-      let editInfoController = DynamicEditInfoController()
-      editInfoController.image = img
-      navigationController?.pushViewController(editInfoController, animated: true)
+        
+//        let width = imgView.frame.size.width;
+//        let rationScale = (width / img!.size.width)
+//        
+//        let origX = (cuttOffFrame.origin.x - imgView.frame.origin.x) / rationScale;
+//        let origY = (cuttOffFrame.origin.y - imgView.frame.origin.y) / rationScale;
+//        let oriWidth = cuttOffFrame.size.width / rationScale;
+//        let oriHeight = cuttOffFrame.size.height / rationScale;
+////
+//        let myRect = CGRectMake(origX, origY, oriWidth, oriHeight)
+//        let  imageRef = CGImageCreateWithImageInRect(img!.CGImage, myRect)
+//        UIGraphicsBeginImageContext(myRect.size)
+//        let context = UIGraphicsGetCurrentContext()
+//        CGContextDrawImage(context, myRect, imageRef)
+//        let clipImage = UIImage(CGImage: imageRef!)
+//        UIGraphicsEndImageContext();
+//        
+        let editInfoController = DynamicEditInfoController()
+        editInfoController.image = img
+        navigationController?.pushViewController(editInfoController, animated: true)
     }
 
 //    MARK: -- getter / setter
@@ -128,12 +146,13 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
         return scroView
     }()
     
-    lazy var imgView: UIImageView = UIImageView()
     
+    lazy var imgView: UIImageView = UIImageView()
+    var cuttOffFrame = CGRectZero
     var img: UIImage? {
         didSet {
             // 重置 scrollView
-//            resetScrollView()
+//            resetScrollView()                 
             imgView.image = nil                 // 解决复用
             imgView.image = img
             setImagePosition()
@@ -143,7 +162,9 @@ class DynamicCutOffImgController: UIViewController, UIScrollViewDelegate {
         let view = UIView()
         view.userInteractionEnabled = false
         let layer = CAShapeLayer()
-        layer.path = UIBezierPath(rect: CGRectMake(0, (screenMaimheiht - 64 - screenMaimWidth) * 0.5, screenMaimWidth, screenMaimWidth)).CGPath
+        self.cuttOffFrame =  CGRectMake(0, (screenMaimheiht - 64 - screenMaimWidth) * 0.5, screenMaimWidth, screenMaimWidth)
+        layer.path = UIBezierPath(rect: self.cuttOffFrame).CGPath
+    
         layer.fillColor = UIColor.clearColor().CGColor
         layer.strokeColor = UIColor.whiteColor().CGColor
         view.layer.addSublayer(layer)

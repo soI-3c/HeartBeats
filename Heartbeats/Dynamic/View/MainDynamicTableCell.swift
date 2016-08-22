@@ -69,7 +69,6 @@ class MainDynamicTableCell: UITableViewCell {
         }
     }
     func updateViewConstraints() {
-        
     }
 //    MARK: -- setter/ getter
     let topView: CellTopView = CellTopView.loadNibSelf()

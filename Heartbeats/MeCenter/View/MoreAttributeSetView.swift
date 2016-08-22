@@ -29,9 +29,15 @@ class MoreAttributeSetView: NameWithPhoneSetView, UIPickerViewDataSource, UIPick
                     case 6 :
                         soures = incomes
                     case 7:
-                            soures = houses
+                            soures = address
+                    case 8:
+                        soures = houses
+
+                    case 9:
+                       soures = cars
+
                     default:
-                            soures = cars
+                       break
                 }
                 setPicker.reloadAllComponents()
             }

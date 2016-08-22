@@ -11,13 +11,14 @@ import AVOSCloud
 
 
 let meCenterCellID = "meCenterCellID"
-
+let scrWHSize = UIScreen.mainScreen().bounds.size;
 class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 //    MARK: -- 数据懒加载初始化
     var user: HeartUser?{
         didSet {
             self.headView.user = user
-            self.personaView.persionalityLabel.text = user?.personality
+            navigationItem.title = user?.username
+//            self.personaView.persionalityLabel.text = user?.personality
             NetworkTools.loadDynamicsByUser(user!) { (result, error) -> () in              //    MARK : - 加载动态数据
                 if error == nil {
                     self.dynamics = result as? [Dynamic]
@@ -27,42 +28,49 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             }
         }
     }
-    private lazy var headView : MeCenterHeadView = MeCenterHeadView()
-    private lazy var isUserHeadImg: Bool = true                     //   判断是否是头像
-    
-    private lazy var personaView: PersonalitySectionView = {
-        let view = Tools.instantiateFromNib("PersonalitySectionView", widthPercen: 0, hieghtPercen: 0) as! PersonalitySectionView
-        return view
-    }()
     var dynamics: [Dynamic]? {
         didSet {
-            tableView.reloadData()
+            userDynamicFootVuew.dynamics = dynamics
         }
     }
+    private lazy var headView : MeCenterHeadView = MeCenterHeadView()
+    private let userDynamicFootVuew = UserDynamicCollectionV(frame: CGRectMake(0, 0, 0, 400), collectionViewLayout: UserDynamicCollectionLayout())                //   动态展示
+    private lazy var isUserHeadImg: Bool = true                             //   判断是否是头像
+    
     //    MARK: --  初始化操作
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.registerNib(UINib(nibName: "MeCenterCell", bundle: nil), forCellReuseIdentifier: meCenterCellID)
+        navigationController?.navigationBarHidden = false
+        tableView.estimatedRowHeight = 88
+         tableView.rowHeight = UITableViewAutomaticDimension
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
+        let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "setting")
+        self.navigationItem.rightBarButtonItems = [spaceItem, leftBtn]
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: meCenterCellID)
+        
         if user == nil {            // 默认是当前用户, 如果不传user过来
             user = HeartUser.currentUser()
         }
         setupUI()
     }
-    
     private func setupUI() {
         headView.delegate = self
-        headView.bounds = CGRectMake(0, 0, 0, tableView.frame.height * 0.8)
+        headView.bounds = CGRectMake(0, 0, 0, tableView.frame.width)
         tableView.tableHeaderView = headView
-        
-        navigationController?.navigationBar.hidden = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
-        navigationController?.navigationBar.translucent = true
+        tableView.tableFooterView = userDynamicFootVuew
     }
-    
-//    MARK: - MeCenterHeadViewDelegate 
+    func setting() {
+        let settingController = UIStoryboard(name: "SettingController", bundle: nil).instantiateInitialViewController() as? SettingController
+        settingController!.currUser = user
+        settingController?.changUserInfoBlock = {[weak self] (user) -> Void in
+            self?.headView.user = user
+            self?.tableView.reloadData()
+            self?.tableView.layoutIfNeeded()           // 位置改变了, 调用系统会帮我们调整
+        }
+        navigationController?.pushViewController(settingController!, animated: true)
+    }
+//    MARK: - MeCenterHeadViewDelegate
 //    换头像
     func chageUserHeaderImg(meCenterHeadView : MeCenterHeadView) {
         if user != HeartUser.currentUser() {                            // 若不是当前用户则不能修改
@@ -80,60 +88,33 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     
 //    MARK: --- tableViewDelegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
-    }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1{
-            return 0
-        }
-        return dynamics?.count ?? 0
+        return 1
     }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(meCenterCellID, forIndexPath: indexPath) as? MeCenterCell
-        cell?.dynamic = dynamics?[indexPath.row]
-        return cell!
-    }
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        if section == 0 {
-            return self.personaView
+         let cell = UITableViewCell()
+        cell.backgroundColor = UIColor.whiteColor()
+         let lab = UILabel(title: "", fontSize: 15)
+        lab.backgroundColor = UIColor.blackColor()
+        lab.numberOfLines = 0
+        lab.textColor = UIColor.whiteColor()
+        
+        // 行距
+        let attributedString1 = NSMutableAttributedString(string: (user?.personality)!);
+        let paragraphStyle1 = NSMutableParagraphStyle();
+        paragraphStyle1.lineSpacing = 1
+        attributedString1.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle1, range: NSMakeRange(0, (user?.personality!.characters.count)!))
+        lab.attributedText = attributedString1;
+        cell.contentView.addSubview(lab)
+        lab.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 2, left: 2, bottom: -2, right: -2))
         }
-        if section == 1 {
-            let view = Tools.instantiateFromNib("ShopSettingView", widthPercen: 0, hieghtPercen: 0) as! ShopSettingView
-                view.shopActionHandler = {()-> Void in
-            }
-            view.settingActionHandler = {[weak self]()-> Void in
-              let settingController =   UIStoryboard(name: "SettingController", bundle: nil).instantiateInitialViewController() as? SettingController
-                settingController!.currUser = self!.user
-                settingController?.changUserInfoBlock = {[weak self] (user) -> Void in
-                    self?.headView.user = user
-                    self?.tableView.layoutIfNeeded()           // 位置改变了, 调用系统会帮我们调整
-                }
-                self!.navigationController?.pushViewController(settingController!, animated: true)
-            }
-            return view
-        }
-        return nil
+        return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let showDynamicPControl = NSBundle.mainBundle().loadNibNamed("ShowDynamicPhotoController", owner: nil, options: nil).first as? ShowDynamicPhotoController
-        showDynamicPControl?.selectDynamicIndex = indexPath.row
-        showDynamicPControl?.dynamics = dynamics
-        presentViewController(showDynamicPControl!, animated: true, completion: nil)
+        
     }
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
-    }
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 44
-        }
-        // 根据个人介绍的文字长度, 动态计算section的高度
-        let textSize =  personaView.persionalityLabel.text?.sizeWithAttributes([NSFontAttributeName: personaView.persionalityLabel.font])
-        return textSize?.height <= 0 ? 0 : textSize!.height + 8
-    }
-    
+
 // MARK: --- 更换头像一系列方法
     func selectIcon(){
         let userIconAlert = UIAlertController(title: "请选择操作", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -187,7 +168,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     
     //UIImagePicker回调方法
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-////        获取照片的原图
+//       获取照片的原图
 //        let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage)
 //        获得编辑后的图片
         let image = (info as NSDictionary).objectForKey(UIImagePickerControllerEditedImage)
@@ -237,10 +218,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         let imgFile = HBAVFile(name: imageName, data: imgData)
         user!.setObject(imgFile, forKey: imageName)
         user!.saveInBackgroundWithBlock { (success, error) -> Void in
-            if success == true {
-                Tools.showSVPMessage("设置成功")
-                return
-            }else {
+            if success == false {
                 Tools.showSVPMessage("设置失败#")
                 return
             }

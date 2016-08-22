@@ -26,7 +26,6 @@ class PublicDynamicCell: UICollectionViewCell {
                 backImageView.image = nil
                 let iconImageFile = user.iconImage
                 let backImageFile = user.backIconImage
-                let imgNumber = arc4random() % 9
                 let image = placeholderImage
                 if let url = iconImageFile?.url {
                    userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: UIControlState.Normal, placeholderImage: image)
@@ -77,6 +76,7 @@ class PublicDynamicCell: UICollectionViewCell {
         headBtn.layer.cornerRadius = 40 / 2
         //设置遮盖额外部分,下面两句的意义及实现是相同的
         headBtn.layer.masksToBounds = true
+        headBtn.imageView?.contentMode = .ScaleAspectFit
         headBtn.layer.borderWidth = 1
         headBtn.layer.borderColor = UIColor.whiteColor().CGColor
         return headBtn
@@ -92,6 +92,7 @@ class PublicDynamicCell: UICollectionViewCell {
         backImagV.image = UIImage(named: "back")
         backImagV.layer.cornerRadius = 10
         backImagV.layer.masksToBounds = true
+        backImagV.contentMode = .ScaleAspectFill
         return backImagV
     }()                      // 背景图片
     
@@ -271,8 +272,8 @@ class HBHomeCollectionView: UICollectionView {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = UICollectionViewScrollDirection.Vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumInteritemSpacing = HBPhotoItemMargin
-        layout.minimumLineSpacing = HBPhotoItemMargin
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
         layout.itemSize = CGSizeMake(self.frame.width, self.frame.height)
         registerNib(UINib(nibName: "HBHomeCollectionCell", bundle: nil), forCellWithReuseIdentifier: HBHomeCollectionCellID)
     }

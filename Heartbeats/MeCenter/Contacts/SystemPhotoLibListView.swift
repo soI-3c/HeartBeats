@@ -54,11 +54,13 @@ extension SystemPhotoLibListView {
         if cell == nil {
             cell = SystemPhotoLibCell(style: .Subtitle, reuseIdentifier: photoLibCellID)
         }
-        let group = assetGroups[indexPath.row]
-        let imageCGF = group.posterImage().takeRetainedValue()
-        cell!.textLabel?.text = group.valueForProperty(ALAssetsGroupPropertyName) as? String
-        cell!.detailTextLabel?.text = "\(group.numberOfAssets())"
-        cell?.imageView?.image = UIImage(CGImage: imageCGF)
+        if indexPath.row < assetGroups.count {
+            var group = assetGroups[indexPath.row]
+            let imageCGF = group.posterImage().takeRetainedValue()
+            cell!.textLabel?.text = group.valueForProperty(ALAssetsGroupPropertyName) as? String
+            cell!.detailTextLabel?.text = "\(group.numberOfAssets())"
+            cell?.imageView?.image = UIImage(CGImage: imageCGF)
+        }
         return cell!
     }
 }

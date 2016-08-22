@@ -42,7 +42,7 @@ class MainNavigationController: UINavigationController, UINavigationControllerDe
     override func pushViewController(viewController: UIViewController, animated: Bool) {
         if viewControllers.count >= 1 {
           let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-            spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
+          spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
           let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "doBack")
             viewController.navigationItem.leftBarButtonItems = [spaceItem, leftBtn]
             MainTabar.currentMainTabar().hidden = true                          // 隐藏自定义的tabbar

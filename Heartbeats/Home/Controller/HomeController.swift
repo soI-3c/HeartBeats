@@ -42,7 +42,7 @@ class HomeController: UICollectionViewController {
 
         // 注册可重用 cell
         collectionView?.registerClass(PublicDynamicCell.self, forCellWithReuseIdentifier: HBHomeCellID)
-        navigationController?.navigationBar.hidden = true
+//        navigationController?.navigationBar.hidden = true
         loadData()
         prepareLayout()
     }

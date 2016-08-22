@@ -20,6 +20,7 @@ class SettingController: UITableViewController {
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var isHaveHouseLabel: UILabel!
     @IBOutlet weak var isHaveCarLabel: UILabel!
+    @IBOutlet weak var addressLab: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var personalityLabel: UITableViewCell!
     @IBOutlet weak var cellShowText: UILabel!
@@ -42,7 +43,8 @@ class SettingController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBarHidden = false
+        navigationItem.title = "设置"
+        tableView.tableFooterView = UIView()
         prepare()
     }
     
@@ -76,6 +78,9 @@ class SettingController: UITableViewController {
         if let income = user?.income {
             incomeLabel.text = income
         }
+        if let address = user?.address {
+            addressLab.text = address
+        }
         if let car = user?.car {
             isHaveCarLabel.text = car
         }
@@ -104,20 +109,20 @@ class SettingController: UITableViewController {
         return 0
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 {                 // 名字
             let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView", textNumer: 10)
             showView.editTextField.text = user?.username
             showView.editTextField.resignFirstResponder()
             showView.changeHandler = {(objStr) -> Void in
                 self.user?.username = objStr
             }
-        }else if indexPath.row == 1 {
+        }else if indexPath.row == 1 {           // 电话
             let (showView, _) = self.loadNameWithPhoneView("NameWithPhoneSetView", textNumer: 11)
             showView.editTextField.text = user?.mobilePhoneNumber
             showView.changeHandler = {(objStr) -> Void in
                 self.user?.mobilePhoneNumber = objStr
             }
-        }else if indexPath.row == 9 {
+        }else if indexPath.row == 10 {          // 个人介绍
             let (showView, _) = self.loadNameWithPhoneView("PersonalitySetView", textNumer: 0)
             (showView as? PersonalitySetView)?.editTextView.text = user?.personality
             showView.changeHandler = {(objStr) -> Void in
@@ -149,12 +154,18 @@ class SettingController: UITableViewController {
                 }
             case 7:
                 showView.changeHandler = {(objStr) -> Void in
+                    self.user?.address = objStr
+                }
+            case 8:
+                showView.changeHandler = {(objStr) -> Void in
                     self.user?.house = objStr
                 }
-            default:
+            case 9:
                 showView.changeHandler = {(objStr) -> Void in
                     self.user?.car = objStr
                 }
+            default:
+               break
             }
         }
     }
@@ -170,7 +181,6 @@ class SettingController: UITableViewController {
                 if success == true {
                     self.tableView.reloadData()
                     self.isChanged = true
-                    Tools.showSVPMessage("编辑成功")
                 }else {
                     SVProgressHUD.showInfoWithStatus("编辑失败")
                 }
@@ -184,50 +194,4 @@ class SettingController: UITableViewController {
     }
     override func scrollViewDidScroll(scrollView: UIScrollView) {
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -31,7 +31,7 @@ class DynamicTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changePraises:", name: "touchPraiseEven", object: nil)
         
         view.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.translucent = true
+        navigationController?.navigationBar.translucent = true
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.registerClass(ImageDynamicTableCell.self, forCellReuseIdentifier: DynamicCellID.imageCellID.rawValue)
         tableView.registerClass(ContentDynaicTableCell.self, forCellReuseIdentifier: DynamicCellID.contentCellID.rawValue)
@@ -58,15 +58,12 @@ class DynamicTableViewController: UITableViewController {
             }
         }
     }
-    
 //   点赞刷新指定点赞列表
     func changePraises(notification: NSNotification) {
        let user = HeartUser.currentUser()
        let info = notification.userInfo
-        let indexPath = self.tableView.indexPathForCell(info!["Cell"] as! MainDynamicTableCell)
-        
+       let indexPath = self.tableView.indexPathForCell(info!["Cell"] as! MainDynamicTableCell)
        let dynamic = info!["dynamic"] as! Dynamic
-        
        var praises = dynamic.praises                                                                        // 取消点赞
         for var i = 0; i < praises?.count; ++i {
             let praise = praises![i] as? DynamicPraise
@@ -81,19 +78,19 @@ class DynamicTableViewController: UITableViewController {
                 return
             }
         }
-        
         // 点赞
         let praise = DynamicPraise(dynamicID: dynamic.objectId, userID: user.objectId, userHeadImg: user.iconImage, userName: user.username)
-        dynamic.addUniqueObject(praise, forKey: "praises")
-        dynamic.cellHeight = 0                                                                    // 解决缓存行高没法刷新到点赞
-        dynamic.saveInBackgroundWithBlock({ (success, error) -> Void in
+//        dynamic.addUniqueObject(praise, forKey: "praises")
+        dynamic.praises?.append(praise);
+        dynamic.cellHeight = 0                                                                      // 解决缓存行高没法刷新到点赞
+        praise.saveInBackgroundWithBlock { (b, error) -> Void in
             if error == nil {
                 self.tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .None)        // 刷新指定行
-                self.tableView.setNeedsLayout()
                 self.praiseAnimation(true)
+            }else {
+                print(error)
             }
-        })
-
+        }
     }
     // 点赞动画
     private func praiseAnimation(isPraise: Bool) {
@@ -113,7 +110,6 @@ class DynamicTableViewController: UITableViewController {
                 praiseView.removeFromSuperview()
         }
     }
-    
 //    MARK: -- getter / setter
     var en: DynamicCellID = DynamicCellID.imageCellID       // cell ID
     var dynamics: [Dynamic]? {                              // 动态s

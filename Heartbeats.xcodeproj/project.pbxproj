@@ -22,7 +22,6 @@
 		DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */; };
 		DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */; };
 		DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */; };
-		DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB835B231C390EBF004F05BA /* HBCollectionCell.xib */; };
 		DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936771CC673EE00C2FED9 /* CellTopView.xib */; };
 		DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8936791CC6764C00C2FED9 /* CellBottomView.xib */; };
 		DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */; };
@@ -55,6 +54,8 @@
 		DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94731CC7A13100A08669 /* CellBottomView.swift */; };
 		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
+		DBD269751D0A737000915E38 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269741D0A737000915E38 /* NSString+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		DBD269771D0A95AB00915E38 /* UserDynamicCollectionV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */; settings = {ASSET_TAGS = (); }; };
 		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
 		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; };
 		DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */; };
@@ -108,14 +109,10 @@
 		F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E399861C33C12B00A46DB0 /* HBButton.swift */; };
 		F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */; };
 		F1E3998B1C33DB4300A46DB0 /* PersonalitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */; };
-		F1E3D7EF1C23B20100E63CDF /* MeCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3D7ED1C23B20100E63CDF /* MeCenterCell.swift */; };
-		F1E3D7F01C23B20100E63CDF /* MeCenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E3D7EE1C23B20100E63CDF /* MeCenterCell.xib */; };
 		F1E44E641C3FB9BA00EC1836 /* HBAVFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */; };
 		F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */; };
 		F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */; };
 		F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */; };
-		F1E6CBDE1C2D0F8500353300 /* ShopSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E6CBDD1C2D0F8500353300 /* ShopSettingView.xib */; };
-		F1E6CBE01C2D143E00353300 /* ShopSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6CBDF1C2D143E00353300 /* ShopSettingView.swift */; };
 		F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */; };
 		F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BAF1C2159820046EFD2 /* MeCenterController.swift */; };
 		F1E96BB31C21599F0046EFD2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BB21C21599F0046EFD2 /* Tools.swift */; };
@@ -131,11 +128,9 @@
 		F1EF0B361CA1263A00E25771 /* GetisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF0B351CA1263A00E25771 /* GetisterViewController.swift */; };
 		F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1EF0B371CA1267700E25771 /* GetisterViewController.storyboard */; };
 		F1EF9A571C3E002500F3F696 /* HBHomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */; };
-		F1EF9A591C3E566600F3F696 /* OneSelfPhotoLibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */; };
 		F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */; };
 		F1F2F3711CD8A2E200E30083 /* DynamicWriteContentTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */; };
 		F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */; };
-		F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */; };
 		F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */; };
 		F1F576D41CCF30DE00E49F87 /* DynamicCutOffImgController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */; };
 		F1F751B11C229F6400176642 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F751B01C229F6400176642 /* AVOSCloudIM.framework */; };
@@ -189,7 +184,6 @@
 		DB730FBF1C429F4C0074AABB /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		DB730FC11C429F6C0074AABB /* HMProgressImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMProgressImageView.swift; sourceTree = "<group>"; };
 		DB730FC31C42A1660074AABB /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserCell.swift; path = ../../MeCenter/View/PhotoBrowserCell.swift; sourceTree = "<group>"; };
-		DB835B231C390EBF004F05BA /* HBCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBCollectionCell.xib; sourceTree = "<group>"; };
 		DB8936771CC673EE00C2FED9 /* CellTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellTopView.xib; sourceTree = "<group>"; };
 		DB8936791CC6764C00C2FED9 /* CellBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellBottomView.xib; sourceTree = "<group>"; };
 		DB893F3E1CA175B50031D4A5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +210,8 @@
 		DBCC94731CC7A13100A08669 /* CellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBottomView.swift; sourceTree = "<group>"; };
 		DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDynamicTableCell.swift; sourceTree = "<group>"; };
 		DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
+		DBD269741D0A737000915E38 /* NSString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
+		DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDynamicCollectionV.swift; sourceTree = "<group>"; };
 		DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDynamicTableCell.swift; sourceTree = "<group>"; };
 		DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicEditInfoController.swift; sourceTree = "<group>"; };
 		DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -261,7 +257,7 @@
 		F17EB8CB1C3D09EB00829E45 /* PublicDynamicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PublicDynamicCell.xib; path = ../../MeCenter/Contacts/PublicDynamicCell.xib; sourceTree = "<group>"; };
 		F18700DF1CE42A700004EA75 /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
 		F19BBF511C45EC19006BE361 /* DefaultPublicDynamicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPublicDynamicController.swift; sourceTree = "<group>"; };
-		F19DD7251C23DB9000658A93 /* Publice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publice.h; sourceTree = "<group>"; };
+		F19DD7251C23DB9000658A93 /* Publice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publice.swift; sourceTree = "<group>"; };
 		F1B8D34D1C28E75D00B0B847 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPhotoLibListView.swift; sourceTree = "<group>"; };
 		F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraisesCollectionView.swift; sourceTree = "<group>"; };
@@ -272,14 +268,10 @@
 		F1E399861C33C12B00A46DB0 /* HBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBButton.swift; sourceTree = "<group>"; };
 		F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalitySetView.xib; sourceTree = "<group>"; };
 		F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySetView.swift; sourceTree = "<group>"; };
-		F1E3D7ED1C23B20100E63CDF /* MeCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterCell.swift; sourceTree = "<group>"; };
-		F1E3D7EE1C23B20100E63CDF /* MeCenterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeCenterCell.xib; sourceTree = "<group>"; };
 		F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBAVFile.swift; sourceTree = "<group>"; };
 		F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreAttributeSetView.xib; sourceTree = "<group>"; };
 		F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalitySectionView.xib; sourceTree = "<group>"; };
 		F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySectionView.swift; sourceTree = "<group>"; };
-		F1E6CBDD1C2D0F8500353300 /* ShopSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopSettingView.xib; sourceTree = "<group>"; };
-		F1E6CBDF1C2D143E00353300 /* ShopSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSettingView.swift; sourceTree = "<group>"; };
 		F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterHeadView.swift; sourceTree = "<group>"; };
 		F1E96BAF1C2159820046EFD2 /* MeCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterController.swift; sourceTree = "<group>"; };
 		F1E96BB21C21599F0046EFD2 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
@@ -295,11 +287,9 @@
 		F1EF0B351CA1263A00E25771 /* GetisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetisterViewController.swift; path = View/GetisterViewController.swift; sourceTree = "<group>"; };
 		F1EF0B371CA1267700E25771 /* GetisterViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetisterViewController.storyboard; sourceTree = "<group>"; };
 		F1EF9A561C3E002500F3F696 /* HBHomeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HBHomeCollectionCell.xib; path = ../../MeCenter/Contacts/HBHomeCollectionCell.xib; sourceTree = "<group>"; };
-		F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneSelfPhotoLibView.xib; sourceTree = "<group>"; };
 		F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraiseEvaluation.swift; sourceTree = "<group>"; };
 		F1F2F3701CD8A2E200E30083 /* DynamicWriteContentTextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicWriteContentTextController.swift; sourceTree = "<group>"; };
 		F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
-		F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDynamicPhotoController.swift; sourceTree = "<group>"; };
 		F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDynamicPhotoController.xib; path = ../Controller/ShowDynamicPhotoController.xib; sourceTree = "<group>"; };
 		F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCutOffImgController.swift; sourceTree = "<group>"; };
 		F1F751B01C229F6400176642 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
@@ -513,6 +503,7 @@
 				F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */,
 				F1E399861C33C12B00A46DB0 /* HBButton.swift */,
 				F18700DF1CE42A700004EA75 /* TextStorage.swift */,
+				DBD269741D0A737000915E38 /* NSString+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -649,23 +640,18 @@
 			isa = PBXGroup;
 			children = (
 				F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */,
-				F1E3D7ED1C23B20100E63CDF /* MeCenterCell.swift */,
 				F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */,
-				F1E6CBDF1C2D143E00353300 /* ShopSettingView.swift */,
 				F1E399821C33AC4A00A46DB0 /* NameWithPhoneSetView.swift */,
 				F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */,
 				DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */,
 				F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */,
-				F1EF9A581C3E566600F3F696 /* OneSelfPhotoLibView.xib */,
 				F1ED562F1C30DADB005F74DB /* SettingController.storyboard */,
 				F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */,
 				F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */,
 				F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */,
 				F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */,
-				F1E6CBDD1C2D0F8500353300 /* ShopSettingView.xib */,
-				F1E3D7EE1C23B20100E63CDF /* MeCenterCell.xib */,
-				DB835B231C390EBF004F05BA /* HBCollectionCell.xib */,
 				F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */,
+				DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -674,7 +660,6 @@
 			isa = PBXGroup;
 			children = (
 				F1E96BAF1C2159820046EFD2 /* MeCenterController.swift */,
-				F1F52D451C3B565F004228A1 /* ShowDynamicPhotoController.swift */,
 				F1ED56311C30FB58005F74DB /* SettingController.swift */,
 			);
 			path = Controller;
@@ -687,7 +672,7 @@
 				F1518ABB1C2BED5E00A58AF2 /* Extension */,
 				F1E96BB21C21599F0046EFD2 /* Tools.swift */,
 				F1F39ED71C3A60A200BCDA98 /* NetworkTools.swift */,
-				F19DD7251C23DB9000658A93 /* Publice.h */,
+				F19DD7251C23DB9000658A93 /* Publice.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -847,12 +832,10 @@
 			files = (
 				F1EF9A571C3E002500F3F696 /* HBHomeCollectionCell.xib in Resources */,
 				F17EB8A61C3CF19E00829E45 /* Contact.xib in Resources */,
-				F1EF9A591C3E566600F3F696 /* OneSelfPhotoLibView.xib in Resources */,
 				F1716D1F1C06EA2400F7AB97 /* Info.plist in Resources */,
 				DB1AF6201BF76FA90059A41B /* LaunchScreen.storyboard in Resources */,
 				F1ED56301C30DADB005F74DB /* SettingController.storyboard in Resources */,
 				DB8C15701CCC9F6D0040C907 /* select_yes.png in Resources */,
-				F1E6CBDE1C2D0F8500353300 /* ShopSettingView.xib in Resources */,
 				F1EC2A8C1C9A85C90038A0CB /* MainTabar.xib in Resources */,
 				F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */,
 				DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */,
@@ -861,13 +844,11 @@
 				DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */,
 				F17EB8A81C3CF19E00829E45 /* dialCell2.xib in Resources */,
 				F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */,
-				DB835B241C390EBF004F05BA /* HBCollectionCell.xib in Resources */,
 				DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */,
 				F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */,
 				F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */,
 				F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */,
 				F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */,
-				F1E3D7F01C23B20100E63CDF /* MeCenterCell.xib in Resources */,
 				DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -957,6 +938,7 @@
 				DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */,
 				DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */,
 				DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */,
+				DBD269751D0A737000915E38 /* NSString+Extension.swift in Sources */,
 				F1EC2A8E1C9A86460038A0CB /* MainTabar.swift in Sources */,
 				DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */,
 				F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */,
@@ -966,7 +948,6 @@
 				F17EB8C51C3CF2C400829E45 /* PathDynamicModal.swift in Sources */,
 				F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */,
 				DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */,
-				F1E6CBE01C2D143E00353300 /* ShopSettingView.swift in Sources */,
 				F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */,
 				DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */,
 				DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */,
@@ -991,7 +972,6 @@
 				F1716D1E1C06EA2400F7AB97 /* EdgeInsets.swift in Sources */,
 				DB8C156D1CCC9F6D0040C907 /* SCImageGridViewController.m in Sources */,
 				DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */,
-				F1F52D471C3B565F004228A1 /* ShowDynamicPhotoController.swift in Sources */,
 				F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */,
 				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,
 				DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */,
@@ -1007,10 +987,10 @@
 				DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */,
 				F1716D221C06EA2400F7AB97 /* SourceLocation.swift in Sources */,
 				DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */,
-				F1E3D7EF1C23B20100E63CDF /* MeCenterCell.swift in Sources */,
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
 				F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */,
+				DBD269771D0A95AB00915E38 /* UserDynamicCollectionV.swift in Sources */,
 				F1D936A31CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift in Sources */,
 				F1ED56321C30FB58005F74DB /* SettingController.swift in Sources */,
 				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
@@ -1168,6 +1148,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heartbeats/SMS_SDK",
@@ -1214,6 +1195,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heartbeats/SMS_SDK",

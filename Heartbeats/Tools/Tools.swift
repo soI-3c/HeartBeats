@@ -18,7 +18,7 @@ let placeholderImage = UIImage(named: "u4")
 let zero:CGFloat = 0.0
 let minMargins = 8                  // MeCenterHeadView
 let maxMArgins = 16                 // MeCenterHeadView
-let fontSize: CGFloat = 15
+let fontSize: CGFloat = 13
 
 
 let provinceArray = ["广东省","上海", "北京"]
@@ -32,15 +32,16 @@ let academicArray = ["大专以下", "大专", "本科", "硕士", "博士"]
 
 let ages = ["18","19","20","21","22","23","24","25","26","27","28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47","48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60"]
 
- let incomes = ["0 -- 2000元", "2000 -- 5000元", "5000 -- 8000元", "8000 -- 10000元", "10000 -- 15000元", "15000 -- 20000元", "20000 -- 30000元", "30000元以上"]
+let incomes = ["0 -- 2000元", "2000 -- 5000元", "5000 -- 8000元", "8000 -- 10000元", "10000 -- 15000元", "15000 -- 20000元", "20000 -- 30000元", "30000元以上"]
 
- let houses = ["租房", "与父母同住", "已购房"]
+let houses = ["租房", "与父母同住", "已购房", "计划购房"]
 
- let cars = ["已购车", "暂没购车"]
+let address = ["北京市", "天津市", "河北省", "山西省", "内蒙古自治区", "辽宁省", "吉林省", "黑龙江省"
+    ,"上海市", "江苏省", "浙江省", "安徽省", "福建省", "江西省",  "山东省", "河南省", "湖北省","湖南省" ,"广东省" ,"广西", "海南省", "重庆市", "四川省", "贵州省", "云南省", "西藏自治区", "陕西省", "甘肃省", "青海省", "宁夏", "新疆", "香港", "澳门", "台湾省"]
 
+let cars = ["已购车", "暂没购车","计划购车"]
 
 let userId = "userID"
-
 
 
 // MARK: - 输出日志
@@ -160,12 +161,18 @@ class Tools: NSObject {
         if  view.subviews.count >= 1 {
             return
         }
-        view.backgroundColor = UIColor.clearColor()
-        let blurEffect = UIBlurEffect(style: style)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        view.addSubview(blurEffectView)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            view.backgroundColor = UIColor.clearColor()
+            let blurEffect = UIBlurEffect(style: style)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds
+            //需要长时间处理的代码
+            dispatch_sync(dispatch_get_main_queue(), {
+                view.addSubview(blurEffectView)
+            })
+        })
     }
+    
     
     //    滤镜
     func imgFilterEffect(image: UIImage, filterName: String) -> UIImage {

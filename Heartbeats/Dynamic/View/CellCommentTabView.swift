@@ -71,7 +71,7 @@ extension CellCommentTabView: UITableViewDelegate {
         if indexPath.item == comments!.count - 1 {
             NSNotificationCenter.defaultCenter().postNotificationName("updateCommentsViewHeight", object: nil, userInfo: ["height" : tableViewHeight])
         }
-       return cell.cellHeight + 8
+       return cell.cellHeight + 2
     }
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

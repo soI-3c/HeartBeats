@@ -56,6 +56,8 @@ class MeCenterHeadView: UIView{
         btn.titleLabel?.text = nil
         btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
+        btn.layer.masksToBounds = true
+        btn.imageView?.contentMode = .ScaleAspectFill
         return btn;
     }()
 
@@ -63,13 +65,16 @@ class MeCenterHeadView: UIView{
         let btn = UIButton()
         btn.titleLabel?.text = nil
         btn.snp_makeConstraints(closure: { (make) -> Void in
-            make.width.height.equalTo(60)
+            make.width.height.equalTo(45)
         })
         btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
-        btn.layer.borderWidth = 1
+        btn.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+        btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        btn.layer.masksToBounds = true
+        btn.imageView?.contentMode = .ScaleAspectFit
+        btn.layer.borderWidth = 0.5
         btn.layer.borderColor = UIColor.whiteColor().CGColor
-
         return btn;
     }()
     
@@ -171,7 +176,7 @@ class MeCenterHeadView: UIView{
     }
     private func setImgStyle() {
         //设置头像圆角
-        userHeadImgView.layer.cornerRadius = 60/2
+        userHeadImgView.layer.cornerRadius = 45/2
         //设置遮盖额外部分,下面两句的意义及实现是相同的
         //imgV.clipsToBounds = true
         userHeadImgView.layer.masksToBounds = true

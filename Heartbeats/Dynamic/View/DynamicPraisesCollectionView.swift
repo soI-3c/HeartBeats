@@ -66,11 +66,10 @@ extension DynamicPraisesCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return praises?.count ?? 0
     }
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(praisesCollectionViewCell, forIndexPath: indexPath) as? DynamicPraisesCollectionViewCell
         let praise = praises?[indexPath.item] as? DynamicPraise
-        print(praise?.userName)
+        print(praise)   // NIL
         cell?.imgUrl = praise?.userHeadImg?.url
         return cell!
     }

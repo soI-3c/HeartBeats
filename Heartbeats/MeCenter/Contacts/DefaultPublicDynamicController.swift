@@ -24,9 +24,9 @@ class DefaultPublicDynamicController: UIViewController {
         addChildViewController(imgGridViewController)
         view.addSubview(imgGridViewController.view)
         view.addSubview(popView)
-        imgGridViewController.view.frame = view.bounds
         navigationController?.navigationBar.addSubview(navBtn)
         
+        imgGridViewController.view.frame = view.bounds
         navBtn.snp_makeConstraints { (make) -> Void in
             make.center.equalTo((navigationController?.navigationBar)!)
             make.width.equalTo(200)
