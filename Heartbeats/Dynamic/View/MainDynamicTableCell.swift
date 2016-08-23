@@ -31,7 +31,7 @@ class MainDynamicTableCell: UITableViewCell {
     }
 //    MARK: -- private func
     func setUpUI() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateCommentsViewHeight:", name: "updateCommentsViewHeight", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainDynamicTableCell.updateCommentsViewHeight(_:)), name: "updateCommentsViewHeight", object: nil)
         
         contentView.addSubview(backImageView)
         contentView.addSubview(topView)

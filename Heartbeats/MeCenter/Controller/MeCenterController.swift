@@ -9,7 +9,6 @@
 import UIKit
 import AVOSCloud
 
-
 let meCenterCellID = "meCenterCellID"
 let scrWHSize = UIScreen.mainScreen().bounds.size;
 class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -18,7 +17,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         didSet {
             self.headView.user = user
             navigationItem.title = user?.username
-//            self.personaView.persionalityLabel.text = user?.personality
             NetworkTools.loadDynamicsByUser(user!) { (result, error) -> () in              //    MARK : - 加载动态数据
                 if error == nil {
                     self.dynamics = result as? [Dynamic]
@@ -30,11 +28,16 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     var dynamics: [Dynamic]? {
         didSet {
-            userDynamicFootVuew.dynamics = dynamics
+            tableView.reloadData()
         }
     }
+    lazy var backImageView: UIImageView = {
+        let backImageV = UIImageView()
+        backImageV.sd_setImageWithURL(NSURL(string: (self.user!.backIconImage?.url)!))
+        return backImageV
+    }()
     private lazy var headView : MeCenterHeadView = MeCenterHeadView()
-    private let userDynamicFootVuew = UserDynamicCollectionV(frame: CGRectMake(0, 0, 0, 400), collectionViewLayout: UserDynamicCollectionLayout())                //   动态展示
+    private let userDynamicFootVuew = UserDynamicCollectionV(frame: CGRectZero, collectionViewLayout: UserDynamicCollectionLayout())                //   动态展示
     private lazy var isUserHeadImg: Bool = true                             //   判断是否是头像
     
     //    MARK: --  初始化操作
@@ -42,13 +45,16 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         super.viewDidLoad()
         navigationController?.navigationBarHidden = false
         tableView.estimatedRowHeight = 88
-         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .None
+        tableView.showsVerticalScrollIndicator = false
+        // 右边按钮
         let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
-        let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "setting")
+        let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(MeCenterController.setting))
         self.navigationItem.rightBarButtonItems = [spaceItem, leftBtn]
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: meCenterCellID)
-        
+        // 注册
+        self.tableView.registerClass(MeCenterDynamicTabCell.self, forCellReuseIdentifier: meCenterCellID)
         if user == nil {            // 默认是当前用户, 如果不传user过来
             user = HeartUser.currentUser()
         }
@@ -57,8 +63,10 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     private func setupUI() {
         headView.delegate = self
         headView.bounds = CGRectMake(0, 0, 0, tableView.frame.width)
+        Tools.insertBlurView(backImageView, style: .Light)
+        tableView.backgroundView = backImageView
         tableView.tableHeaderView = headView
-        tableView.tableFooterView = userDynamicFootVuew
+        tableView.tableFooterView = UIView()
     }
     func setting() {
         let settingController = UIStoryboard(name: "SettingController", bundle: nil).instantiateInitialViewController() as? SettingController
@@ -70,6 +78,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         }
         navigationController?.pushViewController(settingController!, animated: true)
     }
+
 //    MARK: - MeCenterHeadViewDelegate
 //    换头像
     func chageUserHeaderImg(meCenterHeadView : MeCenterHeadView) {
@@ -89,30 +98,61 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     
 //    MARK: --- tableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dynamics != nil ? (dynamics?.count)! + 2 : 2
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-         let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.whiteColor()
-         let lab = UILabel(title: "", fontSize: 15)
-        lab.backgroundColor = UIColor.blackColor()
-        lab.numberOfLines = 0
-        lab.textColor = UIColor.whiteColor()
-        
-        // 行距
-        let attributedString1 = NSMutableAttributedString(string: (user?.personality)!);
-        let paragraphStyle1 = NSMutableParagraphStyle();
-        paragraphStyle1.lineSpacing = 1
-        attributedString1.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle1, range: NSMakeRange(0, (user?.personality!.characters.count)!))
-        lab.attributedText = attributedString1;
-        cell.contentView.addSubview(lab)
-        lab.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 2, left: 2, bottom: -2, right: -2))
+        if indexPath.row == 0 {                 // 个人简介
+            let cell = UITableViewCell()
+            cell.selectionStyle = .None
+            cell.backgroundColor = UIColor.clearColor()
+            let lab = UILabel(title: "", fontSize: 15)
+            lab.backgroundColor = UIColor(red: 19.0 / 255.0, green: 19.0 / 255.0, blue: 19.0 / 255.0, alpha: 0.8)
+            lab.numberOfLines = 0
+            lab.textColor = UIColor.init(white: 1.0, alpha: 1.0)
+            
+            // 行距
+            let attributedString1 = NSMutableAttributedString(string: (user?.personality)!);
+            let paragraphStyle1 = NSMutableParagraphStyle();
+            paragraphStyle1.lineSpacing = 1
+            attributedString1.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle1, range: NSMakeRange(0, (user?.personality!.characters.count)!))
+            lab.attributedText = attributedString1;
+            cell.contentView.addSubview(lab)
+            lab.snp_makeConstraints { (make) -> Void in
+                make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 2, left: 2, bottom: -2, right: -2))
+            }
+            return cell
         }
+        if indexPath.row == 1 {                     // 个人相册
+            let cell = UITableViewCell()
+            cell.selectionStyle = .None
+            cell.backgroundColor = UIColor.clearColor()
+            cell.contentView.addSubview(userDynamicFootVuew)
+            userDynamicFootVuew.snp_makeConstraints { (make) in
+                make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            }
+            userDynamicFootVuew.dynamics = dynamics
+            return cell
+        }
+        // 动态展示
+        let cell = tableView.dequeueReusableCellWithIdentifier(meCenterCellID, forIndexPath: indexPath) as! MeCenterDynamicTabCell
+        cell.dynamicImageUrl = dynamics![indexPath.item - 2].photos?.url
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            if dynamics != nil {
+                let number = CGFloat((dynamics?.count)!) / 3
+                return ((scrWHSize.width - (3 + 1) * 4) / 3) * ceil(number) + 16;
+            }
+            return 0
+        }
+        if indexPath.row != 0 {
+            return scrWHSize.width
+        }
+        return UITableViewAutomaticDimension
     }
 
 // MARK: --- 更换头像一系列方法

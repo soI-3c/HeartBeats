@@ -18,10 +18,10 @@ extension UILabel {
         sizeToFit()
         if(balckBack) {
             textColor = UIColor.whiteColor()
-            backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.85)
+            backgroundColor = UIColor(red: 19.0 / 255.0, green: 19.0 / 255.0, blue: 19.0 / 255.0, alpha: 0.8)
         }else {
-            textColor = UIColor.blackColor()
-            backgroundColor = UIColor.whiteColor()
+            textColor = UIColor.whiteColor()
+            backgroundColor = UIColor(red: 19.0 / 255.0, green: 19.0 / 255.0, blue: 19.0 / 255.0, alpha: 0.8)
         }
         font = UIFont(name: "Helvetica-Bold", size: fontSize)
         layer.cornerRadius = 5

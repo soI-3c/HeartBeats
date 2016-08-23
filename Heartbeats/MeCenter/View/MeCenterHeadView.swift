@@ -54,7 +54,7 @@ class MeCenterHeadView: UIView{
     lazy var userBackImg: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
-        btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: #selector(MeCenterHeadView.changeUserBackImg), forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         btn.layer.masksToBounds = true
         btn.imageView?.contentMode = .ScaleAspectFill
@@ -64,10 +64,7 @@ class MeCenterHeadView: UIView{
      lazy var userHeadImgView: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
-        btn.snp_makeConstraints(closure: { (make) -> Void in
-            make.width.height.equalTo(45)
-        })
-        btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: #selector(MeCenterHeadView.changeUserHeadImg), forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         btn.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
@@ -135,6 +132,7 @@ class MeCenterHeadView: UIView{
         userHeadImgView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(userBackImg).offset(maxMArgins)
             make.bottom.equalTo(userBackImg.snp_bottom).offset(-30)
+            make.width.height.equalTo(45)
         }
         username.snp_makeConstraints { (make) -> Void in
                make.leading.equalTo(userHeadImgView)

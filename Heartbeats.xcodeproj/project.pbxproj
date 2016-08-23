@@ -54,13 +54,14 @@
 		DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94731CC7A13100A08669 /* CellBottomView.swift */; };
 		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
 		DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1ABB11C9E8B8700251E93 /* PhotoBrowserViewController.swift */; };
-		DBD269751D0A737000915E38 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269741D0A737000915E38 /* NSString+Extension.swift */; settings = {ASSET_TAGS = (); }; };
-		DBD269771D0A95AB00915E38 /* UserDynamicCollectionV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */; settings = {ASSET_TAGS = (); }; };
+		DBD269751D0A737000915E38 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269741D0A737000915E38 /* NSString+Extension.swift */; };
+		DBD269771D0A95AB00915E38 /* UserDynamicCollectionV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */; };
 		DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD71A1E1CB7DA65006921A2 /* MainDynamicTableCell.swift */; };
 		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; };
 		DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */; };
 		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; };
-		F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111275D1C2A5142001FB131 /* SettingView2.swift */; };
+		F100C6E41D6C2D14000B088B /* MeCenterDynamicTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100C6E31D6C2D14000B088B /* MeCenterDynamicTabCell.swift */; };
+		F100C6E61D6C2F4B000B088B /* PersonalitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100C6E51D6C2F4B000B088B /* PersonalitySetView.swift */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
 		F15A8F9D1CD9921D00F29362 /* DynamicAddressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15A8F9C1CD9921D00F29362 /* DynamicAddressControl.swift */; };
 		F1716D171C06EA2400F7AB97 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1716D081C06EA2400F7AB97 /* Constraint.swift */; };
@@ -103,16 +104,12 @@
 		F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */; };
 		F1D936A31CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */; };
 		F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */; };
-		F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC43B11C2948CA00BE211B /* PersonalityView.swift */; };
 		F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */; };
 		F1E399831C33AC4A00A46DB0 /* NameWithPhoneSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E399821C33AC4A00A46DB0 /* NameWithPhoneSetView.swift */; };
 		F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E399861C33C12B00A46DB0 /* HBButton.swift */; };
 		F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */; };
-		F1E3998B1C33DB4300A46DB0 /* PersonalitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */; };
 		F1E44E641C3FB9BA00EC1836 /* HBAVFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */; };
 		F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */; };
-		F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */; };
-		F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */; };
 		F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */; };
 		F1E96BB01C2159820046EFD2 /* MeCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BAF1C2159820046EFD2 /* MeCenterController.swift */; };
 		F1E96BB31C21599F0046EFD2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E96BB21C21599F0046EFD2 /* Tools.swift */; };
@@ -216,7 +213,8 @@
 		DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicEditInfoController.swift; sourceTree = "<group>"; };
 		DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterCollectionView.swift; sourceTree = "<group>"; };
-		F111275D1C2A5142001FB131 /* SettingView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView2.swift; sourceTree = "<group>"; };
+		F100C6E31D6C2D14000B088B /* MeCenterDynamicTabCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterDynamicTabCell.swift; sourceTree = "<group>"; };
+		F100C6E51D6C2F4B000B088B /* PersonalitySetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySetView.swift; sourceTree = "<group>"; };
 		F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F15A8F9C1CD9921D00F29362 /* DynamicAddressControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAddressControl.swift; sourceTree = "<group>"; };
 		F1716D081C06EA2400F7AB97 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -262,16 +260,12 @@
 		F1C2CD751CCDE0180009ED58 /* SystemPhotoLibListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPhotoLibListView.swift; sourceTree = "<group>"; };
 		F1D936A21CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicPraisesCollectionView.swift; sourceTree = "<group>"; };
 		F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalityView.xib; sourceTree = "<group>"; };
-		F1DC43B11C2948CA00BE211B /* PersonalityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
 		F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameWithPhoneSetView.xib; sourceTree = "<group>"; };
 		F1E399821C33AC4A00A46DB0 /* NameWithPhoneSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameWithPhoneSetView.swift; sourceTree = "<group>"; };
 		F1E399861C33C12B00A46DB0 /* HBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBButton.swift; sourceTree = "<group>"; };
 		F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalitySetView.xib; sourceTree = "<group>"; };
-		F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySetView.swift; sourceTree = "<group>"; };
 		F1E44E631C3FB9BA00EC1836 /* HBAVFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBAVFile.swift; sourceTree = "<group>"; };
 		F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreAttributeSetView.xib; sourceTree = "<group>"; };
-		F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalitySectionView.xib; sourceTree = "<group>"; };
-		F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySectionView.swift; sourceTree = "<group>"; };
 		F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterHeadView.swift; sourceTree = "<group>"; };
 		F1E96BAF1C2159820046EFD2 /* MeCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterController.swift; sourceTree = "<group>"; };
 		F1E96BB21C21599F0046EFD2 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
@@ -625,8 +619,6 @@
 			isa = PBXGroup;
 			children = (
 				F1B8D34D1C28E75D00B0B847 /* SettingView.swift */,
-				F111275D1C2A5142001FB131 /* SettingView2.swift */,
-				F1DC43B11C2948CA00BE211B /* PersonalityView.swift */,
 				F1EC2A8D1C9A86460038A0CB /* MainTabar.swift */,
 				F1EC2A8B1C9A85C90038A0CB /* MainTabar.xib */,
 				F1DC43AF1C2946CA00BE211B /* PersonalityView.xib */,
@@ -640,18 +632,17 @@
 			isa = PBXGroup;
 			children = (
 				F1E96BAC1C2159600046EFD2 /* MeCenterHeadView.swift */,
-				F1E6CBDB1C2CF56100353300 /* PersonalitySectionView.swift */,
 				F1E399821C33AC4A00A46DB0 /* NameWithPhoneSetView.swift */,
-				F1E3998A1C33DB4300A46DB0 /* PersonalitySetView.swift */,
 				DB2F83891C361B070017FB7B /* MoreAttributeSetView.swift */,
 				F1EFA2D61C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift */,
+				F100C6E51D6C2F4B000B088B /* PersonalitySetView.swift */,
 				F1ED562F1C30DADB005F74DB /* SettingController.storyboard */,
 				F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */,
 				F1E4C4B11C34C8E9001D338E /* MoreAttributeSetView.xib */,
 				F1E399801C33AA8B00A46DB0 /* NameWithPhoneSetView.xib */,
 				F1E399881C33DA7000A46DB0 /* PersonalitySetView.xib */,
-				F1E6CBD91C2CF2D100353300 /* PersonalitySectionView.xib */,
 				DBD269761D0A95AB00915E38 /* UserDynamicCollectionV.swift */,
+				F100C6E31D6C2D14000B088B /* MeCenterDynamicTabCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -846,7 +837,6 @@
 				F17EB8CD1C3D09EB00829E45 /* PublicDynamicCell.xib in Resources */,
 				DB89367A1CC6764C00C2FED9 /* CellBottomView.xib in Resources */,
 				F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */,
-				F1E6CBDA1C2CF2D100353300 /* PersonalitySectionView.xib in Resources */,
 				F1E4C4B21C34C8E9001D338E /* MoreAttributeSetView.xib in Resources */,
 				F1E399891C33DA7000A46DB0 /* PersonalitySetView.xib in Resources */,
 				DB1AF61D1BF76FA90059A41B /* Assets.xcassets in Resources */,
@@ -932,7 +922,9 @@
 				F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */,
 				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,
+				F100C6E41D6C2D14000B088B /* MeCenterDynamicTabCell.swift in Sources */,
 				DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */,
+				F100C6E61D6C2F4B000B088B /* PersonalitySetView.swift in Sources */,
 				F17EB8B81C3CF1CA00829E45 /* AWCollectionViewDialLayout.m in Sources */,
 				F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */,
 				DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */,
@@ -941,14 +933,12 @@
 				DBD269751D0A737000915E38 /* NSString+Extension.swift in Sources */,
 				F1EC2A8E1C9A86460038A0CB /* MainTabar.swift in Sources */,
 				DB8C15651CCC9F6D0040C907 /* SCBrowseImageController.m in Sources */,
-				F111275E1C2A5142001FB131 /* SettingView2.swift in Sources */,
 				DB8C156B1CCC9F6D0040C907 /* SCImageGridCellSelectingView.m in Sources */,
 				F1E399831C33AC4A00A46DB0 /* NameWithPhoneSetView.swift in Sources */,
 				F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */,
 				F17EB8C51C3CF2C400829E45 /* PathDynamicModal.swift in Sources */,
 				F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */,
 				DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */,
-				F1DC43B21C2948CA00BE211B /* PersonalityView.swift in Sources */,
 				DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */,
 				DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */,
 				F1EF05EC1CE2C6F80003B6D8 /* DynamicComment.swift in Sources */,
@@ -962,7 +952,6 @@
 				F17EB8CC1C3D09EB00829E45 /* PublicDynamicCell.swift in Sources */,
 				F1E96BB81C2159EF0046EFD2 /* LoginRegisterMainViewController.swift in Sources */,
 				DB730FC01C429F4C0074AABB /* PhotoBrowserAnimator.swift in Sources */,
-				F1E6CBDC1C2CF56100353300 /* PersonalitySectionView.swift in Sources */,
 				F1F2F3711CD8A2E200E30083 /* DynamicWriteContentTextController.swift in Sources */,
 				DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */,
 				DB3D10701CBE843B005DBDA3 /* UserInfoShowView.swift in Sources */,
@@ -1001,7 +990,6 @@
 				F15A8F9D1CD9921D00F29362 /* DynamicAddressControl.swift in Sources */,
 				F1716D1C1C06EA2400F7AB97 /* ConstraintRelation.swift in Sources */,
 				DB893F3F1CA175B50031D4A5 /* LoginViewController.swift in Sources */,
-				F1E3998B1C33DB4300A46DB0 /* PersonalitySetView.swift in Sources */,
 				F1716D241C06EA2400F7AB97 /* ViewController+SnapKit.swift in Sources */,
 				F1EF05EE1CE2CDD40003B6D8 /* CellCommentTabView.swift in Sources */,
 				F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */,

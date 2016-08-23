@@ -10,6 +10,7 @@ import UIKit
 
 typealias changeUserInfo = (HeartUser) -> Void
 
+/** 个人设置 */
 class SettingController: UITableViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!

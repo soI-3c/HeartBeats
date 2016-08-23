@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -49,7 +48,7 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="580-Y4-pmv">
-                    <rect key="frame" x="66" y="0.0" width="123.5" height="49"/>
+                    <rect key="frame" x="66" y="0.0" width="123" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-e5-0Lp">
                             <rect key="frame" x="43" y="7" width="36" height="36"/>
@@ -107,10 +106,10 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVc-MR-Lxu">
-                    <rect key="frame" x="189" y="0.0" width="123" height="49"/>
+                    <rect key="frame" x="189" y="0.0" width="124" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjL-W3-ZH4">
-                            <rect key="frame" x="37" y="0.0" width="49" height="49"/>
+                            <rect key="frame" x="38" y="0.0" width="49" height="49"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="49" id="SaL-Nt-2ex"/>
                             </constraints>
@@ -144,7 +143,7 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdU-e2-4TA">
-                    <rect key="frame" x="312" y="0.0" width="123.5" height="49"/>
+                    <rect key="frame" x="313" y="0.0" width="123" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="227-Xi-38b">
                             <rect key="frame" x="43" y="7" width="36" height="36"/>

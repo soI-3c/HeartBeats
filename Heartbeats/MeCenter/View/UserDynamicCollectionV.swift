@@ -8,7 +8,7 @@
 
 import UIKit
 
-/*个人动态列表*/
+/* 个人中心 照片显示CollectionView */
 class UserDynamicCollectionV: UICollectionView {
     var dynamics: [Dynamic]? {
         didSet {
@@ -21,7 +21,7 @@ class UserDynamicCollectionV: UICollectionView {
         dataSource = self
         delegate = self
         scrollEnabled = false
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.clearColor()
         registerClass(UserDynamicCollectionVCell.self, forCellWithReuseIdentifier: "userDyanmicCellID")
     }
     required init?(coder aDecoder: NSCoder) {
@@ -30,18 +30,24 @@ class UserDynamicCollectionV: UICollectionView {
 }
 extension UserDynamicCollectionV: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dynamics?.count ?? 0
+        return dynamics != nil ? (dynamics?.count)! + ((dynamics?.count)! == 6 ? 0 : 1) : 0
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("userDyanmicCellID", forIndexPath: indexPath) as! UserDynamicCollectionVCell
-         let dynamic = dynamics![indexPath.item]
-        cell.dynamicImgUrl = dynamic.photos?.url
+        cell.dynamicImgUrl =  indexPath.item < dynamics!.count ? dynamics![indexPath.item].photos?.url : nil
         return cell
     }
 }
 extension UserDynamicCollectionV: UICollectionViewDelegate {
-
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.item == dynamics!.count {
+            // 添加图片
+            return
+        }
+        // 显示点击的图片
+    }
 }
+
 
 // MARK: -- Cell
 class UserDynamicCollectionVCell: UICollectionViewCell {
@@ -55,14 +61,17 @@ class UserDynamicCollectionVCell: UICollectionViewCell {
     private let dynamicImgV = UIImageView()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.clearColor()
         contentView.addSubview(dynamicImgV)
+        layer.cornerRadius = 5
+        clipsToBounds = true
         dynamicImgV.frame = bounds
-        dynamicImgV.layer.borderWidth = 1
-        dynamicImgV.layer.borderColor = UIColor.whiteColor().CGColor
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override func prepareForReuse() {                   // 当cell要进入 缓冲池的时候
+        dynamicImgV.image = nil
     }
 }
 
@@ -73,10 +82,10 @@ let MAXWHSzie = UIScreen.mainScreen().bounds.size
 
 class UserDynamicCollectionLayout: UICollectionViewFlowLayout {
     override func prepareLayout() {
-        itemSize = CGSize(width: MAXWHSzie.width / 2.0, height: MAXWHSzie.width / 2.0)
-        minimumInteritemSpacing = 0
-        minimumLineSpacing = 0
-        sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        itemSize = CGSize(width: MAXWHSzie.width / 3.0 - 4, height: MAXWHSzie.width / 3.0 - 4)
+        minimumInteritemSpacing = 2
+        minimumLineSpacing = 4
+        sectionInset = UIEdgeInsets(top: 4, left: 2, bottom: 2, right: 2)
     }
 }
 
