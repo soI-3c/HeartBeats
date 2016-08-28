@@ -38,7 +38,7 @@ class DefaultPublicDynamicController: UIViewController {
     func setUpNav() {
         let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         spaceItem.width = -10                                       // 为了自定返回按钮时, 往右偏移的问题
-        let leftBtn = UIBarButtonItem(image: UIImage(named: "cancel")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(DefaultPublicDynamicController.doBack))
+        let leftBtn = UIBarButtonItem(image: UIImage(named: "cancel")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "doBack")
         navigationItem.leftBarButtonItems = [spaceItem, leftBtn]
     }
     func doBack() {
@@ -71,7 +71,7 @@ class DefaultPublicDynamicController: UIViewController {
         let btn = UIButton(type: .Custom)
         btn.setTitle("相机胶卷", forState: .Normal)
         btn.setImage(UIImage(named: "upDown"), forState: .Normal)
-        btn.addTarget(self, action: #selector(DefaultPublicDynamicController.showPhotoLibList(_:)), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: "showPhotoLibList:", forControlEvents: .TouchUpInside)
         return btn
     }()
     

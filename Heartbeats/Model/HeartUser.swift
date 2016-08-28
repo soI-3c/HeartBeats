@@ -26,6 +26,7 @@ let HBUserAddress = "address"
 let HBUserIncome = "income"
 let HBUserHouse = "house"
 let HBUserCar = "car"
+let HBPhotographAlbum = "photographAlbum"
 
 class HeartUser: AVUser {
     @NSManaged var iconImage: HBAVFile?      // 用户头像
@@ -41,6 +42,7 @@ class HeartUser: AVUser {
     @NSManaged var house: String?
     @NSManaged var car: String?
     @NSManaged var dynamics: [Dynamic]?
+    @NSManaged var photographAlbum: [HBAVFile]? // 个人相册
     override class func parseClassName() -> String? {
         return "_User"
     }

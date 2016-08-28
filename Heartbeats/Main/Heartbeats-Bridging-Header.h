@@ -9,3 +9,4 @@
 #import "UIButton+WebCache.h"
 #import "SVProgressHUD.h"
 #import "SCImageGridViewController.h"
+#import "HMImagePickerController.h"

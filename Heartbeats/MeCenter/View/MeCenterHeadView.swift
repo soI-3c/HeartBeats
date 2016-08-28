@@ -54,7 +54,7 @@ class MeCenterHeadView: UIView{
     lazy var userBackImg: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
-        btn.addTarget(self, action: #selector(MeCenterHeadView.changeUserBackImg), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         btn.layer.masksToBounds = true
         btn.imageView?.contentMode = .ScaleAspectFill
@@ -64,7 +64,7 @@ class MeCenterHeadView: UIView{
      lazy var userHeadImgView: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
-        btn.addTarget(self, action: #selector(MeCenterHeadView.changeUserHeadImg), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
         btn.adjustsImageWhenHighlighted = false
         btn.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill

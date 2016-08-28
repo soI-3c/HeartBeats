@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-typedef void (^accomplishTakePhoto)(NSMutableArray *);                              // 完成拍摄后的回调用所有图片
+typedef void (^accomplishTakePhoto)(NSMutableArray *);                              // 回调用所有图片
 
 typedef void (^selectImage)(UIImage *);                                             // 选择图片
 @interface SCImageGridViewController : UICollectionViewController

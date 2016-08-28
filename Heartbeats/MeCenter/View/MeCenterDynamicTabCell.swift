@@ -16,7 +16,7 @@ class MeCenterDynamicTabCell: UITableViewCell {
         let btn = UIButton()
         btn.backgroundColor = .redColor()
         btn .setImage(UIImage(named: "closeIcon"), forState: .Normal)
-        btn.addTarget(MeCenterDynamicTabCell.self, action: #selector(MeCenterDynamicTabCell.deleDynamic(_:)), forControlEvents: .TouchUpInside)
+        btn.addTarget(MeCenterDynamicTabCell.self, action:"deleDynamic", forControlEvents: .TouchUpInside)
         return btn
     }()
     var dynamicImageUrl: String? {

@@ -56,8 +56,8 @@ class NetworkTools: NSObject {
    class func loadUserIconImageWithBackImage (user: HeartUser?, imageName: String?, finishedCallBack: HBNetFinishedCallBack) {
         let userQuery = HeartUser.query()
         userQuery.whereKey("objectId", equalTo: user?.objectId)
-        userQuery.cachePolicy = AVCachePolicy.NetworkElseCache
-        //设置缓存有效期
+        userQuery.includeKey(HBPhotographAlbum)
+        //设置缓存有
         userQuery.maxCacheAge = 24*3600;
         userQuery.getFirstObjectInBackgroundWithBlock { (obj, error) -> Void in
             if error == nil {
@@ -65,6 +65,19 @@ class NetworkTools: NSObject {
             }
             if error != nil {
                 finishedCallBack(result: nil, error: error)
+            }
+        }
+    }
+//    MARK: -- 查找指定用户的个人相册
+    class func loadUserPhotographAlbumWithBackImage(param: [String: AnyObject], finishedCallBack: HBNetFinishedCallBack) {
+        assert(param["objectId"] != nil, "查找相册时, userObjectId不能为空")
+        let sql = "select photographAlbum from _User where objectId = ?"
+        let dict = [param["objectId"]!]
+        AVQuery.doCloudQueryInBackgroundWithCQL(sql, pvalues: dict) { (result, error) -> Void in
+            if error == nil {
+                finishedCallBack(result: result.results, error: nil)
+            }else {
+                 finishedCallBack(result: nil, error: error)
             }
         }
     }

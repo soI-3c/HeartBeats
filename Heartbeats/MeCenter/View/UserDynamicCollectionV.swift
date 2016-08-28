@@ -8,13 +8,15 @@
 
 import UIKit
 
-/* 个人中心 照片显示CollectionView */
+/* 个人中心 个人相册*/
 class UserDynamicCollectionV: UICollectionView {
-    var dynamics: [Dynamic]? {
+    var photographAlbum: [HBAVFile]! {
         didSet {
             reloadData()
         }
     }
+    var addImagesBlock: (() -> Void)?               // 添加图片到相册
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         bounces = false
@@ -30,24 +32,25 @@ class UserDynamicCollectionV: UICollectionView {
 }
 extension UserDynamicCollectionV: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dynamics != nil ? (dynamics?.count)! + ((dynamics?.count)! == 6 ? 0 : 1) : 0
+        return photographAlbum.count + (photographAlbum.count == 6 ? 0 : 1)
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("userDyanmicCellID", forIndexPath: indexPath) as! UserDynamicCollectionVCell
-        cell.dynamicImgUrl =  indexPath.item < dynamics!.count ? dynamics![indexPath.item].photos?.url : nil
+        
+        cell.dynamicImgUrl =  indexPath.item < photographAlbum.count ? photographAlbum[indexPath.item].url : nil
         return cell
     }
 }
 extension UserDynamicCollectionV: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.item == dynamics!.count {
+        if indexPath.item == photographAlbum.count {
             // 添加图片
+            self.addImagesBlock?()
             return
         }
         // 显示点击的图片
     }
 }
-
 
 // MARK: -- Cell
 class UserDynamicCollectionVCell: UICollectionViewCell {
@@ -55,7 +58,9 @@ class UserDynamicCollectionVCell: UICollectionViewCell {
         didSet{
             if let url = dynamicImgUrl {
                 dynamicImgV.sd_setImageWithURL(NSURL(string: url as String), placeholderImage: placeholderImage)
+                return
             }
+            dynamicImgV.image = UIImage(named: "add")
         }
     }
     private let dynamicImgV = UIImageView()

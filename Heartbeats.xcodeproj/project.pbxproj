@@ -50,6 +50,30 @@
 		DBA28D051C414778007A516E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA28D041C414778007A516E /* UIImage+Extension.swift */; };
 		DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */; };
 		DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */; };
+		DBB66A011D6F3F0400547CD3 /* HMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669E91D6F3F0400547CD3 /* HMAlbum.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A021D6F3F0400547CD3 /* HMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669EA1D6F3F0400547CD3 /* HMAlbum.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A031D6F3F0400547CD3 /* HMAlbumTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669EB1D6F3F0400547CD3 /* HMAlbumTableViewCell.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A041D6F3F0400547CD3 /* HMAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669EC1D6F3F0400547CD3 /* HMAlbumTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A051D6F3F0400547CD3 /* HMAlbumTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669ED1D6F3F0400547CD3 /* HMAlbumTableViewController.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A061D6F3F0400547CD3 /* HMAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669EE1D6F3F0400547CD3 /* HMAlbumTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A071D6F3F0400547CD3 /* HMImageGridCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669EF1D6F3F0400547CD3 /* HMImageGridCell.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A081D6F3F0400547CD3 /* HMImageGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669F01D6F3F0400547CD3 /* HMImageGridCell.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A091D6F3F0400547CD3 /* HMImageGridViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669F11D6F3F0400547CD3 /* HMImageGridViewController.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0A1D6F3F0400547CD3 /* HMImageGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669F21D6F3F0400547CD3 /* HMImageGridViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0B1D6F3F0400547CD3 /* HMImageGridViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669F31D6F3F0400547CD3 /* HMImageGridViewLayout.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0C1D6F3F0400547CD3 /* HMImageGridViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669F41D6F3F0400547CD3 /* HMImageGridViewLayout.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0D1D6F3F0400547CD3 /* HMImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DBB669F51D6F3F0400547CD3 /* HMImagePicker.bundle */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0E1D6F3F0400547CD3 /* HMImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669F61D6F3F0400547CD3 /* HMImagePickerController.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A0F1D6F3F0400547CD3 /* HMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669F71D6F3F0400547CD3 /* HMImagePickerController.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A101D6F3F0400547CD3 /* HMImagePickerGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669F81D6F3F0400547CD3 /* HMImagePickerGlobal.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A111D6F3F0400547CD3 /* HMImageSelectButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669F91D6F3F0400547CD3 /* HMImageSelectButton.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A121D6F3F0400547CD3 /* HMImageSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669FA1D6F3F0400547CD3 /* HMImageSelectButton.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A131D6F3F0400547CD3 /* HMPreviewViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669FB1D6F3F0400547CD3 /* HMPreviewViewController.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A141D6F3F0400547CD3 /* HMPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669FC1D6F3F0400547CD3 /* HMPreviewViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A151D6F3F0400547CD3 /* HMSelectCounterButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669FD1D6F3F0400547CD3 /* HMSelectCounterButton.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A161D6F3F0400547CD3 /* HMSelectCounterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB669FE1D6F3F0400547CD3 /* HMSelectCounterButton.m */; settings = {ASSET_TAGS = (); }; };
+		DBB66A171D6F3F0400547CD3 /* HMViewerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB669FF1D6F3F0400547CD3 /* HMViewerViewController.h */; settings = {ASSET_TAGS = (); }; };
+		DBB66A181D6F3F0400547CD3 /* HMViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB66A001D6F3F0400547CD3 /* HMViewerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DBCC94721CC79FDD00A08669 /* CellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94711CC79FDD00A08669 /* CellTopView.swift */; };
 		DBCC94741CC7A13100A08669 /* CellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94731CC7A13100A08669 /* CellBottomView.swift */; };
 		DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */; };
@@ -203,6 +227,30 @@
 		DBA28D041C414778007A516E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HBUIViewEX.h"; sourceTree = "<group>"; };
 		DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HBUIViewEX.m"; sourceTree = "<group>"; };
+		DBB669E91D6F3F0400547CD3 /* HMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAlbum.h; sourceTree = "<group>"; };
+		DBB669EA1D6F3F0400547CD3 /* HMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAlbum.m; sourceTree = "<group>"; };
+		DBB669EB1D6F3F0400547CD3 /* HMAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAlbumTableViewCell.h; sourceTree = "<group>"; };
+		DBB669EC1D6F3F0400547CD3 /* HMAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAlbumTableViewCell.m; sourceTree = "<group>"; };
+		DBB669ED1D6F3F0400547CD3 /* HMAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAlbumTableViewController.h; sourceTree = "<group>"; };
+		DBB669EE1D6F3F0400547CD3 /* HMAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAlbumTableViewController.m; sourceTree = "<group>"; };
+		DBB669EF1D6F3F0400547CD3 /* HMImageGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageGridCell.h; sourceTree = "<group>"; };
+		DBB669F01D6F3F0400547CD3 /* HMImageGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageGridCell.m; sourceTree = "<group>"; };
+		DBB669F11D6F3F0400547CD3 /* HMImageGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageGridViewController.h; sourceTree = "<group>"; };
+		DBB669F21D6F3F0400547CD3 /* HMImageGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageGridViewController.m; sourceTree = "<group>"; };
+		DBB669F31D6F3F0400547CD3 /* HMImageGridViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageGridViewLayout.h; sourceTree = "<group>"; };
+		DBB669F41D6F3F0400547CD3 /* HMImageGridViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageGridViewLayout.m; sourceTree = "<group>"; };
+		DBB669F51D6F3F0400547CD3 /* HMImagePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMImagePicker.bundle; sourceTree = "<group>"; };
+		DBB669F61D6F3F0400547CD3 /* HMImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImagePickerController.h; sourceTree = "<group>"; };
+		DBB669F71D6F3F0400547CD3 /* HMImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImagePickerController.m; sourceTree = "<group>"; };
+		DBB669F81D6F3F0400547CD3 /* HMImagePickerGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImagePickerGlobal.h; sourceTree = "<group>"; };
+		DBB669F91D6F3F0400547CD3 /* HMImageSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageSelectButton.h; sourceTree = "<group>"; };
+		DBB669FA1D6F3F0400547CD3 /* HMImageSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageSelectButton.m; sourceTree = "<group>"; };
+		DBB669FB1D6F3F0400547CD3 /* HMPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPreviewViewController.h; sourceTree = "<group>"; };
+		DBB669FC1D6F3F0400547CD3 /* HMPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPreviewViewController.m; sourceTree = "<group>"; };
+		DBB669FD1D6F3F0400547CD3 /* HMSelectCounterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSelectCounterButton.h; sourceTree = "<group>"; };
+		DBB669FE1D6F3F0400547CD3 /* HMSelectCounterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSelectCounterButton.m; sourceTree = "<group>"; };
+		DBB669FF1D6F3F0400547CD3 /* HMViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMViewerViewController.h; sourceTree = "<group>"; };
+		DBB66A001D6F3F0400547CD3 /* HMViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMViewerViewController.m; sourceTree = "<group>"; };
 		DBCC94711CC79FDD00A08669 /* CellTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTopView.swift; sourceTree = "<group>"; };
 		DBCC94731CC7A13100A08669 /* CellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBottomView.swift; sourceTree = "<group>"; };
 		DBCC94751CC7A9DC00A08669 /* ImageDynamicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDynamicTableCell.swift; sourceTree = "<group>"; };
@@ -470,6 +518,37 @@
 			path = Soure;
 			sourceTree = "<group>";
 		};
+		DBB669E81D6F3F0400547CD3 /* HMImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				DBB669E91D6F3F0400547CD3 /* HMAlbum.h */,
+				DBB669EA1D6F3F0400547CD3 /* HMAlbum.m */,
+				DBB669EB1D6F3F0400547CD3 /* HMAlbumTableViewCell.h */,
+				DBB669EC1D6F3F0400547CD3 /* HMAlbumTableViewCell.m */,
+				DBB669ED1D6F3F0400547CD3 /* HMAlbumTableViewController.h */,
+				DBB669EE1D6F3F0400547CD3 /* HMAlbumTableViewController.m */,
+				DBB669EF1D6F3F0400547CD3 /* HMImageGridCell.h */,
+				DBB669F01D6F3F0400547CD3 /* HMImageGridCell.m */,
+				DBB669F11D6F3F0400547CD3 /* HMImageGridViewController.h */,
+				DBB669F21D6F3F0400547CD3 /* HMImageGridViewController.m */,
+				DBB669F31D6F3F0400547CD3 /* HMImageGridViewLayout.h */,
+				DBB669F41D6F3F0400547CD3 /* HMImageGridViewLayout.m */,
+				DBB669F51D6F3F0400547CD3 /* HMImagePicker.bundle */,
+				DBB669F61D6F3F0400547CD3 /* HMImagePickerController.h */,
+				DBB669F71D6F3F0400547CD3 /* HMImagePickerController.m */,
+				DBB669F81D6F3F0400547CD3 /* HMImagePickerGlobal.h */,
+				DBB669F91D6F3F0400547CD3 /* HMImageSelectButton.h */,
+				DBB669FA1D6F3F0400547CD3 /* HMImageSelectButton.m */,
+				DBB669FB1D6F3F0400547CD3 /* HMPreviewViewController.h */,
+				DBB669FC1D6F3F0400547CD3 /* HMPreviewViewController.m */,
+				DBB669FD1D6F3F0400547CD3 /* HMSelectCounterButton.h */,
+				DBB669FE1D6F3F0400547CD3 /* HMSelectCounterButton.m */,
+				DBB669FF1D6F3F0400547CD3 /* HMViewerViewController.h */,
+				DBB66A001D6F3F0400547CD3 /* HMViewerViewController.m */,
+			);
+			path = HMImagePicker;
+			sourceTree = "<group>";
+		};
 		DBD71A1D1CB7DA1F006921A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +738,7 @@
 		F1E96BB11C21599F0046EFD2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DBB669E81D6F3F0400547CD3 /* HMImagePicker */,
 				DB8C15551CCC9F6D0040C907 /* SCImagePicker */,
 				F1518ABB1C2BED5E00A58AF2 /* Extension */,
 				F1E96BB21C21599F0046EFD2 /* Tools.swift */,
@@ -697,13 +777,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8C156C1CCC9F6D0040C907 /* SCImageGridViewController.h in Headers */,
+				DBB66A131D6F3F0400547CD3 /* HMPreviewViewController.h in Headers */,
+				DBB66A091D6F3F0400547CD3 /* HMImageGridViewController.h in Headers */,
+				DBB66A101D6F3F0400547CD3 /* HMImagePickerGlobal.h in Headers */,
 				DB8C156E1CCC9F6D0040C907 /* SCImageGridViewLayout.h in Headers */,
+				DBB66A111D6F3F0400547CD3 /* HMImageSelectButton.h in Headers */,
 				DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */,
+				DBB66A0B1D6F3F0400547CD3 /* HMImageGridViewLayout.h in Headers */,
+				DBB66A071D6F3F0400547CD3 /* HMImageGridCell.h in Headers */,
 				F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */,
 				F17EB8BD1C3CF1CA00829E45 /* DWFlowLayout.h in Headers */,
+				DBB66A031D6F3F0400547CD3 /* HMAlbumTableViewCell.h in Headers */,
 				F17EB8B71C3CF1CA00829E45 /* AWCollectionViewDialLayout.h in Headers */,
+				DBB66A0E1D6F3F0400547CD3 /* HMImagePickerController.h in Headers */,
 				DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */,
+				DBB66A151D6F3F0400547CD3 /* HMSelectCounterButton.h in Headers */,
+				DBB66A171D6F3F0400547CD3 /* HMViewerViewController.h in Headers */,
 				DB8C15681CCC9F6D0040C907 /* SCImageGridCell.h in Headers */,
+				DBB66A051D6F3F0400547CD3 /* HMAlbumTableViewController.h in Headers */,
+				DBB66A011D6F3F0400547CD3 /* HMAlbum.h in Headers */,
 				DB8C15641CCC9F6D0040C907 /* SCBrowseImageController.h in Headers */,
 				DB8C15661CCC9F6D0040C907 /* SCImageCollectionCell.h in Headers */,
 			);
@@ -831,6 +923,7 @@
 				F1EF0B381CA1267700E25771 /* GetisterViewController.storyboard in Resources */,
 				DB8936781CC673EE00C2FED9 /* CellTopView.xib in Resources */,
 				F1E399811C33AA8B00A46DB0 /* NameWithPhoneSetView.xib in Resources */,
+				DBB66A0D1D6F3F0400547CD3 /* HMImagePicker.bundle in Resources */,
 				F1DC43B01C2946CA00BE211B /* PersonalityView.xib in Resources */,
 				DB893F411CA17B610031D4A5 /* LoginViewController.storyboard in Resources */,
 				F17EB8A81C3CF19E00829E45 /* dialCell2.xib in Resources */,
@@ -915,12 +1008,16 @@
 				DB8C15711CCCA02D0040C907 /* SCBrowseImageController.h in Sources */,
 				DB8C15721CCCA02D0040C907 /* SCImageCollectionCell.h in Sources */,
 				DB8C15731CCCA02D0040C907 /* SCImageGridCell.h in Sources */,
+				DBB66A0C1D6F3F0400547CD3 /* HMImageGridViewLayout.m in Sources */,
 				DB8C15741CCCA02D0040C907 /* SCImageGridCellSelectingView.h in Sources */,
 				DB8C15751CCCA02D0040C907 /* SCImageGridViewController.h in Sources */,
 				DB8C15761CCCA02D0040C907 /* SCImageGridViewLayout.h in Sources */,
 				F18700E01CE42A700004EA75 /* TextStorage.swift in Sources */,
+				DBB66A081D6F3F0400547CD3 /* HMImageGridCell.m in Sources */,
 				F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */,
 				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
+				DBB66A041D6F3F0400547CD3 /* HMAlbumTableViewCell.m in Sources */,
+				DBB66A161D6F3F0400547CD3 /* HMSelectCounterButton.m in Sources */,
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,
 				F100C6E41D6C2D14000B088B /* MeCenterDynamicTabCell.swift in Sources */,
 				DB9518331C37EEE10056EB44 /* Dynamic.swift in Sources */,
@@ -938,9 +1035,11 @@
 				F1EFA2D71C3CAC57003B46D8 /* DynamicPraiseEvaluation.swift in Sources */,
 				F17EB8C51C3CF2C400829E45 /* PathDynamicModal.swift in Sources */,
 				F1716D211C06EA2400F7AB97 /* SnapKit.swift in Sources */,
+				DBB66A121D6F3F0400547CD3 /* HMImageSelectButton.m in Sources */,
 				DBD1ABB21C9E8B8700251E93 /* PhotoBrowserViewController.swift in Sources */,
 				DB8C15671CCC9F6D0040C907 /* SCImageCollectionCell.m in Sources */,
 				DBB49B711C9D8631003FA2D9 /* UIView+HBUIViewEX.m in Sources */,
+				DBB66A0A1D6F3F0400547CD3 /* HMImageGridViewController.m in Sources */,
 				F1EF05EC1CE2C6F80003B6D8 /* DynamicComment.swift in Sources */,
 				F17EB8C81C3D02F800829E45 /* PublicDynamicController.swift in Sources */,
 				F1B8D34E1C28E75D00B0B847 /* SettingView.swift in Sources */,
@@ -963,6 +1062,7 @@
 				DB0ACD6B1CDEED4700F345DD /* DynamicPraise.swift in Sources */,
 				F1F39ED81C3A60A200BCDA98 /* NetworkTools.swift in Sources */,
 				F1716D201C06EA2400F7AB97 /* LayoutConstraint.swift in Sources */,
+				DBB66A181D6F3F0400547CD3 /* HMViewerViewController.m in Sources */,
 				DB730FC21C429F6C0074AABB /* HMProgressImageView.swift in Sources */,
 				F1E44E641C3FB9BA00EC1836 /* HBAVFile.swift in Sources */,
 				F1716D1B1C06EA2400F7AB97 /* ConstraintMaker.swift in Sources */,
@@ -978,12 +1078,15 @@
 				DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */,
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,
+				DBB66A021D6F3F0400547CD3 /* HMAlbum.m in Sources */,
+				DBB66A061D6F3F0400547CD3 /* HMAlbumTableViewController.m in Sources */,
 				F17C2BEE1CC8BD9C00BAE708 /* ContentDynaicTableCell.swift in Sources */,
 				DBD269771D0A95AB00915E38 /* UserDynamicCollectionV.swift in Sources */,
 				F1D936A31CD1FC6E009AB09F /* DynamicPraisesCollectionView.swift in Sources */,
 				F1ED56321C30FB58005F74DB /* SettingController.swift in Sources */,
 				F1C2CD761CCDE0180009ED58 /* SystemPhotoLibListView.swift in Sources */,
 				F1E96BAD1C2159600046EFD2 /* MeCenterHeadView.swift in Sources */,
+				DBB66A0F1D6F3F0400547CD3 /* HMImagePickerController.m in Sources */,
 				F1716D191C06EA2400F7AB97 /* ConstraintDescription.swift in Sources */,
 				DB4353121CD79DFB0081347E /* FeelingView.swift in Sources */,
 				DB2F838A1C361B070017FB7B /* MoreAttributeSetView.swift in Sources */,
@@ -994,6 +1097,7 @@
 				F1EF05EE1CE2CDD40003B6D8 /* CellCommentTabView.swift in Sources */,
 				F17EB8A71C3CF19E00829E45 /* ContactsCollectionViewController.swift in Sources */,
 				F1E96BB61C2159CB0046EFD2 /* HeartUser.swift in Sources */,
+				DBB66A141D6F3F0400547CD3 /* HMPreviewViewController.m in Sources */,
 				DBCC94761CC7A9DC00A08669 /* ImageDynamicTableCell.swift in Sources */,
 				F1716D1A1C06EA2400F7AB97 /* ConstraintItem.swift in Sources */,
 				DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */,

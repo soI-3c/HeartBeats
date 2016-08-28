@@ -11,7 +11,7 @@ import AVOSCloud
 
 let meCenterCellID = "meCenterCellID"
 let scrWHSize = UIScreen.mainScreen().bounds.size;
-class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HMImagePickerControllerDelegate {
 //    MARK: -- 数据懒加载初始化
     var user: HeartUser?{
         didSet {
@@ -24,20 +24,35 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
                 }
                 Tools.showSVPMessage("加载失败#")
             }
+//            // 查找个人相册
+//            NetworkTools.loadUserPhotographAlbumWithBackImage(["objectId": user?.objectId as! AnyObject]) { (result, error) -> () in
+//                if error == nil {
+//                    if let netUser = result?.first as? HeartUser where netUser.photographAlbum?.count > 0 {
+//                        self.user?.photographAlbum = netUser.photographAlbum
+//                        self.tableView.reloadData()
+//                        return
+//                    }
+//                    self.user?.photographAlbum = [HBAVFile]()
+//                }
+//            }
         }
     }
-    var dynamics: [Dynamic]? {
+    private var selectImagesAsset = [PHAsset]?()          // 相册选择的图片PHAsset(用于定位再次选择)
+    private var selectImage = [UIImage]?()                // 相册选择的图片
+    
+    var dynamics: [Dynamic]? {                            // 个人动态
         didSet {
             tableView.reloadData()
         }
     }
     lazy var backImageView: UIImageView = {
         let backImageV = UIImageView()
-        backImageV.sd_setImageWithURL(NSURL(string: (self.user!.backIconImage?.url)!))
+//        backImageV.sd_setImageWitxhURL(NSURL(string: (self.user!.backIconImage?.url)!))
         return backImageV
     }()
+    
     private lazy var headView : MeCenterHeadView = MeCenterHeadView()
-    private let userDynamicFootVuew = UserDynamicCollectionV(frame: CGRectZero, collectionViewLayout: UserDynamicCollectionLayout())                //   动态展示
+    private let photographAlbumView = UserDynamicCollectionV(frame: CGRectZero, collectionViewLayout: UserDynamicCollectionLayout())                                        //   个人相册
     private lazy var isUserHeadImg: Bool = true                             //   判断是否是头像
     
     //    MARK: --  初始化操作
@@ -51,12 +66,16 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         // 右边按钮
         let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
-        let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(MeCenterController.setting))
+        let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "setting")
         self.navigationItem.rightBarButtonItems = [spaceItem, leftBtn]
         // 注册
         self.tableView.registerClass(MeCenterDynamicTabCell.self, forCellReuseIdentifier: meCenterCellID)
         if user == nil {            // 默认是当前用户, 如果不传user过来
             user = HeartUser.currentUser()
+        }
+        // 添加图片到相册
+        photographAlbumView.addImagesBlock = {[weak self]() -> Void in
+            self!.addImagesToPhotographAlbum()
         }
         setupUI()
     }
@@ -95,7 +114,25 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         isUserHeadImg = false
         selectIcon()
     }
-    
+    // 添加相片到相册
+    func addImagesToPhotographAlbum() {
+       let imagePickerControl = HMImagePickerController(selectedAssets: selectImagesAsset)
+        imagePickerControl.pickerDelegate = self
+        imagePickerControl.targetSize = CGSize(width: 300, height: 300)
+        imagePickerControl.maxPickerCount = 6
+        presentViewController(imagePickerControl, animated: true, completion: nil)
+    }
+    /// 图像选择完成代理方法
+    /// @param picker         图像选择控制器
+    /// @param images         用户选中图像数组
+    /// @param selectedAssets 选中素材数组，方便重新定位图像
+    func imagePickerController(picker: HMImagePickerController, didFinishSelectedImages images: [UIImage], selectedAssets: [PHAsset]?) {
+        for img in images {
+           let file = HBAVFile(name: HBPhotographAlbum, data: UIImagePNGRepresentation(img))
+            file.saveInBackgroundWithBlock({ (b, e) -> Void in
+            })
+        }
+    }
 //    MARK: --- tableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dynamics != nil ? (dynamics?.count)! + 2 : 2
@@ -126,11 +163,11 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             let cell = UITableViewCell()
             cell.selectionStyle = .None
             cell.backgroundColor = UIColor.clearColor()
-            cell.contentView.addSubview(userDynamicFootVuew)
-            userDynamicFootVuew.snp_makeConstraints { (make) in
+            cell.contentView.addSubview(photographAlbumView)
+            photographAlbumView.snp_makeConstraints { (make) in
                 make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
             }
-            userDynamicFootVuew.dynamics = dynamics
+            photographAlbumView.photographAlbum = []
             return cell
         }
         // 动态展示
@@ -144,7 +181,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 1 {
             if dynamics != nil {
-                let number = CGFloat((dynamics?.count)!) / 3
+                let number = CGFloat(dynamics!.count) / 3
                 return ((scrWHSize.width - (3 + 1) * 4) / 3) * ceil(number) + 16;
             }
             return 0
@@ -154,7 +191,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         }
         return UITableViewAutomaticDimension
     }
-
 // MARK: --- 更换头像一系列方法
     func selectIcon(){
         let userIconAlert = UIAlertController(title: "请选择操作", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -201,7 +237,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         //模态弹出IamgePickerView
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
-    
    @objc func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -246,7 +281,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         let files = try? fileQuery.findFiles()
         if files?.count > 0 {
             for file in files! {
-                   let f = file as? HBAVFile
+                let f = file as? HBAVFile
                 f?.deleteInBackgroundWithBlock({ (b, error) -> Void in
                     if (error != nil) {
                     }
@@ -264,5 +299,4 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             }
         }
     }
-    
 }
