@@ -42,7 +42,7 @@ class HeartUser: AVUser {
     @NSManaged var house: String?
     @NSManaged var car: String?
     @NSManaged var dynamics: [Dynamic]?
-    @NSManaged var photographAlbum: [HBAVFile]? // 个人相册
+    @NSManaged var photographAlbum: [String]? // 个人相册
     override class func parseClassName() -> String? {
         return "_User"
     }

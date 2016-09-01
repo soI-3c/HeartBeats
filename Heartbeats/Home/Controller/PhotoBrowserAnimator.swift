@@ -20,7 +20,7 @@ class PhotoBrowserAnimator: NSObject, UIViewControllerTransitioningDelegate {
     /// 动画播放的图像视图
     lazy var imageView: HMProgressImageView = {
         let iv = HMProgressImageView()
-        iv.contentMode = UIViewContentMode.ScaleAspectFill
+        iv.contentMode = .ScaleAspectFill
         iv.clipsToBounds = true
         return iv
     }()
