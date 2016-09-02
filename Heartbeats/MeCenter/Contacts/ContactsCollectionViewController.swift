@@ -81,7 +81,6 @@ class ContactsCollectionViewController: UICollectionViewController {
     }
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let showView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        showView.backgroundColor = UIColor.redColor()
         let window = UIApplication.sharedApplication().delegate?.window!
          let modal = PathDynamicModal.show(modalView: showView, inView: window!)
     }

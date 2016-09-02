@@ -24,17 +24,17 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
                 }
                 Tools.showSVPMessage("加载失败#")
             }
-//            // 查找个人相册
-//            NetworkTools.loadUserPhotographAlbumWithBackImage(["objectId": user?.objectId as! AnyObject]) { (result, error) -> () in
-//                if error == nil {
-//                    if let netUser = result?.first as? HeartUser where netUser.photographAlbum?.count > 0 {
-//                        self.user?.photographAlbum = netUser.photographAlbum
-//                        self.tableView.reloadData()
-//                        return
-//                    }
-//                    self.user?.photographAlbum = [HBAVFile]()
-//                }
-//            }
+//          查找个人相册
+            NetworkTools.loadUserPhotographAlbumWithBackImage(["objectId": user?.objectId as! AnyObject]) { (result, error) -> () in
+                if error == nil {
+                    if let netUser = result?.first as? HeartUser where netUser.photographAlbum?.count > 0 {
+                        self.user?.photographAlbum = netUser.photographAlbum
+                        self.tableView.reloadData()
+                        return
+                    }
+                    self.user?.photographAlbum = [String]()
+                }
+            }
         }
     }
     private var selectImagesAsset = [PHAsset]?()          // 相册选择的图片PHAsset(用于定位再次选择)
@@ -47,7 +47,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     lazy var backImageView: UIImageView = {
         let backImageV = UIImageView()
-//        backImageV.sd_setImageWitxhURL(NSURL(string: (self.user!.backIconImage?.url)!))
+        backImageV.sd_setImageWithURL(NSURL(string: (self.user!.backIconImage?.url)!))
         return backImageV
     }()
     
@@ -76,6 +76,13 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         // 添加图片到相册
         photographAlbumView.addImagesBlock = {[weak self]() -> Void in
             self!.addImagesToPhotographAlbum()
+        }
+        // 浏览图片
+        photographAlbumView.tapPhotograpAlbum = {[weak self](idx) -> Void in
+            let browseImageControl = BrowseImageController(collectionViewLayout: UICollectionViewFlowLayout())
+            browseImageControl.imageUrls = self!.user?.photographAlbum
+            browseImageControl.selectIdx = idx
+            PathDynamicModal.show(modalView: browseImageControl.collectionView!, inView: self!.view)
         }
         setupUI()
     }
@@ -119,17 +126,35 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
        let imagePickerControl = HMImagePickerController(selectedAssets: selectImagesAsset)
         imagePickerControl.pickerDelegate = self
         imagePickerControl.targetSize = CGSize(width: 300, height: 300)
-        imagePickerControl.maxPickerCount = 6
+        imagePickerControl.maxPickerCount = 6 - (user?.photographAlbum?.count)!
         presentViewController(imagePickerControl, animated: true, completion: nil)
     }
-    /// 图像选择完成代理方法
+    
+    ///  MARK: --- ImageDelegate
     /// @param picker         图像选择控制器
     /// @param images         用户选中图像数组
     /// @param selectedAssets 选中素材数组，方便重新定位图像
     func imagePickerController(picker: HMImagePickerController, didFinishSelectedImages images: [UIImage], selectedAssets: [PHAsset]?) {
+        var i = 0
+        SVProgressHUD.show()
         for img in images {
-           let file = HBAVFile(name: HBPhotographAlbum, data: UIImagePNGRepresentation(img))
-            file.saveInBackgroundWithBlock({ (b, e) -> Void in
+            let imgFile = AVFile(name: HBPhotographAlbum, data: UIImageJPEGRepresentation(img, 1.0))
+            imgFile.saveInBackgroundWithBlock({ [weak self](b, error) in
+                if error == nil {
+                    self?.user?.photographAlbum?.append(imgFile.url);
+                    i += 1
+                    if i == images.count {
+                        SVProgressHUD.dismiss()
+                        self?.user?.saveInBackgroundWithBlock({ (b, e) in               // 修改用户信息
+                            if e == nil {
+                                self?.tableView.reloadData()
+                                self?.dismissViewControllerAnimated(true, completion: nil)
+                                return;
+                            }
+                            SVProgressHUD.showInfoWithStatus("修改失败.")
+                        })
+                    }
+                }
             })
         }
     }
@@ -167,7 +192,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             photographAlbumView.snp_makeConstraints { (make) in
                 make.edges.equalTo(cell.contentView).offset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
             }
-            photographAlbumView.photographAlbum = []
+            photographAlbumView.photographAlbum = user?.photographAlbum ?? [String]()
             return cell
         }
         // 动态展示
@@ -180,8 +205,8 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            if dynamics != nil {
-                let number = CGFloat(dynamics!.count) / 3
+            if user?.photographAlbum != nil {
+                let number = CGFloat((user?.photographAlbum!.count)!) / 3
                 return ((scrWHSize.width - (3 + 1) * 4) / 3) * ceil(number) + 16;
             }
             return 0

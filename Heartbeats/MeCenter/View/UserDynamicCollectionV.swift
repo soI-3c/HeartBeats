@@ -10,13 +10,13 @@ import UIKit
 
 /* 个人中心 个人相册*/
 class UserDynamicCollectionV: UICollectionView {
-    var photographAlbum: [HBAVFile]! {
+    var photographAlbum: [String]! {
         didSet {
             reloadData()
         }
     }
-    var addImagesBlock: (() -> Void)?               // 添加图片到相册
-    
+    var addImagesBlock: (() -> Void)?                       // 添加图片到相册
+    var tapPhotograpAlbum: ((Int) -> Void)?              // 点击图片
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         bounces = false
@@ -36,8 +36,7 @@ extension UserDynamicCollectionV: UICollectionViewDataSource {
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("userDyanmicCellID", forIndexPath: indexPath) as! UserDynamicCollectionVCell
-        
-        cell.dynamicImgUrl =  indexPath.item < photographAlbum.count ? photographAlbum[indexPath.item].url : nil
+        cell.dynamicImgUrl =  indexPath.item < photographAlbum.count ? photographAlbum[indexPath.item] : nil
         return cell
     }
 }
@@ -49,6 +48,7 @@ extension UserDynamicCollectionV: UICollectionViewDelegate {
             return
         }
         // 显示点击的图片
+        tapPhotograpAlbum?(indexPath.item)
     }
 }
 

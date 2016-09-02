@@ -26,14 +26,6 @@ class HomeController: UICollectionViewController {
         return imgView
     }()
     
-    /// 动画播放的图像视图
-    lazy var imageView: HMProgressImageView = {
-        let iv = HMProgressImageView()
-        iv.contentMode = UIViewContentMode.ScaleAspectFill
-        iv.clipsToBounds = true
-        return iv
-    }()
-    
 //    MARK: -- override
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +72,6 @@ class HomeController: UICollectionViewController {
     }
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(HBHomeCellID, forIndexPath: indexPath) as! PublicDynamicCell
-        
 //        图片浏览器
         cell.tapBackImageBlock = {(image) -> Void in
             let photoBrowControl =  PhotoBrowserViewController()
