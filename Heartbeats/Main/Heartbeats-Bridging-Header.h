@@ -10,3 +10,5 @@
 #import "SVProgressHUD.h"
 #import "SCImageGridViewController.h"
 #import "HMImagePickerController.h"
+#import "UIView+RoundedCorner.h"
+#import "UIImage+RoundedCorner.h"

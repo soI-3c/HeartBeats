@@ -9,6 +9,7 @@
 #import "UIView+HBUIViewEX.h"
 
 @implementation UIView (HBUIViewEX)
+
 -(CGFloat)x{
     return self.frame.origin.x;
 }
