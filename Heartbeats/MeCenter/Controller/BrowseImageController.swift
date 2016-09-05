@@ -11,7 +11,11 @@ import UIKit
 /** 个人中心的图片浏览器 */
 private let reuseIdentifier = NSStringFromClass(BrowseImageCell.self)
 class BrowseImageController: UICollectionViewController {
-    var imageUrls: [String]!
+    var imageUrls: [String]! {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
     var selectIdx: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +23,7 @@ class BrowseImageController: UICollectionViewController {
         self.collectionView!.registerClass(BrowseImageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     override func viewWillAppear(animated: Bool) {
-//        collectionView?.scrollToItemAtIndexPath(NSIndexPath(index: selectIdx), atScrollPosition: .Right, animated: true)
+        collectionView?.scrollToItemAtIndexPath(NSIndexPath(index: selectIdx), atScrollPosition: .Right, animated: true)
     }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageUrls.count
@@ -30,18 +34,37 @@ class BrowseImageController: UICollectionViewController {
         return cell
     }
     private func setUpUI() {
-        collectionView?.backgroundColor = .redColor()
+        collectionView?.backgroundColor = .clearColor()
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = .Horizontal
-        layout.itemSize = CGSizeMake(320, 400)
-//        collectionView?.showsHorizontalScrollIndicator = false
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSizeMake(collectionView!.frame.size.width, collectionView!.frame.size.height)
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.pagingEnabled = true
+        
+        
+        collectionView!.addSubview(deleBtn)
+        deleBtn.snp_makeConstraints { (make) in
+            make.right.equalTo(collectionView!.snp_right)
+            make.bottom.equalTo(collectionView!.snp_bottom)
+//            make.size.equalTo(CGSize(width: 35, height: 35))
+        }
     }
+    private let deleBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .redColor()
+        btn.frame = CGRectMake(0, 0, 100, 100)
+        btn.setImage(UIImage(named: "closeIcon"), forState: .Normal)
+        btn.addTarget(BrowseImageCell.self, action: "deleAction:", forControlEvents: .TouchUpInside)
+        return btn
+    }()
 }
 /* cell */
 class BrowseImageCell: UICollectionViewCell {
     var imgUrl: String! {
         didSet {
-            print(imgUrl)
             imgView.sd_setImageWithURL(NSURL(string: imgUrl))
         }
     }
@@ -60,8 +83,5 @@ class BrowseImageCell: UICollectionViewCell {
     private func setUpUI() {
         contentView.addSubview(imgView)
         imgView.frame = bounds
-//        imgView.snp_makeConstraints { (make) in
-//            make.edges.equalTo(contentView)
-//        }
     }
 }
