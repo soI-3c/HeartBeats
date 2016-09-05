@@ -29,8 +29,8 @@ let HBUserCar = "car"
 let HBPhotographAlbum = "photographAlbum"
 
 class HeartUser: AVUser {
-    @NSManaged var iconImage: HBAVFile?      // 用户头像
-    @NSManaged var backIconImage: HBAVFile?  // 背景头像
+    @NSManaged var iconImage: String?      // 用户头像
+    @NSManaged var backIconImage: String?  // 背景头像
     @NSManaged var personality: String?      // 个性签名
     @NSManaged var age: String?
     @NSManaged var sex: String?
@@ -49,24 +49,5 @@ class HeartUser: AVUser {
 }
 
 extension HeartUser {
-//    MARK: --- 根据key 返回文件AVFile的 url
-    func loadUserIconImageWithBackImage(user: HeartUser?, imageName: String?) -> String? {
-        var url: String?
-        let userQuery = HeartUser.query()
-        userQuery.whereKey("objectId", equalTo: user?.objectId)
-        userQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            print(objects)
-            if objects != nil {
-                if let user = objects.first as? HeartUser {
-                    if imageName == HBUserIconImage {
-                        url = user.iconImage?.url
-                    }
-                    if imageName == HBUserBackIconImage {
-                        url = user.backIconImage?.url
-                    }
-                }
-            }
-        })
-        return url
-    }
+
 }

@@ -14,7 +14,6 @@ extension UILabel {
         self.init()
         // 设置对象属性
         text = title
-        numberOfLines = 0
         sizeToFit()
         textColor = UIColor.whiteColor()
         jm_setCornerRadius(3.5, withBackgroundColor: UIColor(red: 19.0 / 255.0, green: 19.0 / 255.0, blue: 19.0 / 255.0, alpha: 0.8))

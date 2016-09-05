@@ -24,15 +24,11 @@ class MeCenterHeadView: UIView{
                     , finishedCallBack: {[weak self] (objs, error) -> () in
                     if error == nil {
                         if let user = objs!.first as? HeartUser {
-                            if let url = user.iconImage?.url {
+                            if let url = user.iconImage {
                                 self!.userHeadImgView.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
-                            }else {
-                                self?.userHeadImgView.setBackgroundImage(UIImage(named: "u1"), forState: UIControlState.Normal)
                             }
-                            if let url = user.backIconImage?.url {
+                            if let url = user.backIconImage {
                                 self!.userBackImg.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
-                            }else {
-                                self?.userBackImg.setBackgroundImage(UIImage(named: "u1"), forState: .Normal)
                             }
                         }
                     }
@@ -55,8 +51,6 @@ class MeCenterHeadView: UIView{
         let btn = UIButton()
         btn.titleLabel?.text = nil
         btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
-        btn.adjustsImageWhenHighlighted = false
-        btn.layer.masksToBounds = true
         btn.imageView?.contentMode = .ScaleAspectFill
         return btn;
     }()
@@ -65,10 +59,7 @@ class MeCenterHeadView: UIView{
         let btn = UIButton()
         btn.titleLabel?.text = nil
         btn.addTarget(self, action: "changeUserHeadImg", forControlEvents: .TouchUpInside)
-        btn.adjustsImageWhenHighlighted = false
         btn.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        btn.layer.masksToBounds = true
         btn.imageView?.contentMode = .ScaleAspectFit
         btn.layer.borderWidth = 0.5
         btn.layer.borderColor = UIColor.whiteColor().CGColor

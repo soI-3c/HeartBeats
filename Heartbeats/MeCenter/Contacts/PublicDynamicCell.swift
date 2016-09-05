@@ -22,21 +22,12 @@ class PublicDynamicCell: UICollectionViewCell {
     var user: HeartUser? {
         didSet {
             if let user = user {
-                userHeadImg.imageView?.image = nil
-                backImageView.image = nil
-                let iconImageFile = user.iconImage
-                let backImageFile = user.backIconImage
                 let image = placeholderImage
-                if let url = iconImageFile?.url {
+                if let url = user.iconImage {
                    userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: UIControlState.Normal, placeholderImage: image)
-                }else {
-                    userHeadImg.setImage(image, forState: UIControlState.Normal)
                 }
-                
-                if let url = backImageFile?.url {
+                if let url = user.backIconImage {
                     backImageView.sd_setImageWithURL(NSURL(string: url))
-                }else {
-                    backImageView.image = image
                 }
                 username!.text = "  \(user.username)  "
                 heartLabel.text = user.personality
@@ -69,8 +60,8 @@ class PublicDynamicCell: UICollectionViewCell {
     
     weak var delegate: PublicDynamicCellDelegate?                           // 代理
     
-    var userinfoView : UserInfoShowView = UserInfoShowView()                // 显示基本信息
-    var userHeadImg: HBButton = {                                           //头像
+    lazy var userinfoView : UserInfoShowView = UserInfoShowView()                // 显示基本信息
+    lazy var userHeadImg: HBButton = {                                           //头像
         let headBtn = HBButton()
         //设置头像圆角
         //设置遮盖额外部分,下面两句的意义及实现是相同的
@@ -79,33 +70,17 @@ class PublicDynamicCell: UICollectionViewCell {
         headBtn.layer.borderColor = UIColor.whiteColor().CGColor
         return headBtn
     }()
-    
-//   var collectionV: HBHomeCollectionView!                                 // 以前根据图片个数来显示, 现在只显示一张图片, 所以并不用了
+
     lazy var backImageView: UIImageView = {
         let backImagV = UIImageView()
         backImagV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapBackImageView"))            //   添加点击手势
         backImagV.userInteractionEnabled = true
         backImagV.image = UIImage(named: "back")
         backImagV.contentMode = .ScaleAspectFill
-//        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8, height: 8))
-//        let layer = CAShapeLayer()
-//        layer.frame = backImagV. bounds
-//        layer.path = path.CGPath
-//        self.layer.mask = layer
-
         return backImagV
     }()                      // 背景图片
     
-    var username: UILabel? = UILabel(title: "  HeartBeats  ", fontSize: fontSize, balckBack: true)
-    
-    //心形layer
-   lazy var myLayer: CALayer = {
-        let layer = CALayer()
-        layer.bounds = CGRectMake(0, 0, 25, 25)
-        layer.position = self.giveHeartView.center
-        layer.contents = UIImage(named: "3")?.CGImage
-        return layer
-    }()
+    lazy var username: UILabel? = UILabel(title: "  HeartBeats  ", fontSize: fontSize, balckBack: true)
     
 //   送心Button
    lazy var giveHeartView: UIButton = {
@@ -126,7 +101,7 @@ class PublicDynamicCell: UICollectionViewCell {
     }()
     
     // 心灵鸡烫
-    var heartLabel: UILabel = {
+   lazy var heartLabel: UILabel = {
         let heartL = UILabel()
         heartL.textAlignment = NSTextAlignment.Center
         heartL.font = UIFont.systemFontOfSize(10)
@@ -155,50 +130,23 @@ class PublicDynamicCell: UICollectionViewCell {
             tapBackImageBlock?(image)
         }
     }
-    
+    override func prepareForReuse() {
+        userHeadImg.imageView?.image = nil
+        backImageView.image = nil
+    }
 //    MARK: -- PublicDynamicCellDelegate
     func giveHeartAction(sender: HBButton) {
-        self.myLayer.opacity = 0.0
         sender.transform = CGAffineTransformMakeScale(0.86, 0.86)
         UIView.animateWithDuration(0.25, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
-             self.myLayer.opacity = 0.15
             // 恢复默认形变
             sender.transform = CGAffineTransformIdentity
             UIView.animateWithDuration(0.25, animations: { () -> Void in
-                 self.myLayer.opacity = 1.0
                 }, completion: { (_) -> Void in
             })
-            self.layer.addSublayer(self.myLayer)
             }) { (_) -> Void in
-                self.translationAnimation()
         }
         delegate?.publicDynamicCell(self, giveHeart: user!)
     }
-//    MARK: -- 键帧动画
-    func translationAnimation() {
-        //1.创建关键帧动画并设置动画属性
-        let keyframeAnimation = CAKeyframeAnimation(keyPath: "position")
-        keyframeAnimation.delegate = self               // 动画结束时代理
-        //2.设置路径
-        //绘制贝塞尔曲线
-        let path = UIBezierPath()
-        path.moveToPoint(myLayer.position)
-        path.addCurveToPoint(CGPointMake(50, 50), controlPoint1: CGPointMake(100, 200), controlPoint2: CGPointMake(0, 400))
-        keyframeAnimation.path = path.CGPath;      //设置path属性
-        
-        //设置其他属性
-        keyframeAnimation.duration = 3
-        keyframeAnimation.timingFunction = CAMediaTimingFunction(name: "easeIn")
-        keyframeAnimation.beginTime = CACurrentMediaTime()
-        //3.添加动画到图层，添加动画后就会执行动画
-        myLayer.addAnimation(keyframeAnimation, forKey: "HBKeyframeAnimation_Position")
-    }
-    
-//    动画结束代理
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        myLayer.removeFromSuperlayer()
-    }
-    
     func setUI() {
         addSubview(backImageView)
         addSubview(userHeadImg)
@@ -284,7 +232,6 @@ class HBHomeCollectionView: UICollectionView {
 // MARK: -- CollectionView分类
 extension HBHomeCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
      func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photosUrls?.count ?? 0
         return 1
     }
 
@@ -293,7 +240,6 @@ extension HBHomeCollectionView: UICollectionViewDataSource, UICollectionViewDele
 //        cell.imgUrl = photosUrls?[indexPath.row]
         return cell
     }
-
 }
 
 // MARK: -- CollectionViewCell

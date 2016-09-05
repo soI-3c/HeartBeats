@@ -10,13 +10,12 @@ import UIKit
 
 /** 个人中心 动态显示的 cell */
 class MeCenterDynamicTabCell: UITableViewCell {
-    
+    var deleDynamicBlock: ((MeCenterDynamicTabCell) -> Void)?           // 删除
     private let imgV = UIImageView()
-    private let deleBtn :UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .redColor()
+    private lazy var deleBtn :UIButton = {
+        let btn = UIButton(frame: CGRectMake(screenMaimWidth - 48, 8, 40, 40))
         btn .setImage(UIImage(named: "closeIcon"), forState: .Normal)
-        btn.addTarget(MeCenterDynamicTabCell.self, action:"deleDynamic", forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action:"deleDynamic", forControlEvents: .TouchUpInside)
         return btn
     }()
     var dynamicImageUrl: String? {
@@ -40,17 +39,12 @@ class MeCenterDynamicTabCell: UITableViewCell {
         backgroundColor = UIColor.clearColor()
         imgV.contentMode = .ScaleAspectFill
         contentView.addSubview(imgV)
-        imgV.addSubview(deleBtn)
+        contentView.addSubview(deleBtn)
         imgV.snp_makeConstraints { (make) in
             make.edges.equalTo(contentView)
         }
-        deleBtn.snp_makeConstraints { (make) in
-            make.top.equalTo(contentView.snp_top).offset(8)
-            make.right.equalTo(contentView.snp_right).offset(8)
-            make.size.equalTo(CGSize(width: 35, height: 35))
-        }
     }
-    func deleDynamic(sender: UIButton) {
-        
+    func deleDynamic() {
+        self.deleDynamicBlock?(self)
     }
 }
