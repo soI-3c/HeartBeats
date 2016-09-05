@@ -9,6 +9,8 @@
 import UIKit
 import AVOSCloud
 
+
+let window = UIApplication.sharedApplication().delegate?.window!
 let meCenterCellID = "meCenterCellID"
 let scrWHSize = UIScreen.mainScreen().bounds.size;
 class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, HMImagePickerControllerDelegate {
@@ -82,7 +84,9 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             let browseImageControl = BrowseImageController(collectionViewLayout: UICollectionViewFlowLayout())
             browseImageControl.imageUrls = self!.user?.photographAlbum
             browseImageControl.selectIdx = idx
-            PathDynamicModal.show(modalView: browseImageControl.collectionView!, inView: self!.view)
+            self?.addChildViewController(browseImageControl)
+            browseImageControl.didMoveToParentViewController(self)
+            PathDynamicModal.show(modalView: browseImageControl.collectionView!, inView: window!)
         }
         setupUI()
     }
