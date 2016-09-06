@@ -29,8 +29,8 @@ let HBUserCar = "car"
 let HBPhotographAlbum = "photographAlbum"
 
 class HeartUser: AVUser {
-    @NSManaged var iconImage: HBAVFile?      // 用户头像
-    @NSManaged var backIconImage: HBAVFile?  // 背景头像
+    @NSManaged var iconImage: String?      // 用户头像
+    @NSManaged var backIconImage: String?  // 背景头像
     @NSManaged var personality: String?      // 个性签名
     @NSManaged var age: String?
     @NSManaged var sex: String?
@@ -59,10 +59,10 @@ extension HeartUser {
             if objects != nil {
                 if let user = objects.first as? HeartUser {
                     if imageName == HBUserIconImage {
-                        url = user.iconImage?.url
+                        url = user.iconImage
                     }
                     if imageName == HBUserBackIconImage {
-                        url = user.backIconImage?.url
+                        url = user.backIconImage
                     }
                 }
             }
