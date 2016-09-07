@@ -11,14 +11,8 @@ class HBButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
-
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
-
     }
 }

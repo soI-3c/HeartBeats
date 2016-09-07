@@ -84,6 +84,10 @@
 		DBD9645D1CD43923008A4FEF /* DynamicEditInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */; };
 		DBD9645F1CD43F7F008A4FEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */; };
 		DBD964611CD46605008A4FEF /* ImageFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */; };
+		DBE00E9D1D72C40C0040F0B6 /* UIImage+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE00E991D72C40C0040F0B6 /* UIImage+RoundedCorner.h */; settings = {ASSET_TAGS = (); }; };
+		DBE00E9E1D72C40C0040F0B6 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE00E9A1D72C40C0040F0B6 /* UIImage+RoundedCorner.m */; settings = {ASSET_TAGS = (); }; };
+		DBE00E9F1D72C40C0040F0B6 /* UIView+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE00E9B1D72C40C0040F0B6 /* UIView+RoundedCorner.h */; settings = {ASSET_TAGS = (); }; };
+		DBE00EA01D72C40C0040F0B6 /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE00E9C1D72C40C0040F0B6 /* UIView+RoundedCorner.m */; settings = {ASSET_TAGS = (); }; };
 		F100C6E41D6C2D14000B088B /* MeCenterDynamicTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100C6E31D6C2D14000B088B /* MeCenterDynamicTabCell.swift */; };
 		F100C6E61D6C2F4B000B088B /* PersonalitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100C6E51D6C2F4B000B088B /* PersonalitySetView.swift */; };
 		F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */; };
@@ -156,8 +160,6 @@
 		F1F52D481C3B565F004228A1 /* ShowDynamicPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */; };
 		F1F576D41CCF30DE00E49F87 /* DynamicCutOffImgController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */; };
 		F1F751B11C229F6400176642 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F751B01C229F6400176642 /* AVOSCloudIM.framework */; };
-		F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */; };
-		F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */; };
 		F1FC09FE1C18074B00459E6F /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC09FD1C18074B00459E6F /* AVOSCloud.framework */; };
 		F1FC0A001C18077C00459E6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC09FF1C18077C00459E6F /* SystemConfiguration.framework */; };
 		F1FC0A021C18078600459E6F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC0A011C18078600459E6F /* MobileCoreServices.framework */; };
@@ -262,6 +264,10 @@
 		DBD9645C1CD43923008A4FEF /* DynamicEditInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicEditInfoController.swift; sourceTree = "<group>"; };
 		DBD9645E1CD43F7F008A4FEF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		DBD964601CD46605008A4FEF /* ImageFilterCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilterCollectionView.swift; sourceTree = "<group>"; };
+		DBE00E991D72C40C0040F0B6 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		DBE00E9A1D72C40C0040F0B6 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		DBE00E9B1D72C40C0040F0B6 /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
+		DBE00E9C1D72C40C0040F0B6 /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
 		F100C6E31D6C2D14000B088B /* MeCenterDynamicTabCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterDynamicTabCell.swift; sourceTree = "<group>"; };
 		F100C6E51D6C2F4B000B088B /* PersonalitySetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalitySetView.swift; sourceTree = "<group>"; };
 		F1518ABC1C2BED8100A58AF2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -337,8 +343,6 @@
 		F1F52D461C3B565F004228A1 /* ShowDynamicPhotoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDynamicPhotoController.xib; path = ../Controller/ShowDynamicPhotoController.xib; sourceTree = "<group>"; };
 		F1F576D31CCF30DE00E49F87 /* DynamicCutOffImgController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCutOffImgController.swift; sourceTree = "<group>"; };
 		F1F751B01C229F6400176642 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
-		F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+textOfOnePointNumber.h"; sourceTree = "<group>"; };
-		F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+textOfOnePointNumber.m"; sourceTree = "<group>"; };
 		F1FC09FD1C18074B00459E6F /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		F1FC09FF1C18077C00459E6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F1FC0A011C18078600459E6F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -570,8 +574,10 @@
 		F1518ABB1C2BED5E00A58AF2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F1F9B9301CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h */,
-				F1F9B9311CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m */,
+				DBE00E991D72C40C0040F0B6 /* UIImage+RoundedCorner.h */,
+				DBE00E9A1D72C40C0040F0B6 /* UIImage+RoundedCorner.m */,
+				DBE00E9B1D72C40C0040F0B6 /* UIView+RoundedCorner.h */,
+				DBE00E9C1D72C40C0040F0B6 /* UIView+RoundedCorner.m */,
 				DBB49B6E1C9D8631003FA2D9 /* UIView+HBUIViewEX.h */,
 				DBB49B6F1C9D8631003FA2D9 /* UIView+HBUIViewEX.m */,
 				DBA28D041C414778007A516E /* UIImage+Extension.swift */,
@@ -788,10 +794,11 @@
 				DBB49B701C9D8631003FA2D9 /* UIView+HBUIViewEX.h in Headers */,
 				DBB66A0B1D6F3F0400547CD3 /* HMImageGridViewLayout.h in Headers */,
 				DBB66A071D6F3F0400547CD3 /* HMImageGridCell.h in Headers */,
-				F1F9B9321CC604B2005C1F28 /* UILabel+textOfOnePointNumber.h in Headers */,
+				DBE00E9F1D72C40C0040F0B6 /* UIView+RoundedCorner.h in Headers */,
 				F17EB8BD1C3CF1CA00829E45 /* DWFlowLayout.h in Headers */,
 				DBB66A031D6F3F0400547CD3 /* HMAlbumTableViewCell.h in Headers */,
 				F17EB8B71C3CF1CA00829E45 /* AWCollectionViewDialLayout.h in Headers */,
+				DBE00E9D1D72C40C0040F0B6 /* UIImage+RoundedCorner.h in Headers */,
 				DBB66A0E1D6F3F0400547CD3 /* HMImagePickerController.h in Headers */,
 				DB8C156A1CCC9F6D0040C907 /* SCImageGridCellSelectingView.h in Headers */,
 				DBB66A151D6F3F0400547CD3 /* HMSelectCounterButton.h in Headers */,
@@ -1019,6 +1026,7 @@
 				DBB66A081D6F3F0400547CD3 /* HMImageGridCell.m in Sources */,
 				F1518ABD1C2BED8100A58AF2 /* UILabel+Extension.swift in Sources */,
 				F1716D181C06EA2400F7AB97 /* ConstraintAttributes.swift in Sources */,
+				DBE00EA01D72C40C0040F0B6 /* UIView+RoundedCorner.m in Sources */,
 				DBB66A041D6F3F0400547CD3 /* HMAlbumTableViewCell.m in Sources */,
 				DBB66A161D6F3F0400547CD3 /* HMSelectCounterButton.m in Sources */,
 				F1E399871C33C12B00A46DB0 /* HBButton.swift in Sources */,
@@ -1027,7 +1035,6 @@
 				F195BD841D78279D0090E8C9 /* BrowseImageController.swift in Sources */,
 				F100C6E61D6C2F4B000B088B /* PersonalitySetView.swift in Sources */,
 				F17EB8B81C3CF1CA00829E45 /* AWCollectionViewDialLayout.m in Sources */,
-				F1F9B9331CC604B2005C1F28 /* UILabel+textOfOnePointNumber.m in Sources */,
 				DBD71A201CB7DA65006921A2 /* MainDynamicTableCell.swift in Sources */,
 				DBA28D011C414716007A516E /* PictureSelectorViewController.swift in Sources */,
 				DB730FC41C42A1660074AABB /* PhotoBrowserCell.swift in Sources */,
@@ -1079,6 +1086,7 @@
 				DB8C15691CCC9F6D0040C907 /* SCImageGridCell.m in Sources */,
 				DB1AF6471BF771090059A41B /* MainTabBarController.swift in Sources */,
 				F1716D221C06EA2400F7AB97 /* SourceLocation.swift in Sources */,
+				DBE00E9E1D72C40C0040F0B6 /* UIImage+RoundedCorner.m in Sources */,
 				DB8C156F1CCC9F6D0040C907 /* SCImageGridViewLayout.m in Sources */,
 				F1EC2A911C9AAC880038A0CB /* DynamicTableViewController.swift in Sources */,
 				DB1AF6161BF76FA90059A41B /* AppDelegate.swift in Sources */,

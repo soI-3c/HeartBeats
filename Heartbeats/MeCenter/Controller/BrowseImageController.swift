@@ -17,6 +17,7 @@ class BrowseImageController: UICollectionViewController {
         }
     }
     var selectIdx: Int!
+    var deleImageAction: ((Int, UIButton) -> Void)?           // 删除
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -31,6 +32,9 @@ class BrowseImageController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BrowseImageCell
         cell.imgUrl = imageUrls[indexPath.item]
+        cell.deleImageBlock = { [weak self](cell, sender) -> Void in
+            self!.deleAction(cell, sender: sender)                      // 删除图片
+        }
         return cell
     }
     private func setUpUI() {
@@ -43,26 +47,32 @@ class BrowseImageController: UICollectionViewController {
         layout.itemSize = CGSizeMake(collectionView!.frame.size.width, collectionView!.frame.size.height)
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.pagingEnabled = true
-        
-        
-        collectionView!.addSubview(deleBtn)
-        deleBtn.snp_makeConstraints { (make) in
-            make.right.equalTo(collectionView!.snp_right)
-            make.bottom.equalTo(collectionView!.snp_bottom)
-//            make.size.equalTo(CGSize(width: 35, height: 35))
+    }
+    // 删除图片
+    private func deleAction(cell: BrowseImageCell, sender: UIButton){
+       let idx = collectionView?.indexPathForCell(cell)?.item
+        print(imageUrls[idx!])
+        let fileQuery = AVFile.query()
+        fileQuery.whereKey("url", equalTo: imageUrls[idx!])
+        fileQuery.findFilesInBackgroundWithBlock { (result, error) in
+            if error == nil {
+                    self.imageUrls.removeAtIndex(idx!)
+                    self.deleImageAction?(idx!, sender)
+                    self.collectionView?.reloadData()
+                    sender.userInteractionEnabled = true
+                (result.first as? AVFile)?.deleteInBackgroundWithBlock({[weak self](b, error) in
+                })
+            }else {
+                sender.userInteractionEnabled = true
+                SVProgressHUD.showInfoWithStatus("删除失败")
+            }
         }
     }
-    private let deleBtn: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .redColor()
-        btn.frame = CGRectMake(0, 0, 100, 100)
-        btn.setImage(UIImage(named: "closeIcon"), forState: .Normal)
-        btn.addTarget(BrowseImageCell.self, action: "deleAction:", forControlEvents: .TouchUpInside)
-        return btn
-    }()
 }
 /* cell */
 class BrowseImageCell: UICollectionViewCell {
+    var deleImageBlock: ((BrowseImageCell, UIButton) -> Void)?           // 删除
+
     var imgUrl: String! {
         didSet {
             imgView.sd_setImageWithURL(NSURL(string: imgUrl))
@@ -73,6 +83,12 @@ class BrowseImageCell: UICollectionViewCell {
         imgV.contentMode = .ScaleAspectFit
         return imgV
     }()
+   private lazy var deleBtn: UIButton = {
+        let btn = UIButton(frame: CGRectMake(100, 100, 100, 100))
+        btn.setImage(UIImage(named: "closeIcon"), forState: .Normal)
+        btn.addTarget(self, action: "deleAction:", forControlEvents: .TouchUpInside)
+        return btn
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
@@ -82,6 +98,11 @@ class BrowseImageCell: UICollectionViewCell {
     }
     private func setUpUI() {
         contentView.addSubview(imgView)
+        contentView.addSubview(deleBtn)
         imgView.frame = bounds
+    }
+    func deleAction(sender: UIButton){              // 删除按钮
+        sender.userInteractionEnabled = false
+        self.deleImageBlock?(self, sender)
     }
 }

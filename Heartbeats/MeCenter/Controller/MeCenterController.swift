@@ -18,6 +18,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     var user: HeartUser?{
         didSet {
             self.headView.user = user
+            backImageView.sd_setImageWithURL(NSURL(string: user!.backIconImage!))
             navigationItem.title = user?.username
             NetworkTools.loadDynamicsByUser(user!) { (result, error) -> () in              //    MARK : - 加载动态数据
                 if error == nil {
@@ -30,8 +31,9 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             NetworkTools.loadUserPhotographAlbumWithBackImage(["objectId": user?.objectId as! AnyObject]) { (result, error) -> () in
                 if error == nil {
                     if let netUser = result?.first as? HeartUser where netUser.photographAlbum?.count > 0 {
-                        self.user?.photographAlbum = netUser.photographAlbum
-                        self.tableView.reloadData()
+                        print(netUser.photographAlbum?.count)
+                         self.user?.photographAlbum = netUser.photographAlbum
+                         self.tableView.reloadData()
                         return
                     }
                     self.user?.photographAlbum = [String]()
@@ -49,12 +51,11 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     lazy var backImageView: UIImageView = {
         let backImageV = UIImageView()
-        backImageV.sd_setImageWithURL(NSURL(string: (self.user!.backIconImage?.url)!))
         return backImageV
     }()
     
     private lazy var headView : MeCenterHeadView = MeCenterHeadView()
-    private let photographAlbumView = UserDynamicCollectionV(frame: CGRectZero, collectionViewLayout: UserDynamicCollectionLayout())                                        //   个人相册
+    private let photographAlbumView = UserDynamicCollectionV(frame: CGRectZero, collectionViewLayout: UserDynamicCollectionLayout())                                      //   个人相册
     private lazy var isUserHeadImg: Bool = true                             //   判断是否是头像
     
     //    MARK: --  初始化操作
@@ -84,10 +85,16 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             let browseImageControl = BrowseImageController(collectionViewLayout: UICollectionViewFlowLayout())
             browseImageControl.imageUrls = self!.user?.photographAlbum
             browseImageControl.selectIdx = idx
+            browseImageControl.deleImageAction = {(a, b) -> Void in
+                self!.user?.photographAlbum = browseImageControl.imageUrls
+                AVFile.clearAllCachedFiles()
+                self!.tableView.reloadData()
+            }
             self?.addChildViewController(browseImageControl)
             browseImageControl.didMoveToParentViewController(self)
             PathDynamicModal.show(modalView: browseImageControl.collectionView!, inView: window!)
         }
+    
         setupUI()
     }
     private func setupUI() {
@@ -108,7 +115,20 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         }
         navigationController?.pushViewController(settingController!, animated: true)
     }
-
+    private func deleDynamic(deleCell :MeCenterDynamicTabCell) {                       // 删除动态
+        let index = tableView.indexPathForCell(deleCell)
+        let dynamic = dynamics![index!.row - 2]
+        dynamic.deleteInBackgroundWithBlock { (b, error) -> Void in
+            if error == nil && b == true{
+                self.dynamics?.removeAtIndex(index!.row - 2)
+                self.tableView.reloadData()
+                return
+            }
+            SVProgressHUD.showInfoWithStatus("删除失败.")
+        }
+    }
+    
+    
 //    MARK: - MeCenterHeadViewDelegate
 //    换头像
     func chageUserHeaderImg(meCenterHeadView : MeCenterHeadView) {
@@ -164,7 +184,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
 //    MARK: --- tableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dynamics != nil ? (dynamics?.count)! + 2 : 2
+        return dynamics != nil ? (dynamics?.count)! + 2 : 1
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {                 // 个人简介
@@ -201,6 +221,9 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         }
         // 动态展示
         let cell = tableView.dequeueReusableCellWithIdentifier(meCenterCellID, forIndexPath: indexPath) as! MeCenterDynamicTabCell
+        cell.deleDynamicBlock = {[weak self](deleCell) -> Void in
+           self?.deleDynamic(deleCell)
+        }
         cell.dynamicImageUrl = dynamics![indexPath.item - 2].photos?.url
         return cell
     }
@@ -303,28 +326,13 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         let fullPath = ((NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents") as NSString).stringByAppendingPathComponent(imageName)
         // 将图片写入文件
         imageData.writeToFile(fullPath, atomically: false)
-        
-        //将服务器之前的图片删除
-        let fileQuery = HBAVFile.query()
-        fileQuery.whereKey("name", equalTo: imageName)
-        let files = try? fileQuery.findFiles()
-        if files?.count > 0 {
-            for file in files! {
-                let f = file as? HBAVFile
-                f?.deleteInBackgroundWithBlock({ (b, error) -> Void in
-                    if (error != nil) {
-                    }
-                })
-            }
-        }
         //      保存到服务器
         let imgData = UIImagePNGRepresentation(currentImage)
-        let imgFile = HBAVFile(name: imageName, data: imgData)
-        user!.setObject(imgFile, forKey: imageName)
-        user!.saveInBackgroundWithBlock { (success, error) -> Void in
-            if success == false {
-                Tools.showSVPMessage("设置失败#")
-                return
+        let imgFile = AVFile(name: imageName, data: imgData)
+        imgFile.saveInBackgroundWithBlock { (b, error) -> Void in
+            if b == true {
+                self.user?.setValue(imgFile.url, forKey: imageName)
+                self.user?.save()
             }
         }
     }

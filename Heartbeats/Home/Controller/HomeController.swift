@@ -31,7 +31,7 @@ class HomeController: UICollectionViewController {
         super.viewDidLoad()
         collectionView?.backgroundView = backImageView
         Tools.insertBlurView(backImageView, style: .ExtraLight)
-
+        
         // 注册可重用 cell
         collectionView?.registerClass(PublicDynamicCell.self, forCellWithReuseIdentifier: HBHomeCellID)
         loadData()

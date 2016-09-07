@@ -12,10 +12,10 @@ import UIKit
 class DynamicPraise: AVObject, AVSubclassing {
     @NSManaged var dynamicID: String!               //动态ID
     @NSManaged var userID: String!                  //  赞用户的ID
-    @NSManaged var userHeadImg: HBAVFile?             //  赞用户名头像
+    @NSManaged var userHeadImg: String?             //  赞用户名头像
     @NSManaged var userName: String!                 //  赞用户名
     
-    init(dynamicID: String, userID: String, userHeadImg: HBAVFile?, userName: String){
+    init(dynamicID: String, userID: String, userHeadImg: String?, userName: String){
         super.init()
         self.dynamicID = dynamicID
         self.userID = userID

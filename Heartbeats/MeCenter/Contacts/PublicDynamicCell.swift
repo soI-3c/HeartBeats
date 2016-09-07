@@ -22,21 +22,12 @@ class PublicDynamicCell: UICollectionViewCell {
     var user: HeartUser? {
         didSet {
             if let user = user {
-                userHeadImg.imageView?.image = nil
-                backImageView.image = nil
-                let iconImageFile = user.iconImage
-                let backImageFile = user.backIconImage
                 let image = placeholderImage
-                if let url = iconImageFile?.url {
+                if let url = user.iconImage {
                    userHeadImg.sd_setImageWithURL(NSURL(string: url), forState: UIControlState.Normal, placeholderImage: image)
-                }else {
-                    userHeadImg.setImage(image, forState: UIControlState.Normal)
                 }
-                
-                if let url = backImageFile?.url {
+                if let url = user.backIconImage {
                     backImageView.sd_setImageWithURL(NSURL(string: url))
-                }else {
-                    backImageView.image = image
                 }
                 username!.text = "  \(user.username)  "
                 heartLabel.text = user.personality
@@ -69,89 +60,68 @@ class PublicDynamicCell: UICollectionViewCell {
     
     weak var delegate: PublicDynamicCellDelegate?                           // 代理
     
-    var userinfoView : UserInfoShowView = UserInfoShowView()                // 显示基本信息
-    var userHeadImg: HBButton = {                                           //头像
+    lazy var userinfoView : UserInfoShowView = UserInfoShowView()                // 显示基本信息
+    lazy var userHeadImg: HBButton = {                                           //头像
         let headBtn = HBButton()
         //设置头像圆角
-        headBtn.layer.cornerRadius = 40 / 2
         //设置遮盖额外部分,下面两句的意义及实现是相同的
-        headBtn.layer.masksToBounds = true
         headBtn.imageView?.contentMode = .ScaleAspectFit
         headBtn.layer.borderWidth = 1
         headBtn.layer.borderColor = UIColor.whiteColor().CGColor
         return headBtn
     }()
-    
-//   var collectionV: HBHomeCollectionView!                                 // 以前根据图片个数来显示, 现在只显示一张图片, 所以并不用了
-    
+
     lazy var backImageView: UIImageView = {
         let backImagV = UIImageView()
         backImagV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapBackImageView"))            //   添加点击手势
         backImagV.userInteractionEnabled = true
-        backImagV.frame = CGRectZero
         backImagV.image = UIImage(named: "back")
-        backImagV.layer.cornerRadius = 10
-        backImagV.layer.masksToBounds = true
         backImagV.contentMode = .ScaleAspectFill
         return backImagV
     }()                      // 背景图片
     
-    var username: UILabel? = UILabel(title: "  HeartBeats  ", fontSize: fontSize, balckBack: true)
-    
-    //心形layer
-   lazy var myLayer: CALayer = {
-        let layer = CALayer()
-        layer.bounds = CGRectMake(0, 0, 25, 25)
-        layer.position = self.giveHeartView.center
-        layer.contents = UIImage(named: "3")?.CGImage
-        return layer
-    }()
+    lazy var username: UILabel? = UILabel(title: "  HeartBeats  ", fontSize: fontSize, balckBack: true)
     
 //   送心Button
-   lazy var giveHeartView: UIView = {
-        let view = UIView()
+   lazy var giveHeartView: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: Selector("giveHeartAction:"), forControlEvents: UIControlEvents.TouchDown)
-        button.setTitle("喜欢", forState: UIControlState.Normal)
-        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        button.frame = CGRectMake(2, 1, self.frame.width - 12, 25)
-        view.addSubview(button)
-        button.backgroundColor = UIColor.blackColor()
-        view.backgroundColor = UIColor.whiteColor()
-        view.layer.cornerRadius = 10
-        view.layer.masksToBounds = true
-        button.layer.cornerRadius = 10
-        button.layer.masksToBounds = true
-        view.layer.borderWidth = 1.5
-        button.layer.borderWidth = 1.5
-        view.layer.borderColor = UIColor.blackColor().CGColor
-        button.layer.borderColor = UIColor.whiteColor().CGColor
-        return view
+        button.setTitle("心动", forState: .Normal)
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.jm_setCornerRadius(5, withBackgroundColor: .blackColor())
+        return button
+    }()
+    lazy var chatBtn: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: Selector("giveHeartAction:"), forControlEvents: UIControlEvents.TouchDown)
+        button.setTitle("聊天", forState: .Normal)
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.jm_setCornerRadius(5, withBackgroundColor: .blackColor())
+        return button
     }()
     
     // 心灵鸡烫
-    var heartLabel: UILabel = {
+   lazy var heartLabel: UILabel = {
         let heartL = UILabel()
         heartL.textAlignment = NSTextAlignment.Center
-//        heartL.font = UIFont(name: "", size: 10)
+        heartL.font = UIFont.systemFontOfSize(10)
         heartL.numberOfLines = 0
         heartL.textColor = UIColor.blackColor()
-        heartL.alpha = 0.85
         return heartL;
     }()
 
 //    MARK: 初始化方法
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = true
         setUI()
-
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8, height: 8))
+        let layer = CAShapeLayer()
+        layer.frame = bounds
+        layer.path = path.CGPath
+        self.layer.mask = layer
         setUI()
     }
 //    MARK: -- 点击背景头像的事件
@@ -160,50 +130,23 @@ class PublicDynamicCell: UICollectionViewCell {
             tapBackImageBlock?(image)
         }
     }
-    
+    override func prepareForReuse() {
+        userHeadImg.imageView?.image = nil
+        backImageView.image = nil
+    }
 //    MARK: -- PublicDynamicCellDelegate
     func giveHeartAction(sender: HBButton) {
-        self.myLayer.opacity = 0.0
-        giveHeartView.transform = CGAffineTransformMakeScale(0.86, 0.86)
-        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
-             self.myLayer.opacity = 0.15
+        sender.transform = CGAffineTransformMakeScale(0.86, 0.86)
+        UIView.animateWithDuration(0.25, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
             // 恢复默认形变
-            self.giveHeartView.transform = CGAffineTransformIdentity
-            UIView.animateWithDuration(3, animations: { () -> Void in
-                 self.myLayer.opacity = 1.0
+            sender.transform = CGAffineTransformIdentity
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
                 }, completion: { (_) -> Void in
             })
-            self.layer.addSublayer(self.myLayer)
             }) { (_) -> Void in
-                self.translationAnimation()
         }
         delegate?.publicDynamicCell(self, giveHeart: user!)
     }
-//    MARK: -- 键帧动画
-    func translationAnimation() {
-        //1.创建关键帧动画并设置动画属性
-        let keyframeAnimation = CAKeyframeAnimation(keyPath: "position")
-        keyframeAnimation.delegate = self               // 动画结束时代理
-        //2.设置路径
-        //绘制贝塞尔曲线
-        let path = UIBezierPath()
-        path.moveToPoint(myLayer.position)
-        path.addCurveToPoint(CGPointMake(50, 50), controlPoint1: CGPointMake(100, 200), controlPoint2: CGPointMake(0, 400))
-        keyframeAnimation.path = path.CGPath;      //设置path属性
-        
-        //设置其他属性
-        keyframeAnimation.duration = 3
-        keyframeAnimation.timingFunction = CAMediaTimingFunction(name: "easeIn")
-        keyframeAnimation.beginTime = CACurrentMediaTime()
-        //3.添加动画到图层，添加动画后就会执行动画
-        myLayer.addAnimation(keyframeAnimation, forKey: "HBKeyframeAnimation_Position")
-    }
-    
-//    动画结束代理
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        myLayer.removeFromSuperlayer()
-    }
-    
     func setUI() {
         addSubview(backImageView)
         addSubview(userHeadImg)
@@ -211,6 +154,7 @@ class PublicDynamicCell: UICollectionViewCell {
         addSubview(userinfoView)
         addSubview(heartLabel)
         addSubview(giveHeartView)
+        addSubview(chatBtn)
         
         backImageView.snp_makeConstraints { (make) -> Void in
             make.left.top.equalTo(self).offset(4)
@@ -238,8 +182,15 @@ class PublicDynamicCell: UICollectionViewCell {
             make.bottom.equalTo(giveHeartView.snp_top).offset(-16)
         }
         giveHeartView.snp_makeConstraints { (make) -> Void in
-            make.left.right.equalTo(backImageView)
+            make.left.equalTo(backImageView)
+            make.right.equalTo(chatBtn.snp_left).offset(-4)
+            make.width.equalTo(chatBtn)
             make.height.equalTo(27)
+            make.bottom.equalTo(self.snp_bottom).offset(-4)
+        }
+        chatBtn.snp_makeConstraints { (make) -> Void in
+            make.right.equalTo(backImageView)
+            make.height.equalTo(giveHeartView)
             make.bottom.equalTo(self.snp_bottom).offset(-4)
         }
     }
@@ -277,22 +228,18 @@ class HBHomeCollectionView: UICollectionView {
         layout.itemSize = CGSizeMake(self.frame.width, self.frame.height)
         registerNib(UINib(nibName: "HBHomeCollectionCell", bundle: nil), forCellWithReuseIdentifier: HBHomeCollectionCellID)
     }
-    /// 根据模型中的图片数量来计算视图大小
 }
 // MARK: -- CollectionView分类
 extension HBHomeCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
      func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photosUrls?.count ?? 0
         return 1
     }
 
      func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(HBHomeCollectionCellID, forIndexPath: indexPath) as! HBHomeCollectionCell
 //        cell.imgUrl = photosUrls?[indexPath.row]
-        cell.backgroundColor = UIColor.blackColor()
         return cell
     }
-
 }
 
 // MARK: -- CollectionViewCell

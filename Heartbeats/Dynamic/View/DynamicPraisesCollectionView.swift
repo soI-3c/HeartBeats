@@ -70,7 +70,7 @@ extension DynamicPraisesCollectionView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(praisesCollectionViewCell, forIndexPath: indexPath) as? DynamicPraisesCollectionViewCell
         let praise = praises?[indexPath.item] as? DynamicPraise
         print(praise)   // NIL
-        cell?.imgUrl = praise?.userHeadImg?.url
+        cell?.imgUrl = praise?.userHeadImg
         return cell!
     }
 }
