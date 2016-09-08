@@ -49,7 +49,7 @@ class PublicDynamicCell: UICollectionViewCell {
                 if user.address?.isEmpty == false {
                     userInfos.append(user.address!)
                 }
-                userinfoView.infos = userInfos;       // 根据信息数据来动态创建label
+//                userinfoView.infos = userInfos;       // 根据信息数据来动态创建label
             }
         }
     }
@@ -148,13 +148,13 @@ class PublicDynamicCell: UICollectionViewCell {
         delegate?.publicDynamicCell(self, giveHeart: user!)
     }
     func setUI() {
-        addSubview(backImageView)
-        addSubview(userHeadImg)
-        addSubview(username!)
-        addSubview(userinfoView)
-        addSubview(heartLabel)
-        addSubview(giveHeartView)
-        addSubview(chatBtn)
+       contentView.addSubview(backImageView)
+       contentView.addSubview(userHeadImg)
+       contentView.addSubview(username!)
+       contentView.addSubview(userinfoView)
+       contentView.addSubview(heartLabel)
+       contentView.addSubview(giveHeartView)
+       contentView.addSubview(chatBtn)
         
         backImageView.snp_makeConstraints { (make) -> Void in
             make.left.top.equalTo(self).offset(4)

@@ -49,24 +49,4 @@ class HeartUser: AVUser {
 }
 
 extension HeartUser {
-//    MARK: --- 根据key 返回文件AVFile的 url
-    func loadUserIconImageWithBackImage(user: HeartUser?, imageName: String?) -> String? {
-        var url: String?
-        let userQuery = HeartUser.query()
-        userQuery.whereKey("objectId", equalTo: user?.objectId)
-        userQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            print(objects)
-            if objects != nil {
-                if let user = objects.first as? HeartUser {
-                    if imageName == HBUserIconImage {
-                        url = user.iconImage
-                    }
-                    if imageName == HBUserBackIconImage {
-                        url = user.backIconImage
-                    }
-                }
-            }
-        })
-        return url
-    }
 }

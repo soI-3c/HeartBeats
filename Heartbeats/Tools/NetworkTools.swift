@@ -51,36 +51,6 @@ class NetworkTools: NSObject {
             }
         })
     }
-
-// 根据ID查找指定用户
-   class func loadUserIconImageWithBackImage (user: HeartUser?, imageName: String?, finishedCallBack: HBNetFinishedCallBack) {
-        let userQuery = HeartUser.query()
-        userQuery.whereKey("objectId", equalTo: user?.objectId)
-        userQuery.includeKey(HBPhotographAlbum)
-        //设置缓存有
-        userQuery.maxCacheAge = 24*3600;
-        userQuery.getFirstObjectInBackgroundWithBlock { (obj, error) -> Void in
-            if error == nil {
-                finishedCallBack(result: [obj], error: nil)
-            }
-            if error != nil {
-                finishedCallBack(result: nil, error: error)
-            }
-        }
-    }
-//    MARK: -- 查找指定用户的个人相册
-    class func loadUserPhotographAlbumWithBackImage(param: [String: AnyObject], finishedCallBack: HBNetFinishedCallBack) {
-        assert(param["objectId"] != nil, "查找相册时, userObjectId不能为空")
-        let sql = "select photographAlbum from _User where objectId = ?"
-        let dict = [param["objectId"]!]
-        AVQuery.doCloudQueryInBackgroundWithCQL(sql, pvalues: dict) { (result, error) -> Void in
-            if error == nil {
-                finishedCallBack(result: result.results, error: nil)
-            }else {
-                 finishedCallBack(result: nil, error: error)
-            }
-        }
-    }
 // 查找所有User
   class func loadUsers (finishedCallBack: HBNetFinishedCallBack) {
         let userQuery = HeartUser.query()
@@ -96,6 +66,22 @@ class NetworkTools: NSObject {
                     return
                 }
                     finishedCallBack(result: nil, error: err)
+            }
+        }
+    }
+// MARK: -- 根据删除url的文件
+    class func deleFileByUrl(url: String, finishedCallBack: HBNetFinishedCallBack) {
+        let fileQuery = AVFile.query()
+        fileQuery.whereKey("url", equalTo: url)
+        fileQuery.findFilesInBackgroundWithBlock { (result, error) in
+            if error == nil {
+                (result.first as? AVFile)?.deleteInBackgroundWithBlock({(b, error) in
+                    if error != nil {
+                        finishedCallBack(result: nil, error: error)
+                    }else {
+                        finishedCallBack(result: nil, error: nil)
+                    }
+                })
             }
         }
     }

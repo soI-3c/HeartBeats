@@ -20,19 +20,12 @@ class MeCenterHeadView: UIView{
     var user: HeartUser? {
         didSet {
            if let user = user {
-                NetworkTools.loadUserIconImageWithBackImage(user, imageName: HBUserIconImage
-                    , finishedCallBack: {[weak self] (objs, error) -> () in
-                    if error == nil {
-                        if let user = objs!.first as? HeartUser {
-                            if let url = user.iconImage {
-                                self!.userHeadImgView.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
-                            }
-                            if let url = user.backIconImage {
-                                self!.userBackImg.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
-                            }
-                        }
-                    }
-                })
+                if let url = user.iconImage {
+                    userHeadImgView.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
+                }
+                if let url = user.backIconImage {
+                    userBackImg.sd_setBackgroundImageWithURL(NSURL(string: url), forState: .Normal)
+                }
                 username.text = user.username
                 userIndividualityText.text = user.personality == nil ? "" : user.personality
                 ageLabel.text = user.age == nil ? " 年龄 " : " \(user.age!) "
@@ -43,6 +36,7 @@ class MeCenterHeadView: UIView{
                 incomeLabel.text = user.income == nil ? " 月收入 " : " \(user.income!) "
                 carLabel.text = user.car == nil ? " 是否已购车 " : " \(user.car!) "
                 houseLabel.text = user.house == nil ? " 是否已购房 " : " \(user.house!) "
+                layoutIfNeeded()
             }
         }
     }
@@ -50,6 +44,8 @@ class MeCenterHeadView: UIView{
     lazy var userBackImg: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.text = nil
+        btn.backgroundColor = .clearColor()
+        btn.imageView?.backgroundColor = .clearColor()
         btn.addTarget(self, action: "changeUserBackImg", forControlEvents: .TouchUpInside)
         btn.imageView?.contentMode = .ScaleAspectFill
         return btn;

@@ -18,7 +18,9 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     var user: HeartUser?{
         didSet {
             self.headView.user = user
-            backImageView.sd_setImageWithURL(NSURL(string: user!.backIconImage!))
+            if let backUrl = user?.backIconImage {
+                backImageView.sd_setImageWithURL(NSURL(string: backUrl))
+            }
             navigationItem.title = user?.username
             NetworkTools.loadDynamicsByUser(user!) { (result, error) -> () in              //    MARK : - 加载动态数据
                 if error == nil {
@@ -26,18 +28,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
                     return
                 }
                 Tools.showSVPMessage("加载失败#")
-            }
-//          查找个人相册
-            NetworkTools.loadUserPhotographAlbumWithBackImage(["objectId": user?.objectId as! AnyObject]) { (result, error) -> () in
-                if error == nil {
-                    if let netUser = result?.first as? HeartUser where netUser.photographAlbum?.count > 0 {
-                        print(netUser.photographAlbum?.count)
-                         self.user?.photographAlbum = netUser.photographAlbum
-                         self.tableView.reloadData()
-                        return
-                    }
-                    self.user?.photographAlbum = [String]()
-                }
             }
         }
     }
@@ -70,9 +60,11 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
         let spaceItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         spaceItem.width = -15                                       // 为了自定返回按钮时, 往右偏移的问题
         let leftBtn = UIBarButtonItem(image: UIImage(named: "defBack")!.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: "setting")
-        self.navigationItem.rightBarButtonItems = [spaceItem, leftBtn]
+        navigationItem.rightBarButtonItems = [spaceItem, leftBtn]
+    
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 44, 0)
         // 注册
-        self.tableView.registerClass(MeCenterDynamicTabCell.self, forCellReuseIdentifier: meCenterCellID)
+        tableView.registerClass(MeCenterDynamicTabCell.self, forCellReuseIdentifier: meCenterCellID)
         if user == nil {            // 默认是当前用户, 如果不传user过来
             user = HeartUser.currentUser()
         }
@@ -85,16 +77,16 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             let browseImageControl = BrowseImageController(collectionViewLayout: UICollectionViewFlowLayout())
             browseImageControl.imageUrls = self!.user?.photographAlbum
             browseImageControl.selectIdx = idx
-            browseImageControl.deleImageAction = {(a, b) -> Void in
-                self!.user?.photographAlbum = browseImageControl.imageUrls
-                AVFile.clearAllCachedFiles()
+            browseImageControl.deleImageAction = {(idx, btn) -> Void in         // 删除
+                self!.user?.photographAlbum?.removeAtIndex(idx)
+                self?.user?.saveInBackground()
+                AVUser.changeCurrentUser(self?.user, save: true)
                 self!.tableView.reloadData()
             }
             self?.addChildViewController(browseImageControl)
             browseImageControl.didMoveToParentViewController(self)
             PathDynamicModal.show(modalView: browseImageControl.collectionView!, inView: window!)
         }
-    
         setupUI()
     }
     private func setupUI() {
@@ -127,8 +119,7 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             SVProgressHUD.showInfoWithStatus("删除失败.")
         }
     }
-    
-    
+
 //    MARK: - MeCenterHeadViewDelegate
 //    换头像
     func chageUserHeaderImg(meCenterHeadView : MeCenterHeadView) {
@@ -192,7 +183,6 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             cell.selectionStyle = .None
             cell.backgroundColor = UIColor.clearColor()
             let lab = UILabel(title: "", fontSize: 15)
-            lab.backgroundColor = UIColor(red: 19.0 / 255.0, green: 19.0 / 255.0, blue: 19.0 / 255.0, alpha: 0.8)
             lab.numberOfLines = 0
             lab.textColor = UIColor.init(white: 1.0, alpha: 1.0)
             
@@ -232,11 +222,14 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 1 {
-            if user?.photographAlbum != nil {
-                let number = CGFloat((user?.photographAlbum!.count)!) / 3
-                return ((scrWHSize.width - (3 + 1) * 4) / 3) * ceil(number) + 16;
+            let size = CGSize(width: MAXWHSzie.width / 3.0 - 4, height: MAXWHSzie.width / 3.0 - 4)
+            if user?.photographAlbum?.count > 0{
+                if user?.photographAlbum?.count <= 2 {
+                    return size.height + 16
+                }
+                return size.height * 2 + 16
             }
-            return 0
+            return size.height + 8;
         }
         if indexPath.row != 0 {
             return scrWHSize.width
@@ -320,6 +313,8 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
     
     //MARK: - 保存图片到服务器
     func saveImage(currentImage: UIImage,imageName: String){
+        var oldUrl : String!
+        oldUrl =  imageName == HBUserIncome ? user?.iconImage : user?.backIconImage             // 记录以前的url
         var imageData = NSData()
         imageData = UIImageJPEGRepresentation(currentImage, 0.5)!
         // 获取沙盒目录
@@ -333,6 +328,8 @@ class MeCenterController: UITableViewController, MeCenterHeadViewDelegate, UINav
             if b == true {
                 self.user?.setValue(imgFile.url, forKey: imageName)
                 self.user?.save()
+                NetworkTools.deleFileByUrl(oldUrl, finishedCallBack: { (result, error) in           // 删除以前的文件
+                })
             }
         }
     }

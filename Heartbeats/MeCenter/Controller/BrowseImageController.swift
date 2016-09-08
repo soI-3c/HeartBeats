@@ -16,7 +16,11 @@ class BrowseImageController: UICollectionViewController {
             collectionView?.reloadData()
         }
     }
-    var selectIdx: Int!
+    var selectIdx: Int! {
+        didSet {
+             collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: selectIdx, inSection: 0), atScrollPosition: .Right, animated: true)
+        }
+    }
     var deleImageAction: ((Int, UIButton) -> Void)?           // 删除
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +28,6 @@ class BrowseImageController: UICollectionViewController {
         self.collectionView!.registerClass(BrowseImageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     override func viewWillAppear(animated: Bool) {
-        collectionView?.scrollToItemAtIndexPath(NSIndexPath(index: selectIdx), atScrollPosition: .Right, animated: true)
     }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageUrls.count
@@ -51,21 +54,11 @@ class BrowseImageController: UICollectionViewController {
     // 删除图片
     private func deleAction(cell: BrowseImageCell, sender: UIButton){
        let idx = collectionView?.indexPathForCell(cell)?.item
-        print(imageUrls[idx!])
-        let fileQuery = AVFile.query()
-        fileQuery.whereKey("url", equalTo: imageUrls[idx!])
-        fileQuery.findFilesInBackgroundWithBlock { (result, error) in
-            if error == nil {
-                    self.imageUrls.removeAtIndex(idx!)
-                    self.deleImageAction?(idx!, sender)
-                    self.collectionView?.reloadData()
-                    sender.userInteractionEnabled = true
-                (result.first as? AVFile)?.deleteInBackgroundWithBlock({[weak self](b, error) in
-                })
-            }else {
-                sender.userInteractionEnabled = true
-                SVProgressHUD.showInfoWithStatus("删除失败")
-            }
+        NetworkTools.deleFileByUrl(imageUrls[idx!]) { (result, error) in
+            self.imageUrls.removeAtIndex(idx!)
+            self.deleImageAction?(idx!, sender)
+            self.collectionView?.reloadData()
+            sender.userInteractionEnabled = true
         }
     }
 }

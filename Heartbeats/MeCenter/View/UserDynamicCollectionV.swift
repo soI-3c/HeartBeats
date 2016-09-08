@@ -70,6 +70,7 @@ class UserDynamicCollectionVCell: UICollectionViewCell {
         contentView.addSubview(dynamicImgV)
         layer.cornerRadius = 5
         clipsToBounds = true
+        dynamicImgV.contentMode = .ScaleAspectFill
         dynamicImgV.frame = bounds
     }
     required init?(coder aDecoder: NSCoder) {
